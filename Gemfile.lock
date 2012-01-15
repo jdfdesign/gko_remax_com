@@ -1,23 +1,25 @@
 GIT
   remote: git@github.com:jdfdesign/gko-cms-31.git
-  revision: 239d1b895e5513c866946cd5e5913c9450d22ede
+  revision: 898e12baff3b94ff5d7e32f5c9ac995b3458cde3
   specs:
-    gko-images (0.0.47)
-      dragonfly (~> 0.9.8)
+    gko-auth (0.0.34)
+      cancan (= 1.6.5)
+      devise (= 1.5.1)
       gko-core
-      mime-types
-      rack-cache (>= 0.5.3)
+    gko-inquiry (0.0.34)
+      filters_spam (~> 0.2)
+      gko-core
 
 GIT
   remote: git@github.com:jdfdesign/gko-cms-31.git
-  revision: 239d1b895e5513c866946cd5e5913c9450d22ede
+  revision: 898e12baff3b94ff5d7e32f5c9ac995b3458cde3
   specs:
     gko-features (0.0.4)
       gko-core
 
 GIT
   remote: git@github.com:jdfdesign/gko-cms-31.git
-  revision: 239d1b895e5513c866946cd5e5913c9450d22ede
+  revision: 898e12baff3b94ff5d7e32f5c9ac995b3458cde3
   specs:
     gko-categories (0.0.24)
       gko-core
@@ -26,15 +28,7 @@ GIT
 
 GIT
   remote: git@github.com:jdfdesign/gko-cms-31.git
-  revision: 239d1b895e5513c866946cd5e5913c9450d22ede
-  specs:
-    gko-inquiry (0.0.34)
-      filters_spam (~> 0.2)
-      gko-core
-
-GIT
-  remote: git@github.com:jdfdesign/gko-cms-31.git
-  revision: 239d1b895e5513c866946cd5e5913c9450d22ede
+  revision: 898e12baff3b94ff5d7e32f5c9ac995b3458cde3
   specs:
     gko-core (0.0.86)
       activesupport-slices (= 0.0.2)
@@ -68,12 +62,13 @@ GIT
 
 GIT
   remote: git@github.com:jdfdesign/gko-cms-31.git
-  revision: 239d1b895e5513c866946cd5e5913c9450d22ede
+  revision: 898e12baff3b94ff5d7e32f5c9ac995b3458cde3
   specs:
-    gko-auth (0.0.33)
-      cancan (= 1.6.5)
-      devise (= 1.5.1)
+    gko-images (0.0.47)
+      dragonfly (~> 0.9.8)
       gko-core
+      mime-types
+      rack-cache (>= 0.5.3)
 
 GIT
   remote: git@github.com:jdfdesign/gko-realty.git
@@ -258,7 +253,7 @@ PLATFORMS
 
 DEPENDENCIES
   coffee-rails (~> 3.1.1)
-  gko-auth (= 0.0.33)!
+  gko-auth (= 0.0.34)!
   gko-categories (= 0.0.24)!
   gko-core (= 0.0.86)!
   gko-features (= 0.0.4)!

@@ -13,7 +13,7 @@ end
 
 group :production do
   gem 'gko-core', '= 0.0.86', :git => 'git@github.com:jdfdesign/gko-cms-31.git'
-  gem 'gko-auth', '= 0.0.33', :git => 'git@github.com:jdfdesign/gko-cms-31.git'
+  gem 'gko-auth', '= 0.0.34', :git => 'git@github.com:jdfdesign/gko-cms-31.git'
   gem 'gko-images', '= 0.0.47', :git => 'git@github.com:jdfdesign/gko-cms-31.git'
   gem 'gko-inquiry', '= 0.0.34', :git => 'git@github.com:jdfdesign/gko-cms-31.git'
   gem "gko-categories", '= 0.0.24', :git => 'git@github.com:jdfdesign/gko-cms-31.git'
