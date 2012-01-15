@@ -1,39 +1,42 @@
 GIT
-  remote: git://github.com/thedarkone/rails-dev-boost.git
-  revision: c648d229fa981c5f9bcbd8ac6baa520582c248c6
+  remote: git@github.com:jdfdesign/gko-cms-31.git
+  revision: 239d1b895e5513c866946cd5e5913c9450d22ede
   specs:
-    rails-dev-boost (0.1.1)
+    gko-images (0.0.47)
+      dragonfly (~> 0.9.8)
+      gko-core
+      mime-types
+      rack-cache (>= 0.5.3)
 
-PATH
-  remote: /Users/regisbruggheman/Developer/Workspace/gko/gko-realty
+GIT
+  remote: git@github.com:jdfdesign/gko-cms-31.git
+  revision: 239d1b895e5513c866946cd5e5913c9450d22ede
   specs:
-    gko-realty (0.0.37)
+    gko-features (0.0.4)
       gko-core
 
-PATH
-  remote: /Users/regisbruggheman/Developer/Workspace/gko_cms_html/gko-categories
+GIT
+  remote: git@github.com:jdfdesign/gko-cms-31.git
+  revision: 239d1b895e5513c866946cd5e5913c9450d22ede
   specs:
-    gko-categories (0.0.23)
+    gko-categories (0.0.24)
+      gko-core
+    gko-sticker (0.0.24)
       gko-core
 
-PATH
-  remote: /Users/regisbruggheman/Developer/Workspace/gko_cms_html/gko-features
+GIT
+  remote: git@github.com:jdfdesign/gko-cms-31.git
+  revision: 239d1b895e5513c866946cd5e5913c9450d22ede
   specs:
-    gko-features (0.0.3)
+    gko-inquiry (0.0.34)
+      filters_spam (~> 0.2)
       gko-core
 
-PATH
-  remote: /Users/regisbruggheman/Developer/Workspace/gko_cms_html/gko_auth
+GIT
+  remote: git@github.com:jdfdesign/gko-cms-31.git
+  revision: 239d1b895e5513c866946cd5e5913c9450d22ede
   specs:
-    gko-auth (0.0.32)
-      cancan (= 1.6.5)
-      devise (= 1.5.1)
-      gko-core
-
-PATH
-  remote: /Users/regisbruggheman/Developer/Workspace/gko_cms_html/gko_core
-  specs:
-    gko-core (0.0.85)
+    gko-core (0.0.86)
       activesupport-slices (= 0.0.2)
       acts_as_indexed (~> 0.7.6)
       bundler (= 1.1.pre.4)
@@ -63,26 +66,20 @@ PATH
       uuid (= 2.3.1)
       will_paginate (~> 3.0.0)
 
-PATH
-  remote: /Users/regisbruggheman/Developer/Workspace/gko_cms_html/gko_images
+GIT
+  remote: git@github.com:jdfdesign/gko-cms-31.git
+  revision: 239d1b895e5513c866946cd5e5913c9450d22ede
   specs:
-    gko-images (0.0.45)
-      dragonfly (~> 0.9.8)
-      gko-core
-      mime-types
-      rack-cache (>= 0.5.3)
-
-PATH
-  remote: /Users/regisbruggheman/Developer/Workspace/gko_cms_html/gko_inquiry
-  specs:
-    gko-inquiry (0.0.33)
-      filters_spam (~> 0.2)
+    gko-auth (0.0.33)
+      cancan (= 1.6.5)
+      devise (= 1.5.1)
       gko-core
 
-PATH
-  remote: /Users/regisbruggheman/Developer/Workspace/gko_cms_html/gko_sticker
+GIT
+  remote: git@github.com:jdfdesign/gko-realty.git
+  revision: 725f27fad79e350949a6a4e501eec371ab5bb6f9
   specs:
-    gko-sticker (0.0.23)
+    gko-realty (0.0.38)
       gko-core
 
 GEM
@@ -188,7 +185,7 @@ GEM
       net-ssh (>= 1.99.1)
     net-sftp (2.0.5)
       net-ssh (>= 2.0.9)
-    net-ssh (2.2.2)
+    net-ssh (2.3.0)
     net-ssh-gateway (1.1.0)
       net-ssh (>= 1.99.1)
     orm_adapter (0.0.5)
@@ -261,15 +258,14 @@ PLATFORMS
 
 DEPENDENCIES
   coffee-rails (~> 3.1.1)
-  gko-auth!
-  gko-categories!
-  gko-core!
-  gko-features!
-  gko-images!
-  gko-inquiry!
-  gko-realty!
-  gko-sticker!
+  gko-auth (= 0.0.33)!
+  gko-categories (= 0.0.24)!
+  gko-core (= 0.0.86)!
+  gko-features (= 0.0.4)!
+  gko-images (= 0.0.47)!
+  gko-inquiry (= 0.0.34)!
+  gko-realty (= 0.0.38)!
+  gko-sticker (= 0.0.24)!
   iconv
-  rails-dev-boost!
   sass-rails (~> 3.1.5.rc1)
   uglifier (>= 1.0.3)
