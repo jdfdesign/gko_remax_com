@@ -1,6 +1,6 @@
 GIT
   remote: git@github.com:jdfdesign/gko-cms-31.git
-  revision: 898e12baff3b94ff5d7e32f5c9ac995b3458cde3
+  revision: 865f57ebe673949bf19ae02ee2654d7757aa070f
   specs:
     gko-auth (0.0.34)
       cancan (= 1.6.5)
@@ -12,14 +12,14 @@ GIT
 
 GIT
   remote: git@github.com:jdfdesign/gko-cms-31.git
-  revision: 898e12baff3b94ff5d7e32f5c9ac995b3458cde3
+  revision: 865f57ebe673949bf19ae02ee2654d7757aa070f
   specs:
     gko-features (0.0.4)
       gko-core
 
 GIT
   remote: git@github.com:jdfdesign/gko-cms-31.git
-  revision: 898e12baff3b94ff5d7e32f5c9ac995b3458cde3
+  revision: 865f57ebe673949bf19ae02ee2654d7757aa070f
   specs:
     gko-categories (0.0.24)
       gko-core
@@ -28,9 +28,9 @@ GIT
 
 GIT
   remote: git@github.com:jdfdesign/gko-cms-31.git
-  revision: 898e12baff3b94ff5d7e32f5c9ac995b3458cde3
+  revision: 865f57ebe673949bf19ae02ee2654d7757aa070f
   specs:
-    gko-core (0.0.86)
+    gko-core (0.0.87)
       activesupport-slices (= 0.0.2)
       acts_as_indexed (~> 0.7.6)
       bundler (= 1.1.pre.4)
@@ -62,9 +62,9 @@ GIT
 
 GIT
   remote: git@github.com:jdfdesign/gko-cms-31.git
-  revision: 898e12baff3b94ff5d7e32f5c9ac995b3458cde3
+  revision: 865f57ebe673949bf19ae02ee2654d7757aa070f
   specs:
-    gko-images (0.0.47)
+    gko-images (0.0.48)
       dragonfly (~> 0.9.8)
       gko-core
       mime-types
@@ -72,9 +72,9 @@ GIT
 
 GIT
   remote: git@github.com:jdfdesign/gko-realty.git
-  revision: 725f27fad79e350949a6a4e501eec371ab5bb6f9
+  revision: f2bf9d62fc3a09499769532c1d97c635e0488b44
   specs:
-    gko-realty (0.0.38)
+    gko-realty (0.0.39)
       gko-core
 
 GEM
@@ -255,11 +255,11 @@ DEPENDENCIES
   coffee-rails (~> 3.1.1)
   gko-auth (= 0.0.34)!
   gko-categories (= 0.0.24)!
-  gko-core (= 0.0.86)!
+  gko-core (= 0.0.87)!
   gko-features (= 0.0.4)!
-  gko-images (= 0.0.47)!
+  gko-images (= 0.0.48)!
   gko-inquiry (= 0.0.34)!
-  gko-realty (= 0.0.38)!
+  gko-realty (= 0.0.39)!
   gko-sticker (= 0.0.24)!
   iconv
   sass-rails (~> 3.1.5.rc1)

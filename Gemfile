@@ -12,14 +12,14 @@ group :assets do
 end
 
 group :production do
-  gem 'gko-core', '= 0.0.86', :git => 'git@github.com:jdfdesign/gko-cms-31.git'
+  gem 'gko-core', '= 0.0.87', :git => 'git@github.com:jdfdesign/gko-cms-31.git'
   gem 'gko-auth', '= 0.0.34', :git => 'git@github.com:jdfdesign/gko-cms-31.git'
-  gem 'gko-images', '= 0.0.47', :git => 'git@github.com:jdfdesign/gko-cms-31.git'
+  gem 'gko-images', '= 0.0.48', :git => 'git@github.com:jdfdesign/gko-cms-31.git'
   gem 'gko-inquiry', '= 0.0.34', :git => 'git@github.com:jdfdesign/gko-cms-31.git'
   gem "gko-categories", '= 0.0.24', :git => 'git@github.com:jdfdesign/gko-cms-31.git'
   gem 'gko-sticker', '= 0.0.24', :git => 'git@github.com:jdfdesign/gko-cms-31.git'
   gem "gko-features", '= 0.0.4', :git => 'git@github.com:jdfdesign/gko-cms-31.git'
-  gem 'gko-realty', '= 0.0.38',  :git => 'git@github.com:jdfdesign/gko-realty.git'
+  gem 'gko-realty', '= 0.0.39',  :git => 'git@github.com:jdfdesign/gko-realty.git'
 end
 
 #group :development do

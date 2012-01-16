@@ -217,11 +217,9 @@ h1, h2, h3, h4, h5, h6 { font-family: $altFontFamily; }
    Header
 ----------------------------------------- */
 #wrapper-wide-masterhead {
-	background-color: black;
 	padding:0px;
 	#locales {
 		float:right;
-		background-color: black;
 		padding:4px;
 		margin: 0px;
 		li {
@@ -233,7 +231,8 @@ h1, h2, h3, h4, h5, h6 { font-family: $altFontFamily; }
 h2#site-title {
 	@include logo(103px, 140px);
 	float: none;
-	margin: 0 auto !important;
+	@include center-block;
+	margin-top: -26px;
 	
 }
 ul.menu
