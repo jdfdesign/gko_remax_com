@@ -1,17 +1,15 @@
-//= require jquery.js
-//= require jquery_ujs
-//= require gko/externals/innershiv
-//= require gko/externals/jquery.easing.1.3
-//= require gko/externals/jquery.imagesloaded
-//= require gko/externals/jquery.elastislide
+//= gko_public_all
 //= require gko/externals/jquery.elastidegallery
-//= require gko/externals/foundation/jquery.orbit-1.3.0.js
 	
 $(document).ready(function() {
 	if($('.images:first').length > 0) {
 		Gallery.init($('.images:first'));
 	}
-
+  
+	$("div.custom.dropdown").each(function () {
+    $(this).css('width', '260px').find('ul').css('width', '260px');
+  });
+	
 	$('#featured').orbit({ 
 		bullets : true, 
 		animation : "horizontal-push",

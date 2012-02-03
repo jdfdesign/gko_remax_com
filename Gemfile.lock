@@ -1,36 +1,40 @@
 GIT
-  remote: git@github.com:jdfdesign/gko-cms-31.git
-  revision: 865f57ebe673949bf19ae02ee2654d7757aa070f
+  remote: git@github.com:jdfdesign/gko-realty.git
+  revision: a8284a06e36ba4ed510bbc0b2712b2279c737eb8
   specs:
-    gko-auth (0.0.34)
+    gko_realty (0.0.41)
+      gko_core
+
+GIT
+  remote: git@github.com:jdfdesign/gko_cms_rails_3.git
+  revision: a12511e17e737f88c4432ce3ef687e5e2e1fed5f
+  specs:
+    gko_auth (0.1.14)
       cancan (= 1.6.5)
       devise (= 1.5.1)
-      gko-core
-    gko-inquiry (0.0.34)
+      gko_core
+    gko_categories (0.1.14)
+      gko_core
+    gko_features (0.1.14)
+      dragonfly (~> 0.9.8)
+      gko_core
+      gko_images
+    gko_images (0.1.14)
+      dragonfly (~> 0.9.8)
+      gko_core
+      mime-types
+      rack-cache (>= 0.5.3)
+    gko_inquiries (0.1.14)
       filters_spam (~> 0.2)
-      gko-core
+      gko_core
+    gko_stickers (0.1.14)
+      gko_core
 
 GIT
-  remote: git@github.com:jdfdesign/gko-cms-31.git
-  revision: 865f57ebe673949bf19ae02ee2654d7757aa070f
+  remote: git@github.com:jdfdesign/gko_cms_rails_3.git
+  revision: a12511e17e737f88c4432ce3ef687e5e2e1fed5f
   specs:
-    gko-features (0.0.4)
-      gko-core
-
-GIT
-  remote: git@github.com:jdfdesign/gko-cms-31.git
-  revision: 865f57ebe673949bf19ae02ee2654d7757aa070f
-  specs:
-    gko-categories (0.0.24)
-      gko-core
-    gko-sticker (0.0.24)
-      gko-core
-
-GIT
-  remote: git@github.com:jdfdesign/gko-cms-31.git
-  revision: 865f57ebe673949bf19ae02ee2654d7757aa070f
-  specs:
-    gko-core (0.0.87)
+    gko_core (0.1.14)
       activesupport-slices (= 0.0.2)
       acts_as_indexed (~> 0.7.6)
       bundler (= 1.1.pre.4)
@@ -58,24 +62,7 @@ GIT
       truncate_html (~> 0.5)
       uglifier (>= 1.0.3)
       uuid (= 2.3.1)
-      will_paginate (~> 3.0.0)
-
-GIT
-  remote: git@github.com:jdfdesign/gko-cms-31.git
-  revision: 865f57ebe673949bf19ae02ee2654d7757aa070f
-  specs:
-    gko-images (0.0.48)
-      dragonfly (~> 0.9.8)
-      gko-core
-      mime-types
-      rack-cache (>= 0.5.3)
-
-GIT
-  remote: git@github.com:jdfdesign/gko-realty.git
-  revision: f2bf9d62fc3a09499769532c1d97c635e0488b44
-  specs:
-    gko-realty (0.0.39)
-      gko-core
+      will_paginate (~> 3.0.pre4)
 
 GEM
   remote: http://rubygems.org/
@@ -253,14 +240,14 @@ PLATFORMS
 
 DEPENDENCIES
   coffee-rails (~> 3.1.1)
-  gko-auth (= 0.0.34)!
-  gko-categories (= 0.0.24)!
-  gko-core (= 0.0.87)!
-  gko-features (= 0.0.4)!
-  gko-images (= 0.0.48)!
-  gko-inquiry (= 0.0.34)!
-  gko-realty (= 0.0.39)!
-  gko-sticker (= 0.0.24)!
+  gko_auth!
+  gko_categories!
+  gko_core (= 0.1.14)!
+  gko_features!
+  gko_images!
+  gko_inquiries!
+  gko_realty (= 0.0.41)!
+  gko_stickers!
   iconv
   sass-rails (~> 3.1.5.rc1)
   uglifier (>= 1.0.3)

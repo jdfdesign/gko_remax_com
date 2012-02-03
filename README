@@ -2,12 +2,18 @@ cd ~/developer/workspace/gko_remax_stbarth_com
 bundle install
 rails s
 
+bundle install
 bundle exec rake assets:precompile
+git add
+git commit -m "precompile"
+git push
+cap deploy
 
 bundle exec rake railties:install:migrations
 bundle exec rake db:bootstrap
-
- 
+(bundle exec rake gko:install
 bundle exec rake db:admin:create
 bundle exec rake db:load_default 
 bundle exec rake db:load_sample
+bundle exec rake gko:seed)
+

@@ -5,9 +5,9 @@
 @sale_properties ||= sale_section.sale_properties.with_translations(I18n.locale).published.in_homepage if @sale_section
 %>
 <% content_for :page_content do %>
-<div class="row features">
+<div class="row featured">
   <div class="twelve columns">
-    <%= render 'shared/features', :features => @site.features.availables %>
+    <%= render 'shared/features', :features => @site.features.visibles %>
   </div>
 </div> 
 <div class="row">
