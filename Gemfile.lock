@@ -108,7 +108,6 @@ GEM
       net-sftp (>= 2.0.0)
       net-ssh (>= 2.0.14)
       net-ssh-gateway (>= 1.1.0)
-    chronic (0.6.7)
     coffee-rails (3.1.1)
       coffee-script (>= 2.2.0)
       railties (~> 3.1.0)
@@ -124,9 +123,6 @@ GEM
     dragonfly (0.9.8)
       rack
     erubis (2.7.0)
-    eu_central_bank (0.3.0)
-      money (~> 4.0.1)
-      nokogiri
     exception_notification (2.5.2)
       actionmailer (>= 3.0.4)
     execjs (1.2.13)
@@ -162,9 +158,6 @@ GEM
     minimal (0.0.25)
       actionpack (>= 3.0.0)
       activesupport (>= 3.0.0)
-    money (4.0.2)
-      i18n (~> 0.4)
-      json
     multi_json (1.0.4)
     mysql2 (0.3.7)
     nested_set (1.6.8)
@@ -177,7 +170,6 @@ GEM
     net-ssh (2.3.0)
     net-ssh-gateway (1.1.0)
       net-ssh (>= 1.99.1)
-    nokogiri (1.5.0)
     orm_adapter (0.0.5)
     paper_trail (2.5.0)
       rails (~> 3)
@@ -241,9 +233,6 @@ GEM
       macaddr (~> 1.0)
     warden (1.1.0)
       rack (>= 1.0)
-    whenever (0.7.2)
-      activesupport (>= 2.3.4)
-      chronic (~> 0.6.3)
     will_paginate (3.0.2)
 
 PLATFORMS
@@ -251,7 +240,6 @@ PLATFORMS
 
 DEPENDENCIES
   coffee-rails (~> 3.1.1)
-  eu_central_bank (~> 0.3.0)
   gko_auth!
   gko_categories!
   gko_core (= 0.1.31)!
@@ -261,7 +249,5 @@ DEPENDENCIES
   gko_realty (= 0.0.42)!
   gko_stickers!
   iconv
-  nokogiri (~> 1.5.0)
   sass-rails (~> 3.1.5.rc1)
   uglifier (>= 1.0.3)
-  whenever (~> 0.7.2)
