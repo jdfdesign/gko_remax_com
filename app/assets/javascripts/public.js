@@ -1,5 +1,4 @@
-//= gko_public_all
-//= require gko/externals/jquery.elastidegallery
+//= require gko/jquery.elastidegallery 
 	
 $(document).ready(function() {
 	if($('.images:first').length > 0) {
@@ -16,4 +15,6 @@ $(document).ready(function() {
 		animationSpeed: 800,
 		timer: true,
 		fluid: false });
+		
+	$('.block-grid .entry-thumb').prepend("<div class='overlay'>+</div>");
 });

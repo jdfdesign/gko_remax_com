@@ -65,13 +65,13 @@ ActiveRecord::Schema.define(:version => 20120127114353) do
   create_table "category_translations", :force => true do |t|
     t.integer  "category_id"
     t.string   "locale"
-    t.string   "meta_title"
-    t.string   "path"
-    t.text     "meta_description"
-    t.text     "meta_keywords"
     t.string   "slug"
-    t.text     "body"
+    t.string   "path"
+    t.text     "meta_keywords"
     t.string   "title"
+    t.text     "body"
+    t.string   "meta_title"
+    t.text     "meta_description"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -92,12 +92,12 @@ ActiveRecord::Schema.define(:version => 20120127114353) do
   create_table "content_translations", :force => true do |t|
     t.integer  "content_id"
     t.string   "locale"
+    t.string   "slug"
+    t.text     "meta_keywords"
+    t.string   "title"
+    t.text     "body"
     t.string   "meta_title"
     t.text     "meta_description"
-    t.text     "meta_keywords"
-    t.string   "slug"
-    t.text     "body"
-    t.string   "title"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -184,8 +184,8 @@ ActiveRecord::Schema.define(:version => 20120127114353) do
   create_table "document_translations", :force => true do |t|
     t.integer  "document_id"
     t.string   "locale"
-    t.string   "title"
     t.string   "alt"
+    t.string   "title"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -218,8 +218,8 @@ ActiveRecord::Schema.define(:version => 20120127114353) do
   create_table "feature_translations", :force => true do |t|
     t.integer  "feature_id"
     t.string   "locale"
-    t.text     "body"
     t.string   "title"
+    t.text     "body"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -303,8 +303,8 @@ ActiveRecord::Schema.define(:version => 20120127114353) do
   create_table "image_translations", :force => true do |t|
     t.integer  "image_id"
     t.string   "locale"
-    t.string   "title"
     t.string   "alt"
+    t.string   "title"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -422,8 +422,8 @@ ActiveRecord::Schema.define(:version => 20120127114353) do
   create_table "rental_property_option_translations", :force => true do |t|
     t.integer  "rental_property_option_id"
     t.string   "locale"
-    t.text     "children_policy"
     t.text     "description"
+    t.text     "children_policy"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -558,16 +558,16 @@ ActiveRecord::Schema.define(:version => 20120127114353) do
   create_table "section_translations", :force => true do |t|
     t.integer  "section_id"
     t.string   "locale"
-    t.string   "meta_title"
+    t.string   "slug"
     t.string   "path"
-    t.string   "redirect_url"
-    t.text     "meta_description"
     t.text     "meta_keywords"
     t.string   "title_addon"
-    t.string   "slug"
-    t.text     "body"
     t.string   "title"
     t.string   "menu_title"
+    t.text     "body"
+    t.string   "redirect_url"
+    t.string   "meta_title"
+    t.text     "meta_description"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -634,9 +634,9 @@ ActiveRecord::Schema.define(:version => 20120127114353) do
   create_table "site_translations", :force => true do |t|
     t.integer  "site_id"
     t.string   "locale"
+    t.string   "title"
     t.string   "meta_title"
     t.string   "subtitle"
-    t.string   "title"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

@@ -1,6 +1,181 @@
-/*
-*= require_self
-******/
-@import "gko/gko_public_all"; 
-@import "gko/elastislide";
-@import "gko/orbit";
+$baseFontFamily: "proxima-nova-1", "proxima-nova-2", "Helvetica Neue", "HelveticaNeue", Helvetica, Arial, "Lucida Grande", sans-serif;
+/* custom variables >>> */ 
+$lightColor: #F7F6F2;
+$mediumColor: #686868;
+$darkColor: #262626;
+/* <<< custom variables */
+$textColor: #7B7A78;
+$navbarBackgroundHighlight: #E0DFDB;
+$navbarBackground: #E0DFDB;  
+$bodyBackgroundColor: #EBEAE6; 
+$headingFontFamily: Georgia,'Times New Roman', Times, serif;
+$headingFontColor: $darkColor;
+@import "gko_public_all"; 
+@import "gko/elastislide"; 
+/*-----------------------------------------
+   SHARED STYLES 
+----------------------------------------- */
+.uppercase_font_style {
+	letter-spacing: 1px; 
+	text-transform: uppercase; 
+}
+/*-----------------------------------------
+ TYPOGRAPHY 
+----------------------------------------- */
+h1,h2,h3,h4,h5,h6 {
+	font-style: italic;
+}
+h1,h2,h3 {
+	font-weight: normal;
+}
+/*-----------------------------------------
+ STRUCTURAL LAYOUT 
+----------------------------------------- */
+.navbar {
+  margin-bottom: 0;
+}    
+.navbar .row-fluid {
+	background-color: #D9D8D4;
+}
+
+#content {
+	background-color: $lightColor;
+	
+	#main-column { 
+	 padding-top: 60px; 
+	 background-color: #FFFFFF; 	
+	}
+	#sidebar { 
+	 padding-top: 40px;  
+	}
+}
+#copyright-container,
+#footer-container {
+	background-color: $darkColor;
+	.row-fluid {
+		background-color: #111111;
+		color: $lightColor;
+	}
+	a {
+		@include link-colors($mediumColor, $lightColor, $lightColor);
+	} 
+}
+#main-column .main-column-inner,
+#footer .footer-row-inner {
+	padding-left: 20px;
+	padding-right: 20px;
+}
+
+.block-grid > li {
+	.entry-thumb {
+		background-color: black;
+		border-top: 4px solid black;
+		.overlay {
+			cursor: pointer;
+			opacity: 0; 
+			background-color: black; 
+			position:absolute; 
+			top: 0; 
+			width: 100%; 
+			height:100%;
+			@include transition(opacity .5s linear);
+			&:hover {
+				opacity: .7;
+			};
+		}
+	}
+	.entry-infos {
+		h2 {
+			text-transform: uppercase;
+			font-family: $baseFontFamily;
+			font-size: $baseFontSize; 
+			font-style: normal;
+			font-weight: bold;
+			line-height: $baseLineHeight;
+		} 
+		padding: 8px 12px;
+		text-align: right;
+		background-color: $lightColor; 
+		.entry-links {
+			display: none;
+		}
+		span { 
+			font-size:12px;
+			&.tag {
+				color: $mediumColor;
+				strong {
+					color: $darkColor;
+				}
+			}
+		} 
+	} 
+}
+#sidebar {
+	h4 {
+		border-bottom: 6px solid darken($lightColor, 10%);
+		margin-bottom: $baseLineHeight * .5;
+	}
+}
+/*-----------------------------------------
+ SLIDESHOW
+----------------------------------------- */
+.image-large-wrapper {
+	padding: 20px 30px;
+	background: none;
+	@include border-radius(0px); 
+}
+/*-----------------------------------------
+ HEADER
+----------------------------------------- */ 
+.navbar { 
+	
+	.header-nav {
+		position:relative;
+		height: 120px;
+		.nav {
+			@include vertical-nav; 
+			margin-top: 12px;
+			margin-left: 36px;
+			&:first-child {
+				margin-left:123px;
+			}
+		}
+		.nav > li > a {
+			font-size: 11px; 
+			text-transform: uppercase;  
+		}
+	}
+}
+h2#site-title {
+	@include logo(103px, 140px);
+	position:absolute;
+	left: -10px;
+	top: 0;
+}
+h4#site-subtitle {
+	position: absolute;
+	right: 20px;
+	bottom: 20px; 
+	max-width:320px;
+}
+.navbar .header-top .nav {
+ background-color: $darkColor;
+ font-size: 10px; 
+ a {
+	color: $lightColor;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+ } 
+}
+/*-----------------------------------------
+ HOME
+----------------------------------------- */
+
+/*-----------------------------------------
+ FOOTER
+----------------------------------------- */
+
+/*-----------------------------------------
+ RESPONSIVE
+----------------------------------------- */
+@import "gko/responsive";

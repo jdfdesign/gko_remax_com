@@ -5,24 +5,25 @@
 @sale_properties ||= sale_section.sale_properties.with_translations(I18n.locale).published.in_homepage if @sale_section
 %>
 <% content_for :page_content do %>
-<div class="row featured">
-  <div class="twelve columns">
-    <%= render 'shared/features', :features => @site.features.visibles %>
+  <div class="row-fluid featured">
+    <div class="span12">
+      <%= render 'shared/features', :features => @site.features.visibles %>
+    </div>
+  </div> 
+  <div class="row-fluid">
+    <section class="span6">
+      <h3><%= "Title column 1".html_safe %></h3>
+      <p><%= "Le Lorem Ipsum est simplement du faux texte employé dans la composition et la mise en page avant impression. Le Lorem Ipsum est le faux texte standard de l'imprimerie depuis les années 1500, quand un peintre anonyme assembla ensemble des morceaux de texte pour réaliser un livre spécimen de polices de texte".html_safe %></p>  
+    </section>
+    <section class="span6">
+      <h3><%= "Title column 2".html_safe %></h3>
+      <p><%= "Le Lorem Ipsum est simplement du faux texte employé dans la composition et la mise en page avant impression. Le Lorem Ipsum est le faux texte standard de l'imprimerie depuis les années 1500, quand un peintre anonyme assembla ensemble des morceaux de texte pour réaliser un livre spécimen de polices de texte".html_safe %></p>  
+    </section>
   </div>
-</div> 
-<div class="row">
-  <section class="six columns">
-    <h3><%= "Title column 1".html_safe %></h3> 
-  </section>
-  <section class="six columns">
-    <h3><%= "Title column 2".html_safe %></h3> 
-  </section>
-</div>
-<div class="row">
-  <section class="twelve columns"> 
-    <h3><%= "Title".html_safe %></h3>
-    <%= "Le Lorem Ipsum est simplement du faux texte employé dans la composition et la mise en page avant impression. Le Lorem Ipsum est le faux texte standard de l'imprimerie depuis les années 1500, quand un peintre anonyme assembla ensemble des morceaux de texte pour réaliser un livre spécimen de polices de texte".html_safe %>   				
-  </section>  
-</div> 
- 
+  <div class="row-fluid">
+    <section class="span12"> 
+      <h3><%= "Title".html_safe %></h3>
+      <p><%= "Le Lorem Ipsum est simplement du faux texte employé dans la composition et la mise en page avant impression. Le Lorem Ipsum est le faux texte standard de l'imprimerie depuis les années 1500, quand un peintre anonyme assembla ensemble des morceaux de texte pour réaliser un livre spécimen de polices de texte".html_safe %></p>   				
+    </section>  
+  </div>  
 <% end %>
