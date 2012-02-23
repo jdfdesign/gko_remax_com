@@ -261,6 +261,7 @@ DEPENDENCIES
   gko_realty (= 0.0.42)!
   gko_stickers!
   iconv
+  nokogiri (~> 1.5.0)
   sass-rails (~> 3.1.5.rc1)
   uglifier (>= 1.0.3)
   whenever (~> 0.7.2)

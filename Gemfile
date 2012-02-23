@@ -22,6 +22,7 @@ group :production do
   gem 'gko_realty', '= 0.0.42',  :git => 'git@github.com:jdfdesign/gko-realty.git'
   gem "eu_central_bank", "~> 0.3.0"
   gem "whenever", "~> 0.7.2"
+  gem "nokogiri", "~> 1.5.0"
 end
 
 #group :development do
