@@ -1,5 +1,6 @@
 //= require gko/jquery.elastidegallery 
-	
+//= require zurb/foundation/modernizr.foundation.js 
+//= require zurb/foundation/jquery.orbit-1.4.0.js	
 $(document).ready(function() {
 	if($('.images:first').length > 0) {
 		Gallery.init($('.images:first'));
@@ -16,5 +17,5 @@ $(document).ready(function() {
 		timer: true,
 		fluid: false });
 		
-	$('.block-grid .entry-thumb').prepend("<div class='overlay'>+</div>");
+	//$('.block-grid .entry-thumb').prepend("<div class='overlay'>+</div>");
 });

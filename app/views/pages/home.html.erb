@@ -5,7 +5,7 @@
 @sale_properties ||= sale_section.sale_properties.with_translations(I18n.locale).published.in_homepage if @sale_section
 %>
 <% content_for :page_content do %>
-  <div class="row-fluid featured">
+  <div class="row-fluid home-orbit">
     <div class="span12">
       <%= render 'shared/features', :features => @site.features.visibles %>
     </div>
