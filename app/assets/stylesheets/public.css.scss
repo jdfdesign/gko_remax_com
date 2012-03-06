@@ -7,7 +7,10 @@ $darkColor: #262626;
 $textColor: #7B7A78;
 $navbarBackgroundHighlight: #E0DFDB;
 $navbarBackground: #E0DFDB;  
-$bodyBackgroundColor: #EBEAE6; 
+$bodyBackgroundColor: #EBEAE6;
+$navbarButtonBackgroundHighlight: $darkColor; 
+$navbarButtonBackground: $darkColor; 
+$navbarButtonIconBarColor: $lightColor; 
 $headingFontFamily: Georgia,'Times New Roman', Times, serif;
 $headingTextColor: $darkColor;
 $inputBackgroundColor: $lightColor;
@@ -80,23 +83,36 @@ button, input[type="button"], input[type="reset"], input[type="submit"] {
 	.row-fluid {
 		background-color: #111111;
 		color: $lightColor;
+		padding-left: 20px;
+		padding-right: 20px;
+		max-width: 940px;
 	}
 	a {
 		@include link-colors($mediumColor, $lightColor, $lightColor);
-	} 
+	}
+	 
 }
-#main-column .main-column-inner,
-#footer .footer-row-inner {
+#main-column .main-column-inner  {
 	padding-left: 20px;
 	padding-right: 20px;
-} 
+	
+}
 #main-column { 
  padding-top: 60px; 
  background-color: #FFFFFF;
+ position:relative;
 	h3 {
 		border-bottom: 6px solid $lightColor;
 		margin-top: $baseLineHeight;
 		margin-bottom: $baseLineHeight * .5;
+	}
+	div.realty-promo {
+		background: transparent asset-url("promo_en.png", image) no-repeat scroll right top;
+		position:absolute;
+		top:0;
+		right:0;
+		width: 146px;
+		height: 102px;
 	} 	
 }
 #sidebar {
@@ -105,6 +121,10 @@ button, input[type="button"], input[type="reset"], input[type="submit"] {
 		border-bottom: 6px solid $bodyBackgroundColor;
 		margin-bottom: $baseLineHeight * .5;
 	}
+}
+.well.realty-promo-text {
+	background-color:#BA4F45;
+	color: $lightColor;
 }
 /*-----------------------------------------
  GRID
@@ -120,17 +140,6 @@ button, input[type="button"], input[type="reset"], input[type="submit"] {
 		img:hover {
 			opacity: .7;
 		};
-		.overlay {
-			cursor: pointer;
-			opacity: 0; 
-			background-color: black; 
-			position:absolute; 
-			top: 0; 
-			width: 100%; 
-			height:100%;
-			@include transition(opacity .5s linear);
-			
-		}
 	}
 	.entry-infos { 
 		margin-top: $baseLineHeight * .25;
@@ -157,9 +166,16 @@ button, input[type="button"], input[type="reset"], input[type="submit"] {
 				}
 			}
 		} 
+	}
+	.realty-promo {
+		background: transparent asset-url("promo_en.png", image) no-repeat scroll right top;
+		position:absolute;
+		top:0;
+		right:0;
+		width: 146px;
+		height: 102px;
 	} 
 }
-
 /*-----------------------------------------
  SLIDESHOW
 ----------------------------------------- */
@@ -192,16 +208,17 @@ button, input[type="button"], input[type="reset"], input[type="submit"] {
 		}
 	}
 }
-h2#site-title {
+.navbar .brand {
 	@include logo(103px, 140px);
 	position:absolute;
 	left: -10px;
 	top: 0;
+	z-index: 10;
 }
 h4#site-subtitle {
 	position: absolute;
 	right: 20px;
-	bottom: 20px; 
+	bottom: 8px; 
 	max-width:320px;
 }
 .navbar .header-top .nav {
@@ -216,9 +233,34 @@ h4#site-subtitle {
 /*-----------------------------------------
  HOME
 ----------------------------------------- */
-
+#home {
+	#main-column h4 {
+		border-bottom: 6px solid $lightColor;
+		margin-top: $baseLineHeight;
+		margin-bottom: $baseLineHeight * .5;
+	}
+	
+}
+#home-orbit {
+	height: 400px;
+	padding-bottom: $baseLineHeight;
+  border: 6px solid $lightColor;
+}
+#orbit {
+	h3 {
+		border: none;
+	} 
+	.infos {
+		position:absolute;
+		bottom: 0;
+		left:0;
+		right:0;
+		padding: 12px;
+		background: rgba(255,255,255,.7);
+	}
+}
 /*-----------------------------------------
- FOOTER
+ CONTENT
 ----------------------------------------- */
 ul.realty-seasons {
 	//display: block;
@@ -238,6 +280,20 @@ ul.realty-rates {
 	}
 }
 /*-----------------------------------------
+ FOOTER
+----------------------------------------- */
+#footer, #copyright {
+	text-align: center;
+}
+a#site_by {
+	background-image: asset-url('gko/logo_gecko_white.png', image);
+}
+/*-----------------------------------------
  RESPONSIVE
 ----------------------------------------- */
 @import "gko/responsive";
+@media(max-width: 980px) {
+	#main-column { 
+	 padding-top: 120px;
+  } 
+}

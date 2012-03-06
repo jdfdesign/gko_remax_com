@@ -10,12 +10,11 @@ $(document).ready(function() {
     $(this).css('width', '260px').find('ul').css('width', '260px');
   });
 	
-	$('#featured').orbit({ 
-		bullets : true, 
+	$('#orbit').orbit({ 
+		bullets : false, 
 		animation : "horizontal-push",
 		animationSpeed: 800,
-		timer: true,
-		fluid: false });
+		timer: true });
 		
 	//$('.block-grid .entry-thumb').prepend("<div class='overlay'>+</div>");
 });

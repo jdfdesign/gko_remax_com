@@ -1,29 +1,68 @@
 <%
-@sale_section ||= site.sections.with_translations(I18n.locale).published.named("sale_properties")
-@rent_section ||= site.sections.with_translations(I18n.locale).published.named("rental_properties")
-@rental_properties ||= rent_section.rental_properties.with_translations(I18n.locale).published.in_homepage if @rent_section
-@sale_properties ||= sale_section.sale_properties.with_translations(I18n.locale).published.in_homepage if @sale_section
+if @rent_section = site.rental_property_lists.with_translations(I18n.locale).published.first
+  #@rental_properties = @rent_section.rental_properties.with_translations(I18n.locale).published.in_homepage.limit(2)
+  @random_rental_property = @rent_section.rental_properties.randoms(1).first
+  @promo_rental_property = @rent_section.rental_properties.with_translations(I18n.locale).published.with_promo.first
+end
+if @sale_section = site.sale_property_lists.with_translations(I18n.locale).published.first 
+  #@sale_properties = @sale_section.sale_properties.with_translations(I18n.locale).published.in_homepage.limit(2)
+  @random_sale_property = @sale_section.sale_properties.randoms(1).first
+end 
+
+@features ||= @site.features.visibles
 %>
 <% content_for :page_content do %>
-  <div class="row-fluid home-orbit">
-    <div class="span12">
-      <%= render 'shared/features', :features => @site.features.visibles %>
+  <% if @features.any? %>
+  <div class="row-fluid">
+    <div class="span12"  id="home-orbit">
+      <%= render 'shared/features', :features => @features %>
     </div>
+  </div>
+  <% end %>   
+  <div class="row-fluid">
+    <section class="span4">
+      <h4><%= t("home.featured_sale_properties") %></h4>
+      <% if @random_sale_property %>
+        <ul id="home-sale-property" class="unstyled block-grid">
+          <%= render "sale_properties/record", :record => @random_sale_property %>
+        </ul>
+        <%= link_to(t("home.view_all_sale_properties"), url_for([@sale_section]), :class => 'btn view_all') if @sale_section %>
+      <% end %>
+    </section>
+    <section class="span4">
+      <h4><%= t("home.featured_rental_properties") %></h4>
+      <% if @random_rental_property %>
+        <ul id="home-rental-property" class="unstyled block-grid">
+          <%= render "rental_properties/record", :record => @random_rental_property %>
+        </ul>
+        <%= link_to(t("home.view_all_rental_properties"), url_for([@rent_section]), :class => 'btn view_all') if @rent_section %>
+      <% end %>
+    </section>
+    <section class="span4">
+      <h4><%= t("promotions") %></h4>
+      <% if @promo_rental_property %>
+        <ul id="home-rental-property" class="unstyled block-grid">
+          <%= render "rental_properties/record", :record => @promo_rental_property %>
+        </ul>
+        <%= link_to(t("home.view_all_rental_properties"), url_for([@rent_section]), :class => 'btn view_all') if @rent_section %>
+      <% end %>
+    </section>
   </div> 
   <div class="row-fluid">
     <section class="span6">
-      <h3><%= "Title column 1".html_safe %></h3>
+      <h4><%= "The blog".html_safe %></h4>
       <p><%= "Le Lorem Ipsum est simplement du faux texte employé dans la composition et la mise en page avant impression. Le Lorem Ipsum est le faux texte standard de l'imprimerie depuis les années 1500, quand un peintre anonyme assembla ensemble des morceaux de texte pour réaliser un livre spécimen de polices de texte".html_safe %></p>  
     </section>
     <section class="span6">
-      <h3><%= "Title column 2".html_safe %></h3>
+      <h4><%= "The blue villa website".html_safe %></h4>
       <p><%= "Le Lorem Ipsum est simplement du faux texte employé dans la composition et la mise en page avant impression. Le Lorem Ipsum est le faux texte standard de l'imprimerie depuis les années 1500, quand un peintre anonyme assembla ensemble des morceaux de texte pour réaliser un livre spécimen de polices de texte".html_safe %></p>  
     </section>
   </div>
+  <% unless resource.body.blank? %>
   <div class="row-fluid">
     <section class="span12"> 
-      <h3><%= "Title".html_safe %></h3>
-      <p><%= "Le Lorem Ipsum est simplement du faux texte employé dans la composition et la mise en page avant impression. Le Lorem Ipsum est le faux texte standard de l'imprimerie depuis les années 1500, quand un peintre anonyme assembla ensemble des morceaux de texte pour réaliser un livre spécimen de polices de texte".html_safe %></p>   				
+      <%= render_html_text(resource.body) %>   				
     </section>  
-  </div>  
+  </div>
+  <% end %>  
 <% end %>

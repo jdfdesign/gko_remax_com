@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120127114353) do
+ActiveRecord::Schema.define(:version => 20120305223952) do
 
   create_table "accounts", :force => true do |t|
     t.string   "reference",  :limit => 40
@@ -88,6 +88,15 @@ ActiveRecord::Schema.define(:version => 20120127114353) do
   end
 
   add_index "configurations", ["site_id", "name", "type"], :name => "index_configurations_on_site_id_and_name_and_type"
+
+  create_table "content_options", :force => true do |t|
+    t.integer "owner_id",                      :null => false
+    t.string  "owner_type",      :limit => 40, :null => false
+    t.integer "option_type_id",                :null => false
+    t.integer "option_value_id"
+  end
+
+  add_index "content_options", ["option_value_id"], :name => "index_content_options_on_option_value_id"
 
   create_table "content_translations", :force => true do |t|
     t.integer  "content_id"
@@ -377,6 +386,49 @@ ActiveRecord::Schema.define(:version => 20120127114353) do
 
   add_index "mail_methods", ["site_id"], :name => "index_mail_methods_on_site_id"
 
+  create_table "option_type_translations", :force => true do |t|
+    t.integer  "option_type_id"
+    t.string   "locale"
+    t.string   "presentation"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "option_type_translations", ["locale"], :name => "index_option_type_translations_on_locale"
+  add_index "option_type_translations", ["option_type_id"], :name => "index_option_type_translations_on_option_type_id"
+
+  create_table "option_types", :force => true do |t|
+    t.string   "name",         :limit => 100
+    t.string   "presentation", :limit => 100
+    t.integer  "site_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "position",                    :default => 0, :null => false
+    t.integer  "globalized",                  :default => 0
+    t.string   "class_name",                                 :null => false
+  end
+
+  create_table "option_value_translations", :force => true do |t|
+    t.integer  "option_value_id"
+    t.string   "locale"
+    t.string   "presentation"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "option_value_translations", ["locale"], :name => "index_option_value_translations_on_locale"
+  add_index "option_value_translations", ["option_value_id"], :name => "index_7e3c65098a7438807f84e39113d17ccde29e3ec8"
+
+  create_table "option_values", :force => true do |t|
+    t.integer  "option_type_id"
+    t.string   "name"
+    t.integer  "position"
+    t.string   "presentation"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "globalized",     :default => 0
+  end
+
   create_table "partner_translations", :force => true do |t|
     t.integer  "partner_id"
     t.string   "locale"
@@ -419,6 +471,28 @@ ActiveRecord::Schema.define(:version => 20120127114353) do
 
   add_index "preferences", ["key"], :name => "index_preferences_on_key", :unique => true
 
+  create_table "realty_agent", :force => true do |t|
+    t.string   "name",                        :limit => 100
+    t.string   "grade",                       :limit => 100
+    t.string   "email",                       :limit => 100
+    t.string   "primary_phone_number_name",   :limit => 100
+    t.string   "primary_phone_number",        :limit => 100
+    t.string   "secondary_phone_number_name", :limit => 100
+    t.string   "secondary_phone_number",      :limit => 100
+    t.string   "alt_phone_number_name",       :limit => 100
+    t.string   "alt_phone_number",            :limit => 100
+    t.integer  "site_id"
+    t.string   "image_mime_type"
+    t.string   "image_name"
+    t.integer  "image_size"
+    t.integer  "image_width"
+    t.integer  "image_height"
+    t.string   "image_uid"
+    t.string   "image_ext"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "rental_property_option_translations", :force => true do |t|
     t.integer  "rental_property_option_id"
     t.string   "locale"
@@ -426,6 +500,7 @@ ActiveRecord::Schema.define(:version => 20120127114353) do
     t.text     "children_policy"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.text     "promo_text"
   end
 
   add_index "rental_property_option_translations", ["locale"], :name => "index_rental_property_option_translations_on_locale"
@@ -457,6 +532,8 @@ ActiveRecord::Schema.define(:version => 20120127114353) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "globalized",                              :default => 0
+    t.text     "promo_text"
+    t.integer  "realty_agent_id"
   end
 
   add_index "rental_property_options", ["area_id"], :name => "index_rental_property_options_on_area_id"
@@ -526,6 +603,10 @@ ActiveRecord::Schema.define(:version => 20120127114353) do
     t.boolean  "show_in_homepage",               :default => false
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "year_built"
+    t.integer  "building_size"
+    t.integer  "bathroom_count"
+    t.integer  "realty_agent_id"
   end
 
   add_index "sale_property_options", ["area_id"], :name => "index_sale_property_options_on_area_id"

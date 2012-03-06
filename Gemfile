@@ -6,21 +6,21 @@ gem 'iconv'
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do
-  gem 'sass-rails',   '~> 3.1.5.rc1'
-  gem 'coffee-rails', '~> 3.1.1'
-  gem 'uglifier', '>= 1.0.3'
+gem 'sass-rails',   '~> 3.1.5.rc2'
+gem 'coffee-rails', '~> 3.1.1'
+gem 'uglifier', '>= 1.0.3'
 end
 
 group :production do
-  gem 'gko_core', '= 0.1.34', :git => 'git@github.com:jdfdesign/gko_cms_rails_3.git'
+  gem 'gko_core', '= 0.1.47', :git => 'git@github.com:jdfdesign/gko_cms_rails_3.git'
   gem 'gko_auth', :git => 'git@github.com:jdfdesign/gko_cms_rails_3.git'
   gem 'gko_images', :git => 'git@github.com:jdfdesign/gko_cms_rails_3.git'
   gem 'gko_inquiries', :git => 'git@github.com:jdfdesign/gko_cms_rails_3.git'
   gem 'gko_categories', :git => 'git@github.com:jdfdesign/gko_cms_rails_3.git'
   gem 'gko_stickers', :git => 'git@github.com:jdfdesign/gko_cms_rails_3.git'
   gem 'gko_features', :git => 'git@github.com:jdfdesign/gko_cms_rails_3.git'
-  gem 'gko_realty', '= 0.0.42',  :git => 'git@github.com:jdfdesign/gko-realty.git'
-  #gem "eu_central_bank", "~> 0.3.0"
+  gem 'gko_realty', '= 0.0.43',  :git => 'git@github.com:jdfdesign/gko-realty.git'
+  gem "eu_central_bank", "~> 0.3.0"
   #gem "whenever", "~> 0.7.2"
   #gem "nokogiri", "~> 1.5.0"
 end
