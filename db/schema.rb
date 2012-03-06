@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120305223952) do
+ActiveRecord::Schema.define(:version => 20120306155958) do
 
   create_table "accounts", :force => true do |t|
     t.string   "reference",  :limit => 40
@@ -471,7 +471,7 @@ ActiveRecord::Schema.define(:version => 20120305223952) do
 
   add_index "preferences", ["key"], :name => "index_preferences_on_key", :unique => true
 
-  create_table "realty_agent", :force => true do |t|
+  create_table "realty_agents", :force => true do |t|
     t.string   "name",                        :limit => 100
     t.string   "grade",                       :limit => 100
     t.string   "email",                       :limit => 100
@@ -607,6 +607,7 @@ ActiveRecord::Schema.define(:version => 20120305223952) do
     t.integer  "building_size"
     t.integer  "bathroom_count"
     t.integer  "realty_agent_id"
+    t.string   "currency",         :limit => 1,  :default => "€"
   end
 
   add_index "sale_property_options", ["area_id"], :name => "index_sale_property_options_on_area_id"

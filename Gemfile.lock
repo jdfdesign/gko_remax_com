@@ -1,8 +1,8 @@
 GIT
   remote: git@github.com:jdfdesign/gko-realty.git
-  revision: c7527448594704d2a63d3bc92621117eb2259c55
+  revision: f26b5a5af7a48a8318245ac3db373481ca453cda
   specs:
-    gko_realty (0.0.44)
+    gko_realty (0.0.45)
       gko_core
 
 GIT
@@ -241,7 +241,7 @@ DEPENDENCIES
   gko_features!
   gko_images!
   gko_inquiries!
-  gko_realty (= 0.0.44)!
+  gko_realty (= 0.0.45)!
   gko_stickers!
   iconv
   sass-rails (~> 3.1.5.rc2)

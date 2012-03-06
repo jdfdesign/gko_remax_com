@@ -19,7 +19,7 @@ group :production do
   gem 'gko_categories', :git => 'git@github.com:jdfdesign/gko_cms_rails_3.git'
   gem 'gko_stickers', :git => 'git@github.com:jdfdesign/gko_cms_rails_3.git'
   gem 'gko_features', :git => 'git@github.com:jdfdesign/gko_cms_rails_3.git'
-  gem 'gko_realty', '= 0.0.44',  :git => 'git@github.com:jdfdesign/gko-realty.git'
+  gem 'gko_realty', '= 0.0.45',  :git => 'git@github.com:jdfdesign/gko-realty.git'
   #gem "eu_central_bank", "~> 0.3.0"
   #gem "whenever", "~> 0.7.2"
   #gem "nokogiri", "~> 1.5.0"
