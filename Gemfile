@@ -12,14 +12,14 @@ gem 'uglifier', '>= 1.0.3'
 end
 
 group :production do
-  gem 'gko_core', '= 0.1.47', :git => 'git@github.com:jdfdesign/gko_cms_rails_3.git'
+  gem 'gko_core', '= 0.1.49', :git => 'git@github.com:jdfdesign/gko_cms_rails_3.git'
   gem 'gko_auth', :git => 'git@github.com:jdfdesign/gko_cms_rails_3.git'
   gem 'gko_images', :git => 'git@github.com:jdfdesign/gko_cms_rails_3.git'
   gem 'gko_inquiries', :git => 'git@github.com:jdfdesign/gko_cms_rails_3.git'
   gem 'gko_categories', :git => 'git@github.com:jdfdesign/gko_cms_rails_3.git'
   gem 'gko_stickers', :git => 'git@github.com:jdfdesign/gko_cms_rails_3.git'
   gem 'gko_features', :git => 'git@github.com:jdfdesign/gko_cms_rails_3.git'
-  gem 'gko_realty', '= 0.0.43',  :git => 'git@github.com:jdfdesign/gko-realty.git'
+  gem 'gko_realty', '= 0.0.44',  :git => 'git@github.com:jdfdesign/gko-realty.git'
   #gem "eu_central_bank", "~> 0.3.0"
   #gem "whenever", "~> 0.7.2"
   #gem "nokogiri", "~> 1.5.0"
@@ -37,5 +37,6 @@ end
 #  gem "gko_realty", :path => File.expand_path('../../gko/gko_realty', __FILE__) 
 #  gem "eu_central_bank", "~> 0.3.0"
 #  gem "whenever", "~> 0.7.2"
+#  gem "nokogiri", "~> 1.5.0"
 #  gem 'rails-dev-boost', :git => 'git://github.com/thedarkone/rails-dev-boost.git', :require => 'rails_development_boost'
 #end
