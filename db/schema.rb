@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120306155958) do
+ActiveRecord::Schema.define(:version => 20120418113028) do
 
   create_table "accounts", :force => true do |t|
     t.string   "reference",  :limit => 40
@@ -65,13 +65,13 @@ ActiveRecord::Schema.define(:version => 20120306155958) do
   create_table "category_translations", :force => true do |t|
     t.integer  "category_id"
     t.string   "locale"
-    t.string   "slug"
-    t.string   "path"
-    t.text     "meta_keywords"
-    t.string   "title"
-    t.text     "body"
     t.string   "meta_title"
+    t.string   "path"
     t.text     "meta_description"
+    t.text     "meta_keywords"
+    t.string   "slug"
+    t.text     "body"
+    t.string   "title"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -101,12 +101,12 @@ ActiveRecord::Schema.define(:version => 20120306155958) do
   create_table "content_translations", :force => true do |t|
     t.integer  "content_id"
     t.string   "locale"
-    t.string   "slug"
-    t.text     "meta_keywords"
-    t.string   "title"
-    t.text     "body"
     t.string   "meta_title"
     t.text     "meta_description"
+    t.text     "meta_keywords"
+    t.string   "slug"
+    t.text     "body"
+    t.string   "title"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -193,8 +193,8 @@ ActiveRecord::Schema.define(:version => 20120306155958) do
   create_table "document_translations", :force => true do |t|
     t.integer  "document_id"
     t.string   "locale"
-    t.string   "alt"
     t.string   "title"
+    t.string   "alt"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -227,8 +227,8 @@ ActiveRecord::Schema.define(:version => 20120306155958) do
   create_table "feature_translations", :force => true do |t|
     t.integer  "feature_id"
     t.string   "locale"
-    t.string   "title"
     t.text     "body"
+    t.string   "title"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -256,6 +256,8 @@ ActiveRecord::Schema.define(:version => 20120306155958) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "globalized",      :default => 0
+    t.date     "start_at"
+    t.date     "end_at"
   end
 
   add_index "features", ["owner_type", "owner_id"], :name => "index_features_on_owner_type_and_owner_id"
@@ -312,8 +314,8 @@ ActiveRecord::Schema.define(:version => 20120306155958) do
   create_table "image_translations", :force => true do |t|
     t.integer  "image_id"
     t.string   "locale"
-    t.string   "alt"
     t.string   "title"
+    t.string   "alt"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -365,21 +367,22 @@ ActiveRecord::Schema.define(:version => 20120306155958) do
 
   add_index "inquiries", ["site_id"], :name => "index_inquiries_on_site_id"
 
+  create_table "liquid_models", :force => true do |t|
+    t.integer  "site_id"
+    t.text     "body"
+    t.string   "path"
+    t.string   "format"
+    t.string   "locale"
+    t.string   "handler"
+    t.boolean  "partial",    :default => false
+    t.datetime "created_at",                    :null => false
+    t.datetime "updated_at",                    :null => false
+  end
+
   create_table "mail_methods", :force => true do |t|
     t.integer  "site_id"
     t.string   "environment"
-    t.boolean  "active",                 :default => true
-    t.boolean  "enable_mail_delivery",   :default => true
-    t.string   "mail_host"
-    t.string   "mail_domain"
-    t.integer  "mail_port",              :default => 25
-    t.string   "mail_auth_type"
-    t.string   "smtp_username"
-    t.string   "smtp_password"
-    t.string   "secure_connection_type"
-    t.string   "mails_from"
-    t.string   "mail_bcc"
-    t.string   "intercept_email"
+    t.boolean  "active",      :default => true
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -456,8 +459,10 @@ ActiveRecord::Schema.define(:version => 20120306155958) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "globalized",      :default => 0
+    t.integer  "position",        :default => 1
   end
 
+  add_index "partners", ["position", "section_id"], :name => "index_partners_on_position_and_section_id"
   add_index "partners", ["section_id"], :name => "index_partners_on_section_id"
   add_index "partners", ["site_id"], :name => "index_partners_on_site_id"
 
@@ -496,8 +501,8 @@ ActiveRecord::Schema.define(:version => 20120306155958) do
   create_table "rental_property_option_translations", :force => true do |t|
     t.integer  "rental_property_option_id"
     t.string   "locale"
-    t.text     "description"
     t.text     "children_policy"
+    t.text     "description"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.text     "promo_text"
@@ -539,6 +544,7 @@ ActiveRecord::Schema.define(:version => 20120306155958) do
   add_index "rental_property_options", ["area_id"], :name => "index_rental_property_options_on_area_id"
   add_index "rental_property_options", ["country_id"], :name => "index_rental_property_options_on_country_id"
   add_index "rental_property_options", ["property_id"], :name => "index_rental_property_options_on_property_id"
+  add_index "rental_property_options", ["realty_agent_id"], :name => "index_rental_property_options_on_realty_agent_id"
 
   create_table "rental_property_rates", :force => true do |t|
     t.integer  "eur_price"
@@ -613,6 +619,7 @@ ActiveRecord::Schema.define(:version => 20120306155958) do
   add_index "sale_property_options", ["area_id"], :name => "index_sale_property_options_on_area_id"
   add_index "sale_property_options", ["country_id"], :name => "index_sale_property_options_on_country_id"
   add_index "sale_property_options", ["property_id"], :name => "index_sale_property_options_on_property_id"
+  add_index "sale_property_options", ["realty_agent_id"], :name => "index_sale_property_options_on_realty_agent_id"
 
   create_table "season_prototype_translations", :force => true do |t|
     t.integer  "season_prototype_id"
@@ -640,16 +647,16 @@ ActiveRecord::Schema.define(:version => 20120306155958) do
   create_table "section_translations", :force => true do |t|
     t.integer  "section_id"
     t.string   "locale"
-    t.string   "slug"
+    t.string   "meta_title"
     t.string   "path"
+    t.string   "redirect_url"
+    t.text     "meta_description"
     t.text     "meta_keywords"
     t.string   "title_addon"
+    t.string   "slug"
+    t.text     "body"
     t.string   "title"
     t.string   "menu_title"
-    t.text     "body"
-    t.string   "redirect_url"
-    t.string   "meta_title"
-    t.text     "meta_description"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -678,12 +685,13 @@ ActiveRecord::Schema.define(:version => 20120306155958) do
     t.string   "redirect_url"
     t.string   "title_addon"
     t.datetime "published_at"
-    t.boolean  "hidden",           :default => false
+    t.boolean  "hidden",            :default => false
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "menu_title"
-    t.integer  "globalized",       :default => 0
+    t.integer  "globalized",        :default => 0
     t.integer  "level"
+    t.boolean  "shallow_permalink", :default => true
   end
 
   add_index "sections", ["link_id", "link_type"], :name => "index_sections_on_link_id_and_link_type"
@@ -716,9 +724,9 @@ ActiveRecord::Schema.define(:version => 20120306155958) do
   create_table "site_translations", :force => true do |t|
     t.integer  "site_id"
     t.string   "locale"
-    t.string   "title"
     t.string   "meta_title"
     t.string   "subtitle"
+    t.string   "title"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -741,6 +749,13 @@ ActiveRecord::Schema.define(:version => 20120306155958) do
     t.integer  "globalized",                             :default => 0
     t.text     "plugins"
     t.integer  "site_registrations_count",               :default => 0
+    t.string   "logo_mime_type"
+    t.string   "logo_name"
+    t.integer  "logo_size"
+    t.integer  "logo_width"
+    t.integer  "logo_height"
+    t.string   "logo_uid"
+    t.string   "logo_ext"
   end
 
   add_index "sites", ["account_id"], :name => "index_sites_on_account_id"
@@ -814,9 +829,8 @@ ActiveRecord::Schema.define(:version => 20120306155958) do
     t.datetime "confirmed_at"
     t.datetime "confirmation_sent_at"
     t.string   "reset_password_token"
-    t.string   "remember_token"
     t.string   "remember_created_at"
-    t.integer  "sign_in_count"
+    t.integer  "sign_in_count",                           :default => 0
     t.datetime "current_sign_in_at"
     t.datetime "last_sign_in_at"
     t.string   "current_sign_in_ip"
@@ -838,6 +852,7 @@ ActiveRecord::Schema.define(:version => 20120306155958) do
     t.string   "authentication_token"
     t.string   "unlock_token"
     t.datetime "locked_at"
+    t.datetime "reset_password_sent_at"
   end
 
   add_index "users", ["account_id"], :name => "index_users_on_account_id"

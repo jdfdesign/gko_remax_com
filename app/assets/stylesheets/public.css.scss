@@ -5,6 +5,7 @@ $mediumColor: #686868;
 $darkColor: #262626;
 /* <<< custom variables */
 $textColor: #7B7A78;
+
 $navbarBackgroundHighlight: #E0DFDB;
 $navbarBackground: #E0DFDB;  
 $bodyBackgroundColor: #EBEAE6;
@@ -19,10 +20,13 @@ $inputBorderRadius: 0;
 $inputFocusBorderColor: rgba(224, 224, 219, 0.8); //$bodyBackgroundColor
 @import "gko_public_all"; 
 @import "gko/elastislide";
-@import "zurb/foundation/orbit";  
 /*-----------------------------------------
    SHARED STYLES 
 ----------------------------------------- */
+
+.next-previous {
+	display:none;
+}
 .uppercase_font_style {
 	letter-spacing: 1px; 
 	text-transform: uppercase; 
@@ -64,11 +68,7 @@ button, input[type="button"], input[type="reset"], input[type="submit"] {
 // Hover state
 .btn:hover {
   color: white;
-  background-color: black;
-
-  // transition is only when going to hover, otherwise the background
-  // behind the gradient (there for IE<=9 fallback) gets mismatched
-  @include transition(background-color .1s linear);
+  @include buttonBackground($darkColor, $darkColor);	
 }
 /*-----------------------------------------
  STRUCTURAL LAYOUT 
@@ -118,7 +118,7 @@ button, input[type="button"], input[type="reset"], input[type="submit"] {
 #sidebar {
 	padding-top: 40px; 
 	h4 {
-		border-bottom: 6px solid $bodyBackgroundColor;
+		border-bottom: 6px solid $white;
 		margin-bottom: $baseLineHeight * .5;
 	}
 }
@@ -129,44 +129,50 @@ button, input[type="button"], input[type="reset"], input[type="submit"] {
 /*-----------------------------------------
  GRID
 ----------------------------------------- */
-.block-grid > li { 
+.grid > li { 
 	margin-bottom: $baseLineHeight * .5;
-	.entry-thumb {
-		background-color: black;
-		img {
-			border-top: 6px solid black; 
-		}
-		
-		img:hover {
-			opacity: .7;
-		};
-	}
-	.entry-infos { 
-		margin-top: $baseLineHeight * .25;
-		h2 {
-			text-transform: uppercase;
-			font-family: $baseFontFamily;
-			font-size: $baseFontSize; 
-			font-style: normal;
-			font-weight: bold;
-			line-height: $baseLineHeight;
-		} 
-		padding: 8px 12px;
-		text-align: right;
-		background-color: $lightColor; 
-		.entry-links {
-			display: none;
-		}
-		span { 
-			font-size:12px;
-			&.tag {
-				color: $mediumColor;
-				strong {
-					color: $darkColor;
-				}
+	.thumbnail {
+		border: none;
+		@include border-radius(0);
+		@include box-shadow(none);
+		.thumbnail-image {
+			background-color: black;
+			img {
+				border-top: 6px solid black; 
 			}
-		} 
+
+			img:hover {
+				opacity: .7;
+			};
+		}
+		.thumbnail-caption { 
+			margin-top: $baseLineHeight * .25;
+			.thumbnail-title {
+				text-transform: uppercase;
+				font-family: $baseFontFamily;
+				font-size: $baseFontSize; 
+				font-style: normal;
+				font-weight: bold;
+				line-height: $baseLineHeight;
+			} 
+			padding: 8px 12px;
+			text-align: right;
+			background-color: $lightColor; 
+			.thumbnail-links {
+				display: none;
+			}
+			span { 
+				font-size:12px;
+				&.tag {
+					color: $mediumColor;
+					strong {
+						color: $darkColor;
+					}
+				}
+			} 
+		}
 	}
+
 	.realty-promo {
 		background: transparent asset-url("promo_en.png", image) no-repeat scroll right top;
 		position:absolute;
