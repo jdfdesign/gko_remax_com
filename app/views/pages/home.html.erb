@@ -23,7 +23,7 @@ end
     <section class="span4">
       <h4><%= t("home.featured_sale_properties") %></h4>
       <% if @random_sale_property %>
-        <ul id="home-sale-property" class="unstyled block-grid">
+        <ul id="home-sale-property" class="grid">
           <%= render "sale_properties/record", :record => @random_sale_property %>
         </ul>
         <%= link_to(t("home.view_all_sale_properties"), url_for([@sale_section]), :class => 'btn view_all') if @sale_section %>
@@ -32,7 +32,7 @@ end
     <section class="span4">
       <h4><%= t("home.featured_rental_properties") %></h4>
       <% if @random_rental_property %>
-        <ul id="home-rental-property" class="unstyled block-grid">
+        <ul id="home-rental-property" class="grid">
           <%= render "rental_properties/record", :record => @random_rental_property %>
         </ul>
         <%= link_to(t("home.view_all_rental_properties"), url_for([@rent_section]), :class => 'btn view_all') if @rent_section %>
@@ -41,7 +41,7 @@ end
     <section class="span4">
       <h4><%= t("promotions") %></h4>
       <% if @promo_rental_property %>
-        <ul id="home-rental-property" class="unstyled block-grid">
+        <ul id="home-rental-property" class="grid">
           <%= render "rental_properties/record", :record => @promo_rental_property %>
         </ul>
         <%= link_to(t("home.view_all_rental_properties"), url_for([@rent_section]), :class => 'btn view_all') if @rent_section %>
