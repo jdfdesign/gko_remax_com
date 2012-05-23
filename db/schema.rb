@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120418113028) do
+ActiveRecord::Schema.define(:version => 20120521224518) do
 
   create_table "accounts", :force => true do |t|
     t.string   "reference",  :limit => 40
@@ -184,6 +184,7 @@ ActiveRecord::Schema.define(:version => 20120418113028) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "country_id"
+    t.string   "language",           :limit => 5
   end
 
   add_index "document_items", ["country_id"], :name => "index_press_articles_on_country_id"
@@ -506,6 +507,8 @@ ActiveRecord::Schema.define(:version => 20120418113028) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.text     "promo_text"
+    t.text     "price_note"
+    t.text     "pets_policy"
   end
 
   add_index "rental_property_option_translations", ["locale"], :name => "index_rental_property_option_translations_on_locale"
@@ -539,6 +542,8 @@ ActiveRecord::Schema.define(:version => 20120418113028) do
     t.integer  "globalized",                              :default => 0
     t.text     "promo_text"
     t.integer  "realty_agent_id"
+    t.text     "price_note"
+    t.text     "pets_policy"
   end
 
   add_index "rental_property_options", ["area_id"], :name => "index_rental_property_options_on_area_id"
@@ -575,7 +580,8 @@ ActiveRecord::Schema.define(:version => 20120418113028) do
     t.date     "end_date"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "globalized",  :default => 0
+    t.integer  "globalized",    :default => 0
+    t.integer  "minimum_night", :default => 1
   end
 
   add_index "rental_property_seasons", ["property_id"], :name => "index_rental_property_seasons_on_property_id"
@@ -692,6 +698,7 @@ ActiveRecord::Schema.define(:version => 20120418113028) do
     t.integer  "globalized",        :default => 0
     t.integer  "level"
     t.boolean  "shallow_permalink", :default => true
+    t.boolean  "no_follow"
   end
 
   add_index "sections", ["link_id", "link_type"], :name => "index_sections_on_link_id_and_link_type"

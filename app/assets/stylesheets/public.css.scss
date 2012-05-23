@@ -83,14 +83,16 @@ button, input[type="button"], input[type="reset"], input[type="submit"] {
 	.row-fluid {
 		background-color: #111111;
 		color: $lightColor;
-		padding-left: 20px;
-		padding-right: 20px;
-		max-width: 940px;
 	}
 	a {
 		@include link-colors($mediumColor, $lightColor, $lightColor);
 	}
-	 
+	.nav {
+		@include vertical-nav;
+	}
+	.nav > li > a {
+		@include link-colors($mediumColor, $lightColor, $lightColor);  
+	}
 }
 #main-column .main-column-inner  {
 	padding-left: 20px;
@@ -98,7 +100,7 @@ button, input[type="button"], input[type="reset"], input[type="submit"] {
 	
 }
 #main-column { 
- padding-top: 60px; 
+ padding-top: 20px; 
  background-color: #FFFFFF;
  position:relative;
 	h3 {
@@ -192,51 +194,46 @@ button, input[type="button"], input[type="reset"], input[type="submit"] {
 /*-----------------------------------------
  HEADER
 ----------------------------------------- */ 
-.navbar { 
-	margin-bottom: 0;
+.navbar {
 	.row-fluid {
 		background-color: #D9D8D4;
 	}
-	.header-nav {
-		position:relative;
-		height: 120px;
-		.nav {
-			@include vertical-nav; 
-			margin-top: 12px;
-			margin-left: 36px;
-			&:first-child {
-				margin-left:123px;
-			}
-		}
-		.nav > li > a {
-			font-size: 11px; 
-			text-transform: uppercase;  
-		}
+	.brand {
+		@include logo(103px, 140px);
+	}
+	.header-top .nav {
+	 background-color: $darkColor;
+	 font-size: 10px; 
+		a {
+			color: $lightColor;
+			text-transform: uppercase;
+			letter-spacing: 1px;
+	 	} 
 	}
 }
-.navbar .brand {
-	@include logo(103px, 140px);
-	position:absolute;
-	left: -10px;
-	top: 0;
-	z-index: 10;
+.navbar-inner {
+	padding-left: 0;
+	padding-right: 0;
+}
+.nav-collapse {
+	
+	.nav > li > a {
+		font-size: 11px; 
+		text-transform: uppercase;  
+		text-shadow: none;
+	}
+}
+.btn-navbar {
+	margin-top: 12px;
+	margin-bottom: 12px;
 }
 h4#site-subtitle {
 	position: absolute;
 	right: 20px;
 	bottom: 8px; 
 	max-width:320px;
-	line-height: 22px;
-	font-size: 14px;
-}
-.navbar .header-top .nav {
- background-color: $darkColor;
- font-size: 10px; 
- a {
-	color: $lightColor;
-	text-transform: uppercase;
-	letter-spacing: 1px;
- } 
+	line-height: 28px;
+	font-size: 16px;
 }
 /*-----------------------------------------
  HOME
@@ -271,9 +268,7 @@ h4#site-subtitle {
  CONTENT
 ----------------------------------------- */
 ul.realty-seasons {
-	//display: block;
 	li {
-	 //display: block;
 		h4 {
 			border-bottom: 2px solid $bodyBackgroundColor;
 			span {
@@ -293,6 +288,9 @@ ul.realty-rates {
 #footer, #copyright {
 	text-align: center;
 }
+#footer .nav > li > a {
+	padding:0;
+}
 a#site_by {
 	background-image: asset-url('gko/logo_gecko_white.png', image);
 }
@@ -300,8 +298,85 @@ a#site_by {
  RESPONSIVE
 ----------------------------------------- */
 @import "gko/responsive";
-@media(max-width: 980px) {
+@media(max-width: 979px) and (min-width: 768px) {
+	.row-fluid > .span4 {
+		float: none;
+		display: block;
+		width: auto;
+		margin: 0;
+	}	
+}
+
+
+@media(max-width: 979px) {
+	body {
+		padding-left: 0;
+		padding-right: 0;
+	}
+	.navbar {
+		background-color: $darkColor;
+		.brand {
+			padding: 0; 
+			float: none; 
+			margin: 0 auto; 
+			 a { display: block;width: 100%; height: 100%;}
+		}
+		a {
+			@include link-colors($mediumColor, $lightColor, $lightColor);
+		}
+		.nav {
+			@include vertical-nav;
+		}
+		.nav > li > a {
+			@include link-colors($mediumColor, $lightColor, $lightColor);  
+		}
+	}
+
+	#footer {
+		.row-fluid > [class*="span"] {
+			float: none;
+			display: block;
+			width: auto;
+			margin: 0;
+		}
+	}
+}
+@media(min-width: 980px) {
 	#main-column { 
-	 padding-top: 120px;
-  } 
+		padding-top: 120px;
+	}
+	.navbar { 
+		margin-bottom: 0;
+		.brand {
+			position:absolute;
+			left: -10px;
+			top: 0;
+			z-index: 10;
+		}
+		.header-nav {
+			position:relative;
+			height: 120px;	
+			.nav {
+				@include vertical-nav; 
+				margin-top: 12px;
+				margin-left: 36px;
+				&:first-child {
+					margin-left:123px;
+				}
+			}
+		}
+		.nav > li > a {
+			padding: 0;
+		}
+	}
+	#main-column { 
+		padding-top: 60px; 
+	}
+	#footer-container {
+		.row-fluid {
+			padding-left: 20px;
+			padding-right: 20px;
+			max-width: 940px;
+		}
+	}
 }
