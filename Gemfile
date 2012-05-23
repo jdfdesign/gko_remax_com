@@ -9,7 +9,7 @@ group :assets do
 end
 
 prod_location = 'git@github.com:jdfdesign/gko_cms3.git'
-prod_version = "= 0.2.84"
+prod_version = "= 0.2.85"
 group :production do
 	gem 'gko_core', prod_version, :git => prod_location
 	gem 'gko_auth', prod_version, :git => prod_location
@@ -26,7 +26,7 @@ group :production do
 end
 
 #group :development do
-#  gem "gko_core", :path => File.expand_path('~/Github/gko_cms3/gko_core', __FILE__)
+ # gem "gko_core", :path => File.expand_path('~/Github/gko_cms3/gko_core', __FILE__)
 #  gem "gko_auth", :path => File.expand_path('~/Github/gko_cms3/gko_auth', __FILE__)
 #  gem "gko_images", :path => File.expand_path('~/Github/gko_cms3/gko_images', __FILE__)
 #  gem "gko_documents", :path => File.expand_path('~/Github/gko_cms3/gko_documents', __FILE__)
@@ -37,5 +37,5 @@ end
 #  gem "gko_realty", :path => File.expand_path('~/Github/gko/gko_realty', __FILE__) 
 #  gem "eu_central_bank", "~> 0.3.0"
 #  gem "whenever", "~> 0.7.2"
- # gem "nokogiri", "~> 1.5.0"
+#  gem "nokogiri", "~> 1.5.0"
 #end
