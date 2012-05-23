@@ -1,19 +1,19 @@
 GIT
   remote: git@github.com:jdfdesign/gko-realty.git
-  revision: 7e316258a78d16bca845e9d378b194310ee9edda
+  revision: 358ec9c9854a89f27663e714d566d0eb1669bcbc
   specs:
-    gko_realty (0.0.59)
+    gko_realty (0.0.60)
       gko_core
 
 GIT
   remote: git@github.com:jdfdesign/gko_cms3.git
-  revision: 3542b62ad159c489ff906654a960768e3c1562bd
+  revision: 2b27f6540f4263ebf73b7af2aa74b97268630c48
   specs:
-    gko_auth (0.2.85)
+    gko_auth (0.2.86)
       cancan (= 1.6.7)
       devise (= 2.0.4)
-    gko_categories (0.2.85)
-    gko_core (0.2.85)
+    gko_categories (0.2.86)
+    gko_core (0.2.86)
       RedCloth (= 4.2.9)
       activesupport-slices (= 0.0.2)
       acts_as_indexed (~> 0.7.7)
@@ -45,15 +45,15 @@ GIT
       uglifier (>= 1.0.3)
       uuid (= 2.3.5)
       will_paginate (~> 3.0.2)
-    gko_documents (0.2.85)
+    gko_documents (0.2.86)
       dragonfly (~> 0.9.8)
       rack-cache (>= 0.5.3)
-    gko_features (0.2.85)
-    gko_images (0.2.85)
-    gko_inquiries (0.2.85)
+    gko_features (0.2.86)
+    gko_images (0.2.86)
+    gko_inquiries (0.2.86)
       filters_spam (~> 0.2)
       launchy
-    gko_stickers (0.2.85)
+    gko_stickers (0.2.86)
 
 GEM
   remote: http://rubygems.org/
@@ -235,15 +235,15 @@ PLATFORMS
 
 DEPENDENCIES
   coffee-rails (~> 3.2.2)
-  gko_auth (= 0.2.85)!
-  gko_categories (= 0.2.85)!
-  gko_core (= 0.2.85)!
-  gko_documents (= 0.2.85)!
-  gko_features (= 0.2.85)!
-  gko_images (= 0.2.85)!
-  gko_inquiries (= 0.2.85)!
-  gko_realty (= 0.0.59)!
-  gko_stickers (= 0.2.85)!
+  gko_auth (= 0.2.86)!
+  gko_categories (= 0.2.86)!
+  gko_core (= 0.2.86)!
+  gko_documents (= 0.2.86)!
+  gko_features (= 0.2.86)!
+  gko_images (= 0.2.86)!
+  gko_inquiries (= 0.2.86)!
+  gko_realty (= 0.0.60)!
+  gko_stickers (= 0.2.86)!
   iconv
   sass-rails (~> 3.2.5)
   uglifier (>= 1.0.3)

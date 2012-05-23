@@ -103,7 +103,7 @@ button, input[type="button"], input[type="reset"], input[type="submit"] {
  padding-top: 20px; 
  background-color: #FFFFFF;
  position:relative;
-	h3 {
+	h3.realty-partial {
 		border-bottom: 6px solid $lightColor;
 		margin-top: $baseLineHeight;
 		margin-bottom: $baseLineHeight * .5;
@@ -127,6 +127,18 @@ button, input[type="button"], input[type="reset"], input[type="submit"] {
 .well.realty-promo-text {
 	background-color:#BA4F45;
 	color: $lightColor;
+}
+p small {
+	font-size: 11px;
+	line-height: 14px;	
+}
+.html_text {
+	h3 {
+		font-size: 18px;
+	}
+}
+button, input[type="button"], input[type="reset"], input[type="submit"] {
+	font-size: 12px;
 }
 /*-----------------------------------------
  GRID
