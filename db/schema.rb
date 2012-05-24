@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120523173243) do
+ActiveRecord::Schema.define(:version => 20120523194947) do
 
   create_table "accounts", :force => true do |t|
     t.string   "reference",  :limit => 40
@@ -544,6 +544,9 @@ ActiveRecord::Schema.define(:version => 20120523173243) do
     t.integer  "realty_agent_id"
     t.text     "price_note"
     t.text     "pets_policy"
+    t.boolean  "pool"
+    t.boolean  "beachfront"
+    t.boolean  "end_display"
   end
 
   add_index "rental_property_options", ["area_id"], :name => "index_rental_property_options_on_area_id"

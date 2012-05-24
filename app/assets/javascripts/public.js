@@ -9,4 +9,9 @@ $(document).ready(function() {
     $(this).css('width', '260px').find('ul').css('width', '260px');
   });
 
+
+	$('select#rental_property_id').change(function(){
+	    var result = $(this).val()
+		document.location.href = result;
+	});
 });
