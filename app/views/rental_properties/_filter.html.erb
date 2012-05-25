@@ -5,7 +5,7 @@
   price_options << t(:'realty.filters.price.more_than', :price => 10000)
   price_options.compact.join("\n").html_safe
 
-  properties = site.rental_properties.published.with_translations(I18n.locale)
+  properties = site.rental_properties.published.with_translations(I18n.locale).order('content_translations.title ASC')
 %>
 <div class="partial filter rental_properties">
   <h4><%= t(:listing).html_safe %></h4>
@@ -30,6 +30,13 @@
         :label => false,
         :as => :select %>
      <% end %> 
+
+	<%= form.input :with_pool,
+		:as => :boolean,
+		:label => t(:'realty.filters.with_pool') %>
+	<%= form.input :with_beachfront,
+		:as => :boolean,
+		:label => t(:'realty.filters.with_beachfront') %>
      <div class='control-group'> 
       <%= form.button 'submit', t('search'), :class => "search" %>
     </div> 
