@@ -20,6 +20,8 @@ group :production do
 	gem 'gko_stickers', prod_version, :git => prod_location
 	gem 'gko_features', prod_version, :git => prod_location
 	gem 'gko_realty', '= 0.0.62',  :git => 'git@github.com:jdfdesign/gko-realty.git'
+	
+	gem 'net-ssh', :git => 'git://github.com/nessche/net-ssh.git' 
   #gem "eu_central_bank", "~> 0.3.0"
   #gem "whenever", "~> 0.7.2"
   #gem "nokogiri", "~> 1.5.0"

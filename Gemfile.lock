@@ -1,4 +1,11 @@
 GIT
+  remote: git://github.com/nessche/net-ssh.git
+  revision: 21dde273463f5aae11dcad34dfb3feb08dc81375
+  specs:
+    net-ssh (2.5.1)
+      jruby-pageant (>= 1.0.2)
+
+GIT
   remote: git@github.com:jdfdesign/gko-realty.git
   revision: a6b978f967fb5fb00c08c1ec0fe7cd7aa0dbb365
   specs:
@@ -159,8 +166,6 @@ GEM
       net-ssh (>= 1.99.1)
     net-sftp (2.0.5)
       net-ssh (>= 2.0.9)
-    net-ssh (2.5.1)
-      jruby-pageant (>= 1.0.2)
     net-ssh-gateway (1.1.0)
       net-ssh (>= 1.99.1)
     orm_adapter (0.0.7)
@@ -245,5 +250,6 @@ DEPENDENCIES
   gko_realty (= 0.0.62)!
   gko_stickers (= 0.2.88)!
   iconv
+  net-ssh!
   sass-rails (~> 3.2.5)
   uglifier (>= 1.0.3)
