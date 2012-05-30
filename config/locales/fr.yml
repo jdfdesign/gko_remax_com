@@ -2,7 +2,8 @@ fr:
   about_us: A propos de Remax
   informations: Informations
   footer_remaxislandproperties: "<a href='http://www.remaxislandproperties.com' target='_blank'>Looking for properties in St Martin/St Maarten? Visit Remax Island Properties in St Martin/St Maarten.</a><br/>©Remax Island Properties St Barths."
-  price_notes: "All rates are based on 7 nights and include an escort to your villa upon arrival, welcome gift and daily maid service (except Sundays & Public Holidays)."
+  realty:
+    price_notes: "All rates are based on 7 nights and include an escort to your villa upon arrival, welcome gift and daily maid service (except Sundays & Public Holidays)."
   sale_properties:
     collection:
       empty: "Nous avons de nombreux biens à vous proposer, n'hésitez pas à nous contacter."

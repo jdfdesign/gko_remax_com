@@ -44,7 +44,7 @@ end
         <ul id="home-rental-property" class="grid">
           <%= render "rental_properties/record", :record => @promo_rental_property %>
         </ul>
-        <%= link_to(t("home.view_all_promotions"), url_for([@rent_section]), :class => 'btn view_all') if @rent_section %>
+        <%= link_to(t("home.view_all_promotions"), add_url_param(:with_promo,'true',rental_property_list_path(@rent_section)), :class => 'btn view_all') if @rent_section %>
       <% end %>
     </section>
   </div> 

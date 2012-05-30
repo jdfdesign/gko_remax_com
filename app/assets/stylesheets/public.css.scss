@@ -145,6 +145,7 @@ button, input[type="button"], input[type="reset"], input[type="submit"] {
 ----------------------------------------- */
 .grid > li { 
 	margin-bottom: $baseLineHeight * .5;
+	overflow:hidden;
 	.thumbnail {
 		border: none;
 		@include border-radius(0);
@@ -179,6 +180,9 @@ button, input[type="button"], input[type="reset"], input[type="submit"] {
 				font-size:12px;
 				&.tag {
 					color: $mediumColor;
+					display: block;
+					clear:both;
+					margin-top: 4px;
 					strong {
 						color: $darkColor;
 					}
@@ -187,13 +191,18 @@ button, input[type="button"], input[type="reset"], input[type="submit"] {
 		}
 	}
 
-	.realty-promo {
-		background: transparent asset-url("promo_en.png", image) no-repeat scroll right top;
+	.thumbnail-badge {
+		background: #bd3d3d;
 		position:absolute;
-		top:0;
-		right:0;
-		width: 146px;
-		height: 102px;
+		color:white;
+		text-align: center;
+		line-height: 24px;
+		padding: 8px;
+		right: -65px;
+		top: 40px;
+		width: 250px;
+		@include rotate(45deg);
+		@include box-shadow(rgba(black, 0.2) 1px 1px 10px);
 	} 
 }
 /*-----------------------------------------
@@ -235,7 +244,7 @@ button, input[type="button"], input[type="reset"], input[type="submit"] {
 		text-shadow: none;
 	}
 }
-.btn-navbar {
+.navbar .btn-navbar {
 	margin-top: 12px;
 	margin-bottom: 12px;
 }
@@ -256,12 +265,17 @@ h4#site-subtitle {
 		margin-top: $baseLineHeight;
 		margin-bottom: $baseLineHeight * .5;
 	}
-	
+	.grid > li {
+		float: none;
+	}
 }
 #home-orbit {
-	height: 400px;
-	padding-bottom: $baseLineHeight;
-  border: 6px solid $lightColor;
+
+	.carousel {
+		border: 6px solid $lightColor;
+	}
+
+  
 }
 #orbit {
 	h3 {
@@ -293,6 +307,10 @@ ul.realty-rates {
 	li span.realty-rates-price {
 		margin-left: 20px;
 	}
+}
+.realty-agent a {
+	font-style: italic;
+	text-decoration: underline;
 }
 /*-----------------------------------------
  FOOTER
@@ -333,14 +351,8 @@ a#site_by {
 			margin: 0 auto; 
 			 a { display: block;width: 100%; height: 100%;}
 		}
-		a {
-			@include link-colors($mediumColor, $lightColor, $lightColor);
-		}
 		.nav {
 			@include vertical-nav;
-		}
-		.nav > li > a {
-			@include link-colors($mediumColor, $lightColor, $lightColor);  
 		}
 	}
 

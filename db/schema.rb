@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120523194947) do
+ActiveRecord::Schema.define(:version => 20120530154628) do
 
   create_table "accounts", :force => true do |t|
     t.string   "reference",  :limit => 40
@@ -134,8 +134,10 @@ ActiveRecord::Schema.define(:version => 20120523194947) do
     t.datetime "updated_at"
     t.integer  "globalized",                      :default => 0
     t.integer  "position",                        :default => 1
+    t.integer  "badge_id"
   end
 
+  add_index "contents", ["badge_id"], :name => "index_contents_on_badge_id"
   add_index "contents", ["position", "section_id"], :name => "index_contents_on_position_and_section_id"
   add_index "contents", ["section_id"], :name => "index_contents_on_section_id"
   add_index "contents", ["site_id"], :name => "index_contents_on_site_id"
@@ -509,6 +511,7 @@ ActiveRecord::Schema.define(:version => 20120523194947) do
     t.text     "promo_text"
     t.text     "price_note"
     t.text     "pets_policy"
+    t.string   "badge"
   end
 
   add_index "rental_property_option_translations", ["locale"], :name => "index_rental_property_option_translations_on_locale"
@@ -547,6 +550,7 @@ ActiveRecord::Schema.define(:version => 20120523194947) do
     t.boolean  "pool"
     t.boolean  "beachfront"
     t.boolean  "end_display"
+    t.string   "badge"
   end
 
   add_index "rental_property_options", ["area_id"], :name => "index_rental_property_options_on_area_id"
@@ -601,6 +605,17 @@ ActiveRecord::Schema.define(:version => 20120523194947) do
   add_index "roles_users", ["role_id"], :name => "index_roles_users_on_role_id"
   add_index "roles_users", ["user_id"], :name => "index_roles_users_on_user_id"
 
+  create_table "sale_property_option_translations", :force => true do |t|
+    t.integer  "sale_property_option_id"
+    t.string   "locale"
+    t.string   "badge"
+    t.datetime "created_at",              :null => false
+    t.datetime "updated_at",              :null => false
+  end
+
+  add_index "sale_property_option_translations", ["locale"], :name => "index_sale_property_option_translations_on_locale"
+  add_index "sale_property_option_translations", ["sale_property_option_id"], :name => "index_629a76235fca137e211a6ec87139ebe1eebb9303"
+
   create_table "sale_property_options", :force => true do |t|
     t.text     "notes"
     t.integer  "bedroom_count",                  :default => 1
@@ -623,6 +638,8 @@ ActiveRecord::Schema.define(:version => 20120523194947) do
     t.integer  "bathroom_count"
     t.integer  "realty_agent_id"
     t.string   "currency",         :limit => 1,  :default => "€"
+    t.string   "badge"
+    t.integer  "globalized",                     :default => 0
   end
 
   add_index "sale_property_options", ["area_id"], :name => "index_sale_property_options_on_area_id"
