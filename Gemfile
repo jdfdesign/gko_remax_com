@@ -35,7 +35,7 @@ end
 #	gem "gko_categories", :path => File.expand_path('~/Github/gko_cms3/gko_categories', __FILE__)
 #	gem "gko_stickers", :path => File.expand_path('~/Github/gko_cms3/gko_stickers', __FILE__)
 #	gem "gko_realty", :path => File.expand_path('~/Github/gko/gko_realty', __FILE__) 
-#	gem "eu_central_bank", "~> 0.3.0"
-#	gem "whenever", "~> 0.7.2"
+#	gem "eu_central_bank", "~> 0.3.2"
+#	gem "whenever", "~> 0.7.3"
 #	gem "nokogiri", "~> 1.5.0"
 #end

@@ -29,3 +29,5 @@ namespace :rates do
     end 
   end
 end
+
+
