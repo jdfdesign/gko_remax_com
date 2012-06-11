@@ -13,9 +13,9 @@ namespace :rates do
             puts "id #{rate.id} - price #{rate.eur_price}"
             currency = (property.currency == "$" ? "USD" : "EUR")
             #puts "#{currency} -- eur_price #{rate.eur_price} - usd_price #{rate.usd_price}" 
-            if currency == "USD"
+            if currency == "USD" && rate.usd_price
               rate.eur_price = eu_bank.exchange_with(Money.new(rate.usd_price * 100, currency), "EUR").to_f
-            else
+            elsif rate.eur_price
               rate.usd_price = eu_bank.exchange_with(Money.new(rate.eur_price * 100, currency), "USD").to_f
             end
             puts "#{currency} -- eur_price #{rate.eur_price} - usd_price #{rate.usd_price}"
