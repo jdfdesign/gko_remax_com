@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120530154628) do
+ActiveRecord::Schema.define(:version => 20120611200935) do
 
   create_table "accounts", :force => true do |t|
     t.string   "reference",  :limit => 40
@@ -640,6 +640,7 @@ ActiveRecord::Schema.define(:version => 20120530154628) do
     t.string   "currency",         :limit => 1,  :default => "€"
     t.string   "badge"
     t.integer  "globalized",                     :default => 0
+    t.integer  "exchange_price"
   end
 
   add_index "sale_property_options", ["area_id"], :name => "index_sale_property_options_on_area_id"
