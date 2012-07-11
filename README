@@ -32,3 +32,4 @@ cd ~/Github/gko_joufdesign_com
 bundle exec rake assets:themes:precompile
 
 whenever --update-crontab --set environment=development
+rake gko:db:backup --trace
