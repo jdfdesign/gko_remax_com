@@ -19,7 +19,7 @@ $inputBorderColor: $bodyBackgroundColor;
 $inputBorderRadius: 0;
 $inputFocusBorderColor: rgba(224, 224, 219, 0.8); //$bodyBackgroundColor
 @import "gko_public_all"; 
-@import "gko/elastislide";
+@import "galleria";
 /*-----------------------------------------
    SHARED STYLES 
 ----------------------------------------- */
@@ -208,9 +208,8 @@ button, input[type="button"], input[type="reset"], input[type="submit"] {
 /*-----------------------------------------
  SLIDESHOW
 ----------------------------------------- */
-.images-thumbnails ul li a img,
-.image-large {
-	border-top: 6px solid black; 
+.galleria {
+	margin-bottom: $baseLineHeight;
 }
 /*-----------------------------------------
  HEADER

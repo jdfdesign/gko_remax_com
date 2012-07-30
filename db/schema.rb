@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120711184126) do
+ActiveRecord::Schema.define(:version => 20120725154659) do
 
   create_table "accounts", :force => true do |t|
     t.string   "reference",  :limit => 40
@@ -333,12 +333,10 @@ ActiveRecord::Schema.define(:version => 20120711184126) do
     t.string   "image_uid"
     t.string   "image_ext"
     t.integer  "globalized",                             :default => 0
-    t.integer  "image_folder_id"
   end
 
   add_index "images", ["account_id"], :name => "index_images_on_account_id"
   add_index "images", ["author_id"], :name => "index_images_on_author_id"
-  add_index "images", ["image_folder_id"], :name => "index_images_on_image_folder_id"
   add_index "images", ["site_id"], :name => "index_images_on_site_id"
 
   create_table "inquiries", :force => true do |t|
@@ -715,22 +713,6 @@ ActiveRecord::Schema.define(:version => 20120711184126) do
   add_index "sections", ["link_id", "link_type"], :name => "index_sections_on_link_id_and_link_type"
   add_index "sections", ["parent_id"], :name => "index_sections_on_parent_id"
   add_index "sections", ["site_id"], :name => "index_sections_on_site_id"
-
-  create_table "settings", :force => true do |t|
-    t.integer  "site_id"
-    t.string   "name"
-    t.text     "value"
-    t.boolean  "destroyable",             :default => true
-    t.string   "scoping"
-    t.boolean  "restricted",              :default => false
-    t.string   "callback_proc_as_string"
-    t.string   "form_value_type",         :default => "text_area", :null => false
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  add_index "settings", ["name"], :name => "index_settings_on_name"
-  add_index "settings", ["site_id"], :name => "index_settings_on_site_id"
 
   create_table "site_registrations", :force => true do |t|
     t.integer "user_id"
