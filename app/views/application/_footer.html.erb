@@ -7,7 +7,7 @@
   <div id='footer' class='row-fluid'>
     <div class="span<%= column_count %>">
       <h3><small><%= t("Informations") %></small></h3>
-      <%= render 'shared/pipe_menu', :mobile_behaviour => "hide-on-mobile" %>
+      <%= render_menu('pipe') %>
     </div>
     <% unless site.preferred_facebook_account.blank? %>
     <div class="span4">

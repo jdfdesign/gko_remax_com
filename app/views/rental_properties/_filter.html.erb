@@ -23,13 +23,13 @@
 
     <%= render "shared/bedroom_count_select", :f => form %>
     <%= render "shared/area_select", :f => form %>  
-    <%= fieldcontain_tag do %>
+    <div class='control-group'> 
       <%= form.input :price, 
         :collection => price_options, 
         :prompt => t(:'helpers.select.price.prompt').html_safe,
         :label => false,
         :as => :select %>
-     <% end %> 
+     </div> 
 
 	<%= form.input :with_pool,
 		:as => :boolean,

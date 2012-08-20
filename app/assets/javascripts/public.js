@@ -1,7 +1,37 @@
 //= require gko/gko.galleria 
+var Site = {
+	init: function() {
+		$("div.custom.dropdown").each(function () {
+	    	$(this).css('width', '260px').find('ul').css('width', '260px');
+		});
 
-$(document).ready(function() {
-	f_init_galleria = function() {
+		$('select#rental_property_id').change(function(){
+		    var result = $(this).val()
+			document.location.href = result;
+		});	
+		Carousel.addTheme();
+		Carousel.init();
+	}
+}
+
+var Carousel = {
+	init: function() {
+		if($(".galleria").length > 0) {
+			$(".galleria").galleria({
+				debug: false,
+				autoplay: true,
+				responsive: true,
+				height: .85,
+				imageCrop: 'landscape',
+				transition: 'flash',
+				thumbMargin: 10,
+				showCounter: false,
+				showInfo: false,
+				thumbnails: true
+			})
+		}
+	},
+	addTheme: function() {
 
 		 Galleria.addTheme({
 		        name:'classic',
@@ -81,32 +111,8 @@ $(document).ready(function() {
 		            });
 		        }
 		    });
-	}
-	
-	if($('.images:first').length > 0) {
-		Gallery.init($('.images:first'));
-	}
-  
-	$("div.custom.dropdown").each(function () {
-    $(this).css('width', '260px').find('ul').css('width', '260px');
-  });
-
-
-	$('select#rental_property_id').change(function(){
-	    var result = $(this).val()
-		document.location.href = result;
-	});
-	if($(".galleria").length > 0) {
-		f_init_galleria();
-		$(".galleria").galleria({
-            autoplay: true,
-            responsive: true,
-            height: .85,
-			carousel: true,
-            imageCrop: 'landscape',
-            transition: 'flash',
-            showCounter: false,
-            showInfo: false
-        })
-	}
+	} 
+}
+$(document).ready(function() {
+	Site.init();
 });
