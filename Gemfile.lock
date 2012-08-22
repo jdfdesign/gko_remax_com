@@ -7,13 +7,13 @@ GIT
 
 GIT
   remote: git@github.com:jdfdesign/gko_cms3.git
-  revision: 36071dd137dd2ef325fb52a2b4d69da4132616d1
+  revision: 3e9c1782ff93263de18001ed2c1fa66b1862c1fd
   specs:
-    gko_auth (0.3.61)
+    gko_auth (0.3.63)
       cancan (= 1.6.8)
       devise (= 2.1.2)
-    gko_categories (0.3.61)
-    gko_core (0.3.61)
+    gko_categories (0.3.63)
+    gko_core (0.3.63)
       RedCloth (= 4.2.9)
       activesupport-slices (= 0.0.2)
       acts_as_indexed (~> 0.7.7)
@@ -34,6 +34,7 @@ GIT
       json
       mysql2 (= 0.3.11)
       nested_set (= 1.7.0)
+      nokogiri (~> 1.5.0)
       rack-cache (>= 0.5.3)
       rack-mount (~> 0.8.3)
       rails (= 3.2.3.rc2)
@@ -46,15 +47,15 @@ GIT
       uglifier (>= 1.0.3)
       uuid (= 2.3.5)
       will_paginate (~> 3.0.2)
-    gko_documents (0.3.61)
+    gko_documents (0.3.63)
       dragonfly (~> 0.9.8)
       rack-cache (>= 0.5.3)
-    gko_features (0.3.61)
-    gko_images (0.3.61)
-    gko_inquiries (0.3.61)
+    gko_features (0.3.63)
+    gko_images (0.3.63)
+    gko_inquiries (0.3.63)
       filters_spam (~> 0.2)
       launchy
-    gko_stickers (0.3.61)
+    gko_stickers (0.3.63)
 
 GEM
   remote: http://rubygems.org/
@@ -97,7 +98,7 @@ GEM
     bcrypt-ruby (3.0.1)
     builder (3.0.0)
     cancan (1.6.8)
-    capistrano (2.13.0)
+    capistrano (2.13.3)
       highline
       net-scp (>= 1.0.0)
       net-sftp (>= 2.0.0)
@@ -252,15 +253,15 @@ PLATFORMS
 DEPENDENCIES
   coffee-rails (~> 3.2.2)
   eu_central_bank (~> 0.3.2)
-  gko_auth (= 0.3.61)!
-  gko_categories (= 0.3.61)!
-  gko_core (= 0.3.61)!
-  gko_documents (= 0.3.61)!
-  gko_features (= 0.3.61)!
-  gko_images (= 0.3.61)!
-  gko_inquiries (= 0.3.61)!
+  gko_auth (= 0.3.63)!
+  gko_categories (= 0.3.63)!
+  gko_core (= 0.3.63)!
+  gko_documents (= 0.3.63)!
+  gko_features (= 0.3.63)!
+  gko_images (= 0.3.63)!
+  gko_inquiries (= 0.3.63)!
   gko_realty (= 0.0.79)!
-  gko_stickers (= 0.3.61)!
+  gko_stickers (= 0.3.63)!
   iconv
   nokogiri (~> 1.5.0)
   sass-rails (~> 3.2.5)
