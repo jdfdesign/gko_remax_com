@@ -7,7 +7,7 @@ if @sale_section = site.sale_property_lists.live.first
   @random_sale_property = @sale_section.sale_properties.live.all.sample(1).first
 end 
 
-@features ||= @site.features.live
+@features ||= site.features.live
 %>
 <% content_for :page_content do %>
   <% if @features.any? %>
