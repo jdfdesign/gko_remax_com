@@ -11,9 +11,11 @@ class CreateLanguagesTable < ActiveRecord::Migration
       t.timestamps
     end
     add_index :languages, :site_id
-    
+
+    add_column :sites, :languages_count, :integer, :default => 0
+
     Site.all.each do |site|
-      site.all_locales.each_with_index do |locale, index|
+      site.translated_locales.each_with_index do |locale, index|
         site.languages.create!({
           :name => I18n.t(:"locales.long.#{locale.to_s}"),
           :code => locale.to_s,
@@ -26,6 +28,7 @@ class CreateLanguagesTable < ActiveRecord::Migration
   end
   
   def down
+    remove_column :sites, :languages_count
     remove_index :languages, :site_id
     drop_table :languages
   end

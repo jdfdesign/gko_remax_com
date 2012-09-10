@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120827172215) do
+ActiveRecord::Schema.define(:version => 20120910155347) do
 
   create_table "accounts", :force => true do |t|
     t.string   "reference",  :limit => 40
@@ -140,12 +140,10 @@ ActiveRecord::Schema.define(:version => 20120827172215) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "position",                        :default => 1
-    t.integer  "badge_id"
     t.integer  "access_count",                    :default => 0
   end
 
   add_index "contents", ["access_count"], :name => "index_contents_on_access_count"
-  add_index "contents", ["badge_id"], :name => "index_contents_on_badge_id"
   add_index "contents", ["position", "section_id"], :name => "index_contents_on_position_and_section_id"
   add_index "contents", ["section_id"], :name => "index_contents_on_section_id"
   add_index "contents", ["site_id"], :name => "index_contents_on_site_id"
@@ -392,8 +390,10 @@ ActiveRecord::Schema.define(:version => 20120827172215) do
     t.boolean  "default",      :default => false
     t.datetime "created_at",                      :null => false
     t.datetime "updated_at",                      :null => false
+    t.integer  "position",     :default => 1
   end
 
+  add_index "languages", ["site_id", "position"], :name => "index_languages_on_site_id_and_position"
   add_index "languages", ["site_id"], :name => "index_languages_on_site_id"
 
   create_table "liquid_models", :force => true do |t|
@@ -407,16 +407,6 @@ ActiveRecord::Schema.define(:version => 20120827172215) do
     t.datetime "created_at",                    :null => false
     t.datetime "updated_at",                    :null => false
   end
-
-  create_table "mail_methods", :force => true do |t|
-    t.integer  "site_id"
-    t.string   "environment"
-    t.boolean  "active",      :default => true
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  add_index "mail_methods", ["site_id"], :name => "index_mail_methods_on_site_id"
 
   create_table "option_type_translations", :force => true do |t|
     t.integer  "option_type_id"
@@ -784,7 +774,8 @@ ActiveRecord::Schema.define(:version => 20120827172215) do
     t.string   "logo_uid"
     t.string   "logo_ext"
     t.string   "default_image_uid"
-    t.integer  "languages_count",          :default => 0
+    t.text     "mailer_settings"
+    t.datetime "liquid_models_updated_at"
   end
 
   add_index "sites", ["account_id"], :name => "index_sites_on_account_id"
