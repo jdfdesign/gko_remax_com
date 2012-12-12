@@ -1,3 +1,5 @@
+<% cache([action_name, site, I18n.locale, 'footer']) do %>
+
 <% 
   has_facebook = !site.preferred_facebook_account.blank?
   column_count = has_facebook ? 4 : 6 
@@ -28,5 +30,5 @@
     </div>
   </div>
 </div>
-
+<% end %>
 

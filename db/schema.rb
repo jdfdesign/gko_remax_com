@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120910155347) do
+ActiveRecord::Schema.define(:version => 20121212153847) do
 
   create_table "accounts", :force => true do |t|
     t.string   "reference",  :limit => 40
@@ -22,6 +22,28 @@ ActiveRecord::Schema.define(:version => 20120910155347) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  create_table "annual_rental_options", :force => true do |t|
+    t.text     "notes"
+    t.integer  "bedroom_count",                  :default => 1
+    t.integer  "room_count",                     :default => 1
+    t.string   "code",             :limit => 30
+    t.integer  "price"
+    t.string   "lat_long"
+    t.string   "postcode",         :limit => 20
+    t.string   "city",             :limit => 30
+    t.string   "province_state",   :limit => 30
+    t.integer  "country_id"
+    t.integer  "area_id"
+    t.integer  "property_id"
+    t.boolean  "show_in_homepage",               :default => false
+    t.datetime "created_at",                                        :null => false
+    t.datetime "updated_at",                                        :null => false
+  end
+
+  add_index "annual_rental_options", ["area_id"], :name => "index_annual_rental_options_on_area_id"
+  add_index "annual_rental_options", ["country_id"], :name => "index_annual_rental_options_on_country_id"
+  add_index "annual_rental_options", ["property_id"], :name => "index_annual_rental_options_on_property_id"
 
   create_table "areas", :force => true do |t|
     t.string   "name",       :limit => 60
@@ -47,18 +69,20 @@ ActiveRecord::Schema.define(:version => 20120910155347) do
   add_index "assets", ["site_id"], :name => "index_assets_on_site_id"
 
   create_table "categories", :force => true do |t|
-    t.integer "site_id"
-    t.integer "section_id"
-    t.integer "parent_id"
-    t.integer "lft",              :default => 0, :null => false
-    t.integer "rgt",              :default => 0, :null => false
-    t.string  "name"
-    t.string  "slug"
-    t.string  "path"
-    t.string  "title"
-    t.text    "body"
-    t.string  "meta_title"
-    t.text    "meta_description"
+    t.integer  "site_id"
+    t.integer  "section_id"
+    t.integer  "parent_id"
+    t.integer  "lft",              :default => 0, :null => false
+    t.integer  "rgt",              :default => 0, :null => false
+    t.string   "name"
+    t.string   "slug"
+    t.string   "path"
+    t.string   "title"
+    t.text     "body"
+    t.string   "meta_title"
+    t.text     "meta_description"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   add_index "categories", ["parent_id"], :name => "index_categories_on_parent_id"
@@ -724,8 +748,7 @@ ActiveRecord::Schema.define(:version => 20120910155347) do
     t.boolean  "shallow_permalink", :default => true
     t.boolean  "robot_index",       :default => true
     t.boolean  "robot_follow",      :default => true
-    t.boolean  "locked",            :default => false
-    t.integer  "locked_by"
+    t.boolean  "restricted",        :default => false
   end
 
   add_index "sections", ["link_id", "link_type"], :name => "index_sections_on_link_id_and_link_type"
@@ -776,6 +799,9 @@ ActiveRecord::Schema.define(:version => 20120910155347) do
     t.string   "default_image_uid"
     t.text     "mailer_settings"
     t.datetime "liquid_models_updated_at"
+    t.integer  "languages_count",                             :null => false
+    t.text     "page_types"
+    t.boolean  "front_page_cached",        :default => false
   end
 
   add_index "sites", ["account_id"], :name => "index_sites_on_account_id"
