@@ -49,7 +49,7 @@ end
   <div class="row-fluid">
     <section class="span6">
       <h4><%= "News".html_safe %></h4>
-      <p><%= link_to image_tag("assets/stbarthimagebank-stbarthbucket2011-9362.jpg"), "http://stbarths-vacation-villa-news.com/", :target => "_blank" %><br/><%= link_to "Click here to view all RE/MAX Island Properties St Barths rental properties news, updates, promotions, last minute offers, new listings, ...".html_safe, "http://stbarths-vacation-villa-news.com/", :target => "_blank" %></p>  
+      <p><%#= link_to image_tag("assets/stbarthimagebank-stbarthbucket2011-9362.jpg"), "http://stbarths-vacation-villa-news.com/", :target => "_blank" %><br/><%= link_to "Click here to view all RE/MAX Island Properties St Barths rental properties news, updates, promotions, last minute offers, new listings, ...".html_safe, "http://stbarths-vacation-villa-news.com/", :target => "_blank" %></p>  
     </section>
     <section class="span6">
       <%= render_html_text(resource.body) %> 
