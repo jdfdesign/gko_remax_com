@@ -19,7 +19,7 @@ group :production do
 	gem 'gko_categories', prod_version, :git => prod_location
   gem 'gko_stickers', prod_version, :git => prod_location
 	gem 'gko_features', prod_version, :git => prod_location
-	gem 'gko_realty', '= 0.0.86', :git => 'git@github.com:jdfdesign/gko-realty.git'
+	gem 'gko_realty', '= 0.0.87', :git => 'git@github.com:jdfdesign/gko-realty.git'
 	gem "money", "= 5.0.0"
 	gem "eu_central_bank", "~> 0.3.2"
 	gem "whenever", "~> 0.7.3"
