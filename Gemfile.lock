@@ -1,19 +1,20 @@
 GIT
   remote: git@github.com:jdfdesign/gko-realty.git
-  revision: b82163f03ba04c245cb48330da9aaddc4813ae73
+  revision: 5411e65b803b72deb3006651c1c618eb8824faf9
   specs:
-    gko_realty (0.0.90)
+    gko_realty (0.0.91)
       gko_core
 
 GIT
   remote: git@github.com:jdfdesign/gko_cms3.git
-  revision: a6629f018f3e3839dc4aefc9d42fb7b1bd969210
+  revision: 2d77f20844c91ac54e44fcfd1fdfef78a0a4e835
+  tag: v0.6.24.RC3
   specs:
-    gko_auth (0.6.03)
+    gko_auth (0.6.24.RC3)
       cancan (>= 1.6.8)
       devise (>= 2.1.2)
-    gko_categories (0.6.03)
-    gko_core (0.6.03)
+    gko_categories (0.6.24.RC3)
+    gko_core (0.6.24.RC3)
       RedCloth (= 4.2.9)
       activesupport-slices (= 0.0.2)
       acts_as_indexed (~> 0.7.7)
@@ -24,7 +25,7 @@ GIT
       codemirror-rails (>= 2.3)
       coffee-rails (~> 3.2.2)
       cucumber (~> 1.1.4)
-      dragonfly (~> 0.9.12)
+      dragonfly (~> 0.9.13)
       dropbox-sdk (~> 1.2.0)
       exception_notification (~> 3.0.0)
       faker (= 1.0.0)
@@ -37,6 +38,7 @@ GIT
       jquery-rails (= 2.0.3)
       json
       letter_opener (~> 1.0.0)
+      lol_dba
       mail_form (~> 1.3.0)
       mobile-fu
       mysql2 (~> 0.3.11)
@@ -48,21 +50,21 @@ GIT
       rmagick (~> 2.13.1)
       routing-filter (= 0.3.1)
       rubyzip (= 0.9.6.1)
-      sass-rails (~> 3.2.5)
+      sass-rails (~> 3.2.6)
       simple_form (~> 2.0.4)
       to_xls (~> 1.5.1)
       truncate_html (= 0.5.5)
       uglifier (>= 1.0.3)
       uuid (= 2.3.5)
       will_paginate (~> 3.0.2)
-    gko_documents (0.6.03)
+    gko_documents (0.6.24.RC3)
       dragonfly (~> 0.9.8)
       rack-cache (>= 0.5.3)
-    gko_features (0.6.03)
-    gko_images (0.6.03)
-    gko_inquiries (0.6.03)
+    gko_features (0.6.24.RC3)
+    gko_images (0.6.24.RC3)
+    gko_inquiries (0.6.24.RC3)
       filters_spam (~> 0.2)
-    gko_stickers (0.6.03)
+    gko_stickers (0.6.24.RC3)
 
 GEM
   remote: http://rubygems.org/
@@ -131,13 +133,14 @@ GEM
       gherkin (~> 2.9.0)
       json (>= 1.4.6)
       term-ansicolor (>= 1.0.6)
-    devise (2.2.1)
+    devise (2.2.3)
       bcrypt-ruby (~> 3.0)
       orm_adapter (~> 0.1)
       railties (~> 3.1)
       warden (~> 1.2.1)
-    diff-lcs (1.1.3)
-    dragonfly (0.9.12)
+    diff-lcs (1.2.0)
+    dragonfly (0.9.13)
+      multi_json (~> 1.0)
       rack
     dropbox-sdk (1.2)
       json
@@ -145,18 +148,12 @@ GEM
     eu_central_bank (0.3.2)
       money (>= 5.0.0)
       nokogiri
-    eventmachine (1.0.0)
-    exception_notification (3.0.0)
+    exception_notification (3.0.1)
       actionmailer (>= 3.0.4)
-      tinder (~> 1.8)
     execjs (1.4.0)
       multi_json (~> 1.0)
     faker (1.0.0)
       i18n (~> 0.4)
-    faraday (0.8.4)
-      multipart-post (~> 1.1)
-    faraday_middleware (0.9.0)
-      faraday (>= 0.7.4, < 0.9)
     filters_spam (0.3)
     gem-patching (0.0.3)
     gherkin (2.9.3)
@@ -169,12 +166,9 @@ GEM
       actionpack (>= 2.3.0)
       json
     has_scope (0.5.1)
-    hashie (1.2.0)
     highline (1.6.8)
     hike (1.2.1)
-    http_parser.rb (0.5.3)
     i18n (0.6.1)
-    iconv (0.1)
     inherited_resources (1.3.1)
       has_scope (~> 0.5.0)
       responders (~> 0.6)
@@ -187,6 +181,10 @@ GEM
       addressable (~> 2.3)
     letter_opener (1.0.0)
       launchy (>= 2.0.4)
+    lol_dba (1.4.3)
+      actionpack (>= 3.0)
+      activerecord (>= 3.0)
+      railties (>= 3.0)
     macaddr (1.6.1)
       systemu (~> 2.5.0)
     mail (2.4.4)
@@ -202,7 +200,6 @@ GEM
       i18n (~> 0.4)
       json
     multi_json (1.5.0)
-    multipart-post (1.1.5)
     mysql2 (0.3.11)
     nested_set (1.7.0)
       activerecord (>= 3.0.0)
@@ -257,16 +254,15 @@ GEM
       actionpack
     ruby-ole (1.2.11.6)
     rubyzip (0.9.6.1)
-    sass (3.2.3)
-    sass-rails (3.2.5)
+    sass (3.2.5)
+    sass-rails (3.2.6)
       railties (~> 3.2.0)
       sass (>= 3.1.10)
       tilt (~> 1.3)
     simple_form (2.0.4)
       actionpack (~> 3.0)
       activemodel (~> 3.0)
-    simple_oauth (0.1.9)
-    spreadsheet (0.7.5)
+    spreadsheet (0.7.7)
       ruby-ole (>= 1.0)
     sprockets (2.1.3)
       hike (~> 1.2)
@@ -276,25 +272,12 @@ GEM
     term-ansicolor (1.0.7)
     thor (0.14.6)
     tilt (1.3.3)
-    tinder (1.9.2)
-      eventmachine (~> 1.0)
-      faraday (~> 0.8)
-      faraday_middleware (~> 0.9)
-      hashie (~> 1.0)
-      json (~> 1.7.5)
-      mime-types (~> 1.19)
-      multi_json (~> 1.5)
-      twitter-stream (~> 0.1)
     to_xls (1.5.1)
       spreadsheet
     treetop (1.4.12)
       polyglot
       polyglot (>= 0.3.1)
     truncate_html (0.5.5)
-    twitter-stream (0.1.16)
-      eventmachine (>= 0.12.8)
-      http_parser.rb (~> 0.5.1)
-      simple_oauth (~> 0.1.4)
     tzinfo (0.3.35)
     uglifier (1.3.0)
       execjs (>= 0.3.0)
@@ -314,18 +297,17 @@ PLATFORMS
 DEPENDENCIES
   coffee-rails (~> 3.2.2)
   eu_central_bank (~> 0.3.2)
-  gko_auth (= 0.6.03)!
-  gko_categories (= 0.6.03)!
-  gko_core (= 0.6.03)!
-  gko_documents (= 0.6.03)!
-  gko_features (= 0.6.03)!
-  gko_images (= 0.6.03)!
-  gko_inquiries (= 0.6.03)!
-  gko_realty (= 0.0.90)!
-  gko_stickers (= 0.6.03)!
-  iconv
+  gko_auth!
+  gko_categories!
+  gko_core!
+  gko_documents!
+  gko_features!
+  gko_images!
+  gko_inquiries!
+  gko_realty (= 0.0.91)!
+  gko_stickers!
   money (= 5.0.0)
   nokogiri (~> 1.5.0)
-  sass-rails (~> 3.2.5)
+  sass-rails (~> 3.2.6)
   uglifier (>= 1.0.3)
   whenever (~> 0.7.3)
