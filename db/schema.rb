@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130203144653) do
+ActiveRecord::Schema.define(:version => 20130627130041) do
 
   create_table "accounts", :force => true do |t|
     t.string   "reference",  :limit => 40
@@ -455,7 +455,7 @@ ActiveRecord::Schema.define(:version => 20130203144653) do
   create_table "partners", :force => true do |t|
     t.string   "title"
     t.text     "body"
-    t.string   "url"
+    t.string   "link"
     t.integer  "site_id"
     t.integer  "section_id"
     t.string   "image_mime_type"
@@ -685,6 +685,7 @@ ActiveRecord::Schema.define(:version => 20130203144653) do
     t.string   "menu_title"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.text     "alt"
   end
 
   add_index "section_translations", ["locale"], :name => "index_section_translations_on_locale"
@@ -700,24 +701,25 @@ ActiveRecord::Schema.define(:version => 20130203144653) do
     t.string   "type"
     t.string   "name"
     t.string   "slug"
-    t.string   "path"
     t.text     "options"
-    t.string   "title"
     t.string   "layout"
-    t.text     "body"
-    t.string   "meta_title"
-    t.text     "meta_description"
-    t.string   "redirect_url"
     t.datetime "published_at"
     t.boolean  "hidden",            :default => false
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "menu_title"
     t.boolean  "shallow_permalink", :default => true
     t.boolean  "robot_index",       :default => true
     t.boolean  "robot_follow",      :default => true
     t.boolean  "restricted",        :default => false
     t.string   "template"
+    t.string   "title"
+    t.text     "body"
+    t.string   "meta_description"
+    t.string   "meta_title"
+    t.string   "menu_title"
+    t.string   "path"
+    t.string   "redirect_url"
+    t.text     "alt"
   end
 
   add_index "sections", ["link_id", "link_type"], :name => "index_sections_on_link_id_and_link_type"
@@ -771,6 +773,8 @@ ActiveRecord::Schema.define(:version => 20130203144653) do
     t.integer  "languages_count",                             :null => false
     t.text     "page_types"
     t.boolean  "front_page_cached",        :default => false
+    t.text     "stylesheet"
+    t.text     "javascript"
   end
 
   add_index "sites", ["account_id"], :name => "index_sites_on_account_id"
