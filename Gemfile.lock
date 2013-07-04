@@ -1,8 +1,8 @@
 GIT
   remote: git@github.com:jdfdesign/gko-realty.git
-  revision: 38c065cbe3e82c849811f0182d6e972574266439
+  revision: d7262a264ec74f10b982d3bd73d6d584916b6337
   specs:
-    gko_realty (0.0.92)
+    gko_realty (0.0.93)
       gko_core
 
 GIT
@@ -104,7 +104,7 @@ GEM
     bcrypt-ruby (3.0.1)
     builder (3.0.4)
     cancan (1.6.10)
-    capistrano (2.15.4)
+    capistrano (2.15.5)
       highline
       net-scp (>= 1.0.0)
       net-sftp (>= 2.0.0)
@@ -303,7 +303,7 @@ DEPENDENCIES
   gko_documents!
   gko_features!
   gko_inquiries!
-  gko_realty (= 0.0.92)!
+  gko_realty (= 0.0.93)!
   gko_stickers!
   money (= 5.0.0)
   nokogiri (~> 1.5.0)
