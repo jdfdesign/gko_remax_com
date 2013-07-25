@@ -1,4 +1,4 @@
-<% cache([action_name, site, I18n.locale, 'footer']) do %>
+<% cache([action_name, site, I18n.locale, 'footer22']) do %>
 
 <% 
   has_facebook = !site.preferred_facebook_account.blank?
@@ -7,12 +7,12 @@
 
 <div id='footer-container' class='container-fluid'>
   <div id='footer' class='row-fluid'>
-    <div class="span<%= column_count %>">
+    <div class="span<%= column_count %> hide-on-print">
       <h3><small><%= t("informations") %></small></h3>
       <%= render_menu('pipe') %>
     </div>
     <% unless site.preferred_facebook_account.blank? %>
-    <div class="span4">
+    <div class="span4 hide-on-print">
       <h3><small><%= t("follow_us") %></small></h3>
       <p><iframe src="http://www.facebook.com/plugins/like.php?href=http%3A%2F%2Fwww.facebook.com/'<%= site.preferred_facebook_account %>'&amp;send=false&amp;layout=box_count&amp;width=450&amp;show_faces=false&amp;action=like&amp;colorscheme=light&amp;font=lucida+grande&amp;height=90" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:62px; height:90px;" allowtransparency="true"></iframe></p>
     </div>

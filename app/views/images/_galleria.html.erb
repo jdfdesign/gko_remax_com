@@ -1,0 +1,20 @@
+<% if images.try(:any?) %>
+<%
+   image_geometry = local_assigns.has_key?(:image_style) ? image_style : site.preferred_image_carousel_size
+   thumb_geometry = local_assigns.has_key?(:thumb_style) ? thumb_style : site.preferred_image_thumb_size
+%>
+
+<% if images.length == 1 %>
+	<%= image_fu(images.first, image_geometry) %>
+<% else %>
+	<div class='galleria hide-on-print'>
+  		<% images.each do |img| %>
+      		<%= link_to(image_fu(img, thumb_geometry), img.thumbnail(image_geometry).url) %>
+  		<% end %>
+	</div>
+	<div class="printable-image hide show-on-print">
+		<%= image_fu(images.first, image_geometry) %>
+	</div>
+<% end %>
+
+<% end %>

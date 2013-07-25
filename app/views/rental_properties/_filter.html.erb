@@ -1,4 +1,4 @@
-<% cache([action_name, site, I18n.locale, 'rental_properties_filter']) do %>
+<% cache([action_name, site, I18n.locale, 'rental_properties_filter2']) do %>
 	<% 
   price_options = []
   price_options << t(:'realty.filters.price.less_than', :price => 4000)
@@ -8,7 +8,7 @@
 
   properties = site.rental_properties.published.with_translations(I18n.locale).order('content_translations.title ASC')
 %>
-<div class="partial filter rental_properties">
+<div class="partial filter rental_properties hide-on-print">
   <h4><%= t(:listing).html_safe %></h4>
 	<%= collection_select "rental_property", "id", properties, :public_url, :title, {:prompt => "Select a property" } %>
   <h4><%= t(:search).html_safe %></h4>
