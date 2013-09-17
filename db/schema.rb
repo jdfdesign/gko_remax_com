@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130725145815) do
+ActiveRecord::Schema.define(:version => 20130917053922) do
 
   create_table "annual_rental_options", :force => true do |t|
     t.text     "notes"
@@ -151,16 +151,6 @@ ActiveRecord::Schema.define(:version => 20130725145815) do
   add_index "contents", ["section_id"], :name => "index_contents_on_section_id"
   add_index "contents", ["site_id"], :name => "index_contents_on_site_id"
   add_index "contents", ["slug"], :name => "index_contents_on_slug"
-
-  create_table "countries", :force => true do |t|
-    t.string   "iso_name"
-    t.string   "iso3",       :limit => 3
-    t.string   "iso",        :limit => 2
-    t.string   "name"
-    t.integer  "numcode"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
 
   create_table "document_assignments", :force => true do |t|
     t.integer  "position",                      :default => 1, :null => false
@@ -355,18 +345,6 @@ ActiveRecord::Schema.define(:version => 20130725145815) do
 
   add_index "languages", ["site_id", "position"], :name => "index_languages_on_site_id_and_position"
   add_index "languages", ["site_id"], :name => "index_languages_on_site_id"
-
-  create_table "liquid_models", :force => true do |t|
-    t.integer  "site_id"
-    t.text     "body"
-    t.string   "path"
-    t.string   "format"
-    t.string   "locale"
-    t.string   "handler"
-    t.boolean  "partial",    :default => false
-    t.datetime "created_at",                    :null => false
-    t.datetime "updated_at",                    :null => false
-  end
 
   create_table "mail_methods", :force => true do |t|
     t.integer  "site_id",                                                       :null => false
@@ -757,14 +735,6 @@ ActiveRecord::Schema.define(:version => 20130725145815) do
   end
 
   add_index "sites", ["host"], :name => "index_sites_on_host", :unique => true
-
-  create_table "states", :force => true do |t|
-    t.string  "name"
-    t.string  "abbr"
-    t.integer "country_id"
-  end
-
-  add_index "states", ["country_id"], :name => "index_states_on_country_id"
 
   create_table "sticker_translations", :force => true do |t|
     t.integer  "sticker_id"

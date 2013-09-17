@@ -1,0 +1,26 @@
+<%# cache([site, I18n.locale, 'header']) do %>
+<!-- Begin Header -->
+<header class="navbar navbar-default" role="navigation">
+  <%= render "locales_select" %>
+  <div class="container">
+    <div class="navbar-header">
+      <%= link_to(image_tag("logo.png", :alt => site.title), root_url, :class => "navbar-brand") %>
+      <button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".navbar-collapse">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+    </div>
+    <nav class="collapse navbar-collapse">
+      <% site.primary_menu.in_groups_of(4) do |section_group| %>
+        <%= render 'menu', :sections => section_group, :menu_name => 'navbar-nav navbar-left' if section_group %>
+      <% end %>
+    </nav>
+    <div class="navbar-subtitle visible-md visible-lg">
+      <p>St Barths Real Estate and Vacation Rentals</p> 
+      <p><strong>RE/MAX Island Properties St Barths</strong></p>
+    </div>
+  </div>
+</header>
+<%# end %>

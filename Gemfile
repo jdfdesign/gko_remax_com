@@ -7,7 +7,7 @@ gem 'sass-rails', '~> 3.2.6'
 end
 
 group :production do
-    git "git@github.com:jdfdesign/gko_cms3.git", :tag => "v0.6.50.rc8" do
+    git "git@github.com:jdfdesign/gko_cms3.git", :tag => "v0.6.60.rc6" do
         gem 'gko_core'
         gem 'gko_auth'
         gem 'gko_documents'
@@ -16,7 +16,7 @@ group :production do
         gem 'gko_categories'
         gem 'gko_stickers'
     end
-    gem 'gko_realty', '= 0.0.96', :git => 'git@github.com:jdfdesign/gko-realty.git'
+    gem 'gko_realty', '= 0.0.97', :git => 'git@github.com:jdfdesign/gko-realty.git'
 end
 
 #group :development do

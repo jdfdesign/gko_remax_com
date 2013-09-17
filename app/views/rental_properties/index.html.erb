@@ -1,0 +1,29 @@
+<section class="page-header-section">
+  <div class="container row">
+    <div class="col-md-12">
+      <div class="page-header">
+        <%= render_page_title(parent.title) %>
+    	  <%= render_html_text(parent.body) unless params[:page].present? %>
+    	</div>
+    </div>
+  </div>    
+</section>
+<section class="projects-section">
+	<!-- Begin Projects -->
+	<div class="container">
+    <div id="projects-container" class="row">
+      <% if collection.any? %>
+        <%= render collection %>
+        <%= will_paginate %>
+      <% else %>
+        <div class="col-xs-12">
+          <%= render "no_records_found" %>
+        </div>
+      <% end %>
+    </div> 
+  </div>
+</section>
+<% content_for :sidebar do %>
+	<%= render "rental_properties/filter", :section => parent %>
+	<%= render "rental_properties/promotion_list" %>
+<% end %>

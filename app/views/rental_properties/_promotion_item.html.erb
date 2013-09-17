@@ -1,0 +1,7 @@
+<%# cache [collection_record_cache_key(sale_property), sale_property.updated_at.to_i] do %>
+<div class="col-xs-3 col-sm-6">
+  <%= link_to(record.public_url, :class => "promotion-link") do %>
+    <%= image_fu(record.thumbnail, "160x100#", :class => "img-responsive") %>
+    <span><%= record.title %></span>
+	<% end %>
+</div>

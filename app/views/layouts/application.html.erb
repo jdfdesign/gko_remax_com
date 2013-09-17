@@ -1,36 +1,31 @@
-<!doctype html>
-<%= render 'html_tag' %>
+<!DOCTYPE html>
+<html class="no-js">
 <%= render 'head' %>
 <body id='<%= @body_id %>'>
 <div id="wrapper-wide-body" role="main">
-  <%= render_header %>
-  <div id='main-container' class='container-fluid'>
+  <%= render 'navbar' %>
+  <div id='main-container' class='container'>
     <% if content_for?(:page_container) -%>
       <%= render 'layouts/messages' %>
       <%= yield :page_container %>
     <% else -%>
-      <div id="main-row" class='row-fluid'>
+      <div id="main-row" class='row'>
         <% if content_for?(:page_content) -%>
-          <div id="main" class='span12 <%= @body_id %>'>
+          <div id="main" class='col-xs-12 <%= @body_id %>'>
             <%= yield :page_content %>
           </div>
         <% else -%>
           <%
-            has_left_sidebar = content_for?(:left_sidebar)
             has_sidebar = content_for?(:sidebar_header) || content_for?(:sidebar)
             main_span = 12
             main_span -= 3 if has_sidebar
-            main_span -= 3 if has_left_sidebar
           %>
-          <% if has_left_sidebar -%>
-            <aside id='left-sidebar' class="span3"><%= yield :left_sidebar %></aside>
-          <% end -%>
-          <div id="main" class='span<%= main_span %> <%= @body_id %> '>
+          <div id="main" class='col-sm-<%= main_span %> <%= @body_id %> '>
             <%= render 'layouts/messages' %>
             <%= yield %>
           </div>
           <% if has_sidebar -%>
-            <aside id='sidebar' class="span3">
+            <aside id='sidebar' class="col-sm-3">
   					  <%= yield :sidebar_header %>
   					  <%= yield :sidebar %>
             </aside>
@@ -39,9 +34,11 @@
     </div>
     <% end -%><%# end page_container %>
   </div><!--! end of #main-container -->
-  <%= render_footer %>
-  <%= render 'copyright' %>
+  <%= render 'footer' %>
+
 </div> <!--! end of #main -->
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+<script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
 <%= render 'javascripts' %>
 </body>
 </html>

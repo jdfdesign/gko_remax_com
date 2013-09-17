@@ -6,53 +6,52 @@ end
 if @sale_section = site.sale_property_lists.live.first 
   @random_sale_property = @sale_section.sale_properties.live.all.sample(1).first
 end 
-
-@features ||= site.features.live
 %>
 <% content_for :page_content do %>
-  <% if @features.any? %>
-  <div class="row-fluid">
-    <div class="span12"  id="home-orbit">
-      <%= render 'shared/carousel', :features => @features %>
+
+  <section class="row">
+    <div class="col-xs-12">
+      <div id="intro" class="text-container">
+        <%= image_tag("boats.jpg", :class => "img-responsive") %>
+        <h1>Discover a new level of luxury in Real Estate</h1>
+      </div>
     </div>
-  </div>
-  <% end %>   
-  <div class="row-fluid">
-    <section class="span4">
-      <h4><%= t("home.featured_sale_properties") %></h4>
+  </section> 
+
+  <section class="row">
+    <div class="col-sm-4 widget-home">
+      <h4 class="widget-title widget-title-home" ><%= t("home.featured_sale_properties") %></h4>
       <% if @random_sale_property %>
-        <ul id="home-sale-property" class="grid">
-          <%= render "sale_properties/sale_property", :sale_property => @random_sale_property, :parent =>  @sale_section %>
-        </ul>
-        <%= link_to(t("home.view_all_sale_properties"), url_for([@sale_section]), :class => 'btn view_all') if @sale_section %>
-      <% end %>
-    </section>
-    <section class="span4">
-      <h4><%= t("home.featured_rental_properties") %></h4>
+        <%= render "sale_properties/property_thumbnail", :record => @random_sale_property %>
+        <p><%= link_to(t("home.view_all_sale_properties"), @sale_section.public_url, :class => 'btn btn-primary') %></p>
+      <% end %>                                                                 
+    </div>
+    
+    <div class="col-sm-4 widget-home">
+      <h4 class="widget-title widget-title-home" ><%= t("home.featured_rental_properties") %></h4>
       <% if @random_rental_property %>
-        <ul id="home-rental-property" class="grid">
-          <%= render "rental_properties/rental_property", :rental_property => @random_rental_property, :parent => @rent_section %>
-        </ul>
-        <%= link_to(t("home.view_all_rental_properties"), url_for([@rent_section]), :class => 'btn view_all') if @rent_section %>
+        <%= render "rental_properties/property_thumbnail", :record => @random_rental_property %>
+        <p><%= link_to(t("home.view_all_rental_properties"), @rent_section.public_url, :class => 'btn btn-primary') %></p>
       <% end %>
-    </section>
-    <section class="span4">
-      <h4><%= t("promotions") %></h4>
+    </div>
+    
+    <div class="col-sm-4 widget-home">
+      <h4 class="widget-title widget-title-home" ><%= t("promotions") %></h4>
       <% if @promo_rental_property %>
-        <ul id="home-rental-property" class="grid">
-          <%= render "rental_properties/rental_property", :rental_property => @promo_rental_property, :parent => @rent_section  %>
-        </ul>
-        <%= link_to(t("home.view_all_promotions"), add_url_param(:with_promo,'true',rental_property_list_path(@rent_section)), :class => 'btn view_all') if @rent_section %>
+        <%= render "rental_properties/property_thumbnail", :record => @promo_rental_property %>
+        <p><%= link_to(t("realty.view_all_promotions"), add_url_param(:with_promo,'true', @rent_section.public_url), :class => 'btn btn-primary') %></p>
       <% end %>
-    </section>
-  </div> 
-  <div class="row-fluid">
-    <section class="span6">
-      <h4><%= "News".html_safe %></h4>
-      <p><%= link_to image_tag("stbarthimagebank-stbarthbucket2011-9362.jpg"), "http://stbarths-vacation-villa-news.com/", :target => "_blank" %><br/><%= link_to "Click here to view all RE/MAX Island Properties St Barths rental properties news, updates, promotions, last minute offers, new listings, ...".html_safe, "http://stbarths-vacation-villa-news.com/", :target => "_blank" %></p>  
-    </section>
-    <section class="span6">
+    </div>
+  </section>
+   
+  <section class="row">
+    <div class="col-md-6">
+      <h4 class="widget-title widget-title-home" ><%= "News".html_safe %></h4>
+      <p><%= link_to image_tag("stbarthimagebank-stbarthbucket2011-9362.jpg", :class => "img-responsive"), "http://stbarths-vacation-villa-news.com/", :target => "_blank" %><br/><%= link_to "Click here to view all RE/MAX Island Properties St Barths rental properties news, updates, promotions, last minute offers, new listings, ...".html_safe, "http://stbarths-vacation-villa-news.com/", :target => "_blank" %></p>  
+    </div>
+    <div class="col-md-6">
+      <h4 class="widget-title widget-title-home"><%= resource.title %></h4>
       <%= render_html_text(resource.body) %> 
-    </section>
-  </div>
+    </div>
+  </section>
 <% end %>

@@ -1,34 +1,28 @@
-<% cache([action_name, site, I18n.locale, 'footer22']) do %>
-
-<% 
-  has_facebook = !site.preferred_facebook_account.blank?
-  column_count = has_facebook ? 4 : 6 
-%>
-
-<div id='footer-container' class='container-fluid'>
-  <div id='footer' class='row-fluid'>
-    <div class="span<%= column_count %> hide-on-print">
-      <h3><small><%= t("informations") %></small></h3>
-      <%= render_menu('pipe') %>
+<%# cache([action_name, site, I18n.locale, 'footer22']) do %>
+<footer id='footer'>
+  <div class='container'>
+    <div class='row'>
+      <div class="col-md-4">
+        <p><%= "RE/MAX Island Properties - St Barths<br>55 Rue Samuel Fahlberg - Gustavia<br>97133 Saint Barthélemy French West Indies".html_safe %></p>
+      </div>
+      <div class="col-md-4">
+        <p><%= "Tel. Intl +590 590 29 78 20<br>Tel from US 011 +590 590 29 78 20<br>Fax +590 590 87 12 55<br>".html_safe %><%= mail_to(t('email_us'), site.preferred_contact_email, :encode => "javascript") unless site.preferred_contact_email.blank? %></p>
+      </div>
+      <div class="col-md-4">
+        <p><%= t('footer_remaxislandproperties').html_safe %></p>
+      </div>  
     </div>
-    <% unless site.preferred_facebook_account.blank? %>
-    <div class="span4 hide-on-print">
-      <h3><small><%= t("follow_us") %></small></h3>
-      <p><iframe src="http://www.facebook.com/plugins/like.php?href=http%3A%2F%2Fwww.facebook.com/'<%= site.preferred_facebook_account %>'&amp;send=false&amp;layout=box_count&amp;width=450&amp;show_faces=false&amp;action=like&amp;colorscheme=light&amp;font=lucida+grande&amp;height=90" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:62px; height:90px;" allowtransparency="true"></iframe></p>
+    <div class='row'>
+      <div class="col-md-6">
+        <%= render_menu("footer-nav") %>
+      </div>
+      <div class="col-md-6">
+        <p class="copyright"><span><%= t(:'copyright', :year => Time.now.year, :copyright_name => site.copyright_name) if site.copyright_name %></span>
+        <a href='http://www.joufdesign.com' class="copyright-author" target='_blank'>
+          <%= t(:'site_by', :name => "Jouf Design").html_safe %>
+        </a></p>
+      </div>
     </div>
-    <% end %>
-    <div class="span<%= column_count %>">
-      <h3><small><%= t("contact_us") %></small></h3>
-      <p><small>
-        <%= site.preferred_contact_address.html_safe unless site.preferred_contact_address.blank? %>
-        <%= mail_to(t('email_us'), site.preferred_contact_email, :encode => "javascript") unless site.preferred_contact_email.blank? %></small></p>
-    </div>
-  </div>
-  <div class='row-fluid'>
-    <div class="span12"> 
-      <p class="center"><small><%= t('footer_remaxislandproperties').html_safe %><small></p>
-    </div>
-  </div>
-</div>
-<% end %>
-
+  </div> 
+</footer>
+<%# end %>

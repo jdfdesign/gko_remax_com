@@ -1,0 +1,5 @@
+<%# cache [collection_record_cache_key(rental_property), rental_property.updated_at.to_i] do %>
+	<article class="col-sm-6 post-item">
+    <%= render "rental_properties/property_thumbnail", :record => rental_property %>
+  </article> 
+<%# end %> 

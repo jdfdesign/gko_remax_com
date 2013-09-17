@@ -1,4 +1,4 @@
-<% cache([action_name, site, I18n.locale, 'rental_properties_filter2']) do %>
+<% cache([action_name, site, I18n.locale, 'rental_properties_filter16']) do %>
 	<% 
   price_options = []
   price_options << t(:'realty.filters.price.less_than', :price => 4000)
@@ -9,9 +9,11 @@
   properties = site.rental_properties.published.with_translations(I18n.locale).order('content_translations.title ASC')
 %>
 <div class="partial filter rental_properties hide-on-print">
-  <h4><%= t(:listing).html_safe %></h4>
-	<%= collection_select "rental_property", "id", properties, :public_url, :title, {:prompt => "Select a property" } %>
-  <h4><%= t(:search).html_safe %></h4>
+  <h4 class="widget-title" ><%= t(:listing).html_safe %></h4>
+ 
+	<%= collection_select "rental_property", "id", properties, :public_url, 
+	    :title, {:prompt => "Select a property" }, {:class => "form-control" } %>
+  <h4 class="widget-title" ><%= t(:search).html_safe %></h4>
   <%= simple_form_for(:search, 
 	:url => url_for([section]), 
 	:method => :get,
@@ -21,24 +23,23 @@
 		:label => false,
 		:placeholder => "Name",
 		:as => :string %>
-
-    <%= render "shared/bedroom_count_select", :f => form %>
-    <%= render "shared/area_select", :f => form %>  
-    <div class='control-group'> 
-      <%= form.input :price, 
-        :collection => price_options, 
-        :prompt => t(:'helpers.select.price.prompt').html_safe,
-        :label => false,
-        :as => :select %>
-     </div> 
-
+  <%= render "shared/bedroom_count_select", :f => form %>
+  <%= render "shared/area_select", :f => form %>   
+    <%= form.input :price, 
+      :collection => price_options, 
+      :prompt => t(:'helpers.select.price.prompt').html_safe,
+      :label => false,
+      :as => :select,
+      :input_html => { :class => "form-control" } %>
 	<%= form.input :with_pool,
 		:as => :boolean,
-		:label => t(:'realty.filters.with_pool') %>
+		:label => false,
+		:inline_label => t(:'realty.filters.with_pool') %>
 	<%= form.input :with_beachfront,
 		:as => :boolean,
-		:label => t(:'realty.filters.with_beachfront') %>
-     <div class='control-group'> 
+		:label => false,
+		:inline_label => t(:'realty.filters.with_beachfront') %>
+     <div class='form-group'> 
       <%= form.button 'submit', t('search'), :class => "search" %>
     </div> 
   <% end %>
