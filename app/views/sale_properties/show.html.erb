@@ -1,4 +1,4 @@
-<%# resource_cache(resource) do %>
+<% resource_cache(resource) do %>
 <article>
   <div class='row'>
   <div class='col-xs-12'>
@@ -39,7 +39,7 @@
 </div>
 <%#= render_next_previous %>
 </article>
-<%# end %>
+<% end %>
 <% content_for :sidebar do %>
 	<% cache([action_name, site, I18n.locale, parent, @sale_property, 'sidebar2']) do %>
   	<%

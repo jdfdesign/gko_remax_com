@@ -1,4 +1,4 @@
-<%# resource_cache(resource) do %>
+<% resource_cache(resource) do %>
 <article>
   
   <!-- START PRESENTATION --> 
@@ -72,7 +72,7 @@
   </div>
   <!-- END INQUIRY -->  
 </article>
-<%# end %> 
+<% end %> 
 
 <% content_for :sidebar do %>
 	<% cache([action_name, site, I18n.locale, parent, @rental_property, 'sidebar']) do %>	
