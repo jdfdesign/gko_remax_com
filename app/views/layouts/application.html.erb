@@ -17,8 +17,7 @@
         <% else -%>
           <%
             has_sidebar = content_for?(:sidebar_header) || content_for?(:sidebar)
-            main_span = 12
-            main_span -= 3 if has_sidebar
+            main_span = has_sidebar ? 9 : 12
           %>
           <div id="main" class='col-sm-<%= main_span %> <%= @body_id %> '>
             <%= render 'layouts/messages' %>
@@ -32,7 +31,7 @@
           <% end -%> 
         <% end -%>
     </div>
-    <% end -%><%# end page_container %>
+    <% end -%>
   </div><!--! end of #main-container -->
   <%= render 'footer' %>
 

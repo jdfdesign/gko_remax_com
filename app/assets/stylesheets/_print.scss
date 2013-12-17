@@ -1,0 +1,57 @@
+@import "twitter.bootstrap.2.2.1/bootstrap/bootstrap";
+@import 'gko/public/mixin';
+@import "gko/public/grid";
+
+body {
+  background: white;
+  font-size: 12px;
+	line-height: 15px;
+}
+
+.hide-on-print {
+  display: none;
+}
+
+.show-on-print {
+  display: block;
+}
+
+
+#wrapper-wide-body {
+  width: auto;
+  margin: 5%;
+  padding: 0;
+  border: 0;
+  float: none !important;
+  color: black;
+  background: transparent none;
+}
+
+a:link, a:visited {
+  color: #520;
+  background: transparent;
+  font-weight: bold;
+  text-decoration: underline;
+}
+
+.images-thumbnails li {
+  float: left;
+  position: relative;
+  list-style: none;
+}
+.images-thumbnails li:nth-child(4n+1) {
+  clear: left;
+}
+
+.printable-image {
+  margin-bottom: 24px;
+}
+.es-nav {
+	display: none;
+}
+.next-previous {
+	display:none;
+}
+#site_by {
+	display:none;
+}
