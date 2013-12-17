@@ -7,7 +7,7 @@ gem 'sass-rails', '~> 3.2.6'
 end
 
 group :production do
-    git "git@github.com:jdfdesign/gko_cms3.git", :tag => "v0.8.09.rc11" do
+    git "git@github.com:jdfdesign/gko_cms3.git", :tag => "v0.8.09.rc12" do
         gem 'gko_core'
         gem 'gko_auth'
         gem 'gko_documents'
