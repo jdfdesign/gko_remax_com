@@ -1,10 +1,12 @@
-source 'http://rubygems.org'
+source 'https://rubygems.org'
 
 group :assets do
-gem 'sass-rails', '~> 3.2.6'
-    gem 'coffee-rails', '~> 3.2.2'
-    gem 'uglifier', '>= 1.0.3'
+  gem 'sass-rails', '~> 3.2.6'
+  gem 'coffee-rails', '~> 3.2.2'
+  gem 'uglifier', '~> 2.4.0'
 end
+
+
 
 group :production do
     git "git@github.com:jdfdesign/gko_cms3.git", :tag => "v0.8.09.rc12" do

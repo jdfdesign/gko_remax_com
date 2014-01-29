@@ -11,9 +11,11 @@ end
 
   <section class="row">
     <div class="col-xs-12">
-      <div id="intro" class="text-container">
+      <div id="intro" class="text-container" style="position:relative;">
         <%= image_tag("boats.jpg", :class => "img-responsive") %>
         <h1>Discover a new level of luxury in Real Estate</h1>
+        <%= link_to(image_tag("international-property-awards.jpg"), "http://www.propertyawards.net", 
+          :target => "_blank", :class => "visible-md visible-lg", :style => "position:absolute;top:0;right:0;z-index:1000;")%>
       </div>
     </div>
   </section> 

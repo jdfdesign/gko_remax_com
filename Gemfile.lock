@@ -67,7 +67,7 @@ GIT
     gko_stickers (0.8.09.rc12)
 
 GEM
-  remote: http://rubygems.org/
+  remote: https://rubygems.org/
   specs:
     RedCloth (4.2.9)
     actionmailer (3.2.14.rc2)
@@ -116,7 +116,7 @@ GEM
       activesupport (>= 3.2.0)
       json (>= 1.7)
     chronic (0.6.7)
-    codemirror-rails (3.16)
+    codemirror-rails (3.21)
       railties (>= 3.0, < 5)
     coffee-rails (3.2.2)
       coffee-script (>= 2.2.0)
@@ -124,7 +124,7 @@ GEM
     coffee-script (2.2.0)
       coffee-script-source
       execjs
-    coffee-script-source (1.6.3)
+    coffee-script-source (1.7.0)
     country_select (1.2.0)
     cucumber (1.1.9)
       builder (>= 2.1.2)
@@ -195,7 +195,7 @@ GEM
     money (5.0.0)
       i18n (~> 0.4)
       json
-    multi_json (1.8.2)
+    multi_json (1.8.4)
     mysql2 (0.3.13)
     nested_set (1.7.1)
       activerecord (>= 3.0.0)
@@ -239,7 +239,7 @@ GEM
       rake (>= 0.8.7)
       rdoc (~> 3.4)
       thor (>= 0.14.6, < 2.0)
-    rake (10.1.0)
+    rake (10.1.1)
     rdoc (3.12.2)
       json (~> 1.4)
     ref (1.0.5)
@@ -250,7 +250,7 @@ GEM
       actionpack
     ruby-ole (1.2.11.7)
     rubyzip (0.9.6.1)
-    sass (3.2.12)
+    sass (3.2.14)
     sass-rails (3.2.6)
       railties (~> 3.2.0)
       sass (>= 3.1.10)
@@ -281,7 +281,7 @@ GEM
       polyglot (>= 0.3.1)
     truncate_html (0.5.5)
     tzinfo (0.3.38)
-    uglifier (2.3.3)
+    uglifier (2.4.0)
       execjs (>= 0.3.0)
       json (>= 1.8.0)
     uuid (2.3.5)
@@ -310,5 +310,5 @@ DEPENDENCIES
   money (= 5.0.0)
   nokogiri (~> 1.5.0)
   sass-rails (~> 3.2.6)
-  uglifier (>= 1.0.3)
+  uglifier (~> 2.4.0)
   whenever (~> 0.7.3)
