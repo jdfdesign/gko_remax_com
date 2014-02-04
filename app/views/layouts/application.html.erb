@@ -2,9 +2,13 @@
 <html class="no-js">
 <%= render 'head' %>
 <body id='<%= @body_id %>'>
-<div id="wrapper-wide-body" role="main">
+  <%= link_to(image_tag("international-property-awards.jpg"), "http://www.propertyawards.net", 
+    :target => "_blank", :class => "visible-md visible-lg", :style => "position:absolute;top:0;right:0;z-index:1001;")%>
+<div id="wrapper-wide-body" role="main" >
+
   <%= render 'navbar' %>
   <div id='main-container' class='container'>
+    
     <% if content_for?(:page_container) -%>
       <%= render 'layouts/messages' %>
       <%= yield :page_container %>
