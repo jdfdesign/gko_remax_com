@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20131217085456) do
+ActiveRecord::Schema.define(:version => 20140305051222) do
 
   create_table "annual_rental_options", :force => true do |t|
     t.text     "notes"
@@ -28,20 +28,22 @@ ActiveRecord::Schema.define(:version => 20131217085456) do
     t.boolean  "show_in_homepage",               :default => false
     t.datetime "created_at",                                        :null => false
     t.datetime "updated_at",                                        :null => false
+    t.integer  "city_id"
   end
 
   add_index "annual_rental_options", ["area_id"], :name => "index_annual_rental_options_on_area_id"
+  add_index "annual_rental_options", ["city_id"], :name => "index_annual_rental_options_on_city_id"
   add_index "annual_rental_options", ["country_id"], :name => "index_annual_rental_options_on_country_id"
   add_index "annual_rental_options", ["property_id"], :name => "index_annual_rental_options_on_property_id"
 
   create_table "areas", :force => true do |t|
     t.string   "name",       :limit => 60
-    t.integer  "site_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "city_id"
   end
 
-  add_index "areas", ["site_id"], :name => "index_areas_on_site_id"
+  add_index "areas", ["city_id"], :name => "index_areas_on_city_id"
 
   create_table "assets", :force => true do |t|
     t.integer  "site_id"
@@ -102,6 +104,13 @@ ActiveRecord::Schema.define(:version => 20131217085456) do
   add_index "category_translations", ["category_id"], :name => "index_category_translations_on_category_id"
   add_index "category_translations", ["locale"], :name => "index_category_translations_on_locale"
 
+  create_table "cities", :force => true do |t|
+    t.string   "name",       :limit => 80
+    t.integer  "site_id"
+    t.datetime "created_at",               :null => false
+    t.datetime "updated_at",               :null => false
+  end
+
   create_table "content_options", :force => true do |t|
     t.integer "owner_id",                      :null => false
     t.string  "owner_type",      :limit => 40, :null => false
@@ -129,7 +138,6 @@ ActiveRecord::Schema.define(:version => 20131217085456) do
   create_table "contents", :force => true do |t|
     t.integer  "site_id"
     t.integer  "section_id"
-    t.integer  "account_id"
     t.string   "type"
     t.string   "title"
     t.string   "slug"
@@ -519,9 +527,11 @@ ActiveRecord::Schema.define(:version => 20131217085456) do
     t.boolean  "beachfront"
     t.boolean  "end_display"
     t.string   "badge"
+    t.integer  "city_id"
   end
 
   add_index "rental_property_options", ["area_id"], :name => "index_rental_property_options_on_area_id"
+  add_index "rental_property_options", ["city_id"], :name => "index_rental_property_options_on_city_id"
   add_index "rental_property_options", ["country_id"], :name => "index_rental_property_options_on_country_id"
   add_index "rental_property_options", ["property_id"], :name => "index_rental_property_options_on_property_id"
   add_index "rental_property_options", ["realty_agent_id"], :name => "index_rental_property_options_on_realty_agent_id"
@@ -607,9 +617,11 @@ ActiveRecord::Schema.define(:version => 20131217085456) do
     t.string   "currency",         :limit => 1,  :default => "€"
     t.string   "badge"
     t.integer  "exchange_price"
+    t.integer  "city_id"
   end
 
   add_index "sale_property_options", ["area_id"], :name => "index_sale_property_options_on_area_id"
+  add_index "sale_property_options", ["city_id"], :name => "index_sale_property_options_on_city_id"
   add_index "sale_property_options", ["country_id"], :name => "index_sale_property_options_on_country_id"
   add_index "sale_property_options", ["property_id"], :name => "index_sale_property_options_on_property_id"
   add_index "sale_property_options", ["realty_agent_id"], :name => "index_sale_property_options_on_realty_agent_id"
