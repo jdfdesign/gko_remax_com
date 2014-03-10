@@ -1,4 +1,4 @@
-<% cache([action_name, site, I18n.locale, 'rental_properties_filter18']) do %>
+
 	<% 
   price_options = []
   price_options << t(:'realty.filters.price.less_than', :price => 4000)
@@ -6,7 +6,7 @@
   price_options << t(:'realty.filters.price.more_than', :price => 10000)
   price_options.compact.join("\n").html_safe
 
-  properties = site.rental_properties.published.with_translations(I18n.locale).order('content_translations.title ASC')
+  properties = site.rental_properties.published.in_city(site.cities.first).with_translations(I18n.locale).order('content_translations.title ASC')
 %>
 <div class="partial filter rental_properties hide-on-print">
   <h4 class="widget-title" ><%= t(:listing).html_safe %></h4>
@@ -27,7 +27,13 @@
     :input_html => { :class => "form-control" } %>
   </div>
   <%= render "shared/bedroom_count_select", :f => form %>
-  <%= render "shared/area_select", :f => form %>   
+  <%#= render "shared/area_select", :f => form %> 
+  <div class='form-group'>
+    <%= form.select :in_area, 
+      options_from_collection_for_select(site.cities.first.areas, :id, :name, params[:search].present? ? params[:search][:in_area] : nil),
+      { :prompt => t(:'helpers.select.area.prompt').html_safe }, 
+      { :class => "form-control", :id => 'search_area_id' } %>
+  </div>  
   <div class='form-group'>
     <%= form.input :price, 
       :collection => price_options, 
@@ -53,4 +59,3 @@
     </div> 
   <% end %>
 </div>
-<% end %>

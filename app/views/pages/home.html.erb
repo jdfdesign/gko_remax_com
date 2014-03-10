@@ -1,10 +1,10 @@
 <%
 if @rent_section = site.rental_property_lists.live.first
-  @random_rental_property = @rent_section.rental_properties.live.all.sample(1).first
+  @random_rental_property = @rent_section.rental_properties.in_city(site.cities.first).live.all.sample(1).first
   @promo_rental_property = @rent_section.rental_properties.live.with_promo.all.first
 end
 if @sale_section = site.sale_property_lists.live.first 
-  @random_sale_property = @sale_section.sale_properties.live.all.sample(1).first
+  @random_sale_property = @sale_section.sale_properties.in_city(site.cities.first).live.all.sample(1).first
 end 
 %>
 <% content_for :page_content do %>

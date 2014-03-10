@@ -1,5 +1,6 @@
 //= require jquery_ujs
 //= require gko/gko.galleria
+//= require gko/dynamic_selectable
 var Site = {
   init: function() { 
 
@@ -13,6 +14,8 @@ var Site = {
       });
       Carousel.addTheme();
       Carousel.init();
+      
+          $('select[data-dynamic-selectable-url][data-dynamic-selectable-target]').dynamicSelectable();
     }
 }
 
