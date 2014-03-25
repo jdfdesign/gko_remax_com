@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20140305051222) do
+ActiveRecord::Schema.define(:version => 20140325094530) do
 
   create_table "annual_rental_options", :force => true do |t|
     t.text     "notes"
@@ -161,7 +161,7 @@ ActiveRecord::Schema.define(:version => 20140305051222) do
   add_index "contents", ["slug"], :name => "index_contents_on_slug"
 
   create_table "document_assignments", :force => true do |t|
-    t.integer  "position",                      :default => 1, :null => false
+    t.integer  "position",                      :default => 1
     t.integer  "document_id",                                  :null => false
     t.integer  "attachable_id",                                :null => false
     t.string   "attachable_type", :limit => 40,                :null => false
@@ -269,7 +269,7 @@ ActiveRecord::Schema.define(:version => 20140305051222) do
   add_index "features", ["site_id"], :name => "index_features_on_site_id"
 
   create_table "image_assignments", :force => true do |t|
-    t.integer  "position",                      :default => 1, :null => false
+    t.integer  "position",                      :default => 1
     t.integer  "image_id",                                     :null => false
     t.integer  "attachable_id",                                :null => false
     t.string   "attachable_type", :limit => 40,                :null => false

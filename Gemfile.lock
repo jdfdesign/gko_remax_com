@@ -1,25 +1,20 @@
-PATH
-  remote: ~/Github/gko/gko_realty
+GIT
+  remote: git@github.com:jdfdesign/gko-realty.git
+  revision: 04436f5975ad059336bfd986e3b4e83f14e692dd
   specs:
-    gko_realty (0.0.99)
+    gko_realty (0.1.00)
       gko_core
 
-PATH
-  remote: ~/Github/gko_cms3/gko_auth
+GIT
+  remote: git@github.com:jdfdesign/gko_cms3.git
+  revision: 392941cd9d797771e4791111b21dadf4c3934046
+  tag: v0.8.10
   specs:
-    gko_auth (0.8.09.rc25)
+    gko_auth (0.8.10)
       cancan (~> 1.6.10)
       devise (~> 2.2.3)
-
-PATH
-  remote: ~/Github/gko_cms3/gko_categories
-  specs:
-    gko_categories (0.8.09.rc25)
-
-PATH
-  remote: ~/Github/gko_cms3/gko_core
-  specs:
-    gko_core (0.8.09.rc25)
+    gko_categories (0.8.10)
+    gko_core (0.8.10)
       RedCloth (= 4.2.9)
       activesupport-slices (= 0.0.2)
       acts_as_indexed (~> 0.7.7)
@@ -61,29 +56,13 @@ PATH
       uglifier (~> 2.4.0)
       uuid (~> 2.3.7)
       will_paginate (~> 3.0.2)
-
-PATH
-  remote: ~/Github/gko_cms3/gko_documents
-  specs:
-    gko_documents (0.8.09.rc25)
+    gko_documents (0.8.10)
       dragonfly (~> 0.9.8)
       rack-cache (>= 0.5.3)
-
-PATH
-  remote: ~/Github/gko_cms3/gko_features
-  specs:
-    gko_features (0.8.09.rc25)
-
-PATH
-  remote: ~/Github/gko_cms3/gko_inquiries
-  specs:
-    gko_inquiries (0.8.09.rc25)
+    gko_features (0.8.10)
+    gko_inquiries (0.8.10)
       filters_spam (~> 0.2)
-
-PATH
-  remote: ~/Github/gko_cms3/gko_stickers
-  specs:
-    gko_stickers (0.8.09.rc25)
+    gko_stickers (0.8.10)
 
 GEM
   remote: https://rubygems.org/
@@ -118,7 +97,7 @@ GEM
       multi_json (~> 1.0)
     activesupport-slices (0.0.2)
     acts_as_indexed (0.7.8)
-    addressable (2.3.5)
+    addressable (2.3.6)
     arel (3.0.3)
     babosa (0.3.11)
     bcrypt (3.1.7)
@@ -283,8 +262,8 @@ GEM
       ref
     thor (0.18.1)
     tilt (1.4.1)
-    tins (1.0.0)
-    to_xls (1.5.2)
+    tins (1.0.1)
+    to_xls (1.5.3)
       spreadsheet
     treetop (1.4.15)
       polyglot
@@ -315,7 +294,7 @@ DEPENDENCIES
   gko_documents!
   gko_features!
   gko_inquiries!
-  gko_realty!
+  gko_realty (= 0.1.00)!
   gko_stickers!
   money (= 5.0.0)
   nokogiri (~> 1.5.0)

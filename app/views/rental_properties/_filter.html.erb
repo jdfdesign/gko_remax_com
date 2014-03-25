@@ -5,7 +5,6 @@
   price_options << "4000 - 10000"
   price_options << t(:'realty.filters.price.more_than', :price => 10000)
   price_options.compact.join("\n").html_safe
-
   properties = site.rental_properties.published.in_city(site.cities.first).with_translations(I18n.locale).order('content_translations.title ASC')
 %>
 <div class="partial filter rental_properties hide-on-print">
