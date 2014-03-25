@@ -1,7 +1,7 @@
-<%# cache [collection_record_cache_key(sale_property), sale_property.updated_at.to_i] do %>
+<% collection_row_cache(sale_property) do %>
 	<article class="col-xs-12 col-sm-6">
 	  <div class="post-item sale-post-item"> 
 		  <%= render "sale_properties/property_thumbnail", :record => sale_property %>
 	  </div>
   </article> 
-<%# end %>
+<% end %>

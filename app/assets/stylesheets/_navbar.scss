@@ -35,14 +35,13 @@ $navbar-padding-vertical-md: (($navbar-height-md - $line-height-computed) / 2);
   }
 }
 .navbar-nav { 
-  float: left;
-  width: 50%;
   > li > a {
     font-size: 11px; 
     text-transform: uppercase;
     @include transition(all 0.3s ease-in-out);
   }
   @media (min-width: $grid-float-breakpoint) {
+    float: left;
     width: auto !important;
     margin-top: ($navbar-padding-vertical-md / 2);
     margin-bottom: ($navbar-padding-vertical-md / 2);
