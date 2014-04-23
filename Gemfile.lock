@@ -239,7 +239,7 @@ GEM
       actionpack
     ruby-ole (1.2.11.7)
     rubyzip (0.9.6.1)
-    sass (3.3.5)
+    sass (3.2.14)
     sass-rails (3.2.6)
       railties (~> 3.2.0)
       sass (>= 3.1.10)
@@ -298,6 +298,7 @@ DEPENDENCIES
   gko_stickers!
   money (= 5.0.0)
   nokogiri (~> 1.5.0)
+  sass (= 3.2.14)
   sass-rails (~> 3.2.6)
   uglifier (~> 2.4.0)
   whenever (~> 0.7.3)

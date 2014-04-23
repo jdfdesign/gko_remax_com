@@ -1,6 +1,7 @@
 source 'https://rubygems.org'
 
 group :assets do
+  gem 'sass', '= 3.2.14'
   gem 'sass-rails', '~> 3.2.6'
   gem 'coffee-rails', '~> 3.2.2'
   gem 'uglifier', '~> 2.4.0'
