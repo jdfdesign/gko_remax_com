@@ -31,8 +31,8 @@
   <div class='col-xs-4'>
     <% if site.preferred_realty_agent_public && @sale_property.meta.realty_agent %>
       <%= render 'shared/realty_agent', :realty_agent => @sale_property.meta.realty_agent %>
-    <% elsif site.preferred_contact_address.present? %>
-      <p><small><%= site.preferred_contact_address.html_safe %></small></p>
+    <% elsif site.inquiry_recipients.present? %>
+      <p><small><%= site.inquiry_recipients.html_safe %></small></p>
     <% end %> 
   </div>
   <div class='col-xs-8'><%= render :partial => 'sale_property_inquiries/form' %></div>
