@@ -14,7 +14,11 @@
     <div id="projects-container" class="row">
       <% if collection.any? %>
         <%= render collection %>
-        <%= will_paginate %>
+      <div class="row">
+        <div class="col-sm-12 js-pagination">
+          <%= will_paginate %>
+        </div> 
+      </div> 
       <% else %>
         <div class="col-xs-12">
           <%= render "no_records_found" %>

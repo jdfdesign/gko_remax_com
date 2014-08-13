@@ -13,20 +13,18 @@
 	<div class="container">
     <div id="projects-container" class="row">
       <% if collection.any? %>
-        <%= render collection %> 
+        <%= render collection %>
+      <div class="row">
+        <div class="col-sm-12 js-pagination">
+          <%= will_paginate %>
+        </div> 
+      </div> 
       <% else %>
-        <div class="col-md-12">
+        <div class="col-xs-12">
           <%= render "no_records_found" %>
         </div>
       <% end %>
     </div> 
-    <% if collection.any? && collection.respond_to?(:total_entries) %>
-    <div class="row pagination-container">
-      <div class="col-xs-12">
-        <%= will_paginate(collection) %>
-      </div>
-    </div>
-    <% end %>
   </div>
 </section>
 <% content_for :sidebar do %>

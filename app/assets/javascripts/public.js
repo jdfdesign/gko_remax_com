@@ -8,6 +8,17 @@ var Site = {
         $(this).css('width', '260px').find('ul').css('width', '260px');
       });
 
+ 
+
+      $(".js-pagination a").on("click", function(e){
+        e.preventDefault();
+        console.log(window.location);
+        $("#search_page").val($(this).attr('data-page'));
+        var sep = (window.location.href.indexOf('?') > -1) ? '&' : '?';
+        window.location.href = window.location.href + sep + 'page' + '=' + $(this).attr('data-page');
+        $("form.filter").trigger("submit");
+      })
+
       $('select#rental_property_id').change(function() {
         var result = $(this).val()
         document.location.href = result;
@@ -15,7 +26,7 @@ var Site = {
       Carousel.addTheme();
       Carousel.init();
       
-          $('select[data-dynamic-selectable-url][data-dynamic-selectable-target]').dynamicSelectable();
+      $('select[data-dynamic-selectable-url][data-dynamic-selectable-target]').dynamicSelectable();
     }
 }
 

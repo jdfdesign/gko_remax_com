@@ -57,7 +57,11 @@ $brand-height: 140px;
   width: device-width
 }
 
-
+.js-pagination {
+  display: block;
+  clear: both;
+  @include clearfix;
+}
 // Color for the placeholder plugin
 .placeholder {
   color: $input-color-placeholder;

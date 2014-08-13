@@ -14,46 +14,52 @@
 	    :title, {:prompt => "Select a property" }, {:class => "form-control" } %>
   <h4 class="widget-title" ><%= t(:search).html_safe %></h4>
   <%= simple_form_for(:search, 
-	  :url => url_for([section]), 
-	  :method => :get,
-	  :data => {:remote => true }, 
+	  :url => section.public_url, 
+	  :method => :get, 
 	  :html => {:class => "filter rental_property"}) do |form| %>
-	<div class='form-group'>
-    <%= form.input :with_title,
-		:label => false,
-		:placeholder => "Name",
-		:as => :string,
-    :input_html => { :class => "form-control" } %>
-  </div>
-  <%= render "shared/bedroom_count_select", :f => form %>
-  <%#= render "shared/area_select", :f => form %> 
-  <div class='form-group'>
-    <%= form.select :in_area, 
-      options_from_collection_for_select(site.cities.first.areas, :id, :name, params[:search].present? ? params[:search][:in_area] : nil),
-      { :prompt => t(:'helpers.select.area.prompt').html_safe }, 
-      { :class => "form-control", :id => 'search_area_id' } %>
-  </div>  
-  <div class='form-group'>
-    <%= form.input :price, 
-      :collection => price_options, 
-      :prompt => t(:'helpers.select.price.prompt').html_safe,
-      :label => false,
-      :as => :select,
-      :input_html => { :class => "form-control" } %>
-  </div>
-	<div class='form-group'>
-    <%= form.input :with_pool,
-		:as => :boolean,
-		:label => false,
-		:inline_label => t(:'realty.filters.with_pool') %>
-  </div>
-	<div class='form-group'>
-    <%= form.input :with_beachfront,
-		:as => :boolean,
-		:label => false,
-		:inline_label => t(:'realty.filters.with_beachfront') %>
-  </div>
-     <div class='form-group'> 
+    <%= form.input :page, 
+        :as => :hidden,
+        :input_html => { :value => "1" } %>
+  	<div class='form-group'>
+      <%= form.input :with_title,
+  		:label => false,
+  		:placeholder => "Name",
+  		:as => :string,
+      :input_html => { :class => "form-control", 
+        :value => (params[:search].present? ? params[:search][:with_title] : nil) } %>
+    </div>
+    <%= render "shared/bedroom_count_select", :f => form %>
+    <%#= render "shared/area_select", :f => form %> 
+    <div class='form-group'>
+      <%= form.select :in_area, 
+        options_from_collection_for_select(site.cities.first.areas, :id, :name, params[:search].present? ? params[:search][:in_area] : nil),
+        { :prompt => t(:'helpers.select.area.prompt').html_safe }, 
+        { :class => "form-control", :id => 'search_area_id' } %>
+    </div>  
+    <div class='form-group'>
+      <%= form.input :price, 
+        :collection => price_options, 
+        :prompt => t(:'helpers.select.price.prompt').html_safe,
+        :label => false,
+        :as => :select,
+        :selected => params[:search].present? ? params[:search][:price] : nil,
+        :input_html => { :class => "form-control" } %>
+    </div>
+  	<div class='form-group'>
+      <%= form.input :with_pool,
+  		:as => :boolean,
+  		:label => false,
+      :input_html => {:checked => params[:search].present? && params[:search][:with_pool] == '1' ? true : false},
+  		:inline_label => t(:'realty.filters.with_pool') %>
+    </div>
+  	<div class='form-group'>
+      <%= form.input :with_beachfront,
+  		:as => :boolean,
+  		:label => false,
+      :input_html => {:checked => params[:search].present? && params[:search][:with_beachfront] == '1' ? true : false},
+  		:inline_label => t(:'realty.filters.with_beachfront') %>
+    </div>
+    <div class='form-group'> 
       <%= form.button 'submit', t('search'), :class => "btn btn-default search" %>
     </div> 
   <% end %>
