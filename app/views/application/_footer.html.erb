@@ -1,4 +1,4 @@
-<%# cache([action_name, site, I18n.locale, 'footer22']) do %>
+<% cache([site, I18n.locale, 'footer']) do %>
 <footer id='footer'>
   <div class='container'>
     <div class='row'>
@@ -19,10 +19,10 @@
       <div class="col-md-6">
         <p class="copyright"><span><%= t(:'copyright', :year => Time.now.year, :copyright_name => site.copyright_name) if site.copyright_name %></span>
         <a href='http://www.joufdesign.com' class="copyright-author" target='_blank'>
-          <%= t(:'site_by', :name => "Jouf-Design").html_safe %>
+          <%= t(:'site_by', :name => "Jouf Design").html_safe %>
         </a></p>
       </div>
     </div>
   </div> 
 </footer>
-<%# end %>
+<% end %>

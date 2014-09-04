@@ -47,8 +47,7 @@
     <div class='col-xs-12'>
   	<%= render_copy_text(@rental_property.body) %>
     </div>
-  </div>
-  <!-- END PRESENTATION -->
+  </div><!-- END PRESENTATION -->
 
   <!-- START RATES -->
   <div class='row rental_property rates'>
@@ -61,8 +60,7 @@
       <% end %>
       <%= render 'rental_properties/seasons' %>
     </div>
-  </div> 
-  <!-- END RATES --> 
+  </div><!-- END RATES --> 
   
   <% if @rental_property.meta and @rental_property.meta.description.present? %>
   <!-- START DETAILS -->
@@ -71,8 +69,7 @@
       <h2 class='realty-partial'><%= t(:'details') %></h2>
       <%= render_copy_text(@rental_property.meta.description) %>
     </div>
-  </div>
-  <!-- END DETAILS -->
+  </div><!-- END DETAILS -->
   <% end %>
    
   <% if @rental_property.lat_long.present? %>
@@ -81,8 +78,7 @@
     <div class='col-xs-12'>
       <%= render('google_map', :point => @rental_property.lat_long) %> 
     </div>
-  </div>
-  <!-- END GMAP -->
+  </div><!-- END GMAP -->
   <% end %>
   
   <!-- START INQUIRY -->
@@ -100,7 +96,6 @@
       <% end %> 
     </div>
     <div class='col-xs-8'><%= render :partial => 'rental_property_inquiries/form' %></div>
-  </div>
-  <!-- END INQUIRY -->  
+  </div><!-- END INQUIRY -->  
 </article>
 <% end %> 
