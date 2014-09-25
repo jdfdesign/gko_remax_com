@@ -1,7 +1,8 @@
 <% if images.try(:any?) %>
+
 <%
-   image_geometry = "x475"
-   thumb_geometry = "x104"
+   image_geometry = local_assigns.has_key?(:image_style) ? image_style : "x475"
+   thumb_geometry = local_assigns.has_key?(:thumb_style) ? thumb_style : "x104"
 %>
 
 <% if images.length == 1 %>
