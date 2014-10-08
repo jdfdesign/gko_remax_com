@@ -14,6 +14,7 @@ tmp/**/*
 config/*.yml
 Capfile
 config/deploy.rb
+config/deploy-staging.rb
 coverage/*
 capybara-*.html
 .rspec
