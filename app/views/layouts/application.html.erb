@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html class="no-js">
+<%= render 'head' %>
+<body id='<%= @body_id %>'>
+  <%#= link_to(image_tag("international-property-awards.jpg"), "http://www.propertyawards.net", 
+    :target => "_blank", :class => "visible-md visible-lg", :style => "position:absolute;top:0;right:0;z-index:1001;")%>
+
+  <%= render 'navbar' %>
+  <!-- WRAPPER
+  ================================================== -->
+  <div class="main-container">
+    <%= yield %>
+  </div>
+
+  <%= render 'footer' %>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+  <script src="https://netdna.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+  <%= render 'javascripts' %>
+</body>
+</html>
