@@ -11,6 +11,10 @@ en:
   sale_properties:
     collection:
       empty: "Please contact us for our selection of properties for sale."
+  helpers:
+    select:
+      lifestyle:
+        prompt: "lifestyles"
       
       
       

@@ -1,25 +1,25 @@
 
-	<% 
-		tags = []
-		tags << realty_meta_tag("bedroom_count", record.meta.bedroom_count)
-		tags << realty_meta_tag("price", sale_price_value(record))
-		if record.meta.area.present? 
-		  tags << realty_meta_tag("area", record.meta.area.name)
-		end 
-	%>
+<% 
+tags = []
+tags << realty_meta_tag("bedroom_count", record.meta.bedroom_count)
+tags << realty_meta_tag("price", sale_price_value(record))
+if record.meta.area.present? 
+  tags << realty_meta_tag("area", record.meta.area.name)
+end 
+%>
 
-		  <div class="thumbnail">
-		    <%= link_to(image_fu(record.thumbnail, "460x320#", :class => "img-responsive"), record.public_url) %>
-  		  <div class="caption">
-  			  <h3><%= link_to(record.title, record.public_url) %></h3>
-  	     	<p class="tags-list">
-            <%= tags.compact.join("<br/>").html_safe %>
-  	     	</p>
-          <%= content_tag(:p) do %>
-            <%= truncate_html(strip_tags(record.body), :length => 200, :omission => "...") %>
-          <% end if record.body.present? %>
-  		  </div>
-  		  <% if record.badge.present? %>
-  		    <div class="thumbnail-badge"><%= record.badge %></div>
-  		  <% end %>
-  		</div>
+<div class="thumbnail">
+  <%= link_to(image_fu(record.thumbnail, "720x440#", :class => "img-responsive"), record.public_url) %>
+  <div class="caption">
+   <h3><%= link_to(record.title, record.public_url) %></h3>
+   <p class="tags-list">
+    <%= "bedrooms #{record.meta.bedroom_count} - #{record.meta.area.name}" %>
+  </p>
+  <%= content_tag(:p, :class => "body") do %>
+  <%= truncate_html(strip_tags(record.body), :length => 120, :omission => "...") %>
+  <% end if record.body.present? %>
+</div>
+<% if record.badge.present? %>
+<div class="thumbnail-badge"><%= record.badge %></div>
+<% end %>
+</div>

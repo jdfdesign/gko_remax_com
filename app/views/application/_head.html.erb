@@ -12,12 +12,9 @@
 	<%= yield :meta %>                                                
 	<!-- Le styles -->
   <!-- <link href='http://fonts.googleapis.com/css?family=Libre+Baskerville:400,700|Raleway:300,700' rel='stylesheet' type='text/css'> --> 
-  <link href='http://fonts.googleapis.com/css?family=Lato:400,700' rel='stylesheet' type='text/css'>
-	<% if site.has_plugin?(:themes) and site.has_theme? %>
-    <%= theme_stylesheet_link_tag "public" %>
-	<% else %>
-    <%= stylesheet_link_tag "public" %>
-	<% end %>
+<link href='http://fonts.googleapis.com/css?family=Roboto+Condensed:400,700|Merriweather:400,400italic,700,700italic|Roboto:900,400' rel='stylesheet' type='text/css'>	
+<link href='http://fonts.googleapis.com/css?family=Marck+Script' rel='stylesheet' type='text/css'>
+<%= stylesheet_link_tag "public" %>
   <%= raw %(<style type='text/css' media='all'>#{site.stylesheet}</style>) if site.stylesheet? -%>
 	<!-- Le fav and touch icons -->
 	<link rel="shortcut icon" href="/favicon.ico">

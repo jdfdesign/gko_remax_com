@@ -3,57 +3,336 @@ if @rent_section = site.rental_property_lists.live.first
   unless @random_rental_property = @rent_section.rental_properties.in_city(site.cities.first).live.end_display.all.sample(1).first
     @random_rental_property = @rent_section.rental_properties.in_city(site.cities.first).live.all.sample(1).first
   end
-  @promo_rental_property = @rent_section.rental_properties.live.with_promo.all.sample(1).first
+  @promo_rental_property = @rent_section.rental_properties.live.with_promo.all.sample(4)
+  @categories = @rent_section.categories
+  @promotions = @rent_section.rental_properties.live.with_promo.limit(9)
+  @infos = @rent_section.rental_properties.live.with_info.limit(3)
+  @end_display = @rent_section.rental_properties.live.end_display.limit(3)
 end
 if @sale_section = site.sale_property_lists.live.first 
   @random_sale_property = @sale_section.sale_properties.in_city(site.cities.first).live.all.sample(1).first
+  @sale_properties = @sale_section.sale_properties.in_city(site.cities.first).live.all.sample(6)
 end 
+@lifestyle_categories ||= site.categories.named("lifestyles").children
+@features ||= site.features.live
 %>
-<% content_for :page_content do %>
 
-  <section class="row">
-    <div class="col-xs-12">
-      <div id="intro" class="text-container">
-        <%= image_tag("boats.jpg", :class => "img-responsive") %>
-        <h1>Discover a new level of luxury in Real Estate</h1>
+<!-- Hero
+  ================================================== -->
+  <section class="hero-slider" id="hero-slider">
+    <ul class="slides">
+      <% @features.each do |feature| %>
+      <li class="overlayx">
+        <% if image = feature.thumbnail(site.preferred_features_image_size) %>
+          <div class="background-image-holder parallax-background ">
+            <%= image_tag(image.url, :class => "background-image") %>
+          </div>
+        <% end %>
+        <% if feature.title.present? || feature.body.present? %>
+
+        <div class="container align-vertical">
+          <div class="row">
+            <div class="col-md-6 col-sm-9 col-md-offset-3">
+
+              <h1 class="text-white"><%= feature.title %></h1>
+              <% if feature.owner and url = feature.owner.public_url %>
+              <p><%= link_to(t("features.view_more"), url, :class => 'btn btn-primary btn-white') %></p>
+              <% end %>
+            </div>
+          </div>
+        </div><!--end of container-->
+        <% end %>
+      </li>
+      <% end %>
+    </ul>
+    <a href="prev" class="nav-slide prev" data-target="#hero-slider"><span class="glyphicon glyphicon-chevron-left"></span></a>
+    <a href="next" class="nav-slide next" data-target="#hero-slider"><span class="glyphicon glyphicon-chevron-right"></span></a>
+  </section>
+
+<!-- Search
+  ================================================== -->
+  <%= render "search" %>
+
+<!-- Categories
+  ================================================== -->
+  <section class="categories">
+   <div class="container">
+    <div class="row">
+     <div class="col-md-8 col-md-offset-2 text-center">
+      <h2>A villa to fit your Vacation Style</h2>
+      <hr>
+      <h3>Choose your next villa rental according to your vacation style</h3>
+    </div>
+  </div><!--end of row-->
+
+  <div class="row content">
+    <% @lifestyle_categories.each_with_index do |c, index| %>
+    <% if index == 0 || index == 1 %>
+    <div class="col-sm-6">
+      <% else %>
+      <div class="col-sm-4">
+        <% end %>
+        <div id="<%= c.name %>" class="thumbnail category">
+          <%= image_tag('lifetyle_01.jpg') %>
+          <div class="overlay-gradient">
+         <h2><%= link_to(c.title, c.public_url) %></h2>
+         <p><%= c.body %></p>
+       </div>
+       </div><!--end of team member-->
+     </div>
+     <% end %>
+   </div><!--end of row-->
+ </div><!--end of container-->
+</section>
+
+<!-- Special offers
+  ================================================== -->
+  <section class="special_offers">
+   <div class="container">
+
+    <div class="row">
+     <div class="col-md-8 col-md-offset-2 text-center">
+      <h2>Special offers</h2>
+      <hr>
+      <h3>Benefit of good deals, special prices, discounts or extra services offered</h3>
+    </div>
+  </div><!--end of row-->
+
+  <div class="row content">
+    <div class="col-md-12">
+      <div class="image-slider" id="promo-slider">
+        <ul class="slides">
+          <% @promotions.in_groups_of(3) do |group| %>
+          <li>
+            <% group.each do |c| %>
+            <div class="col-sm-12 col-md-4">
+              <%= render("rental_properties/property_thumbnail", :record => c) if c %>
+            </div>
+            <% end %>
+          </li>
+          <% end %>
+        </ul>
+      </div><!--end of image slider-->
+    </div>
+  </div>
+
+  <div class="row space-bottom-large">
+    <div class="col-md-12 text-center">
+      <div class="btn-group controls">
+        <a href="prev" class="btn btn-primary prev" data-target="#promo-slider"><span class="glyphicon glyphicon-chevron-left"></span></a>
+        <%= link_to("View all", "#", :class => "btn btn-primary ") %>
+        <a href="next" class="btn btn-primary next" data-target="#promo-slider"><span class="glyphicon glyphicon-chevron-right"></span></a>
       </div>
     </div>
-  </section> 
+  </div><!--end of row-->
 
-  <section class="row">
-    <div class="col-sm-4 widget-home">
-      <h4 class="widget-title widget-title-home" ><%= t("home.featured_sale_properties") %></h4>
-      <% if @random_sale_property %>
-        <%= render "sale_properties/property_thumbnail", :record => @random_sale_property %>
-        <p><%= link_to(t("home.view_all_sale_properties"), @sale_section.public_url, :class => 'btn btn-primary') %></p>
-      <% end %>                                                                 
+</div><!--end of container-->
+</section>
+
+<!-- Badges
+  ================================================== -->
+  <section class="badges">
+   <div class="container">
+
+    <div class="row">
+     <div class="col-md-6">
+      <div class="row">
+        <div class="col-md-12 text-center">
+          <h2>Coups de coeur</h2>
+          <hr>
+          <h3>A selection of villas you have to see, hidden gems, <br>villas you could fall in love with.</h3>
+        </div>
+      </div>
+
+      <div class="row content">
+        <div class="col-md-12">
+          <div class="image-slider" id="heart-slider">
+            <ul class="slides">
+              <% @end_display.each do |c| %>
+              <li class="overlay">
+                <%= render "rental_properties/property_thumbnail", :record => c %>
+              </li><!--end of individual slide-->
+              <% end %>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="row space-bottom-large">
+        <div class="col-md-12 text-center">
+          <div class="btn-group controls">
+            <a href="prev" class="btn btn-primary prev" data-target="#heart-slider"><span class="glyphicon glyphicon-chevron-left"></span></a>
+            <%= link_to("View all", "#", :class => "btn btn-primary ") %>
+            <a href="next" class="btn btn-primary next" data-target="#heart-slider"><span class="glyphicon glyphicon-chevron-right"></span></a>
+          </div>
+
+        </div>
+      </div><!--end of row-->
+
     </div>
-    
-    <div class="col-sm-4 widget-home">
-      <h4 class="widget-title widget-title-home" ><%= t("home.featured_rental_properties") %></h4>
-      <% if @random_rental_property %>
-        <%= render "rental_properties/property_thumbnail", :record => @random_rental_property %>
-        <p><%= link_to(t("home.view_all_rental_properties"), @rent_section.public_url, :class => 'btn btn-primary') %></p>
-      <% end %>
-    </div>
-    
-    <div class="col-sm-4 widget-home">
-      <h4 class="widget-title widget-title-home" ><%= t("promotions") %></h4>
-      <% if @promo_rental_property %>
-        <%= render "rental_properties/property_thumbnail", :record => @promo_rental_property %>
-        <p><%= link_to(t("realty.view_all_promotions"), add_url_param(:with_promo,'true', @rent_section.public_url), :class => 'btn btn-primary') %></p>
-      <% end %>
-    </div>
-  </section>
-   
-  <section class="row">
+
     <div class="col-md-6">
-      <h4 class="widget-title widget-title-home" ><%= "News".html_safe %></h4>
-      <p><%= link_to image_tag("stbarthimagebank-stbarthbucket2011-9362.jpg", :class => "img-responsive"), "http://stbarths-vacation-villa-news.com/", :target => "_blank" %><br/><%= link_to "Click here to view all RE/MAX Island Properties St Barths rental properties news, updates, promotions, last minute offers, new listings, ...".html_safe, "http://stbarths-vacation-villa-news.com/", :target => "_blank" %></p>  
+      <div class="row">
+        <div class="col-md-12 text-center">
+          <h2>SOMETHING IS NEW</h2>
+          <hr>
+          <h3>New listing, new deco or new prices… <br>
+            Something is new in these villas</h3>
+          </div>
+        </div>
+        <div class="row content">
+          <div class="col-md-12">
+            <div class="image-slider" id="new-slider">
+              <ul class="slides">
+                <% @infos.each do |c| %>
+                <li class="overlay">
+                  <%= render "rental_properties/property_thumbnail", :record => c %>
+                </li><!--end of individual slide-->
+                <% end %>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="row space-bottom-large">
+          <div class="col-md-12 text-center">
+            <div class="btn-group controls">
+              <a href="prev" class="btn btn-primary prev" data-target="#new-slider"><span class="glyphicon glyphicon-chevron-left"></span></a>
+              <%= link_to("View all", "#", :class => "btn btn-primary ") %>
+              <a href="next" class="btn btn-primary next" data-target="#new-slider"><span class="glyphicon glyphicon-chevron-right"></span></a>
+            </div>
+
+          </div>
+        </div>
+      </div><!--end of row-->
     </div>
-    <div class="col-md-6">
-      <h4 class="widget-title widget-title-home"><%= resource.title %></h4>
-      <%= render_html_text(resource.body) %> 
+  </div><!--end of row-->
+</div><!--end of container-->
+</section>
+
+<!-- Sale properties
+  ================================================== -->
+  <section class="image-slider-section">
+   <div class="container">
+    <div class="row">
+     <div class="col-md-8 col-md-offset-2 text-center">
+      <h2>A selection of properties for sale</h2>
+      <hr>
+      <h3>Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minu</h3>
     </div>
-  </section>
-<% end %>
+    <div class="row content">
+      <div class="col-md-12">
+        <div class="image-slider" id="sale-slider">
+          <ul class="slides">
+            <% @sale_properties.in_groups_of(2) do |group| %>
+            <li>
+              <% group.each do |c| %>
+              <div class="col-sm-12 col-md-6">
+                <%= render("sale_properties/property_thumbnail", :record => c) if c %>
+              </div>
+              <% end %>
+            </li>
+            <% end %>
+          </ul>
+        </div><!--end of image slider-->
+      </div>
+    </div>
+    <div class="row space-bottom-large">
+      <div class="col-md-12 text-center">
+        <div class="btn-group controls">
+          <a href="prev" class="btn btn-primary prev" data-target="#sale-slider"><span class="glyphicon glyphicon-chevron-left"></span></a>
+          <%= link_to("View all", "#", :class => "btn btn-primary ") %>
+          <a href="next" class="btn btn-primary next" data-target="#sale-slider"><span class="glyphicon glyphicon-chevron-right"></span></a>
+        </div>
+
+      </div>
+    </div>
+  </div><!--end of row-->
+</div><!--end of row-->
+</div><!--end of container-->
+</section>
+
+
+<!-- Services
+  ================================================== -->
+  <section class="services">
+   <div class="container">
+    <div class="row">
+      <div class="col-md-4">
+        <h2>luxury hotels businesses and exclusivities</h2>
+        <hr>
+        <p>Sed ut nisi pellentesque, aliquam sem non, porta lacus. Morbi mollis aliquam mauris, viverra congue sapien malesuada a. Praesent lectus risus, consectetur et nulla vitae, gravida molestie nulla. Maecenas porta eu dui eget ullamcorper. Pellentesque hendrerit ante nisl, ut malesuada turpis euismod et. Morbi ut enim in orci eleifend pellentesque. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis</p>
+        <%= link_to("More", "#", :class => "btn btn-primary") %>
+      </div>
+      <div class="col-md-4">
+        <h2>Real estate sinT maArten</h2>
+        <hr>
+        <p>Sed ut nisi pellentesque, aliquam sem non, porta lacus. Morbi mollis aliquam mauris, viverra congue sapien malesuada a. Praesent lectus risus, consectetur et nulla vitae, gravida molestie nulla. Maecenas porta eu dui eget ullamcorper. Pellentesque hendrerit ante nisl, ut malesuada turpis euismod et. Morbi ut enim in orci eleifend pellentesque. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis</p>
+        <%= link_to("More", "#", :class => "btn btn-primary") %>
+      </div>
+      <div class="col-md-4">
+        <h2>DURING YOUR STAY</h2>
+        <hr>
+        <p>Sed ut nisi pellentesque, aliquam sem non, porta lacus. Morbi mollis aliquam mauris, viverra congue sapien malesuada a. Praesent lectus risus, consectetur et nulla vitae, gravida molestie nulla. Maecenas porta eu dui eget ullamcorper. Pellentesque hendrerit ante nisl, ut malesuada turpis euismod et. Morbi ut enim in orci eleifend pellentesque. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis</p>
+        <%= link_to("More", "#", :class => "btn btn-primary") %>
+      </div>
+    </div><!--end of row-->
+  </div><!--end of container-->
+</section>
+
+<!-- Team
+  ================================================== -->
+  <section class="team">
+   <div class="container">
+    <div class="row">
+     <div class="col-md-8 col-md-offset-2 text-center">
+      <h2>Team</h2>
+      <hr>
+      <h3>subtitle</h3>
+    </div>
+  </div><!--end of row-->
+
+  <div class="row">
+    <% site.realty_agents.each do |c| %>
+    <div class="col-sm-3">
+      <div class="team-member">
+       <%= image_tag(c.thumbnail.url) if c.image.present? %>
+       <h2><%= c.name %></h2>
+       <h5><%= c.grade %></h5>
+     </div><!--end of team member-->
+   </div>
+   <% end %>
+ </div><!--end of row-->
+</div><!--end of container-->
+</section>
+
+<!-- Newsletter
+  ================================================== -->
+  <section class="newsletter">
+   <div class="container">
+    <div class="row">
+     <div class="col-md-4">
+      <h2>Newsletter</h2>
+      <h3>subtitle</h3>
+    </div>
+    <div class="col-md-8">
+      <form class="form-inline" role="form">
+        <div class="form-group">
+          <label class="sr-only" for="exampleInputPassword2">Password</label>
+          <input type="text" class="form-control" id="exampleInputPassword2" placeholder="Name">
+        </div>
+        <div class="form-group">
+          <label class="sr-only" for="exampleInputEmail2">Email address</label>
+          <input type="email" class="form-control" id="exampleInputEmail2" placeholder="Enter email">
+        </div>
+        <div class="form-group">
+          <select class="form-control">
+            <option>English</option>
+            <option>Français</option>
+          </select>
+        </div>
+        <button type="submit" class="btn btn-default">></button>
+      </form>
+    </div>
+  </div><!--end of row-->
+</div><!--end of container-->
+</section>

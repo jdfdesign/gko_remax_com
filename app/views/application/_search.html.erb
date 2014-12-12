@@ -1,0 +1,74 @@
+<% 
+@rent_section ||= site.rental_property_lists.live.first
+price_options = []
+price_options << t(:'realty.filters.price.less_than', :price => 4000)
+price_options << "4000 - 10000"
+price_options << t(:'realty.filters.price.more_than', :price => 10000)
+price_options.compact.join("\n").html_safe
+@lifestyle_categories ||= site.categories.named("lifestyles").children
+%>
+
+<div role="tabpanel">
+  <!-- Nav tabs -->
+  <ul class="nav nav-tabs" role="tablist">
+    <li role="presentation" class="active"><a href="#rent" aria-controls="rent" role="tab" data-toggle="tab">Properties for rent</a></li>
+    <li role="presentation"><a href="#sale" aria-controls="sale" role="tab" data-toggle="tab">Properties for sale</a></li>
+</ul>
+
+<!-- Tab panes -->
+<div class="tab-content">
+    <div role="tabpanel" class="tab-pane active" id="rent">
+        <%= simple_form_for(:search, 
+            :url => @rent_section.public_url, 
+            :method => :get,
+            :data => {:remote => true }, 
+            :html => {:class => "form-search"}) do |form| %>
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-4">
+                        <%= render "shared/area_select", :f => form %>  
+                    </div>
+                    <div class="col-md-4">
+                        <div class='form-group'>
+                          <%= form.input :price, 
+                          :collection => price_options, 
+                          :prompt => t(:'helpers.select.price.prompt').html_safe,
+                          :label => false,
+                          :as => :select,
+                          :input_html => { :class => "form-control" } %>
+                      </div>
+                  </div>
+                  <div class="col-md-4">
+
+                  </div>
+              </div>
+              <div class="row">
+                <div class="col-md-4">
+                    <%= render "shared/bedroom_count_select", :f => form %>
+                </div>
+                <div class="col-md-4">
+                    <div class='form-group'>
+                        <%= form.input :category, 
+                        :collection => @lifestyle_categories, 
+                        :label_method => :title,
+                        :value_method => :id,
+                        :prompt => t(:'helpers.select.lifestyle.prompt').html_safe,
+                        :label => false,
+                        :as => :select,
+                        :input_html => { :class => "form-control" } %>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <%= form.button 'submit', t('search'), :class => "search" %>
+                </div>
+            </div>
+        </div>
+        <% end %>
+    </div>
+    <div role="tabpanel" class="tab-pane" id="sale">
+        hello
+    </div>
+
+</div>
+
+</div>

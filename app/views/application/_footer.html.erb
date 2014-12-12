@@ -1,23 +1,38 @@
-<% cache([site, I18n.locale, 'footer']) do %>
+<%# cache([site, I18n.locale, 'footer']) do %>
 <footer id='footer'>
   <div class='container'>
     <div class='row'>
       <div class="col-md-4">
+        <h5>Contact</h5>
+        <hr>
         <p><%= "RE/MAX Island Properties - St Barths<br>55 Rue Samuel Fahlberg - Gustavia<br>97133 Saint Barthélemy French West Indies".html_safe %></p>
-      </div>
-      <div class="col-md-4">
         <p><%= "Tel. Intl +590 590 29 78 20<br>Tel from US 011 +590 590 29 78 20<br>Fax +590 590 87 12 55<br>".html_safe %><%= mail_to(t('email_us'), site.preferred_contact_email, :encode => "javascript") unless site.preferred_contact_email.blank? %></p>
       </div>
-      <div class="col-md-4">
+      <div class="col-md-2">
+        <h5>Follow us</h5>
+        <hr>
+        <ul class="list-unstyled">
+          <li>Facebook</li>
+          <li>Instagram</li>
+          <li>Pinterest</li>
+          <li>Twitter</li>
+          <li>Google plus</li>
+      </ul>
+      </div>
+      <div class="col-md-3">
+        <h5>Partners</h5>
+        <hr>
         <p><%= t('footer_remaxislandproperties').html_safe %></p>
-      </div>  
+      </div> 
+      <div class="col-md-3">
+        <h5>NAVIGATION</h5>
+        <hr>
+        <%= render_menu("footer-nav") %>
+      </div>   
     </div>
     <div class='row'>
-      <div class="col-md-6">
-        <%= render_menu("footer-nav") %>
-      </div>
-      <div class="col-md-6">
-        <p class="copyright"><span><%= t(:'copyright', :year => Time.now.year, :copyright_name => site.copyright_name) if site.copyright_name %></span>
+      <div class="col-md-12">
+        <p class="copyright pull-right"><span><%= t(:'copyright', :year => Time.now.year, :copyright_name => site.copyright_name) if site.copyright_name %></span>
         <a href='http://www.joufdesign.com' class="copyright-author" target='_blank'>
           <%= t(:'site_by', :name => "Jouf Design").html_safe %>
         </a></p>
@@ -25,4 +40,4 @@
     </div>
   </div> 
 </footer>
-<% end %>
+<%# end %>
