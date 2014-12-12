@@ -20,6 +20,7 @@ group :production do
   gem 'gko_realty', '= 0.1.05', :git => 'git@github.com:jdfdesign/gko-realty.git'
 end
 
+
 #group :development do
 #   gem "gko_core", :path => '~/Github/gko_cms3/gko_core'
 #   gem "gko_auth", :path => '~/Github/gko_cms3/gko_auth'
