@@ -2,4 +2,22 @@
     font-size: 13px;
     text-transform: uppercase;
     letter-spacing: 1px;
+    border: none;
+}
+.navbar-brand {
+    padding: 0 15px 0 0;
+}
+@media (min-width: $grid-float-breakpoint) {
+    .navbar-nav > li > a {
+        padding: 34px 10px 0 10px;
+        border-bottom: 3px solid $navbar-default-bg;
+        @include transition(all 0.3s ease);
+        &:hover,
+        &:focus {
+        border-bottom-color: $navbar-default-link-hover-color;
+      }
+    }
+    .navbar-brand {
+        margin-left: -15px;
+    }
 }

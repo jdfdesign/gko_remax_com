@@ -1,0 +1,38 @@
+<% if @seasons.try(:any?) %>
+  <% @seasons.each do |season| %>
+    <% cache [I18n.locale, season] do %>
+        <ul class='unstyled realty-seasons'>
+          <li>
+            <h4 class="realty-season-title">
+              <%= season.title %>
+              <% if season.minimum_night > 1 %>
+                <span class='minimum-night'>
+                  <%= " - #{t(:'realty.minimum_night', :count => season.minimum_night)} - ".html_safe %>
+                </span>
+              <% end %>
+              <% unless @rental_property.season_all_year? %>
+                <span class='dates'>
+                  <%= [t(:'from'),format_date(season.start_date),t(:'to'), format_date(season.end_date)].join(' ').html_safe %>
+                </span>
+              <% end %>
+
+            </h4>
+
+            <%= render 'rental_properties/rates', 
+              :season => season,
+              :primary_currency => (@rental_property.meta.currency || @rental_property.section.currency), 
+              :currency_method => currency_field(@rental_property), 
+              :secondary_currency => @rental_property.secondary_currency, 
+              :secondary_currency_method => secondary_currency_field(@rental_property) %>
+          </li>
+        </ul>
+    <% end %>
+ <% end %>
+ <p class='notes price_notes'><small><%= t(:'realty.price_notes').html_safe %></small></p>
+ <% if @rental_property.price_note.present? %>
+ <p class='notes price_notes_extra'><%= @rental_property.price_note.html_safe %></p>
+ <% end %>
+     
+<% else %>
+    <%= t(:'price_on_request').html_safe %>
+<% end %>

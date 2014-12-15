@@ -1,0 +1,50 @@
+/* BUTTONS
+-------------------------------------------------- */
+.btn {
+    font-family: $font-family-alt;
+    font-size: 12px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    font-weight: 900;
+    border: 2px solid #000;
+    background: none;
+    color: #000;
+    border-radius: 17px;
+    min-width: 120px;
+    @include transition(all 0.3s ease);
+    &:hover,
+    &:focus,
+    &.focus,
+    &:active,
+    &.active {
+        color: #fff;
+        background-color: #000;
+        border-color: #000;
+    }
+}
+
+.btn-group {
+    margin-top: $line-height-computed;
+    .btn:first-child {
+        border-right: none;
+        min-width: 60px;
+    }
+    .btn:last-child {
+        border-left: none;
+        min-width: 60px;
+    }
+}
+
+.btn-inverse {
+    color: #fff;
+    border-color: #fff;
+    &:hover,
+    &:focus,
+    &.focus,
+    &:active,
+    &.active {
+        color: #000;
+        background-color: #fff;
+        border-color: #fff;
+    }
+}

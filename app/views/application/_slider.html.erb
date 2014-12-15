@@ -1,0 +1,9 @@
+<div class="image-slider" id="hero-slider">
+  <ul class="slides">
+    <% images.each do |img| %>
+    <li><div class="col-sm-12"><%= image_fu(img, "1200x700#") %></div></li>
+    <% end %>
+  </ul>
+  <a href="prev" class="nav-slide prev" data-target="#hero-slider"><span class="fa fa-angle-left fa-3x"></span></a>
+<a href="next" class="nav-slide next" data-target="#hero-slider"><span class="fa fa-angle-right fa-3x"></span></a>
+</div><!--end of image slider-->

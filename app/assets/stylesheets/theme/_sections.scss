@@ -1,0 +1,65 @@
+
+/* SECTION
+-------------------------------------------------- */
+section {
+    padding: ($line-height-computed*3) 0;
+    position: relative;
+    overflow: hidden;
+    &:nth-of-type(odd) {
+        background: #ebeae6;
+    }
+    h2 {
+        font-family: 'Roboto';
+        font-size: 16px;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        font-weight: 700;
+        margin-bottom: 16px;
+        margin-top: 0;
+    }
+    h3 {
+        font-family: $font-family-serif;
+        font-size: 16px;
+        font-style: italic;
+        margin-bottom: 16px;
+        margin-top: 16px;
+        padding-bottom: 0;
+        line-height: 24px;
+        color: $text-color;
+    }
+    hr {
+        border-top: 3px solid $gray-dark;
+        width: 48px;
+        margin: 0 auto;
+    }
+    .content {
+        padding: $line-height-computed 0 0 0;
+    }
+}
+
+.section-sales {
+    background-color: #000 !important;
+
+    h2 {
+        color: #fff;
+    }
+    hr {
+        border-color: #fff;
+    }
+}
+
+.services {
+    p {
+        font-family: $font-family-serif;
+        font-size: 16px;
+        font-style: italic;
+        margin-bottom: 16px;
+        margin-top: 16px;
+        padding-bottom: 0;
+        line-height: 24px;
+        color: $text-color;
+    }
+    hr {
+        margin-left: 0;
+    }
+}

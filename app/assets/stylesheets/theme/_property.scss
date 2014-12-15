@@ -1,0 +1,171 @@
+
+/* HEADER
+-------------------------------------------------- */
+.property-header {
+    h1 {
+        font-family: $font-family-serif;
+        font-size: 50px;
+        font-style: italic;
+        font-weight: 700;
+        margin-bottom: 16px;
+        margin-top: 0;
+    }
+    hr {
+        margin-left: 0;
+    }
+
+}
+.copy-text {
+    font-family: $font-family-serif;
+    font-size: 16px;
+    font-style: italic;
+    line-height: 24px;
+    color: $text-color;
+    margin-top: 16px;
+        h1, h2, h3, h4, h5, h6 {
+        font-style: normal;
+        font-family: 'Roboto';
+        font-size: 16px;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        font-weight: 700;
+        color: $headings-color;
+
+    }
+    p:last-child {
+        margin-bottom: 0;
+    }
+}
+.nav-stickers > li {
+    float: left;
+}
+.nav-stickers > li > a {
+    text-transform: uppercase;
+    font-family: $font-family-sans-serif;
+    font-size: 12px;
+    letter-spacing: 1px;
+    padding: 0;
+    color: $text-color;
+    @include transition(all 0.3s ease);
+    &:hover, &:focus {
+        background-color: transparent;
+        color: #999;
+        text-decoration: none;
+    }
+}
+
+.widget-details {
+    font-family: $font-family-sans-serif;
+    font-size: 16px;
+    letter-spacing: 0;
+    line-height: 24px;
+    strong {
+        color: #000;
+    }
+    hr {
+        margin: $line-height-computed 0;
+    }
+    a {
+        color: $text-color;
+        &:focus,
+        &:hover {
+         color: $headings-color;
+         text-decoration: none; 
+     } 
+ }
+}
+
+
+/* PANEL
+-------------------------------------------------- */
+.panel-group {
+    margin-bottom: 0;
+}
+.panel-group .panel + .panel {
+    margin-top: 0;
+}
+
+.panel-default:nth-of-type(odd) {
+    background: #ebeae6;
+    border-color: #ebeae6;
+}
+.panel-heading {
+    padding: 24px 0;
+}
+.panel-title {
+    display: block;
+}
+.panel-title a {
+    font-family: $font-family-serif;
+    font-size: 24px;
+    font-style: italic;
+    font-weight: 700;
+    color: $headings-color;
+    display: block;
+    &:focus,
+    &:hover {
+     color: $headings-color;
+     text-decoration: none; 
+ }
+}
+
+.panel-title a .th-icon-close,
+.panel-title a .th-icon-open {
+    text-align: center;
+    float: right;
+    line-height: inherit; 
+}
+
+.panel-title a .th-icon-close {
+    display: inline-block; 
+}
+
+.panel-title a .th-icon-open {
+    display: none; 
+}
+
+.panel-title a.collapsed {
+    color: #000; 
+}
+
+.panel-title a.collapsed .th-icon-open {
+  display: inline-block; 
+}
+.panel-title a.collapsed .th-icon-close {
+  display: none; 
+}
+
+/* RATES
+-------------------------------------------------- */
+.realty-seasons {
+    list-style-type: none;
+    padding-left: 0;
+    ul {
+        list-style-type: none;
+            font-family: $font-family-serif;
+    font-size: 16px;
+    font-style: italic;
+    line-height: 24px;
+    color: $text-color;
+    }
+}
+.realty-season-title {
+            font-style: normal;
+        font-family: 'Roboto';
+        font-size: 14px;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        font-weight: 700;
+        color: $headings-color;
+        margin-top: $line-height-computed;
+        margin-bottom: 12px; 
+        span {
+             font-weight: 300;
+             color: $text-color;
+        }
+}
+.price_notes_extra {
+    font-size: 16px;
+    line-height: 24px;
+    color: $headings-color;
+}

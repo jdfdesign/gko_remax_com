@@ -39,7 +39,7 @@ price_options.compact.join("\n").html_safe
                       </div>
                   </div>
                   <div class="col-md-4">
-
+                    <%= form.button 'submit', t('search'), :class => "search" %>
                   </div>
               </div>
               <div class="row">
@@ -59,7 +59,7 @@ price_options.compact.join("\n").html_safe
                     </div>
                 </div>
                 <div class="col-md-4">
-                    <%= form.button 'submit', t('search'), :class => "search" %>
+                    <%= link_to("View all listing", @rent_section.public_url, :class => "btn btn-link") %>
                 </div>
             </div>
         </div>

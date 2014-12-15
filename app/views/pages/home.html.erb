@@ -24,9 +24,9 @@ end
       <% @features.each do |feature| %>
       <li class="overlayx">
         <% if image = feature.thumbnail(site.preferred_features_image_size) %>
-          <div class="background-image-holder parallax-background ">
-            <%= image_tag(image.url, :class => "background-image") %>
-          </div>
+        <div class="background-image-holder parallax-background ">
+          <%= image_tag(image.url, :class => "background-image") %>
+        </div>
         <% end %>
         <% if feature.title.present? || feature.body.present? %>
 
@@ -45,8 +45,8 @@ end
       </li>
       <% end %>
     </ul>
-    <a href="prev" class="nav-slide prev" data-target="#hero-slider"><span class="glyphicon glyphicon-chevron-left"></span></a>
-    <a href="next" class="nav-slide next" data-target="#hero-slider"><span class="glyphicon glyphicon-chevron-right"></span></a>
+    <a href="prev" class="nav-slide prev" data-target="#hero-slider"><span class="fa fa-angle-left fa-3x"></span></a>
+    <a href="next" class="nav-slide next" data-target="#hero-slider"><span class="fa fa-angle-right fa-3x"></span></a>
   </section>
 
 <!-- Search
@@ -75,9 +75,9 @@ end
         <div id="<%= c.name %>" class="thumbnail category">
           <%= image_tag('lifetyle_01.jpg') %>
           <div class="overlay-gradient">
-         <h2><%= link_to(c.title, c.public_url) %></h2>
-         <p><%= c.body %></p>
-       </div>
+           <h2><%= link_to(c.title, c.public_url) %></h2>
+           <p><%= c.body %></p>
+         </div>
        </div><!--end of team member-->
      </div>
      <% end %>
@@ -119,9 +119,9 @@ end
   <div class="row space-bottom-large">
     <div class="col-md-12 text-center">
       <div class="btn-group controls">
-        <a href="prev" class="btn btn-primary prev" data-target="#promo-slider"><span class="glyphicon glyphicon-chevron-left"></span></a>
+        <a href="prev" class="btn btn-primary prev" data-target="#promo-slider"><span class="fa fa-angle-left"></span></a>
         <%= link_to("View all", "#", :class => "btn btn-primary ") %>
-        <a href="next" class="btn btn-primary next" data-target="#promo-slider"><span class="glyphicon glyphicon-chevron-right"></span></a>
+        <a href="next" class="btn btn-primary next" data-target="#promo-slider"><span class="fa fa-angle-right"></span></a>
       </div>
     </div>
   </div><!--end of row-->
@@ -161,9 +161,9 @@ end
       <div class="row space-bottom-large">
         <div class="col-md-12 text-center">
           <div class="btn-group controls">
-            <a href="prev" class="btn btn-primary prev" data-target="#heart-slider"><span class="glyphicon glyphicon-chevron-left"></span></a>
+            <a href="prev" class="btn btn-primary prev" data-target="#heart-slider"><span class="fa fa-angle-left"></span></a>
             <%= link_to("View all", "#", :class => "btn btn-primary ") %>
-            <a href="next" class="btn btn-primary next" data-target="#heart-slider"><span class="glyphicon glyphicon-chevron-right"></span></a>
+            <a href="next" class="btn btn-primary next" data-target="#heart-slider"><span class="fa fa-angle-right"></span></a>
           </div>
 
         </div>
@@ -196,9 +196,9 @@ end
         <div class="row space-bottom-large">
           <div class="col-md-12 text-center">
             <div class="btn-group controls">
-              <a href="prev" class="btn btn-primary prev" data-target="#new-slider"><span class="glyphicon glyphicon-chevron-left"></span></a>
+              <a href="prev" class="btn btn-primary prev" data-target="#new-slider"><span class="fa fa-angle-left"></span></a>
               <%= link_to("View all", "#", :class => "btn btn-primary ") %>
-              <a href="next" class="btn btn-primary next" data-target="#new-slider"><span class="glyphicon glyphicon-chevron-right"></span></a>
+              <a href="next" class="btn btn-primary next" data-target="#new-slider"><span class="fa fa-angle-right"></span></a>
             </div>
 
           </div>
@@ -211,7 +211,7 @@ end
 
 <!-- Sale properties
   ================================================== -->
-  <section class="image-slider-section">
+  <section class="section-sales">
    <div class="container">
     <div class="row">
      <div class="col-md-8 col-md-offset-2 text-center">
@@ -239,11 +239,10 @@ end
     <div class="row space-bottom-large">
       <div class="col-md-12 text-center">
         <div class="btn-group controls">
-          <a href="prev" class="btn btn-primary prev" data-target="#sale-slider"><span class="glyphicon glyphicon-chevron-left"></span></a>
-          <%= link_to("View all", "#", :class => "btn btn-primary ") %>
-          <a href="next" class="btn btn-primary next" data-target="#sale-slider"><span class="glyphicon glyphicon-chevron-right"></span></a>
+          <a href="prev" class="btn btn-inverse prev" data-target="#sale-slider"><span class="fa fa-angle-left"></span></a>
+          <%= link_to("View all", "#", :class => "btn btn-inverse ") %>
+          <a href="next" class="btn btn-inverse next" data-target="#sale-slider"><span class="fa fa-angle-right"></span></a>
         </div>
-
       </div>
     </div>
   </div><!--end of row-->
@@ -287,52 +286,43 @@ end
      <div class="col-md-8 col-md-offset-2 text-center">
       <h2>Team</h2>
       <hr>
-      <h3>subtitle</h3>
+      <h3>Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minu.Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minu</h3>
+      <%= link_to("Say hello", "#", :class => "btn btn-primary ") %>
     </div>
   </div><!--end of row-->
 
-  <div class="row">
-    <% site.realty_agents.each do |c| %>
-    <div class="col-sm-3">
-      <div class="team-member">
-       <%= image_tag(c.thumbnail.url) if c.image.present? %>
-       <h2><%= c.name %></h2>
-       <h5><%= c.grade %></h5>
-     </div><!--end of team member-->
+  <div class="row content">
+    <div class="col-md-12">
+      <div class="image-slider" id="member-slider">
+        <ul class="slides">
+          <% site.realty_agents.in_groups_of(4) do |group| %>
+          <li>
+            <% group.each do |c| %>
+            <% if c %>
+            <div class="col-md-3">
+              <div class="team-member">
+               <%= image_tag(c.thumbnail.url) if c.image.present? %>
+               <h2><%= c.name %></h2>
+               <h5><%= c.grade %></h5>
+             </div><!--end of team member-->
+           </div>
+           <% end %>
+           <% end %>
+         </li>
+         <% end %>
+       </ul>
+     </div><!--end of image slider-->
    </div>
-   <% end %>
- </div><!--end of row-->
+ </div>
+ <div class="row space-bottom-large">
+  <div class="col-md-12 text-center">
+    <div class="btn-group controls">
+      <a href="prev" class="btn btn-primary prev" data-target="#member-slider"><span class="fa fa-angle-left"></span></a>
+      <a href="next" class="btn btn-primary next" data-target="#member-slider"><span class="fa fa-angle-right"></span></a>
+    </div>
+  </div>
+
+</div><!--end of row-->
 </div><!--end of container-->
 </section>
 
-<!-- Newsletter
-  ================================================== -->
-  <section class="newsletter">
-   <div class="container">
-    <div class="row">
-     <div class="col-md-4">
-      <h2>Newsletter</h2>
-      <h3>subtitle</h3>
-    </div>
-    <div class="col-md-8">
-      <form class="form-inline" role="form">
-        <div class="form-group">
-          <label class="sr-only" for="exampleInputPassword2">Password</label>
-          <input type="text" class="form-control" id="exampleInputPassword2" placeholder="Name">
-        </div>
-        <div class="form-group">
-          <label class="sr-only" for="exampleInputEmail2">Email address</label>
-          <input type="email" class="form-control" id="exampleInputEmail2" placeholder="Enter email">
-        </div>
-        <div class="form-group">
-          <select class="form-control">
-            <option>English</option>
-            <option>Français</option>
-          </select>
-        </div>
-        <button type="submit" class="btn btn-default">></button>
-      </form>
-    </div>
-  </div><!--end of row-->
-</div><!--end of container-->
-</section>
