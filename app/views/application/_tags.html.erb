@@ -1,6 +1,0 @@
-<% if @resource_stickers.try(:any?) %>
-<div class="resource-stickers">
-  <%= content_tag(:h4, title.html_safe, :class => "widget-title") unless title.blank? %>
-  <ul class="nav nav-stickers"><%= render :partial => "resource_sticker", :collection => @resource_stickers, :as => :sticker %></ul>
-</div>
-<% end %>

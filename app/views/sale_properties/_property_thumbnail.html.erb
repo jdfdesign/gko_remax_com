@@ -1,9 +1,15 @@
+<%
+  metas = ""
+  metas += "bedrooms #{record.meta.bedroom_count}" if record.meta.bedroom_count
+  metas += " - #{record.meta.area.name}" if record.meta.area
+%>
+
 <div class="thumbnail thumbnail-property">
   <%= link_to(image_fu(record.thumbnail, "720x440#", :class => "img-responsive"), record.public_url) %>
   <div class="caption">
    <h3><%= link_to(record.title, record.public_url) %></h3>
    <p class="tags-list">
-    <%= "bedrooms #{record.meta.bedroom_count} - #{record.meta.area.name}" %>
+    <%= metas %>
   </p>
   <%= content_tag(:p, :class => "body") do %>
   <%= truncate_html(strip_tags(record.body), :length => 120, :omission => "...") %>

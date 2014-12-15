@@ -1,16 +1,7 @@
-<section class="page-header-section">
-  <div class="container row">
-    <div class="col-md-12">
-      <div class="page-header">
-        <%#= render_page_title(parent.title) %>
-    	  <%#= render_html_text(parent.body) unless params[:page].present? %>
-    	</div>
-    </div>
-  </div>    
-</section>
+<%= render "search" %>
 <section class="projects-section">
-	<!-- Begin Projects -->
-	<div class="container">
+  <!-- Begin Projects -->
+  <div class="container">
     <div id="projects-container" class="row">
       <% if collection.any? %>
         <%= render collection %>
@@ -27,6 +18,3 @@
     </div> 
   </div>
 </section>
-<% content_for :sidebar do %>
-	<%= render "sale_properties/filter", :section => parent %>
-<% end %>

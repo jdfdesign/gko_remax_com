@@ -1,7 +1,5 @@
-<% collection_row_cache(sale_property) do %>
-	<article class="col-xs-12 col-sm-6">
-	  <div class="post-item sale-post-item"> 
-		  <%= render "sale_properties/property_thumbnail", :record => sale_property %>
-	  </div>
-  </article> 
-<% end %>
+<%# collection_row_cache(sale_property) do %>
+<article class="col-sm-6 col-md-4 post-item"> 
+    <%= render "sale_properties/property_thumbnail", :record => sale_property %>
+</article> 
+<%# end %>

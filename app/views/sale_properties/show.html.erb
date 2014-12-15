@@ -1,72 +1,98 @@
-<% resource_cache(resource) do %>
+<%# resource_cache(resource) do %>
+
+  <%# cache([action_name, site, I18n.locale, parent, @sale_property, 'sidebar55']) do %>
+    <%
+    options = @sale_property.content_options
+    has_options = options.try(:any?)
+    tags = []
+    tags << realty_meta_tag("price", sale_price_value(@sale_property, true))
+    tags << realty_meta_tag("bedroom_count", @sale_property.bedroom_count)
+    tags << realty_meta_tag("bathroom_count", @sale_property.bathroom_count)
+    tags << realty_meta_tag("year_built", @sale_property.year_built)
+    if @sale_property.acreage.present?
+      tags << realty_meta_tag("acreage", "#{@sale_property.acreage} m2")
+    end
+    if @sale_property.building_size.present? 
+      tags << realty_meta_tag("building_size", "#{@sale_property.building_size} m2")
+    end
+    if @sale_property.area.present? 
+      tags << realty_meta_tag("area", @sale_property.area.name)
+    end
+    %>
+  <%# end %>  
+
+
 <article>
-  <div class='row'>
-  <div class='col-xs-12'>
-  <%= render_page_title(resource.title) %>
-  </div>
-</div>
-<div class='row'>
-  <div class='col-xs-12'>
-	<%= render_slideshow_for(resource) %>
-  </div>
-</div>
-<div class='row sale_property body'>
-  <div class='col-xs-12'>
-	<%= render_html_text(resource.body) %>
-  </div>
-</div>
+  <!-- Slider
+  ================================================== -->
+  <section class="section-slider">
+    <div class="container">
+      <div class='row'>
+        <div class='col-sm-12'>
+          <%= render "slider", :images => resource.images %>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- Header
+  ================================================== -->
+  <section class="property-header">
+    <div class="container">
+      <div class='row'>
+        <div class='col-sm-8'>
+          <h1><%= resource.title %></h1>
+          <hr>
+          <%= render_copy_text(resource.body) %>
+        </div>
+        <div class="col-sm-4">
+          <div class='widget-details'>
+            <%= tags.compact.join("<br/>").html_safe %>
+            <hr>
+            <%
+              stickers = []
+              resource.stickers.translated.each do |s|
+              stickers << link_to(s.name, s.public_url)
+              end
+            %>
+
+            <%= stickers.compact.join(", ").html_safe %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
 <% if resource.lat_long.present? %>
+<section>
+    <div class="container">
 <div class='row google_map_container hide-on-print'>
   <div class='col-xs-12'>
     <%= render('google_map', :point => resource.lat_long) %> 
   </div>
 </div>
+</div>
+</section>
 <% end %>
-<div class='row sale_property inquiry hide-on-print'>  
-  <div class='col-xs-12'>
-    <h2 class='realty-partial'><%= t(:'realty.sale_inquiry_title') %></h2>
-  </div>
-</div>
-<div class='row'>
-  <div class='col-xs-4'>
-    <% if site.preferred_realty_agent_public && @sale_property.meta.realty_agent %>
-      <%= render 'shared/realty_agent', :realty_agent => @sale_property.meta.realty_agent %>
-    <% elsif site.inquiry_recipients.present? %>
-      <p><small><%= site.inquiry_recipients.html_safe %></small></p>
-    <% end %> 
-  </div>
-  <div class='col-xs-8'><%= render :partial => 'sale_property_inquiries/form' %></div>
-</div>
-<%#= render_next_previous %>
+<section>
+    <div class="container">
+      <div class='row'>
+        <div class='col-sm-4'>
+          <% if site.preferred_realty_agent_public && resource.meta.realty_agent %>
+          <%= render 'shared/realty_agent', :realty_agent => resource.meta.realty_agent %>
+          <% elsif site.inquiry_recipients.present? %>
+          <p><small><%= site.inquiry_recipients.html_safe %></small></p>
+          <% end %> 
+        </div>
+        <div class='col-sm-8'>
+          <%= render :partial => 'sale_property_inquiries/form' %>
+        </div>
+      </div>
+    </div>
+  </section>
+
 </article>
-<% end %>
-<% content_for :sidebar do %>
-	<% cache([action_name, site, I18n.locale, parent, @sale_property, 'sidebar55']) do %>
-  	<%
-  	options = @sale_property.content_options
-  	has_options = options.try(:any?)
-  	tags = []
-  	tags << realty_meta_tag("price", sale_price_value(@sale_property, true))
-  	tags << realty_meta_tag("bedroom_count", @sale_property.bedroom_count)
-  	tags << realty_meta_tag("bathroom_count", @sale_property.bathroom_count)
-  	tags << realty_meta_tag("year_built", @sale_property.year_built)
-  	if @sale_property.acreage.present?
-  		tags << realty_meta_tag("acreage", "#{@sale_property.acreage} m2")
-  	end
-  	if @sale_property.building_size.present? 
-  		tags << realty_meta_tag("building_size", "#{@sale_property.building_size} m2")
-  	end
-  	if @sale_property.area.present? 
-  	  tags << realty_meta_tag("area", @sale_property.area.name)
-  	end
-  	%>
-    <div class='partial tags-list'>
-      <h4 class="widget-title"><%= t(:'description') %></h4>
-      <%= tags.compact.join("<br/>").html_safe %>
-      <%= render('/shared/content_options', :options => options) if has_options %>
-      <%= render_resource_stickers(:title => t(:'details')) %>
-    </div> 
-  	<%= render "sale_properties/filter", :section => parent %>
-  <% end %>  
-<% end %>
+<%# end %>
+
 <%# end %>

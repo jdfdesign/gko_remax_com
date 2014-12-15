@@ -10289,16 +10289,16 @@ html[xmlns] .slides {
 }
 
 /* line 26, ../../app/assets/stylesheets/theme/_buttons.scss */
-.btn-group {
+.btn-group.controls {
   margin-top: 22px;
 }
 /* line 28, ../../app/assets/stylesheets/theme/_buttons.scss */
-.btn-group .btn:first-child {
+.btn-group.controls .btn:first-child {
   border-right: none;
   min-width: 60px;
 }
 /* line 32, ../../app/assets/stylesheets/theme/_buttons.scss */
-.btn-group .btn:last-child {
+.btn-group.controls .btn:last-child {
   border-left: none;
   min-width: 60px;
 }
@@ -10654,7 +10654,12 @@ footer .nav > li > a:hover, footer .nav > li > a:focus {
   font-size: 10px;
 }
 
-/* line 63, ../../app/assets/stylesheets/public.css.scss */
+/* line 64, ../../app/assets/stylesheets/public.css.scss */
+article.post-item {
+  margin-bottom: 16px;
+}
+
+/* line 67, ../../app/assets/stylesheets/public.css.scss */
 .thumbnail-property {
   position: relative;
   padding: 0;
@@ -10663,7 +10668,7 @@ footer .nav > li > a:hover, footer .nav > li > a:focus {
   overflow: visible;
   margin-bottom: 50px;
 }
-/* line 71, ../../app/assets/stylesheets/public.css.scss */
+/* line 75, ../../app/assets/stylesheets/public.css.scss */
 .thumbnail-property .price {
   position: absolute;
   top: -33px;
@@ -10673,7 +10678,7 @@ footer .nav > li > a:hover, footer .nav > li > a:focus {
   padding: 8px;
   color: #fff;
 }
-/* line 80, ../../app/assets/stylesheets/public.css.scss */
+/* line 84, ../../app/assets/stylesheets/public.css.scss */
 .thumbnail-property .caption {
   position: absolute;
   bottom: -50px;
@@ -10685,7 +10690,7 @@ footer .nav > li > a:hover, footer .nav > li > a:focus {
   -o-transition: all 0.5s ease;
   transition: all 0.5s ease;
 }
-/* line 89, ../../app/assets/stylesheets/public.css.scss */
+/* line 93, ../../app/assets/stylesheets/public.css.scss */
 .thumbnail-property .caption h3 {
   margin-top: 0;
   margin-bottom: 8px;
@@ -10694,18 +10699,18 @@ footer .nav > li > a:hover, footer .nav > li > a:focus {
   line-height: 20px;
   font-weight: 700;
 }
-/* line 96, ../../app/assets/stylesheets/public.css.scss */
+/* line 100, ../../app/assets/stylesheets/public.css.scss */
 .thumbnail-property .caption h3 a {
   font-style: normal;
   color: #333333;
   font-family: "Merriweather", Georgia, "Times New Roman", Times, serif;
 }
-/* line 100, ../../app/assets/stylesheets/public.css.scss */
+/* line 104, ../../app/assets/stylesheets/public.css.scss */
 .thumbnail-property .caption h3 a:hover {
   text-decoration: none;
   color: #333333;
 }
-/* line 106, ../../app/assets/stylesheets/public.css.scss */
+/* line 110, ../../app/assets/stylesheets/public.css.scss */
 .thumbnail-property .caption p {
   text-transform: uppercase;
   font-family: "Roboto Condensed", "Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -10713,26 +10718,26 @@ footer .nav > li > a:hover, footer .nav > li > a:focus {
   letter-spacing: 1px;
   margin-bottom: 0;
 }
-/* line 113, ../../app/assets/stylesheets/public.css.scss */
+/* line 117, ../../app/assets/stylesheets/public.css.scss */
 .thumbnail-property .caption p.body {
   display: none;
   margin-top: 8px;
 }
-/* line 119, ../../app/assets/stylesheets/public.css.scss */
+/* line 123, ../../app/assets/stylesheets/public.css.scss */
 .thumbnail-property:hover .caption {
   top: 100px;
 }
-/* line 121, ../../app/assets/stylesheets/public.css.scss */
+/* line 125, ../../app/assets/stylesheets/public.css.scss */
 .thumbnail-property:hover .caption p.body {
   display: block;
 }
 
-/* line 130, ../../app/assets/stylesheets/public.css.scss */
+/* line 134, ../../app/assets/stylesheets/public.css.scss */
 section:nth-of-type(even) .thumbnail .caption {
   background-color: #ebeae6;
 }
 
-/* line 137, ../../app/assets/stylesheets/public.css.scss */
+/* line 141, ../../app/assets/stylesheets/public.css.scss */
 .thumbnail-info,
 .thumbnail-badge {
   position: absolute;
@@ -10747,16 +10752,180 @@ section:nth-of-type(even) .thumbnail .caption {
   font-family: "Roboto Condensed", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 12px;
   letter-spacing: 1px;
-  background: -webkit-linear-gradient(90deg, #50c9c3 10%, #96deda 90%);
+  background-color: #03A9F4;
+}
+
+/* line 159, ../../app/assets/stylesheets/public.css.scss */
+.heart {
+  color: #fff;
+  background-color: #F44336;
+  padding: 10px;
+  position: absolute;
+  top: -20px;
+  left: -20px;
+  font-size: 20px;
+  text-align: center;
+  z-index: 1;
+  border-radius: 20px;
+  background-color: #E91E63;
+}
+
+/* line 174, ../../app/assets/stylesheets/public.css.scss */
+.thumbnail-category {
+  min-height: 200px;
+  text-align: center;
+  position: relative;
+  padding: 0 20px;
+  border: none;
+  margin-bottom: 16px;
+  text-align: center;
+}
+/* line 182, ../../app/assets/stylesheets/public.css.scss */
+.thumbnail-category .img-wrapper {
+  text-align: center;
+  width: 90%;
+  margin: auto 10%;
+  overflow: hidden;
+}
+/* line 188, ../../app/assets/stylesheets/public.css.scss */
+.thumbnail-category .caption {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0px;
+  z-index: 3;
+  background-color: transparent !important;
+  padding: 0;
+  opacity: 1;
+}
+/* line 197, ../../app/assets/stylesheets/public.css.scss */
+.thumbnail-category .caption:before {
+  background: -webkit-linear-gradient(90deg, #dad299 10%, #b0dab9 90%);
   /* Chrome 10+, Saf5.1+ */
-  background: -moz-linear-gradient(90deg, #50c9c3 10%, #96deda 90%);
+  background: -moz-linear-gradient(90deg, #dad299 10%, #b0dab9 90%);
   /* FF3.6+ */
-  background: -ms-linear-gradient(90deg, #50c9c3 10%, #96deda 90%);
+  background: -ms-linear-gradient(90deg, #dad299 10%, #b0dab9 90%);
   /* IE10 */
-  background: -o-linear-gradient(90deg, #50c9c3 10%, #96deda 90%);
+  background: -o-linear-gradient(90deg, #dad299 10%, #b0dab9 90%);
   /* Opera 11.10+ */
-  background: linear-gradient(90deg, #50c9c3 10%, #96deda 90%);
+  background: linear-gradient(90deg, #dad299 10%, #b0dab9 90%);
   /* W3C */
+  content: '';
+  display: block;
+  left: 0;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  -webkit-transition: all 0.2s linear;
+  -o-transition: all 0.2s linear;
+  transition: all 0.2s linear;
+  width: 100%;
+  z-index: 1;
+  opacity: .4;
+}
+/* line 215, ../../app/assets/stylesheets/public.css.scss */
+.thumbnail-category .caption h3 {
+  display: table;
+  height: 100%;
+  position: relative;
+  width: 100%;
+  z-index: 10;
+  padding: 0;
+  margin: 0;
+}
+/* line 223, ../../app/assets/stylesheets/public.css.scss */
+.thumbnail-category .caption h3 a {
+  border: 1px solid #fff;
+  color: #fff;
+  font-family: 'Kalam', cursive;
+  text-transform: none;
+  font-size: 42px;
+  letter-spacing: -1px;
+  line-height: 42px;
+  box-sizing: border-box;
+  vertical-align: middle;
+  display: table-cell;
+}
+/* line 234, ../../app/assets/stylesheets/public.css.scss */
+.thumbnail-category .caption h3 a:hover {
+  text-decoration: none;
+}
+/* line 240, ../../app/assets/stylesheets/public.css.scss */
+.thumbnail-category .caption h4 {
+  display: table;
+  height: 100%;
+  position: relative;
+  width: 100%;
+  z-index: 10;
+  padding: 0 20px;
+  margin: 0;
+}
+/* line 248, ../../app/assets/stylesheets/public.css.scss */
+.thumbnail-category .caption h4 a {
+  color: #fff;
+  text-transform: uppercase;
+  font-size: 14px;
+  letter-spacing: 1px;
+  line-height: 22px;
+  box-sizing: border-box;
+  vertical-align: middle;
+  display: table-cell;
+}
+/* line 257, ../../app/assets/stylesheets/public.css.scss */
+.thumbnail-category .caption h4 a:hover {
+  text-decoration: none;
+}
+/* line 262, ../../app/assets/stylesheets/public.css.scss */
+.thumbnail-category .caption p {
+  font-family: 'Kalam', cursive;
+  font-weight: 400;
+  color: #fff;
+  display: block;
+  font-size: 22px;
+}
+/* line 270, ../../app/assets/stylesheets/public.css.scss */
+.thumbnail-category .caption:hover:before {
+  opacity: .9;
+}
+/* line 273, ../../app/assets/stylesheets/public.css.scss */
+.thumbnail-category .caption:hover .title {
+  display: none;
+}
+/* line 276, ../../app/assets/stylesheets/public.css.scss */
+.thumbnail-category .caption:hover .body {
+  display: table;
+}
+
+/* line 288, ../../app/assets/stylesheets/public.css.scss */
+#cat-2 .caption:before {
+  background: -webkit-linear-gradient(90deg, #aa076b 10%, #61045f 90%);
+  /* Chrome 10+, Saf5.1+ */
+  background: -moz-linear-gradient(90deg, #aa076b 10%, #61045f 90%);
+  /* FF3.6+ */
+  background: -ms-linear-gradient(90deg, #aa076b 10%, #61045f 90%);
+  /* IE10 */
+  background: -o-linear-gradient(90deg, #aa076b 10%, #61045f 90%);
+  /* Opera 11.10+ */
+  background: linear-gradient(90deg, #aa076b 10%, #61045f 90%);
+  /* W3C */
+}
+
+/* line 299, ../../app/assets/stylesheets/public.css.scss */
+#cat-1 .caption:before {
+  background: -webkit-linear-gradient(90deg, #4cb8c4 10%, #3cd3ad 90%);
+  /* Chrome 10+, Saf5.1+ */
+  background: -moz-linear-gradient(90deg, #4cb8c4 10%, #3cd3ad 90%);
+  /* FF3.6+ */
+  background: -ms-linear-gradient(90deg, #4cb8c4 10%, #3cd3ad 90%);
+  /* IE10 */
+  background: -o-linear-gradient(90deg, #4cb8c4 10%, #3cd3ad 90%);
+  /* Opera 11.10+ */
+  background: linear-gradient(90deg, #4cb8c4 10%, #3cd3ad 90%);
+  /* W3C */
+}
+
+/* line 310, ../../app/assets/stylesheets/public.css.scss */
+#cat-3 .caption:before {
   background: -webkit-linear-gradient(90deg, #eb3349 10%, #f45c43 90%);
   /* Chrome 10+, Saf5.1+ */
   background: -moz-linear-gradient(90deg, #eb3349 10%, #f45c43 90%);
@@ -10769,106 +10938,32 @@ section:nth-of-type(even) .thumbnail .caption {
   /* W3C */
 }
 
-/* line 167, ../../app/assets/stylesheets/public.css.scss */
-.heart {
-  color: #fff;
-  background-color: #F44336;
-  padding: 10px;
-  position: absolute;
-  top: -20px;
-  left: -20px;
-  font-size: 20px;
-  text-align: center;
-  z-index: 1;
-  border-radius: 20px;
-  background: -webkit-linear-gradient(90deg, #ff8008 10%, #ffc837 90%);
+/* line 321, ../../app/assets/stylesheets/public.css.scss */
+#cat-4 .caption:before {
+  background: -webkit-linear-gradient(90deg, #dd5e89 10%, #f7bb97 90%);
   /* Chrome 10+, Saf5.1+ */
-  background: -moz-linear-gradient(90deg, #ff8008 10%, #ffc837 90%);
+  background: -moz-linear-gradient(90deg, #dd5e89 10%, #f7bb97 90%);
   /* FF3.6+ */
-  background: -ms-linear-gradient(90deg, #ff8008 10%, #ffc837 90%);
+  background: -ms-linear-gradient(90deg, #dd5e89 10%, #f7bb97 90%);
   /* IE10 */
-  background: -o-linear-gradient(90deg, #ff8008 10%, #ffc837 90%);
+  background: -o-linear-gradient(90deg, #dd5e89 10%, #f7bb97 90%);
   /* Opera 11.10+ */
-  background: linear-gradient(90deg, #ff8008 10%, #ffc837 90%);
+  background: linear-gradient(90deg, #dd5e89 10%, #f7bb97 90%);
   /* W3C */
 }
 
-/* line 187, ../../app/assets/stylesheets/public.css.scss */
-.bg {
-  background: -webkit-linear-gradient(90deg, #fe8c00 10%, #f83600 90%);
-  /* Chrome 10+, Saf5.1+ */
-  background: -moz-linear-gradient(90deg, #fe8c00 10%, #f83600 90%);
-  /* FF3.6+ */
-  background: -ms-linear-gradient(90deg, #fe8c00 10%, #f83600 90%);
-  /* IE10 */
-  background: -o-linear-gradient(90deg, #fe8c00 10%, #f83600 90%);
-  /* Opera 11.10+ */
-  background: linear-gradient(90deg, #fe8c00 10%, #f83600 90%);
-  /* W3C */
-}
-
-/* line 196, ../../app/assets/stylesheets/public.css.scss */
-.categories .thumbnail {
-  min-height: 200px;
-  text-align: center;
-}
-/* line 199, ../../app/assets/stylesheets/public.css.scss */
-.categories .thumbnail h2 {
-  top: 100px;
-}
-/* line 203, ../../app/assets/stylesheets/public.css.scss */
-.categories .thumbnail h2 a {
-  color: #fff;
-  font-family: 'Marck Script', cursive;
-  text-transform: none;
-  font-size: 32px;
-  letter-spacing: -1px;
-}
-/* line 211, ../../app/assets/stylesheets/public.css.scss */
-.categories .thumbnail h2 p {
-  font-family: 'Marck Script', cursive;
-}
-/* line 217, ../../app/assets/stylesheets/public.css.scss */
-.categories .thumbnail:hover .overlay-gradient {
-  opacity: 1;
-}
-
-/* line 225, ../../app/assets/stylesheets/public.css.scss */
-.overlay-gradient {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  top: 0px;
-  content: '';
-  opacity: 0.8;
-  z-index: 2;
-  -webkit-transition: all 0.3s ease;
-  -o-transition: all 0.3s ease;
-  transition: all 0.3s ease;
-  background: -webkit-linear-gradient(90deg, #dad299 10%, #b0dab9 90%);
-  /* Chrome 10+, Saf5.1+ */
-  background: -moz-linear-gradient(90deg, #dad299 10%, #b0dab9 90%);
-  /* FF3.6+ */
-  background: -ms-linear-gradient(90deg, #dad299 10%, #b0dab9 90%);
-  /* IE10 */
-  background: -o-linear-gradient(90deg, #dad299 10%, #b0dab9 90%);
-  /* Opera 11.10+ */
-  background: linear-gradient(90deg, #dad299 10%, #b0dab9 90%);
-  /* W3C */
-}
-
-/* line 242, ../../app/assets/stylesheets/public.css.scss */
+/* line 337, ../../app/assets/stylesheets/public.css.scss */
 .form-search {
   padding: 22px 0;
   background-color: #ebeae6;
 }
-/* line 246, ../../app/assets/stylesheets/public.css.scss */
+/* line 341, ../../app/assets/stylesheets/public.css.scss */
 .form-search button,
 .form-search input {
   width: 100%;
 }
 
-/* line 254, ../../app/assets/stylesheets/public.css.scss */
+/* line 349, ../../app/assets/stylesheets/public.css.scss */
 .background-image-holder,
 .foreground-image-holder {
   position: absolute;
@@ -10881,13 +10976,13 @@ section:nth-of-type(even) .thumbnail .caption {
   background-position: 50% 50% !important;
 }
 
-/* line 264, ../../app/assets/stylesheets/public.css.scss */
+/* line 359, ../../app/assets/stylesheets/public.css.scss */
 .background-image-holder.parallax-background {
   height: 120%;
   top: -10%;
 }
 
-/* line 269, ../../app/assets/stylesheets/public.css.scss */
+/* line 364, ../../app/assets/stylesheets/public.css.scss */
 .hover-background .background-image-holder,
 .hover-background .foreground-image-holder {
   transition: all 0.3s ease-out;
@@ -10895,20 +10990,20 @@ section:nth-of-type(even) .thumbnail .caption {
   -moz-transition: all 0.3s ease-out;
 }
 
-/* line 274, ../../app/assets/stylesheets/public.css.scss */
+/* line 369, ../../app/assets/stylesheets/public.css.scss */
 .hover-background .background-image-holder {
   height: 110%;
   width: 110%;
 }
 
-/* line 279, ../../app/assets/stylesheets/public.css.scss */
+/* line 374, ../../app/assets/stylesheets/public.css.scss */
 .image-slider,
 .hero-slider {
   padding: 0px;
   position: relative;
 }
 
-/* line 285, ../../app/assets/stylesheets/public.css.scss */
+/* line 380, ../../app/assets/stylesheets/public.css.scss */
 .nav-slide {
   font-size: 12px;
   letter-spacing: 2px;
@@ -10926,28 +11021,28 @@ section:nth-of-type(even) .thumbnail .caption {
   background-color: rgba(0, 0, 0, 0.4);
   text-align: center;
 }
-
-/* line 305, ../../app/assets/stylesheets/public.css.scss */
-.prev {
+/* line 397, ../../app/assets/stylesheets/public.css.scss */
+.nav-slide.prev {
   min-width: 60px;
   border-radius: 0 30px 30px 0;
   left: -2px;
+  right: auto;
 }
-
-/* line 311, ../../app/assets/stylesheets/public.css.scss */
-.next {
+/* line 404, ../../app/assets/stylesheets/public.css.scss */
+.nav-slide.next {
   min-width: 60px;
   right: -2px;
+  left: auto;
 }
 
-/* line 316, ../../app/assets/stylesheets/public.css.scss */
+/* line 414, ../../app/assets/stylesheets/public.css.scss */
 .hero-slider .slides li {
   height: 650px;
   overflow: hidden;
   position: relative;
 }
 
-/* line 321, ../../app/assets/stylesheets/public.css.scss */
+/* line 419, ../../app/assets/stylesheets/public.css.scss */
 .hero-slider .slides li h1 {
   font-family: "Merriweather", Georgia, "Times New Roman", Times, serif;
   font-style: italic;
@@ -10959,40 +11054,40 @@ section:nth-of-type(even) .thumbnail .caption {
   color: #fff;
 }
 
-/* line 331, ../../app/assets/stylesheets/public.css.scss */
+/* line 429, ../../app/assets/stylesheets/public.css.scss */
 .hero-slider .slides li p {
   text-align: center;
 }
 
-/* line 335, ../../app/assets/stylesheets/public.css.scss */
+/* line 433, ../../app/assets/stylesheets/public.css.scss */
 .hero-slider .slides li .btn {
   margin-right: 16px;
 }
 
-/* line 338, ../../app/assets/stylesheets/public.css.scss */
+/* line 436, ../../app/assets/stylesheets/public.css.scss */
 .hero-slider .flex-direction-nav a {
   color: rgba(0, 0, 0, 0);
 }
 
-/* line 341, ../../app/assets/stylesheets/public.css.scss */
+/* line 439, ../../app/assets/stylesheets/public.css.scss */
 .flex-direction-nav a:before {
   top: 17px;
   font-size: 36px;
   left: 10px;
 }
 
-/* line 346, ../../app/assets/stylesheets/public.css.scss */
+/* line 444, ../../app/assets/stylesheets/public.css.scss */
 .flex-direction-nav a.flex-next:before {
   left: -10px;
 }
 
 @media all and (max-width: 1350px) {
-  /* line 350, ../../app/assets/stylesheets/public.css.scss */
+  /* line 448, ../../app/assets/stylesheets/public.css.scss */
   .flex-direction-nav {
     display: none !important;
   }
 }
-/* line 354, ../../app/assets/stylesheets/public.css.scss */
+/* line 452, ../../app/assets/stylesheets/public.css.scss */
 .hero-slider .slides li.overlay:before {
   position: absolute;
   width: 100%;
@@ -11005,7 +11100,7 @@ section:nth-of-type(even) .thumbnail .caption {
 }
 
 @media only screen and (min-width: 320px) and (max-width: 767px) {
-  /* line 367, ../../app/assets/stylesheets/public.css.scss */
+  /* line 465, ../../app/assets/stylesheets/public.css.scss */
   .hero-slider .slides li h1 {
     font-size: 32px;
     line-height: 40px;

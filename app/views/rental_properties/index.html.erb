@@ -1,16 +1,4 @@
-<section class="page-header-section">
-  <div class="container row">
-    <div class="col-md-12">
-      <div class="page-header">
-        <%#= render_page_title(parent.title) %>
-    	  <%#= render_html_text(parent.body) unless params[:page].present? %>
-    	</div>
-    </div>
-  </div>    
-</section>
-<!-- Search
-  ================================================== -->
-  <%= render "search" %>
+<%= render "search" %>
 <section class="projects-section">
 	<!-- Begin Projects -->
 	<div class="container">
@@ -30,7 +18,3 @@
     </div> 
   </div>
 </section>
-<% content_for :sidebar do %>
-	<%= render "rental_properties/filter", :section => parent %>
-	<%= render "rental_properties/promotion_list" %>
-<% end %>
