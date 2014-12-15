@@ -1,11 +1,4 @@
 GIT
-  remote: git@github.com:jdfdesign/gko-realty.git
-  revision: a199a97b02bd9b69485a90981181fc922e05d7e5
-  specs:
-    gko_realty (0.1.06)
-      gko_core
-
-GIT
   remote: git@github.com:jdfdesign/gko_cms3.git
   revision: 1c8ae37f68c2ebba538474278fc79977925d6cd7
   tag: v0.8.14.1
@@ -287,7 +280,6 @@ DEPENDENCIES
   gko_documents!
   gko_features!
   gko_inquiries!
-  gko_realty (= 0.1.06)!
   gko_stickers!
   money (= 5.0.0)
   nokogiri (~> 1.5.0)
