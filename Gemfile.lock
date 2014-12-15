@@ -1,4 +1,11 @@
 GIT
+  remote: git@github.com:jdfdesign/gko-realty.git
+  revision: 79825ccd17e6025592fab41ed4977c0269055d3e
+  specs:
+    gko_realty (0.1.07)
+      gko_core
+
+GIT
   remote: git@github.com:jdfdesign/gko_cms3.git
   revision: 1c8ae37f68c2ebba538474278fc79977925d6cd7
   tag: v0.8.14.1
@@ -55,13 +62,6 @@ GIT
     gko_inquiries (0.8.14.1)
       filters_spam (~> 0.2)
     gko_stickers (0.8.14.1)
-
-GIT
-  remote: https://github.com/jdfdesign/gko-realty.git
-  revision: 79825ccd17e6025592fab41ed4977c0269055d3e
-  specs:
-    gko_realty (0.1.07)
-      gko_core
 
 GEM
   remote: https://rubygems.org/
