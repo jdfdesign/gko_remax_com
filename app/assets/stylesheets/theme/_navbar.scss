@@ -3,13 +3,19 @@
     text-transform: uppercase;
     letter-spacing: 1px;
     border: none;
+    border-bottom: 1px solid $navbar-default-border;
 }
 .navbar-brand {
     padding: 0 15px 0 0;
 }
 @media (min-width: $grid-float-breakpoint) {
+    .navbar-nav > li {
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+
     .navbar-nav > li > a {
-        padding: 34px 10px 0 10px;
+        padding: 34px 0 0 0;
         border-bottom: 3px solid $navbar-default-bg;
         @include transition(all 0.3s ease);
         &:hover,

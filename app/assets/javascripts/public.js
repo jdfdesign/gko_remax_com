@@ -14,6 +14,15 @@ $(document).ready(function() {
 
   "use strict";
 
+
+
+
+$(".nav-tabs").on("shown", function(e){
+        if (e.target.hash === '#collapseTwo') {
+          console.log("ok")
+            google.maps.event.trigger(map, 'resize');
+        }
+    });
   //===========================================================
   // NAVIGATION
   //===========================================================
@@ -182,13 +191,21 @@ $(document).ready(function() {
   
   // Slider Initializations
 
-  $('.hero-slider').flexslider({
-    animation: "slide",
-    directionNav: false,
-    controlNav: false,
-    touch: false,
-    slideshow: false
-  });
+  if ($('.hero-slider').length) {
+    if ($('.hero-slider .slides li').length < 2) {
+      $('.prev, .next').hide();
+    }
+
+    $('.hero-slider').flexslider({
+      animation: "slide",
+      directionNav: false,
+      controlNav: false,
+      touch: false,
+      slideshow: false
+    });
+  }
+
+
   $('.testimonials-slider').flexslider({
     directionNav: false
   });
@@ -200,6 +217,7 @@ $(document).ready(function() {
     touch: false,
     slideshow: false
   });
+
 
   $('.prev, .next').on('click', function() {
     var href = $(this).attr('href');

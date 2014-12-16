@@ -2,13 +2,13 @@
 <footer id='footer'>
   <div class='container'>
     <div class='row'>
-      <div class="col-md-4">
+      <div class="col-sm-6 col-md-4">
         <h5>Contact</h5>
         <hr>
         <p><%= "RE/MAX Island Properties - St Barths<br>55 Rue Samuel Fahlberg - Gustavia<br>97133 Saint Barthélemy French West Indies".html_safe %></p>
         <p><%= "Tel. Intl +590 590 29 78 20<br>Tel from US 011 +590 590 29 78 20<br>Fax +590 590 87 12 55<br>".html_safe %><%= mail_to(t('email_us'), site.preferred_contact_email, :encode => "javascript") unless site.preferred_contact_email.blank? %></p>
       </div>
-      <div class="col-md-2">
+      <div class="col-sm-6 col-md-2">
         <h5>Follow us</h5>
         <hr>
         <ul class="nav list-unstyled">
@@ -29,12 +29,17 @@
           <% end %></li>
       </ul>
       </div>
-      <div class="col-md-3">
+
+      <!-- Add the extra clearfix for only the required viewport -->
+      <div class="clearfix visible-sm-block"></div>
+      
+      <div class="col-sm-6 col-md-3">
         <h5>Partners</h5>
         <hr>
         <p><%= t('footer_remaxislandproperties').html_safe %></p>
       </div> 
-      <div class="col-md-3">
+
+      <div class="col-sm-6 col-md-3">
         <h5>NAVIGATION</h5>
         <hr>
         <%= render_menu("footer-nav") %>

@@ -4,10 +4,10 @@
   metas += " - #{record.meta.area.name}" if record.meta.area
 %>
 
-<div class="thumbnail thumbnail-property">
-  <%= link_to(image_fu(record.thumbnail, "720x440#", :class => "img-responsive"), record.public_url) %>
+<%= link_to(record.public_url, :class => "thumbnail thumbnail-property") do %>
+  <%= image_fu(record.thumbnail, "720x440#", :class => "img-responsive") %>
   <div class="caption">
-	  <h3><%= link_to(record.title, record.public_url) %></h3>
+	  <h3><%= record.title %></h3>
    	<p class="tags-list">
       <%= metas %>
    	</p>
@@ -25,4 +25,4 @@
   <% elsif record.info_title.present? %>
     <div class="thumbnail-info"><%= record.info_title %></div>
   <% end %>
-</div>
+<% end %>
