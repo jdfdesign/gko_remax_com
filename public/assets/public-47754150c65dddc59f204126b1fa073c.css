@@ -8475,8 +8475,7 @@ section:nth-of-type(even) .thumbnail .caption {
   overflow: hidden;
   position: relative;
 }
-
-/* line 277, ../../app/assets/stylesheets/public.css.scss */
+/* line 276, ../../app/assets/stylesheets/public.css.scss */
 .hero-slider .slides li h1 {
   font-family: "Merriweather", Georgia, "Times New Roman", Times, serif;
   font-style: italic;
@@ -8487,41 +8486,44 @@ section:nth-of-type(even) .thumbnail .caption {
   font-weight: 700;
   color: #fff;
 }
-
-/* line 287, ../../app/assets/stylesheets/public.css.scss */
+/* line 286, ../../app/assets/stylesheets/public.css.scss */
 .hero-slider .slides li p {
+  color: #fff;
   text-align: center;
 }
-
-/* line 291, ../../app/assets/stylesheets/public.css.scss */
+/* line 290, ../../app/assets/stylesheets/public.css.scss */
+.hero-slider .slides li h1 + p {
+  margin-bottom: 8px;
+}
+/* line 293, ../../app/assets/stylesheets/public.css.scss */
 .hero-slider .slides li .btn {
   margin-right: 16px;
 }
 
-/* line 294, ../../app/assets/stylesheets/public.css.scss */
+/* line 301, ../../app/assets/stylesheets/public.css.scss */
 .hero-slider .flex-direction-nav a {
   color: rgba(0, 0, 0, 0);
 }
 
-/* line 297, ../../app/assets/stylesheets/public.css.scss */
+/* line 304, ../../app/assets/stylesheets/public.css.scss */
 .flex-direction-nav a:before {
   top: 17px;
   font-size: 36px;
   left: 10px;
 }
 
-/* line 302, ../../app/assets/stylesheets/public.css.scss */
+/* line 309, ../../app/assets/stylesheets/public.css.scss */
 .flex-direction-nav a.flex-next:before {
   left: -10px;
 }
 
 @media all and (max-width: 1350px) {
-  /* line 306, ../../app/assets/stylesheets/public.css.scss */
+  /* line 313, ../../app/assets/stylesheets/public.css.scss */
   .flex-direction-nav {
     display: none !important;
   }
 }
-/* line 310, ../../app/assets/stylesheets/public.css.scss */
+/* line 317, ../../app/assets/stylesheets/public.css.scss */
 .hero-slider .slides li.overlay:before {
   position: absolute;
   width: 100%;
@@ -8534,7 +8536,7 @@ section:nth-of-type(even) .thumbnail .caption {
 }
 
 @media only screen and (min-width: 320px) and (max-width: 767px) {
-  /* line 323, ../../app/assets/stylesheets/public.css.scss */
+  /* line 330, ../../app/assets/stylesheets/public.css.scss */
   .hero-slider .slides li h1 {
     font-size: 32px;
     line-height: 40px;

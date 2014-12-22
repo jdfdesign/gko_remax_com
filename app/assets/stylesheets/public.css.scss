@@ -273,24 +273,31 @@ input, select, textarea {
   height: 650px;
   overflow: hidden;
   position: relative;
+  h1 {
+    font-family: $font-family-serif;
+    font-style: italic;
+    font-size: 50px;
+    line-height: 70px;
+    margin-bottom: 40px;
+    text-align: center;
+    font-weight: 700;
+    color: #fff;
+  }
+  p {
+    color: #fff;
+    text-align: center
+  }
+  h1 + p {
+    margin-bottom: 8px;
+  }
+  .btn {
+    margin-right: 16px;
+  }
 }
-.hero-slider .slides li h1 {
-  font-family: $font-family-serif;
-  font-style: italic;
-  font-size: 50px;
-  line-height: 70px;
-  margin-bottom: 40px;
-  text-align: center;
-  font-weight: 700;
-  color: #fff;
-}
-.hero-slider .slides li p {
 
-  text-align: center
-}
-.hero-slider .slides li .btn {
-  margin-right: 16px;
-}
+
+
+
 .hero-slider .flex-direction-nav a {
   color: rgba(0, 0, 0, 0);
 }

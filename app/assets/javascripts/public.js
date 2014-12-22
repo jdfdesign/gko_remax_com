@@ -19,8 +19,6 @@ $(document).ready(function() {
   });
 
     $('#collapseTwo').on('shown.bs.collapse', function () {
-      // do something…
-      console.log("ok");
       google.maps.event.trigger(document.getElementById('map-canvas'), 'resize');
     })
   //===========================================================
@@ -191,43 +189,44 @@ $(document).ready(function() {
   
   // Slider Initializations
 
-  if ($('.hero-slider').length) {
-    if ($('.hero-slider .slides li').length < 2) {
-      $('.prev, .next').hide();
-    }
-
-    $('.hero-slider').flexslider({
-      animation: "slide",
-      directionNav: false,
-      controlNav: false,
-      touch: false,
-      slideshow: false
-    });
-  }
-
-
   $('.testimonials-slider').flexslider({
     directionNav: false
   });
 
-  if ($('.image-slider').length) {
-    if ($('.image-slider .slides li').length < 2) {
-      $('.prev, .next').hide();
-    }
-    
-    $('.image-slider').flexslider({
+$( ".hero-slider" ).each(function( index ) {
+  if ($( this ).find('li').length < 2) {
+    $( this ).find(".prev").hide();
+    $( this ).find(".next").hide();
+  }
+
+  $('.image-slider').flexslider({
       animation: "slide",
       directionNav: false,
       controlNav: false,
       touch: false,
       slideshow: false
     });
+});
+
+$( ".image-slider" ).each(function( index ) {
+  if ($( this ).find('li').length < 2) {
+    $( this ).find(".prev").hide();
+    $( this ).find(".next").hide();
   }
+
+  $('.image-slider').flexslider({
+      animation: "slide",
+      directionNav: false,
+      controlNav: false,
+      touch: false,
+      slideshow: false
+    });
+});
+
 
   $('.prev, .next').on('click', function() {
     var href = $(this).attr('href');
     var target = $(this).data("target");
-    console.log(target)
     $(target).flexslider(href)
     return false;
   })
