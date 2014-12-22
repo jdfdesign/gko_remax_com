@@ -1,7 +1,6 @@
 <%# cache([site, I18n.locale, 'header']) do %>
 <!-- Begin Header -->
 <header class="navbar navbar-default" role="navigation">
-  <%= render "locales_select" %>
   <div class="container-fluid">
     <div class="navbar-header">
       <%= link_to(image_tag("logo.png", :alt => site.title), root_url, :class => "navbar-brand") %>
@@ -14,10 +13,10 @@
     </div>
     <nav class="collapse navbar-collapse">
       <%= render 'menu', :sections => site.primary_menu, :menu_name => 'nav navbar-nav navbar-left' %>
+      <%= render "locales_select" %>
     </nav>
-    <div class="navbar-subtitle visible-md visible-lg">
-
-    </div>
+    
   </div>
+
 </header>
 <%# end %>

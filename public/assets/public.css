@@ -7269,6 +7269,14 @@ button.close {
     margin-left: -15px;
   }
 }
+/* line 32, ../../app/assets/stylesheets/theme/_navbar.scss */
+#locales-menu {
+  position: absolute;
+  right: 20px;
+  top: 26px;
+  z-index: 1;
+}
+
 /* PANELS
 -------------------------------------------------- */
 /* line 3, ../../app/assets/stylesheets/theme/_panels.scss */
@@ -8330,24 +8338,29 @@ section:nth-of-type(even) .thumbnail .caption {
   background-color: #E91E63;
 }
 
+/* line 143, ../../app/assets/stylesheets/public.css.scss */
+.col-sm-12.last {
+  margin-top: 16px;
+}
+
 /* MEMBERS
 -------------------------------------------------- */
-/* line 146, ../../app/assets/stylesheets/public.css.scss */
+/* line 149, ../../app/assets/stylesheets/public.css.scss */
 #member-slider {
   padding: 24px 0;
 }
 
-/* line 149, ../../app/assets/stylesheets/public.css.scss */
+/* line 152, ../../app/assets/stylesheets/public.css.scss */
 .team-member {
   text-align: center;
 }
-/* line 151, ../../app/assets/stylesheets/public.css.scss */
+/* line 154, ../../app/assets/stylesheets/public.css.scss */
 .team-member h2 {
   font-size: 12px;
   margin-top: 16px;
   margin-bottom: 8px;
 }
-/* line 157, ../../app/assets/stylesheets/public.css.scss */
+/* line 160, ../../app/assets/stylesheets/public.css.scss */
 .team-member h5 {
   font-family: "Merriweather", Georgia, "Times New Roman", Times, serif;
   font-size: 12px;
@@ -8357,23 +8370,23 @@ section:nth-of-type(even) .thumbnail .caption {
 
 /* FORM
 -------------------------------------------------- */
-/* line 167, ../../app/assets/stylesheets/public.css.scss */
+/* line 170, ../../app/assets/stylesheets/public.css.scss */
 .form-control {
   font-family: "Merriweather", Georgia, "Times New Roman", Times, serif;
   font-size: 12px;
 }
 
-/* line 175, ../../app/assets/stylesheets/public.css.scss */
+/* line 178, ../../app/assets/stylesheets/public.css.scss */
 .form-search {
   padding: 22px 0;
   background-color: #e0ded8;
   border-bottom: 1px solid #d4d2ca;
 }
-/* line 179, ../../app/assets/stylesheets/public.css.scss */
+/* line 182, ../../app/assets/stylesheets/public.css.scss */
 .form-search input, .form-search select, .form-search textarea {
   width: 100%;
 }
-/* line 182, ../../app/assets/stylesheets/public.css.scss */
+/* line 185, ../../app/assets/stylesheets/public.css.scss */
 .form-search .btn-link {
   border: none;
   border-radius: 0;
@@ -8384,7 +8397,7 @@ section:nth-of-type(even) .thumbnail .caption {
   font-size: 11px;
   letter-spacing: 1px;
 }
-/* line 191, ../../app/assets/stylesheets/public.css.scss */
+/* line 194, ../../app/assets/stylesheets/public.css.scss */
 .form-search .btn-link:hover {
   text-decoration: none;
   border-bottom-color: #000;
@@ -8392,7 +8405,7 @@ section:nth-of-type(even) .thumbnail .caption {
   color: #000;
 }
 
-/* line 201, ../../app/assets/stylesheets/public.css.scss */
+/* line 204, ../../app/assets/stylesheets/public.css.scss */
 .background-image-holder,
 .foreground-image-holder {
   position: absolute;
@@ -8405,13 +8418,13 @@ section:nth-of-type(even) .thumbnail .caption {
   background-position: 50% 50% !important;
 }
 
-/* line 211, ../../app/assets/stylesheets/public.css.scss */
+/* line 214, ../../app/assets/stylesheets/public.css.scss */
 .background-image-holder.parallax-background {
   height: 120%;
   top: -10%;
 }
 
-/* line 216, ../../app/assets/stylesheets/public.css.scss */
+/* line 219, ../../app/assets/stylesheets/public.css.scss */
 .hover-background .background-image-holder,
 .hover-background .foreground-image-holder {
   transition: all 0.3s ease-out;
@@ -8419,20 +8432,20 @@ section:nth-of-type(even) .thumbnail .caption {
   -moz-transition: all 0.3s ease-out;
 }
 
-/* line 221, ../../app/assets/stylesheets/public.css.scss */
+/* line 224, ../../app/assets/stylesheets/public.css.scss */
 .hover-background .background-image-holder {
   height: 110%;
   width: 110%;
 }
 
-/* line 226, ../../app/assets/stylesheets/public.css.scss */
+/* line 229, ../../app/assets/stylesheets/public.css.scss */
 .image-slider,
 .hero-slider {
   padding: 0px;
   position: relative;
 }
 
-/* line 232, ../../app/assets/stylesheets/public.css.scss */
+/* line 235, ../../app/assets/stylesheets/public.css.scss */
 .nav-slide {
   font-size: 12px;
   letter-spacing: 2px;
@@ -8450,80 +8463,77 @@ section:nth-of-type(even) .thumbnail .caption {
   background-color: rgba(0, 0, 0, 0.4);
   text-align: center;
 }
-/* line 249, ../../app/assets/stylesheets/public.css.scss */
+/* line 252, ../../app/assets/stylesheets/public.css.scss */
 .nav-slide:hover {
   color: #fff;
   text-decoration: none;
 }
-/* line 253, ../../app/assets/stylesheets/public.css.scss */
+/* line 256, ../../app/assets/stylesheets/public.css.scss */
 .nav-slide.prev {
   min-width: 60px;
   border-radius: 0 30px 30px 0;
   left: -2px;
   right: auto;
 }
-/* line 260, ../../app/assets/stylesheets/public.css.scss */
+/* line 263, ../../app/assets/stylesheets/public.css.scss */
 .nav-slide.next {
   min-width: 60px;
   right: -2px;
   left: auto;
 }
 
-/* line 272, ../../app/assets/stylesheets/public.css.scss */
+/* line 275, ../../app/assets/stylesheets/public.css.scss */
 .hero-slider .slides li {
   height: 650px;
   overflow: hidden;
   position: relative;
 }
-/* line 276, ../../app/assets/stylesheets/public.css.scss */
+/* line 279, ../../app/assets/stylesheets/public.css.scss */
 .hero-slider .slides li h1 {
   font-family: "Merriweather", Georgia, "Times New Roman", Times, serif;
   font-style: italic;
   font-size: 50px;
   line-height: 70px;
-  margin-bottom: 40px;
+  margin-bottom: 24px;
   text-align: center;
   font-weight: 700;
   color: #fff;
 }
-/* line 286, ../../app/assets/stylesheets/public.css.scss */
+/* line 289, ../../app/assets/stylesheets/public.css.scss */
 .hero-slider .slides li p {
   color: #fff;
   text-align: center;
+  margin-bottom: 24px;
 }
-/* line 290, ../../app/assets/stylesheets/public.css.scss */
-.hero-slider .slides li h1 + p {
-  margin-bottom: 8px;
-}
-/* line 293, ../../app/assets/stylesheets/public.css.scss */
+/* line 294, ../../app/assets/stylesheets/public.css.scss */
 .hero-slider .slides li .btn {
   margin-right: 16px;
 }
 
-/* line 301, ../../app/assets/stylesheets/public.css.scss */
+/* line 299, ../../app/assets/stylesheets/public.css.scss */
 .hero-slider .flex-direction-nav a {
   color: rgba(0, 0, 0, 0);
 }
 
-/* line 304, ../../app/assets/stylesheets/public.css.scss */
+/* line 302, ../../app/assets/stylesheets/public.css.scss */
 .flex-direction-nav a:before {
   top: 17px;
   font-size: 36px;
   left: 10px;
 }
 
-/* line 309, ../../app/assets/stylesheets/public.css.scss */
+/* line 307, ../../app/assets/stylesheets/public.css.scss */
 .flex-direction-nav a.flex-next:before {
   left: -10px;
 }
 
 @media all and (max-width: 1350px) {
-  /* line 313, ../../app/assets/stylesheets/public.css.scss */
+  /* line 311, ../../app/assets/stylesheets/public.css.scss */
   .flex-direction-nav {
     display: none !important;
   }
 }
-/* line 317, ../../app/assets/stylesheets/public.css.scss */
+/* line 315, ../../app/assets/stylesheets/public.css.scss */
 .hero-slider .slides li.overlay:before {
   position: absolute;
   width: 100%;
@@ -8536,7 +8546,7 @@ section:nth-of-type(even) .thumbnail .caption {
 }
 
 @media only screen and (min-width: 320px) and (max-width: 767px) {
-  /* line 330, ../../app/assets/stylesheets/public.css.scss */
+  /* line 328, ../../app/assets/stylesheets/public.css.scss */
   .hero-slider .slides li h1 {
     font-size: 32px;
     line-height: 40px;

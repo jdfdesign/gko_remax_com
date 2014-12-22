@@ -230,7 +230,7 @@ end
               <% group.each_with_index do |c, i| %>
                 <% if i == 0 %>
                   <div class="col-sm-12 col-md-8">
-                    <%= render("sale_properties/property_thumbnail", :record => c) if c %>
+                    <%= render("sale_properties/property_thumbnail", :record => c, :geometry => '820x520#') if c %>
                   </div>
                 <% elsif i == 1 %>
                   <div class="col-sm-12 col-md-4">
@@ -239,7 +239,7 @@ end
                         <%= render("sale_properties/property_thumbnail", :record => c) if c %>
                       </div>
                 <% elsif i == 2 %>
-                  <div class="col-sm-12">
+                  <div class="col-sm-12 last">
                         <%= render("sale_properties/property_thumbnail", :record => c) if c %>
                       </div>
                   </div>

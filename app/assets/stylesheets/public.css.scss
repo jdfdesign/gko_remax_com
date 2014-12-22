@@ -140,6 +140,9 @@ article.post-item {
 
 }
 
+.col-sm-12.last {
+  margin-top: 16px;
+}
 
 /* MEMBERS
 -------------------------------------------------- */
@@ -278,25 +281,20 @@ input, select, textarea {
     font-style: italic;
     font-size: 50px;
     line-height: 70px;
-    margin-bottom: 40px;
+    margin-bottom: 24px;
     text-align: center;
     font-weight: 700;
     color: #fff;
   }
   p {
     color: #fff;
-    text-align: center
-  }
-  h1 + p {
-    margin-bottom: 8px;
+    text-align: center;
+     margin-bottom: 24px;
   }
   .btn {
     margin-right: 16px;
   }
 }
-
-
-
 
 .hero-slider .flex-direction-nav a {
   color: rgba(0, 0, 0, 0);
