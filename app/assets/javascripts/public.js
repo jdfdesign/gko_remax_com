@@ -13,16 +13,16 @@
 $(document).ready(function() {
 
   "use strict";
+  $('select#rental_property_id').change(function() {
+    var result = $(this).val()
+    document.location.href = result;
+  });
 
-
-
-
-$(".nav-tabs").on("shown", function(e){
-        if (e.target.hash === '#collapseTwo') {
-          console.log("ok")
-            google.maps.event.trigger(map, 'resize');
-        }
-    });
+    $('#collapseTwo').on('shown.bs.collapse', function () {
+      // do something…
+      console.log("ok");
+      google.maps.event.trigger(document.getElementById('map-canvas'), 'resize');
+    })
   //===========================================================
   // NAVIGATION
   //===========================================================
@@ -210,14 +210,19 @@ $(".nav-tabs").on("shown", function(e){
     directionNav: false
   });
 
-  $('.image-slider').flexslider({
-    animation: "slide",
-    directionNav: false,
-    controlNav: false,
-    touch: false,
-    slideshow: false
-  });
-
+  if ($('.image-slider').length) {
+    if ($('.image-slider .slides li').length < 2) {
+      $('.prev, .next').hide();
+    }
+    
+    $('.image-slider').flexslider({
+      animation: "slide",
+      directionNav: false,
+      controlNav: false,
+      touch: false,
+      slideshow: false
+    });
+  }
 
   $('.prev, .next').on('click', function() {
     var href = $(this).attr('href');

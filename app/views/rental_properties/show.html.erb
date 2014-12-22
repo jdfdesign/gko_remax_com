@@ -24,7 +24,7 @@ end
 
 
 <%# resource_cache(resource) do %>
-
+<%= render "search" %>
 <article class="property">
 
   <!-- Slider
@@ -54,10 +54,10 @@ end
             <%= tags.compact.join("<br/>").html_safe %>
             <hr>
             <%
-              stickers = []
-              @rental_property.stickers.translated.each do |s|
+            stickers = []
+            @rental_property.stickers.translated.each do |s|
               stickers << link_to(s.name, s.public_url)
-              end
+            end
             %>
 
             <%= stickers.compact.join(", ").html_safe %>
@@ -72,66 +72,57 @@ end
       ================================================== -->
       <div class="panel panel-default">
         <div class="panel-heading" role="tab" id="headingOne">
-          
-            <div class="container">
-              <div class='row'>
-               <div class='col-sm-12'>
-                <h4 class="panel-title">
-                <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                  <%= t(:'rates') %>
-                  <span class="th-icon-open"><i class="fa fa-plus"></i></span>
-                  <span class="th-icon-close"><i class="fa fa-minus"></i></span>
-                </a>
-              </h4>
-            </div>
+          <div class="container">
+            <h4 class="panel-title">
+              <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                <%= t(:'rates') %>
+                <span class="th-icon-open"><i class="fa fa-plus"></i></span>
+                <span class="th-icon-close"><i class="fa fa-minus"></i></span>
+              </a>
+            </h4>
           </div>
         </div>
-      </div>
-      <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
-        <div class="panel-body">
-          <div class="container">
-            <div class='row'>
-             <div class='col-sm-11 col-sm-offset-1'>
+        <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
+          <div class="panel-body">
+            <div class="container">
+              <div class='row'>
+               <div class='col-sm-11 col-sm-offset-1'>
                 <% if @rental_property.has_promo? %>
                 <div class="well realty-promo-text">
                   <%= @rental_property.promo_text.html_safe %>
                 </div>
                 <% end %>
                 <%= render 'rental_properties/seasons' %>
+              </div>
             </div>
           </div>
         </div>
       </div>
     </div>
-  </div>
-  <% if @rental_property.meta and @rental_property.meta.description.present? %>
+    <% if @rental_property.meta and @rental_property.meta.description.present? %>
   <!-- Details
   ================================================== -->
   <div class="panel panel-default">
     <div class="panel-heading" role="tab" id="headingTwo">
 
-        <div class="container">
-          <div class='row'>
-           <div class='col-sm-12'>
-            <h4 class="panel-title">
-              <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-              <%= t(:'details') %>
-              <span class="th-icon-open"><i class="fa fa-plus"></i></span>
-              <span class="th-icon-close"><i class="fa fa-minus"></i></span>
-            </a>
-          </h4>
-        </div>
+      <div class="container">
+        <h4 class="panel-title">
+          <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+            <%= t(:'details') %>
+            <span class="th-icon-open"><i class="fa fa-plus"></i></span>
+            <span class="th-icon-close"><i class="fa fa-minus"></i></span>
+          </a>
+        </h4>
       </div>
     </div>
-  </div>
-  <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
-    <div class="panel-body">
-      <div class="container">
-        <div class='row'>
-         <div class='col-sm-7 col-sm-offset-1'>
-          <%= render_copy_text(@rental_property.meta.description) %>
+    <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+      <div class="panel-body">
+        <div class="container">
+          <div class='row'>
+           <div class='col-sm-7 col-sm-offset-1'>
+            <%= render_copy_text(@rental_property.meta.description) %>
 
-          <% if @rental_property.lat_long.present? %>
+            <% if @rental_property.lat_long.present? %>
           <!-- Map
           ================================================== -->
           <div class='row'>
@@ -149,38 +140,34 @@ end
 <% end %>
 <div class="panel panel-default">
   <div class="panel-heading" role="tab" id="headingThree">
+    <div class="container">
+      <h4 class="panel-title">
+        <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+          <%= t(:'realty.request_availability') %>
+          <span class="th-icon-open"><i class="fa fa-plus"></i></span>
+          <span class="th-icon-close"><i class="fa fa-minus"></i></span>
+        </a>
+      </h4>
+    </div>
+  </div>
+  <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
+    <div class="panel-body">
       <div class="container">
         <div class='row'>
-         <div class='col-sm-12'>
-          <h4 class="panel-title">
-            <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-            <%= t(:'realty.request_availability') %>
-            <span class="th-icon-open"><i class="fa fa-plus"></i></span>
-            <span class="th-icon-close"><i class="fa fa-minus"></i></span>
-          </a>
-        </h4>
-      </div>
-    </div>
-  </div>
-</div>
-<div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
-  <div class="panel-body">
-    <div class="container">
-      <div class='row'>
-        <div class='col-sm-4'>
-          <% if site.preferred_realty_agent_public && @rental_property.meta.realty_agent %>
-          <%= render 'shared/realty_agent', :realty_agent => @rental_property.meta.realty_agent %>
-          <% elsif site.inquiry_recipients.present? %>
-          <p><small><%= site.inquiry_recipients.html_safe %></small></p>
-          <% end %> 
-        </div>
-        <div class='col-sm-8'>
-          <%= render :partial => 'rental_property_inquiries/form' %>
+          <div class='col-sm-4'>
+            <% if site.preferred_realty_agent_public && @rental_property.meta.realty_agent %>
+            <%= render 'shared/realty_agent', :realty_agent => @rental_property.meta.realty_agent %>
+            <% elsif site.inquiry_recipients.present? %>
+            <p><small><%= site.inquiry_recipients.html_safe %></small></p>
+            <% end %> 
+          </div>
+          <div class='col-sm-8'>
+            <%= render :partial => 'rental_property_inquiries/form' %>
+          </div>
         </div>
       </div>
     </div>
   </div>
-</div>
 </div>
 </div>
 

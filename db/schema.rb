@@ -479,56 +479,6 @@ ActiveRecord::Schema.define(:version => 20141212091649) do
     t.datetime "updated_at"
   end
 
-  create_table "realty_categories", :force => true do |t|
-    t.integer  "site_id"
-    t.integer  "section_id"
-    t.integer  "position",         :default => 1
-    t.string   "name"
-    t.string   "slug"
-    t.string   "path"
-    t.string   "title"
-    t.text     "body"
-    t.string   "meta_title"
-    t.text     "meta_description"
-    t.string   "content_type"
-    t.integer  "width"
-    t.integer  "height"
-    t.integer  "size"
-    t.string   "source"
-    t.string   "source_filename"
-    t.datetime "created_at",                      :null => false
-    t.datetime "updated_at",                      :null => false
-  end
-
-  add_index "realty_categories", ["section_id"], :name => "index_realty_categories_on_section_id"
-
-  create_table "realty_categorizations", :force => true do |t|
-    t.integer  "rental_property_id"
-    t.integer  "category_id"
-    t.datetime "created_at",         :null => false
-    t.datetime "updated_at",         :null => false
-  end
-
-  add_index "realty_categorizations", ["category_id"], :name => "index_realty_categorizations_on_category_id"
-  add_index "realty_categorizations", ["rental_property_id"], :name => "index_realty_categorizations"
-  add_index "realty_categorizations", ["rental_property_id"], :name => "index_realty_categorizations_on_rental_property_id"
-
-  create_table "realty_category_translations", :force => true do |t|
-    t.integer  "realty_category_id"
-    t.string   "locale",             :null => false
-    t.datetime "created_at",         :null => false
-    t.datetime "updated_at",         :null => false
-    t.string   "path"
-    t.text     "meta_description"
-    t.text     "body"
-    t.string   "slug"
-    t.string   "meta_title"
-    t.string   "title"
-  end
-
-  add_index "realty_category_translations", ["locale"], :name => "index_realty_category_translations_on_locale"
-  add_index "realty_category_translations", ["realty_category_id"], :name => "index_realty_category_translations_on_realty_category_id"
-
   create_table "rental_property_option_translations", :force => true do |t|
     t.integer  "rental_property_option_id"
     t.string   "locale"
@@ -541,7 +491,7 @@ ActiveRecord::Schema.define(:version => 20141212091649) do
     t.text     "pets_policy"
     t.string   "badge"
     t.string   "info_title"
-    t.string   "info_body"
+    t.text     "info_body"
   end
 
   add_index "rental_property_option_translations", ["locale"], :name => "index_rental_property_option_translations_on_locale"
@@ -582,7 +532,7 @@ ActiveRecord::Schema.define(:version => 20141212091649) do
     t.string   "badge"
     t.integer  "city_id"
     t.string   "info_title"
-    t.string   "info_body"
+    t.text     "info_body"
   end
 
   add_index "rental_property_options", ["area_id"], :name => "index_rental_property_options_on_area_id"

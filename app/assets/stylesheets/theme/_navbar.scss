@@ -18,6 +18,7 @@
         padding: 34px 0 0 0;
         border-bottom: 3px solid $navbar-default-bg;
         @include transition(all 0.3s ease);
+        font-size: 13px;
         &:hover,
         &:focus {
         border-bottom-color: $navbar-default-link-hover-color;

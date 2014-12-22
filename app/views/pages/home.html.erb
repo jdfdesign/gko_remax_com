@@ -33,7 +33,6 @@ end
         <div class="container align-vertical">
           <div class="row">
             <div class="col-md-6 col-sm-9 col-md-offset-3">
-
               <h1 class="text-white"><%= feature.title %></h1>
               <% if feature.owner and url = feature.owner.public_url %>
               <p><%= link_to(t("features.view_more"), url, :class => 'btn btn-primary btn-white') %></p>
@@ -67,23 +66,22 @@ end
 
   <div class="row content">
     <% @lifestyle_categories.each_with_index do |c, index| %>
-    <% if index == 0 || index == 1 %>
-    <div class="col-sm-6">
+      <% if index == 0 || index == 1 %>
+      <div class="col-sm-6">
       <% else %>
       <div class="col-sm-4">
-        <% end %>
-        <div id="cat-<%= index %>" class="thumbnail thumbnail-category">
-          <div class="img-wrapper background-image-holder"><%= image_tag("lifetyle_0#{index+1}.jpg") %></div>
-          
-          <div class="caption">
-           <h3 class="title"><%= link_to(c.title, c.public_url) %></h3>
-
-           <h4 class="body"><%= link_to(c.body, c.public_url) %></h4>
-           <%#= link_to("Discover", c.public_url, :class => "btn btn-inverse") %>
-         </div>
-       </div><!--end of team member-->
-     </div>
-     <% end %>
+      <% end %>
+        <div id="<%= c.name %>" class="thumbnail thumbnail-category">
+          <div class="img-wrapper background-image-holder"><%= image_tag("cat-villa.jpg") %></div>
+          <div class="img-wrapper-holder background-image-holder"><%= image_tag("lifetyle_0#{index+1}.jpg") %></div>
+            <div class="caption">
+              <h3 class="title"><%= link_to(c.title, c.public_url) %></h3>
+              <h4 class="body"><%= link_to(c.body, c.public_url) %></h4>
+              <%#= link_to("Discover", c.public_url, :class => "btn btn-inverse") %>
+            </div>
+          </div><!--end of team member-->
+        </div>
+    <% end %>
    </div><!--end of row-->
  </div><!--end of container-->
 </section>
@@ -228,10 +226,20 @@ end
           <ul class="slides">
             <% @sale_properties.in_groups_of(2) do |group| %>
             <li>
-              <% group.each do |c| %>
-              <div class="col-sm-12 col-md-6">
-                <%= render("sale_properties/property_thumbnail", :record => c) if c %>
-              </div>
+              <% group.each_with_index do |c, i| %>
+                <% if i == 0 %>
+                  <div class="col-sm-12 col-md-8">
+                    <%= render("sale_properties/property_thumbnail", :record => c) if c %>
+                  </div>
+                <% else %>
+                  <div class="col-sm-12 col-md-4">
+                    <div class="row">
+                      <div class="col-sm-12">
+                      <%= render("sale_properties/property_thumbnail", :record => c) if c %>
+                      </div>
+                    </div>
+                  </div>
+                <% end %>
               <% end %>
             </li>
             <% end %>
@@ -298,11 +306,11 @@ end
     <div class="col-md-12">
       <div class="image-slider" id="member-slider">
         <ul class="slides">
-          <% site.realty_agents.in_groups_of(4) do |group| %>
+          <% site.realty_agents.in_groups_of(3) do |group| %>
           <li>
             <% group.each do |c| %>
             <% if c %>
-            <div class="col-md-3">
+            <div class="col-md-4">
               <div class="team-member">
                 <i class="fa fa-user fa-4x"></i>
                <h2><%= c.name %></h2>
