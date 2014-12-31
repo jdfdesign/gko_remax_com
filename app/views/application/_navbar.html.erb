@@ -1,4 +1,8 @@
 <%# cache([site, I18n.locale, 'header']) do %>
+<%
+@rent_section ||= site.rental_property_lists.live.first
+@rental_properties ||= @rent_section.rental_properties.published.in_city(site.cities.first).with_translations(I18n.locale).order('content_translations.title ASC')
+%>
 <!-- Begin Header -->
 <header class="navbar navbar-default" role="navigation">
   <div class="container-fluid">
@@ -13,9 +17,16 @@
     </div>
     <nav class="collapse navbar-collapse">
       <%= render 'menu', :sections => site.primary_menu, :menu_name => 'nav navbar-nav navbar-left' %>
-      <%= render "locales_select" %>
+      <div class="navbar-right">
+        <%= render "locales_select" %>
+      </div>
+      
     </nav>
-    
+    <form class="navbar-form hidden-xs" role="search">
+        <div class="form-group">
+          <%= collection_select("rental_property", "id", @rental_properties, :public_url, :title, :prompt => "Select a rental property") %>
+        </div>
+      </form>
   </div>
 
 </header>

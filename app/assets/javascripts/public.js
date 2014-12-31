@@ -18,9 +18,9 @@ $(document).ready(function() {
     document.location.href = result;
   });
 
-    $('#collapseTwo').on('shown.bs.collapse', function () {
-      google.maps.event.trigger(document.getElementById('map-canvas'), 'resize');
-    })
+  $('#collapseTwo').on('shown.bs.collapse', function () {
+    google.maps.event.trigger(document.getElementById('map-canvas'), 'resize');
+  })
   //===========================================================
   // NAVIGATION
   //===========================================================
@@ -70,22 +70,22 @@ $(document).ready(function() {
   
   // Detect logo dimensions and add correct class
 
-  var logoImage = $('.top-bar .logo:first-of-type');
+  // var logoImage = $('.top-bar .logo:first-of-type');
 
-  var theImage = new Image();
-  theImage.src = logoImage.attr("src");
+  // var theImage = new Image();
+  // theImage.src = logoImage.attr("src");
 
-  var logoWidth = theImage.width;
-  var logoHeight = theImage.height;
-  var logoRatio = logoWidth / logoHeight;
+  // var logoWidth = theImage.width;
+  // var logoHeight = theImage.height;
+  // var logoRatio = logoWidth / logoHeight;
 
-  if (logoRatio > 2.8) {
-    //$('.top-bar .logo').addClass('logo-wide');
-  }
+  // if (logoRatio > 2.8) {
+  //   $('.top-bar .logo').addClass('logo-wide');
+  // }
 
-  if (logoRatio < 2) {
-    //$('.top-bar .logo').addClass('logo-square');
-  }
+  // if (logoRatio < 2) {
+  //   $('.top-bar .logo').addClass('logo-square');
+  // }
 
   //===========================================================
   // SMOOTH SCROLL
@@ -193,35 +193,35 @@ $(document).ready(function() {
     directionNav: false
   });
 
-$( ".hero-slider" ).each(function( index ) {
-  if ($( this ).find('li').length < 2) {
-    $( this ).find(".prev").hide();
-    $( this ).find(".next").hide();
-  }
+  $( ".hero-slider" ).each(function( index ) {
+    if ($( this ).find('li').length < 2) {
+      $( this ).find(".prev").hide();
+      $( this ).find(".next").hide();
+    }
 
-  $('.image-slider').flexslider({
+    $('.hero-slider').flexslider({
       animation: "slide",
       directionNav: false,
       controlNav: false,
       touch: false,
       slideshow: false
     });
-});
+  });
 
-$( ".image-slider" ).each(function( index ) {
-  if ($( this ).find('li').length < 2) {
-    $( this ).find(".prev").hide();
-    $( this ).find(".next").hide();
-  }
+  $( ".image-slider" ).each(function( index ) {
+    if ($( this ).find('li').length < 2) {
+      $( this ).find(".prev").hide();
+      $( this ).find(".next").hide();
+    }
 
-  $('.image-slider').flexslider({
+    $('.image-slider').flexslider({
       animation: "slide",
       directionNav: false,
       controlNav: false,
       touch: false,
       slideshow: false
     });
-});
+  });
 
 
   $('.prev, .next').on('click', function() {
@@ -364,19 +364,19 @@ $( ".image-slider" ).each(function( index ) {
   // COUNTDOWN
   //===========================================================
 
-  $('.countdown').each(function() {
-    $(this).countdown({
-      until: new Date($(this).attr('data-date'))
-    });
-  });
+  // $('.countdown').each(function() {
+  //   $(this).countdown({
+  //     until: new Date($(this).attr('data-date'))
+  //   });
+  // });
 
   //===========================================================
   // TWITTER FEED
   //===========================================================
 
-  if ($('#tweets').length) {
-    twitterFetcher.fetch($('#tweets').attr('data-widget-id'), '', 5, true, true, true, '', false, handleTweets);
-  }
+  // if ($('#tweets').length) {
+  //   twitterFetcher.fetch($('#tweets').attr('data-widget-id'), '', 5, true, true, true, '', false, handleTweets);
+  // }
 
 
   //===========================================================
@@ -390,8 +390,8 @@ $( ".image-slider" ).each(function( index ) {
 
     console.log('We have a submission...');
     var thisForm = $(this).closest('.email-form'),
-      error = 0,
-      originalError = thisForm.attr('original-error');
+    error = 0,
+    originalError = thisForm.attr('original-error');
 
     if (typeof originalError !== typeof undefined && originalError !== false) {
       thisForm.find('.form-error').text(originalError);
@@ -446,9 +446,9 @@ $( ".image-slider" ).each(function( index ) {
           }
         }
       });
-    }
-    return false;
-  });
+}
+return false;
+});
 
   //===========================================================
   // EXPANDING LISTS
@@ -508,27 +508,27 @@ $(window).load(function() {
 
   // Instagram Feed
 
-  if ($('.instafeed').length) {
-    jQuery.fn.spectragram.accessData = {
-      accessToken: '1406933036.fedaafa.feec3d50f5194ce5b705a1f11a107e0b',
-      clientID: 'fedaafacf224447e8aef74872d3820a1'
-    };
+  // if ($('.instafeed').length) {
+  //   jQuery.fn.spectragram.accessData = {
+  //     accessToken: '1406933036.fedaafa.feec3d50f5194ce5b705a1f11a107e0b',
+  //     clientID: 'fedaafacf224447e8aef74872d3820a1'
+  //   };
 
-    $('.instafeed').each(function() {
-      $(this).children('ul').spectragram('getUserFeed', {
-        query: $(this).attr('data-user-name')
-      });
+  //   $('.instafeed').each(function() {
+  //     $(this).children('ul').spectragram('getUserFeed', {
+  //       query: $(this).attr('data-user-name')
+  //     });
 
-    });
+  //   });
 
-  }
+  // }
 
-  if ($('#tweets').length) {
-    $('#tweets').flexslider({
-      directionNav: false,
-      controlNav: false
-    });
-  }
+  // if ($('#tweets').length) {
+  //   $('#tweets').flexslider({
+  //     directionNav: false,
+  //     controlNav: false
+  //   });
+  // }
 
   // Remove Loader
 
@@ -541,12 +541,12 @@ $(window).load(function() {
   $('form.mail-list-signup').on('submit', function() {
 
     var iFrame = $(this).closest('section, header').find('iframe.mail-list-form'),
-      thisForm = $(this).closest('.mail-list-signup'),
-      userEmail = $(this).find('.signup-email-field').val(),
-      userFullName = $(this).find('.signup-name-field').val(),
-      userFirstName = $(this).find('.signup-first-name-field').val(),
-      userLastName = $(this).find('.signup-last-name-field').val(),
-      error = 0;
+    thisForm = $(this).closest('.mail-list-signup'),
+    userEmail = $(this).find('.signup-email-field').val(),
+    userFullName = $(this).find('.signup-name-field').val(),
+    userFirstName = $(this).find('.signup-first-name-field').val(),
+    userLastName = $(this).find('.signup-last-name-field').val(),
+    error = 0;
 
     $(thisForm).find('.validate-required').each(function() {
       if ($(this).val() === '') {
@@ -595,9 +595,6 @@ $(window).load(function() {
       filter: filterValue
     });
   });
-
-
-
 });
 
 function handleTweets(tweets) {

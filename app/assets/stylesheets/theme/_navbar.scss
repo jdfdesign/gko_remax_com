@@ -4,9 +4,26 @@
     letter-spacing: 1px;
     border: none;
     border-bottom: 1px solid $navbar-default-border;
+    .dropdown-menu {
+        font-size: 13px;
+    }
+    .dropdown-menu > li > a {
+        color: $navbar-default-link-color;
+        &:hover,
+        &:focus {
+            color: $navbar-default-link-hover-color;
+            background-color: $navbar-default-link-hover-bg;
+        }
+    }
 }
 .navbar-brand {
     padding: 0 15px 0 0;
+}
+.navbar-default .navbar-nav > .open > a, 
+.navbar-default .navbar-nav > .open > a:hover, 
+.navbar-default .navbar-nav > .open > a:focus {
+    background-color: $navbar-default-link-hover-bg;
+    color: $navbar-default-link-hover-color;
 }
 @media (min-width: $grid-float-breakpoint) {
     .navbar-nav > li {
@@ -15,23 +32,45 @@
     }
 
     .navbar-nav > li > a {
+        font-size: 13px;
         padding: 34px 0 0 0;
         border-bottom: 3px solid $navbar-default-bg;
         @include transition(all 0.3s ease);
-        font-size: 13px;
+        
         &:hover,
         &:focus {
-        border-bottom-color: $navbar-default-link-hover-color;
-      }
+            border-bottom-color: $navbar-default-link-hover-color;
+        }
     }
     .navbar-brand {
         margin-left: -15px;
     }
 }
+#locales {
 
-#locales-menu {
-    position: absolute;
-    right: 20px;
-    top: 26px;
-    z-index: 1;
+    > li > a {
+        padding: 34px 0 0 0;
+        border-bottom: 3px solid $navbar-default-bg;
+        font-size: 13px;
+        @include transition(all 0.3s ease);
+        &:hover,
+        &:focus {
+            border-bottom-color: $navbar-default-link-hover-color;
+            background-color: transparent;
+        }
+    }
 }
+.navbar-form {
+    position: absolute;
+    right: 0px;
+    top: 4px;
+    z-index: 1; 
+    margin-top: 0;
+    margin-bottom: 0;
+}
+// #locales-menu {
+//     position: absolute;
+//     right: 20px;
+//     top: 26px;
+//     z-index: 1;
+// }

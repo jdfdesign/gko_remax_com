@@ -233,7 +233,7 @@ GEM
     rmagick (2.13.2)
     routing-filter (0.3.1)
       actionpack
-    ruby-ole (1.2.11.7)
+    ruby-ole (1.2.11.8)
     rubyzip (0.9.6.1)
     sass (3.2.14)
     sass-rails (3.2.6)

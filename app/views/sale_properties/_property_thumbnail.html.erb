@@ -11,6 +11,7 @@
    <p class="tags-list">
     <%= metas %>
   </p>
+  <p class="price"><%= sale_price_value(record) %></p>
   <%= content_tag(:p, :class => "body") do %>
     <%= truncate_html(strip_tags(record.body), :length => 120, :omission => "...") %>
   <% end if record.body.present? %>

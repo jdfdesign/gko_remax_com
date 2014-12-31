@@ -50,7 +50,14 @@ end
           <%= render_copy_text(@rental_property.body) %>
         </div>
         <div class="col-sm-4">
+          <% if @rental_property.info_body.present? %>
+            <div class="well property-info">
+              <h4><%= @rental_property.info_title %></h4>
+              <%= @rental_property.info_body %>
+            </div>
+          <% end %>
           <div class='widget-details'>
+
             <%= tags.compact.join("<br/>").html_safe %>
             <hr>
             <%
@@ -87,10 +94,10 @@ end
             <div class="container">
               <div class='row'>
                <div class='col-sm-11 col-sm-offset-1'>
-                <% if @rental_property.has_promo? %>
-                <div class="well realty-promo-text">
-                  <%= @rental_property.promo_text.html_safe %>
-                </div>
+                <% if @rental_property.promo_text.present? %>
+                  <div class="well property-promo-text">
+                    <%= @rental_property.promo_text.html_safe %>
+                  </div>
                 <% end %>
                 <%= render 'rental_properties/seasons' %>
               </div>
