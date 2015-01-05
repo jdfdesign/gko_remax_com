@@ -6,7 +6,8 @@ price_options << t(:'realty.filters.price.less_than', :price => 4000)
 price_options << "4000 - 10000"
 price_options << t(:'realty.filters.price.more_than', :price => 10000)
 price_options.compact.join("\n").html_safe
-@lifestyle_categories ||= site.categories.named("lifestyles").children
+@vacation_style_cat ||= site.categories.named("lifestyles")
+@lifestyle_categories ||= @vacation_style_cat.children
 @rental_properties ||= @rent_section.rental_properties.published.in_city(site.cities.first).with_translations(I18n.locale).order('content_translations.title ASC')
 
 @sale_section ||= site.sale_property_lists.live.first
@@ -53,7 +54,7 @@ price_options.compact.join("\n").html_safe
               :collection => @lifestyle_categories, 
               :label_method => :title,
               :value_method => :id,
-              :prompt => t(:'helpers.select.lifestyle.prompt').html_safe,
+              :prompt => @vacation_style_cat.title,
               :label => false,
               :as => :select,
               :input_html => { :class => "form-control" } %>

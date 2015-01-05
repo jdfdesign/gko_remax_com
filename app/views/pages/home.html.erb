@@ -78,7 +78,7 @@ end
           <div class="img-wrapper background-image-holder"><%= image_tag("lifetyle_0#{index+1}.jpg") %></div>
             <div class="caption">
               <h3 class="title"><%= link_to(c.title, c.public_url) %></h3>
-              <h4 class="body"><%= link_to(c.body, c.public_url) %></h4>
+              <h4 class="body"><%= link_to(c.body.html_safe, c.public_url) %></h4>
               <%#= link_to("Discover", c.public_url, :class => "btn btn-inverse") %>
             </div>
           </div><!--end of team member-->

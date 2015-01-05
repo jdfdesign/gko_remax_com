@@ -302,13 +302,10 @@ $(document).ready(function() {
   $('.main-container section:first-child').addClass('first-child');
 
   $('.parallax-background').each(function() {
-
     if ($(this).closest('section').hasClass('first-child') && !$(this).closest('section').hasClass('slider-fullscreen')) {
       $(this).attr('data-top', prefix + 'transform: translate3d(0px,0px, 0px)');
       $(this).attr('data-top-bottom', prefix + 'transform: translate3d(0px,200px, 0px)');
-
     } else {
-
       $(this).attr('data-bottom-top', prefix + 'transform: translate3d(0px,-100px, 0px)');
       $(this).attr('data-center', prefix + 'transform: translate3d(0px,0px, 0px)');
       $(this).attr('data-top-bottom', prefix + 'transform: translate3d(0px,100px, 0px)');

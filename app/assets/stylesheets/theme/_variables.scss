@@ -363,8 +363,8 @@ $navbar-padding-vertical:          0;//(($navbar-height - $line-height-computed)
 $navbar-collapse-max-height:       340px;
 
 $navbar-default-color:             #777;
-$navbar-default-bg:                #fff;//#f8f8f8;
-$navbar-default-border:            darken($navbar-default-bg, 6.5%);
+$navbar-default-bg:                #e0ded8;//#f8f8f8;
+$navbar-default-border:            #e0ded8;;//darken($navbar-default-bg, 6.5%);
 
 // Navbar links
 $navbar-default-link-color:                #777;

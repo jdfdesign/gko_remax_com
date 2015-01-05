@@ -3,7 +3,8 @@
     text-transform: uppercase;
     letter-spacing: 1px;
     border: none;
-    border-bottom: 1px solid $navbar-default-border;
+    //border-bottom: 1px solid $navbar-default-bg:;
+    //background-color: #e0ded8;
     .dropdown-menu {
         font-size: 13px;
     }
@@ -53,7 +54,7 @@
     }
 
     .navbar-nav > li > a {
-        font-size: 13px;
+        font-size: 15px;
         padding: 0;
         border-bottom: 3px solid $navbar-default-bg;
         @include transition(all 0.3s ease);
