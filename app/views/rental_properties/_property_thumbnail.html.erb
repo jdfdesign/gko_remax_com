@@ -20,9 +20,10 @@
   <% end %>
   </div>
   
-  <% if record.badge.present? %>
+  <% unless record.badge.blank? %>
     <div class="thumbnail-badge"><%= record.badge %></div>
-  <% elsif record.info_title.present? %>
+  <% end %>
+  <% unless record.info_title.blank? %>
     <div class="thumbnail-info"><%= record.info_title %></div>
   <% end %>
 <% end %>
