@@ -8197,12 +8197,17 @@ footer .nav > li > a:hover, footer .nav > li > a:focus {
   margin-top: 0;
 }
 
-/* line 49, ../../app/assets/stylesheets/theme/_property.scss */
+/* line 50, ../../app/assets/stylesheets/theme/_property.scss */
+.property-promo-text {
+  background-color: #FF5252 !important;
+}
+
+/* line 53, ../../app/assets/stylesheets/theme/_property.scss */
 .nav-stickers > li {
   float: left;
 }
 
-/* line 52, ../../app/assets/stylesheets/theme/_property.scss */
+/* line 56, ../../app/assets/stylesheets/theme/_property.scss */
 .nav-stickers > li > a {
   text-transform: uppercase;
   font-family: "Roboto Condensed", "Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -8214,33 +8219,33 @@ footer .nav > li > a:hover, footer .nav > li > a:focus {
   -o-transition: all 0.3s ease;
   transition: all 0.3s ease;
 }
-/* line 60, ../../app/assets/stylesheets/theme/_property.scss */
+/* line 64, ../../app/assets/stylesheets/theme/_property.scss */
 .nav-stickers > li > a:hover, .nav-stickers > li > a:focus {
   background-color: transparent;
   color: #999;
   text-decoration: none;
 }
 
-/* line 67, ../../app/assets/stylesheets/theme/_property.scss */
+/* line 71, ../../app/assets/stylesheets/theme/_property.scss */
 .widget-details {
   font-family: "Roboto Condensed", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 16px;
   letter-spacing: 0;
   line-height: 24px;
 }
-/* line 72, ../../app/assets/stylesheets/theme/_property.scss */
+/* line 76, ../../app/assets/stylesheets/theme/_property.scss */
 .widget-details strong {
   color: #000;
 }
-/* line 75, ../../app/assets/stylesheets/theme/_property.scss */
+/* line 79, ../../app/assets/stylesheets/theme/_property.scss */
 .widget-details hr {
   margin: 22px 0;
 }
-/* line 78, ../../app/assets/stylesheets/theme/_property.scss */
+/* line 82, ../../app/assets/stylesheets/theme/_property.scss */
 .widget-details a {
   color: #777777;
 }
-/* line 81, ../../app/assets/stylesheets/theme/_property.scss */
+/* line 85, ../../app/assets/stylesheets/theme/_property.scss */
 .widget-details a:focus, .widget-details a:hover {
   color: #333333;
   text-decoration: none;
@@ -8248,12 +8253,12 @@ footer .nav > li > a:hover, footer .nav > li > a:focus {
 
 /* RATES
 -------------------------------------------------- */
-/* line 92, ../../app/assets/stylesheets/theme/_property.scss */
+/* line 96, ../../app/assets/stylesheets/theme/_property.scss */
 .realty-seasons {
   list-style-type: none;
   padding-left: 0;
 }
-/* line 95, ../../app/assets/stylesheets/theme/_property.scss */
+/* line 99, ../../app/assets/stylesheets/theme/_property.scss */
 .realty-seasons ul {
   list-style-type: none;
   font-family: "Merriweather", Georgia, "Times New Roman", Times, serif;
@@ -8263,7 +8268,7 @@ footer .nav > li > a:hover, footer .nav > li > a:focus {
   color: #777777;
 }
 
-/* line 104, ../../app/assets/stylesheets/theme/_property.scss */
+/* line 108, ../../app/assets/stylesheets/theme/_property.scss */
 .realty-season-title {
   font-style: normal;
   font-family: 'Roboto';
@@ -8275,13 +8280,13 @@ footer .nav > li > a:hover, footer .nav > li > a:focus {
   margin-top: 22px;
   margin-bottom: 12px;
 }
-/* line 114, ../../app/assets/stylesheets/theme/_property.scss */
+/* line 118, ../../app/assets/stylesheets/theme/_property.scss */
 .realty-season-title span {
   font-weight: 300;
   color: #777777;
 }
 
-/* line 119, ../../app/assets/stylesheets/theme/_property.scss */
+/* line 123, ../../app/assets/stylesheets/theme/_property.scss */
 .price_notes_extra {
   font-size: 16px;
   line-height: 24px;
