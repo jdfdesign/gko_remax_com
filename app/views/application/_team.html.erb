@@ -1,0 +1,48 @@
+<!-- Team
+  ================================================== -->
+  <section class="team">
+   <div class="container">
+    <div class="row">
+     <div class="col-md-8 col-md-offset-2 text-center">
+      <h2>Team</h2>
+      <hr>
+      <h3>Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minu.Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minu</h3>
+      <%= link_to("Say hello", "#", :class => "btn btn-primary ") %>
+    </div>
+  </div><!--end of row-->
+
+  <div class="row content">
+    <div class="col-md-12">
+      <div class="image-slider" id="member-slider">
+        <ul class="slides">
+          <% site.realty_agents.in_groups_of(3) do |group| %>
+          <li>
+            <% group.each do |c| %>
+            <% if c %>
+            <div class="col-md-4">
+              <div class="team-member">
+                <i class="fa fa-user fa-4x"></i>
+               <h2><%= c.name %></h2>
+               <h5><%= c.grade %></h5>
+             </div><!--end of team member-->
+           </div>
+           <% end %>
+           <% end %>
+         </li>
+         <% end %>
+       </ul>
+     </div><!--end of image slider-->
+   </div>
+ </div>
+
+ <div class="row space-bottom-large">
+  <div class="col-md-12 text-center">
+    <div class="btn-group controls">
+      <a href="prev" class="btn btn-primary prev" data-target="#member-slider"><span class="fa fa-angle-left"></span></a>
+      <a href="next" class="btn btn-primary next" data-target="#member-slider"><span class="fa fa-angle-right"></span></a>
+    </div>
+  </div>
+
+</div><!--end of row-->
+</div><!--end of container-->
+</section>

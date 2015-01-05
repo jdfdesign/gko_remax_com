@@ -31,10 +31,10 @@ price_options.compact.join("\n").html_safe
       :input_html => { :value => "1" } %>
       <div class="container">
         <div class="row">
-          <div class="col-md-4">
+          <div class="col-md-2">
             <%= render "shared/area_select", :f => form %>  
           </div>
-          <div class="col-md-4">
+          <div class="col-md-2">
             <div class='form-group'>
               <%= form.input :price, 
               :collection => price_options, 
@@ -44,12 +44,10 @@ price_options.compact.join("\n").html_safe
               :input_html => { :class => "form-control" } %>
             </div>
           </div>
-        </div>
-        <div class="row">
-          <div class="col-md-4">
+          <div class="col-md-2">
             <%= render "shared/bedroom_count_select", :f => form %>
           </div>
-          <div class="col-md-4">
+          <div class="col-md-2">
             <div class='form-group'>
               <%= form.input :with_category, 
               :collection => @lifestyle_categories, 
@@ -81,26 +79,26 @@ price_options.compact.join("\n").html_safe
       :html => {:class => "form-search"}) do |form| %>
       <div class="container">
         <div class="row">
-          <div class="col-md-3">
+          <div class="col-md-2 col-md-offset-1">
             <%= render "shared/area_select", :f => form %>  
           </div>
-          <div class="col-md-3">
+          <div class="col-md-2">
             <%= render "shared/bedroom_count_select", :f => form %>
           </div>
-          <div class="col-md-3">
+          <div class="col-md-2">
+            <div class='form-group'>
             <%= form.select :with_category,
             options_from_collection_for_select(@sale_section.categories, :id, :title, params[:search].present? ? params[:search][:with_category] : ''),
             { :prompt => t(:'helpers.select.category.prompt').html_safe },
             { :class => "form-control" } %>
+            </div>
           </div>
-          <div class="col-md-3">
+          <div class="col-md-2">
             <%= form.button 'submit', t('search'), :class => "search" %>
           </div>
-        </div>
-        <div class="row">
-          <div class="col-md-3 col-md-offset-9">
+          <div class="col-md-2">
             <%= link_to(@sale_section.public_url, :class => "btn btn-link") do %>
-            <i class='fa fa-long-arrow-right'></i> <%= "View all listing" %>
+              <i class='fa fa-long-arrow-right'></i> <%= "View all listing" %>
             <% end %>
           </div>
         </div>

@@ -1,19 +1,21 @@
 <%
-if @rent_section = site.rental_property_lists.live.first
-  unless @random_rental_property = @rent_section.rental_properties.in_city(site.cities.first).live.end_display.all.sample(1).first
-    @random_rental_property = @rent_section.rental_properties.in_city(site.cities.first).live.all.sample(1).first
-  end
+@rent_section ||= site.rental_property_lists.live.first
+if @rent_section
   @promo_rental_property = @rent_section.rental_properties.live.with_promo.all.sample(4)
   @categories = @rent_section.categories
   @promotions = @rent_section.rental_properties.live.with_promo.limit(9)
   @infos = @rent_section.rental_properties.live.with_info.limit(3)
   @end_display = @rent_section.rental_properties.live.end_display.limit(3)
 end
-if @sale_section = site.sale_property_lists.live.first 
+
+@sale_section ||= site.sale_property_lists.live.first 
+if @sale_section
   @random_sale_property = @sale_section.sale_properties.in_city(site.cities.first).live.all.sample(1).first
   @sale_properties = @sale_section.sale_properties.in_city(site.cities.first).live.all.sample(6)
-end 
+end
+
 @lifestyle_categories ||= site.categories.named("lifestyles").children
+
 @features ||= site.features.live
 %>
 
@@ -73,8 +75,7 @@ end
       <div class="col-sm-4">
       <% end %>
         <div id="<%= c.name %>" class="thumbnail thumbnail-category">
-          <div class="img-wrapper background-image-holder"><%= image_tag("cat-villa.jpg") %></div>
-          <div class="img-wrapper-holder background-image-holder"><%= image_tag("lifetyle_0#{index+1}.jpg") %></div>
+          <div class="img-wrapper background-image-holder"><%= image_tag("lifetyle_0#{index+1}.jpg") %></div>
             <div class="caption">
               <h3 class="title"><%= link_to(c.title, c.public_url) %></h3>
               <h4 class="body"><%= link_to(c.body, c.public_url) %></h4>
@@ -218,8 +219,6 @@ end
     <div class="row">
      <div class="col-md-8 col-md-offset-2 text-center">
       <h2>A selection of properties for sale</h2>
-      <hr>
-      <h3>Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minu</h3>
     </div>
     <div class="row content">
       <div class="col-md-12">
@@ -274,22 +273,22 @@ end
    <div class="container">
     <div class="row">
       <div class="col-md-4">
-        <h2>luxury hotels businesses and exclusivities</h2>
+        <h2><%= t("home.vacation_rentals.title") %></h2>
         <hr>
-        <p>Sed ut nisi pellentesque, aliquam sem non, porta lacus. Morbi mollis aliquam mauris, viverra congue sapien malesuada a. Praesent lectus risus, consectetur et nulla vitae, gravida molestie nulla. Maecenas porta eu dui eget ullamcorper. Pellentesque hendrerit ante nisl, ut malesuada turpis euismod et. Morbi ut enim in orci eleifend pellentesque. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis</p>
-        <%= link_to("More", "#", :class => "btn btn-primary") %>
+        <%= t("home.vacation_rentals.body").html_safe %>
+        <%#= link_to("More", "#", :class => "btn btn-primary") %>
       </div>
       <div class="col-md-4">
-        <h2>Real estate sinT maArten</h2>
+        <h2><%= t("home.concierge_services.title") %></h2>
         <hr>
-        <p>Sed ut nisi pellentesque, aliquam sem non, porta lacus. Morbi mollis aliquam mauris, viverra congue sapien malesuada a. Praesent lectus risus, consectetur et nulla vitae, gravida molestie nulla. Maecenas porta eu dui eget ullamcorper. Pellentesque hendrerit ante nisl, ut malesuada turpis euismod et. Morbi ut enim in orci eleifend pellentesque. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis</p>
-        <%= link_to("More", "#", :class => "btn btn-primary") %>
+        <%= t("home.concierge_services.body").html_safe %>
+        <%#= link_to("More", "#", :class => "btn btn-primary") %>
       </div>
       <div class="col-md-4">
-        <h2>DURING YOUR STAY</h2>
+        <h2><%= t("home.sin_marteen.title") %></h2>
         <hr>
-        <p>Sed ut nisi pellentesque, aliquam sem non, porta lacus. Morbi mollis aliquam mauris, viverra congue sapien malesuada a. Praesent lectus risus, consectetur et nulla vitae, gravida molestie nulla. Maecenas porta eu dui eget ullamcorper. Pellentesque hendrerit ante nisl, ut malesuada turpis euismod et. Morbi ut enim in orci eleifend pellentesque. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis</p>
-        <%= link_to("More", "#", :class => "btn btn-primary") %>
+        <%= t("home.sin_marteen.body").html_safe %>
+        <%#= link_to("More", "#", :class => "btn btn-primary") %>
       </div>
     </div><!--end of row-->
   </div><!--end of container-->
@@ -297,49 +296,7 @@ end
 
 <!-- Team
   ================================================== -->
-  <section class="team">
-   <div class="container">
-    <div class="row">
-     <div class="col-md-8 col-md-offset-2 text-center">
-      <h2>Team</h2>
-      <hr>
-      <h3>Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minu.Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minu</h3>
-      <%= link_to("Say hello", "#", :class => "btn btn-primary ") %>
-    </div>
-  </div><!--end of row-->
+<%#= render "team" %>
 
-  <div class="row content">
-    <div class="col-md-12">
-      <div class="image-slider" id="member-slider">
-        <ul class="slides">
-          <% site.realty_agents.in_groups_of(3) do |group| %>
-          <li>
-            <% group.each do |c| %>
-            <% if c %>
-            <div class="col-md-4">
-              <div class="team-member">
-                <i class="fa fa-user fa-4x"></i>
-               <h2><%= c.name %></h2>
-               <h5><%= c.grade %></h5>
-             </div><!--end of team member-->
-           </div>
-           <% end %>
-           <% end %>
-         </li>
-         <% end %>
-       </ul>
-     </div><!--end of image slider-->
-   </div>
- </div>
- <div class="row space-bottom-large">
-  <div class="col-md-12 text-center">
-    <div class="btn-group controls">
-      <a href="prev" class="btn btn-primary prev" data-target="#member-slider"><span class="fa fa-angle-left"></span></a>
-      <a href="next" class="btn btn-primary next" data-target="#member-slider"><span class="fa fa-angle-right"></span></a>
-    </div>
-  </div>
 
-</div><!--end of row-->
-</div><!--end of container-->
-</section>
 

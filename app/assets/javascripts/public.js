@@ -13,14 +13,16 @@
 $(document).ready(function() {
 
   "use strict";
+
   $('select#rental_property_id').change(function() {
     var result = $(this).val()
     document.location.href = result;
   });
 
-  $('#collapseTwo').on('shown.bs.collapse', function () {
-    google.maps.event.trigger(document.getElementById('map-canvas'), 'resize');
-  })
+
+  // $('#collapseTwo').on('shown.bs.collapse', function () {
+  //   initialize_map();
+  // })
   //===========================================================
   // NAVIGATION
   //===========================================================
@@ -322,13 +324,13 @@ $(document).ready(function() {
 
     // Multi Layer Parallax
 
-    $('.hover-background').each(function() {
-      $(this).mousemove(function(event) {
-        $(this).find('.background-image-holder').css('transform', 'translate(' + -event.pageX / 18 + 'px,' + -event.pageY / 18 + 'px)');
-        $(this).find('.layer-1').css('transform', 'translate(' + -event.pageX / 9 + 'px,' + -event.pageY / 10 + 'px)');
-        $(this).find('.layer-2').css('transform', 'translate(' + -event.pageX / 5 + 'px,' + -event.pageY / 10 + 'px)');
-      });
-    });
+    // $('.hover-background').each(function() {
+    //   $(this).mousemove(function(event) {
+    //     $(this).find('.background-image-holder').css('transform', 'translate(' + -event.pageX / 18 + 'px,' + -event.pageY / 18 + 'px)');
+    //     $(this).find('.layer-1').css('transform', 'translate(' + -event.pageX / 9 + 'px,' + -event.pageY / 10 + 'px)');
+    //     $(this).find('.layer-2').css('transform', 'translate(' + -event.pageX / 5 + 'px,' + -event.pageY / 10 + 'px)');
+    //   });
+    // });
   }
 
   //===========================================================
@@ -337,27 +339,27 @@ $(document).ready(function() {
   
   // Map Holder Overlay
 
-  $('.map-holder').click(function() {
-    $(this).addClass('on');
-  });
+  // $('.map-holder').click(function() {
+  //   $(this).addClass('on');
+  // });
 
-  $(window).scroll(function() {
-    if ($('.map-holder').hasClass('on')) {
-      $('.map-holder').removeClass('on');
-    }
-  });
+  // $(window).scroll(function() {
+  //   if ($('.map-holder').hasClass('on')) {
+  //     $('.map-holder').removeClass('on');
+  //   }
+  // });
 
   // Map Details Holder
 
-  $('.details-holder').each(function() {
-    $(this).css('height', $(this).width());
-  });
+  // $('.details-holder').each(function() {
+  //   $(this).css('height', $(this).width());
+  // });
 
-  $('.details-holder').mouseenter(function() {
-    $(this).closest('.map-overlay').addClass('fade-overlay');
-  }).mouseleave(function() {
-    $(this).closest('.map-overlay').removeClass('fade-overlay');
-  });
+  // $('.details-holder').mouseenter(function() {
+  //   $(this).closest('.map-overlay').addClass('fade-overlay');
+  // }).mouseleave(function() {
+  //   $(this).closest('.map-overlay').removeClass('fade-overlay');
+  // });
 
 
   //===========================================================
@@ -465,6 +467,7 @@ $(window).load(function() {
 
   "use strict";
 
+  initialize_map();
 
   // Align Elements Vertically
 
@@ -652,4 +655,20 @@ function onYouTubeIframeAPIReady() {
     });
   });
 
+}
+
+function initialize_map() {
+  if(typeof google != 'undefined') {
+    var $map = $(document.getElementById('map-canvas'));
+    var point = $map.data("point").split(",");
+    var latlng = new google.maps.LatLng(point[0],point[1]);
+    var map_options = {
+      zoom: 15,
+      center: latlng,
+      scrollwheel: false,
+      mapTypeId: google.maps.MapTypeId.ROADMAP
+    };
+    var map = new google.maps.Map(document.getElementById('map-canvas'), map_options);
+    var marker = new google.maps.Marker({position: latlng,map: map});
+  }
 }

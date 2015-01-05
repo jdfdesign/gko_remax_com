@@ -16,8 +16,18 @@
         }
     }
 }
+
+
+//364 × 187
 .navbar-brand {
     padding: 0 15px 0 0;
+    max-height: $logo-height-sm;
+    overflow: hidden;
+    img {
+        max-height: 100%;
+        max-width: none;
+        width: auto;
+    }
 }
 .navbar-default .navbar-nav > .open > a, 
 .navbar-default .navbar-nav > .open > a:hover, 
@@ -26,14 +36,25 @@
     color: $navbar-default-link-hover-color;
 }
 @media (min-width: $grid-float-breakpoint) {
+
+    .navbar {
+        min-height: $logo-height-sm-min; // Ensure a navbar always shows (e.g., without a .navbar-brand in collapsed mode)
+        max-height: $logo-height-sm-min;
+    }
+
+    .navbar-brand {
+        max-height: 135px;
+        min-height: $logo-height-sm-min;
+        height: 135px;
+    }
+
     .navbar-nav > li {
-        padding-left: 10px;
-        padding-right: 10px;
+        padding: (($logo-height-sm-min - $line-height-computed) / 2) 10px;
     }
 
     .navbar-nav > li > a {
         font-size: 13px;
-        padding: 34px 0 0 0;
+        padding: 0;
         border-bottom: 3px solid $navbar-default-bg;
         @include transition(all 0.3s ease);
         
@@ -48,8 +69,12 @@
 }
 #locales {
 
+    > li {
+        padding: (($logo-height-sm-min - $line-height-computed) / 2) 10px;
+    }
+
     > li > a {
-        padding: 34px 0 0 0;
+        padding: 0;
         border-bottom: 3px solid $navbar-default-bg;
         font-size: 13px;
         @include transition(all 0.3s ease);

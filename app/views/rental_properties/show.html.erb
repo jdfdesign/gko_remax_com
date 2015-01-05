@@ -81,7 +81,7 @@ end
         <div class="panel-heading" role="tab" id="headingOne">
           <div class="container">
             <h4 class="panel-title">
-              <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+              <a data-toggle="collapse" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
                 <%= t(:'rates') %>
                 <span class="th-icon-open"><i class="fa fa-plus"></i></span>
                 <span class="th-icon-close"><i class="fa fa-minus"></i></span>
@@ -111,10 +111,9 @@ end
   ================================================== -->
   <div class="panel panel-default">
     <div class="panel-heading" role="tab" id="headingTwo">
-
       <div class="container">
         <h4 class="panel-title">
-          <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+          <a data-toggle="collapse" href="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
             <%= t(:'details') %>
             <span class="th-icon-open"><i class="fa fa-plus"></i></span>
             <span class="th-icon-close"><i class="fa fa-minus"></i></span>
@@ -122,7 +121,7 @@ end
         </h4>
       </div>
     </div>
-    <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+    <div id="collapseTwo" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingTwo">
       <div class="panel-body">
         <div class="container">
           <div class='row'>
@@ -134,7 +133,7 @@ end
           ================================================== -->
           <div class='row'>
             <div class='col-sm-12'>
-              <%= render('google_map', :point => @rental_property.lat_long) %> 
+              <%= render('gmap', :point => @rental_property.lat_long) %> 
             </div>
           </div>
           <% end %>
@@ -149,7 +148,7 @@ end
   <div class="panel-heading" role="tab" id="headingThree">
     <div class="container">
       <h4 class="panel-title">
-        <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+        <a data-toggle="collapse" href="#collapseThree" aria-expanded="true" aria-controls="collapseThree">
           <%= t(:'realty.request_availability') %>
           <span class="th-icon-open"><i class="fa fa-plus"></i></span>
           <span class="th-icon-close"><i class="fa fa-minus"></i></span>
@@ -157,7 +156,7 @@ end
       </h4>
     </div>
   </div>
-  <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
+  <div id="collapseThree" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingThree">
     <div class="panel-body">
       <div class="container">
         <div class='row'>
