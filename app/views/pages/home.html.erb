@@ -23,7 +23,7 @@ end
   <section class="hero-slider" id="hero-slider">
     <ul class="slides">
       <% @features.each do |feature| %>
-      <li class="overlay">
+      <li class="overlayx">
         <% if image = feature.thumbnail(site.preferred_features_image_size) %>
         <div class="background-image-holder parallax-background ">
           <%= image_tag(image.url, :class => "background-image") %>
@@ -37,7 +37,7 @@ end
               <%= content_tag(:h1, feature.title, :class => "text-white") if feature.title.present? %>
               <%= feature.body.html_safe if feature.body.present? %>
               <% if feature.owner and url = feature.owner.public_url %>
-              <p><%= link_to(t("features.view_more"), url, :class => 'btn btn-primary btn-white') %></p>
+              <p><%= link_to(t("features.view_more"), url, :class => 'btn btn-primary btn-inverse') %></p>
               <% end %>
             </div>
           </div>
