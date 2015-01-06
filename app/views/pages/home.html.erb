@@ -10,8 +10,7 @@ end
 
 @sale_section ||= site.sale_property_lists.live.first 
 if @sale_section
-  @random_sale_property = @sale_section.sale_properties.in_city(site.cities.first).live.all.sample(1).first
-  @sale_properties = @sale_section.sale_properties.in_city(site.cities.first).live.all.sample(6)
+  @sale_properties = @sale_section.sale_properties.in_city(site.cities.first).in_homepage.live
 end
 
 @lifestyle_categories ||= site.categories.named("lifestyles").children
@@ -24,7 +23,7 @@ end
   <section class="hero-slider" id="hero-slider">
     <ul class="slides">
       <% @features.each do |feature| %>
-      <li class="overlayx">
+      <li class="overlay">
         <% if image = feature.thumbnail(site.preferred_features_image_size) %>
         <div class="background-image-holder parallax-background ">
           <%= image_tag(image.url, :class => "background-image") %>

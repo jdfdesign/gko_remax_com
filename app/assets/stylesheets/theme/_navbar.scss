@@ -50,7 +50,7 @@
     }
 
     .navbar-nav > li {
-        padding: (($logo-height-sm-min - $line-height-computed) / 2) 10px;
+        padding: (($logo-height-sm-min - 6 - $line-height-computed) / 2) 10px;
     }
 
     .navbar-nav > li > a {

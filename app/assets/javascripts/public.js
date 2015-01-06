@@ -206,7 +206,8 @@ $(document).ready(function() {
       directionNav: false,
       controlNav: false,
       touch: false,
-      slideshow: false
+      slideshow: true,
+      slideshowSpeed: 4000
     });
   });
 
@@ -217,7 +218,7 @@ $(document).ready(function() {
     }
 
     $('.image-slider').flexslider({
-      animation: "slide",
+      animation: "fade",
       directionNav: false,
       controlNav: false,
       touch: false,
@@ -309,9 +310,7 @@ $(document).ready(function() {
       $(this).attr('data-bottom-top', prefix + 'transform: translate3d(0px,-100px, 0px)');
       $(this).attr('data-center', prefix + 'transform: translate3d(0px,0px, 0px)');
       $(this).attr('data-top-bottom', prefix + 'transform: translate3d(0px,100px, 0px)');
-
     }
-
   });
 
   if (!(/Android|iPhone|iPad|iPod|BlackBerry|Windows Phone/i).test(navigator.userAgent || navigator.vendor || window.opera)) {
@@ -321,13 +320,13 @@ $(document).ready(function() {
 
     // Multi Layer Parallax
 
-    // $('.hover-background').each(function() {
+    //$('.hover-background').each(function() {
     //   $(this).mousemove(function(event) {
-    //     $(this).find('.background-image-holder').css('transform', 'translate(' + -event.pageX / 18 + 'px,' + -event.pageY / 18 + 'px)');
+     //    $(this).find('.background-image-holder').css('transform', 'translate(' + -event.pageX / 18 + 'px,' + -event.pageY / 18 + 'px)');
     //     $(this).find('.layer-1').css('transform', 'translate(' + -event.pageX / 9 + 'px,' + -event.pageY / 10 + 'px)');
     //     $(this).find('.layer-2').css('transform', 'translate(' + -event.pageX / 5 + 'px,' + -event.pageY / 10 + 'px)');
     //   });
-    // });
+    //});
   }
 
   //===========================================================
@@ -478,10 +477,10 @@ $(window).load(function() {
 
   // Isotope Projects
 
-  $('.projects-container').isotope({
-    itemSelector: '.project',
-    layoutMode: 'fitRows'
-  });
+  //$('.projects-container').isotope({
+  //  itemSelector: '.project',
+  //  layoutMode: 'fitRows'
+  //});
 
   $('.filters li').click(function() {
     var current = $(this);
@@ -498,13 +497,13 @@ $(window).load(function() {
 
   // Isotope contained feature boxes
 
-  $('.contained-features-wrapper').isotope({
-    itemSelector: '.no-pad',
-    layoutMode: 'masonry',
-    masonry: {
-      gutter: 0
-    }
-  });
+  //$('.contained-features-wrapper').isotope({
+   // itemSelector: '.no-pad',
+   // layoutMode: 'masonry',
+   // masonry: {
+   //   gutter: 0
+   // }
+  //});
 
   // Instagram Feed
 

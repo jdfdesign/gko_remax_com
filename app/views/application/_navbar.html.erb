@@ -4,7 +4,7 @@
 @rental_properties ||= @rent_section.rental_properties.published.in_city(site.cities.first).with_translations(I18n.locale).order('content_translations.title ASC')
 %>
 <!-- Begin Header -->
-<header class="navbar navbar-default" role="navigation">
+<div class="navbar navbar-default" role="navigation">
   <div class="container-fluid">
     <div class="navbar-header">
       <%= link_to(image_tag("logo-horizontal.png", :alt => site.title, :class => "img-responsive", :nopin => "nopin"), root_url, :class => "navbar-brand") %>
@@ -17,17 +17,17 @@
     </div>
     <nav class="collapse navbar-collapse">
       <%= render 'menu', :sections => site.primary_menu, :menu_name => 'nav navbar-nav navbar-left' %>
-      <div class="navbar-right">
+ <div class="navbar-right">
         <%= render "locales_select" %>
       </div>
       
     </nav>
+         
     <form class="navbar-form hidden-xs" role="search">
         <div class="form-group">
           <%= collection_select("rental_property", "id", @rental_properties, :public_url, :title, :prompt => "Select a rental property") %>
         </div>
       </form>
   </div>
-
-</header>
+</div>
 <%# end %>
