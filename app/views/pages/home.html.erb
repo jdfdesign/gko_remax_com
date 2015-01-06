@@ -1,16 +1,14 @@
 <%
 @rent_section ||= site.rental_property_lists.live.first
 if @rent_section
-  @promo_rental_property = @rent_section.rental_properties.live.with_promo.all.sample(4)
-  @categories = @rent_section.categories
-  @promotions = @rent_section.rental_properties.live.with_promo.limit(9)
-  @infos = @rent_section.rental_properties.live.with_info.limit(3)
-  @end_display = @rent_section.rental_properties.live.end_display.limit(3)
+  @promotions = @rent_section.rental_properties.live.with_promo.limit(6).order("RAND()")
+  @infos = @rent_section.rental_properties.live.with_info.limit(8).order("RAND()")
+  @end_display = @rent_section.rental_properties.end_display.live.limit(8).order("RAND()")
 end
 
 @sale_section ||= site.sale_property_lists.live.first 
 if @sale_section
-  @sale_properties = @sale_section.sale_properties.in_city(site.cities.first).in_homepage.live
+  @sale_properties = @sale_section.sale_properties.in_city(site.cities.first).in_homepage.live.limit(6).order("RAND()")
 end
 
 @lifestyle_categories ||= site.categories.named("lifestyles").children
@@ -295,7 +293,7 @@ end
 
 <!-- Team
   ================================================== -->
-<%#= render "team" %>
+<%= render "team" %>
 
 
 

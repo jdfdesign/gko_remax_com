@@ -1,6 +1,5 @@
-<%# resource_cache(resource) do %>
+<% resource_cache(resource) do %>
 
-  <%# cache([action_name, site, I18n.locale, parent, @sale_property, 'sidebar55']) do %>
     <%
     options = @sale_property.content_options
     has_options = options.try(:any?)
@@ -93,6 +92,4 @@
   </section>
 
 </article>
-<%# end %>
-
-<%# end %>
+<% end %>
