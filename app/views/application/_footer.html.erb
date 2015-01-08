@@ -6,7 +6,7 @@
         <h5>Contact</h5>
         <hr>
         <p><%= "RE/MAX Island Properties - St Barths<br>55 Rue Samuel Fahlberg - Gustavia<br>97133 Saint Barthélemy French West Indies".html_safe %></p>
-        <p><%= "Tel. Intl +590 590 29 78 20<br>Tel from US 011 +590 590 29 78 20<br>Fax +590 590 87 12 55<br>".html_safe %><%= mail_to(t('email_us'), site.preferred_contact_email, :encode => "javascript") unless site.preferred_contact_email.blank? %></p>
+        <p><%= "Tel. Intl +590 590 29 78 20<br>Tel from US 011 +590 590 29 78 20<br>Fax +590 590 87 12 55<br>".html_safe %><%= mail_to(site.preferred_contact_email, site.preferred_contact_email, :encode => "javascript") unless site.preferred_contact_email.blank? %></p>
       </div>
       <div class="col-sm-6 col-md-2">
         <h5>Follow us</h5>
@@ -21,7 +21,7 @@
           <li><%= link_to("https://twitter.com/remaxstbarths", :target => "_blank") do %>
             <i class="fa fa-twitter"></i> Twitter
           <% end %></li>
-          <li><%= link_to("#", :target => "_blank") do %>
+          <li><%= link_to("https://plus.google.com/116637192740846764053/posts", :target => "_blank") do %>
             <i class="fa fa-google-plus"></i> Google plus
           <% end %></li>
       </ul>

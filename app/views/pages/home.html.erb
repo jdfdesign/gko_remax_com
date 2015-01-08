@@ -1,13 +1,12 @@
 <%
-@rent_section ||= site.rental_property_lists.live.first
-if @rent_section
+
+if @rent_section ||= site.rental_property_lists.live.first
   @promotions = @rent_section.rental_properties.live.with_promo.limit(6).order("RAND()")
   @infos = @rent_section.rental_properties.live.with_info.limit(8).order("RAND()")
   @end_display = @rent_section.rental_properties.end_display.live.limit(8).order("RAND()")
 end
 
-@sale_section ||= site.sale_property_lists.live.first 
-if @sale_section
+if @sale_section ||= site.sale_property_lists.live.first 
   @sale_properties = @sale_section.sale_properties.in_city(site.cities.first).in_homepage.live.limit(6).order("RAND()")
 end
 
