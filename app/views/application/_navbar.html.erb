@@ -1,7 +1,7 @@
 <%# cache([site, I18n.locale, 'header']) do %>
 <%
 @rent_section ||= site.rental_property_lists.live.first
-@rental_properties ||= @rent_section.rental_properties.published.in_city(site.cities.first).with_translations(I18n.locale).order('content_translations.title ASC')
+@rental_properties = @rent_section.rental_properties.published.in_city(site.cities.first).with_translations(I18n.locale).order('content_translations.title ASC')
 %>
 <!-- Begin Header -->
 <div class="navbar navbar-default" role="navigation">
