@@ -1,8 +1,8 @@
 GIT
   remote: git@github.com:jdfdesign/gko-realty.git
-  revision: 3fe0b7d90cd6fa9403cf8d37c8f5608af76a2d1a
+  revision: c1b2a98542dd11603c8c0aeef090ded52570385a
   specs:
-    gko_realty (0.1.12)
+    gko_realty (0.1.20)
       gko_core
 
 GIT
@@ -194,7 +194,7 @@ GEM
       net-ssh (>= 2.6.5)
     net-sftp (2.1.2)
       net-ssh (>= 2.6.5)
-    net-ssh (2.9.1)
+    net-ssh (2.9.2)
     net-ssh-gateway (1.2.0)
       net-ssh (>= 2.6.5)
     nokogiri (1.5.11)

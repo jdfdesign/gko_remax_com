@@ -1,0 +1,27 @@
+<%# resource_cache(resource) do %>
+<section class="property-header">
+  <div class="container">
+    <div class='row'>
+        <div class='col-sm-8'>
+          <h1><%= resource.title %></h1>
+          <hr>
+          <%= render_copy_text(resource.body) %>
+        </div>
+    </div>
+  </div>
+</section>
+<section class="projects-section">
+  <!-- Begin Projects -->
+  <div class="container">
+    <div id="projects-container" class="row">
+      <% if @sale_properties.any? %>
+        <%= render @sale_properties %>
+      <% else %>
+        <div class="col-xs-12">
+          <%= render "no_records_found" %>
+        </div>
+      <% end %>
+    </div> 
+  </div>
+</section>
+<%# end %>

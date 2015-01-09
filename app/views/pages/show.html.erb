@@ -3,7 +3,7 @@
 
   <!-- Slider
   ================================================== -->
-<%= render "page_slider", :images => resource.images %>
+<%= render("page_slider", :images => resource.images) if resource.images.any?  %>
 
   <!-- Header
   ================================================== -->

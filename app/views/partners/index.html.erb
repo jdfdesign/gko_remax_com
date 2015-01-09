@@ -1,0 +1,22 @@
+<%# resource_cache(resource) do %>
+<section class="property-header">
+  <div class="container">
+    <div class='row'>
+        <div class='col-sm-8'>
+          <h1><%= parent.title %></h1>
+          <hr>
+          <%= render_copy_text(parent.body) %>
+        </div>
+    </div>
+  </div>
+</section>
+<% if collection.any? %>
+<section class="projects-section">
+  <!-- Begin Projects -->
+  <div class="container">
+    <div id="projects-container" class="row">
+      <%= render collection %>
+    </div> 
+  </div>
+</section>
+<% end %>

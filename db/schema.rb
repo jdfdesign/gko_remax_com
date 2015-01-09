@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20141212091649) do
+ActiveRecord::Schema.define(:version => 20150109092708) do
 
   create_table "annual_rental_options", :force => true do |t|
     t.text     "notes"
@@ -29,12 +29,14 @@ ActiveRecord::Schema.define(:version => 20141212091649) do
     t.datetime "created_at",                                        :null => false
     t.datetime "updated_at",                                        :null => false
     t.integer  "city_id"
+    t.integer  "realty_agent_id"
   end
 
   add_index "annual_rental_options", ["area_id"], :name => "index_annual_rental_options_on_area_id"
   add_index "annual_rental_options", ["city_id"], :name => "index_annual_rental_options_on_city_id"
   add_index "annual_rental_options", ["country_id"], :name => "index_annual_rental_options_on_country_id"
   add_index "annual_rental_options", ["property_id"], :name => "index_annual_rental_options_on_property_id"
+  add_index "annual_rental_options", ["realty_agent_id"], :name => "index_annual_rental_options_on_realty_agent_id"
 
   create_table "areas", :force => true do |t|
     t.string   "name",       :limit => 60
@@ -477,6 +479,7 @@ ActiveRecord::Schema.define(:version => 20141212091649) do
     t.string   "image_ext"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "position",                                   :default => 1
   end
 
   create_table "rental_property_option_translations", :force => true do |t|
@@ -586,6 +589,14 @@ ActiveRecord::Schema.define(:version => 20141212091649) do
 
   add_index "roles_users", ["role_id"], :name => "index_roles_users_on_role_id"
   add_index "roles_users", ["user_id"], :name => "index_roles_users_on_user_id"
+
+  create_table "sale_property_assignments", :force => true do |t|
+    t.integer "property_id",                 :null => false
+    t.integer "selection_id",                :null => false
+    t.integer "position",     :default => 1
+  end
+
+  add_index "sale_property_assignments", ["selection_id", "property_id"], :name => "index_sale_property_assignments_on_selection_id_and_property_id", :unique => true
 
   create_table "sale_property_option_translations", :force => true do |t|
     t.integer  "sale_property_option_id"
