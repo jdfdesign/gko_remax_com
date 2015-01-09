@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20150109092708) do
+ActiveRecord::Schema.define(:version => 20150109144252) do
 
   create_table "annual_rental_options", :force => true do |t|
     t.text     "notes"
@@ -481,6 +481,14 @@ ActiveRecord::Schema.define(:version => 20150109092708) do
     t.datetime "updated_at"
     t.integer  "position",                                   :default => 1
   end
+
+  create_table "rental_property_assignments", :force => true do |t|
+    t.integer "property_id",                 :null => false
+    t.integer "selection_id",                :null => false
+    t.integer "position",     :default => 1
+  end
+
+  add_index "rental_property_assignments", ["selection_id", "property_id"], :name => "rental_property_assignment_property_id", :unique => true
 
   create_table "rental_property_option_translations", :force => true do |t|
     t.integer  "rental_property_option_id"
