@@ -1,19 +1,24 @@
-GIT
-  remote: git@github.com:jdfdesign/gko-realty.git
-  revision: 5044db86c00561823c3cc1d6576cb6619628560f
+PATH
+  remote: ~/Github/gko/gko_realty
   specs:
-    gko_realty (0.1.31)
+    gko_realty (0.1.32)
       gko_core
 
-GIT
-  remote: git@github.com:jdfdesign/gko_cms3.git
-  revision: 659aea4576fcb80867fdbf58e4c8989d9b432d4d
-  tag: v0.8.14.3
+PATH
+  remote: ~/Github/gko_cms3/gko_auth
   specs:
     gko_auth (0.8.14.3)
       cancan (~> 1.6.10)
       devise (~> 2.2.3)
+
+PATH
+  remote: ~/Github/gko_cms3/gko_categories
+  specs:
     gko_categories (0.8.14.3)
+
+PATH
+  remote: ~/Github/gko_cms3/gko_core
+  specs:
     gko_core (0.8.14.3)
       activesupport-slices (= 0.0.2)
       acts_as_indexed (~> 0.7.7)
@@ -55,12 +60,28 @@ GIT
       uglifier (~> 2.4.0)
       uuid (~> 2.3.7)
       will_paginate (~> 3.0.2)
+
+PATH
+  remote: ~/Github/gko_cms3/gko_documents
+  specs:
     gko_documents (0.8.14.3)
       dragonfly (~> 0.9.8)
       rack-cache (>= 0.5.3)
+
+PATH
+  remote: ~/Github/gko_cms3/gko_features
+  specs:
     gko_features (0.8.14.3)
+
+PATH
+  remote: ~/Github/gko_cms3/gko_inquiries
+  specs:
     gko_inquiries (0.8.14.3)
       filters_spam (~> 0.2)
+
+PATH
+  remote: ~/Github/gko_cms3/gko_stickers
+  specs:
     gko_stickers (0.8.14.3)
 
 GEM
