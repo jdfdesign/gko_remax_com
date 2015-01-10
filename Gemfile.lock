@@ -1,8 +1,8 @@
 GIT
   remote: git@github.com:jdfdesign/gko-realty.git
-  revision: e696323bf066885d2ec247b370476b8954a98f8e
+  revision: 48c0d272ebecb308075f4aa64b4734183293a2de
   specs:
-    gko_realty (0.1.33)
+    gko_realty (0.1.34)
       gko_core
 
 GIT
