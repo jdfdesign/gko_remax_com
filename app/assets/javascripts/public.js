@@ -1,4 +1,3 @@
-//= require themes/isotope
 //= require themes/lightbox
 //= require themes/flexslider
 //= require themes/smoothScroll
@@ -6,9 +5,7 @@
 //= require themes/scrollReveal
 //= require themes/plugin
 //= require themes/countdown
-//= require themes/twitterFetcher
-//= require themes/spectragram
-
+//= require themes/jquery.validate
 
 $(document).ready(function() {
 
@@ -19,10 +16,16 @@ $(document).ready(function() {
     document.location.href = result;
   });
 
+$('.simple_form').submit(function(e) {
+  var name = $("#rental_property_inquiry_name").val(),
+      email = $("#rental_property_inquiry_email").val(),
+      message = $("#rental_property_inquiry_message").val(),
+      error = 0;
 
-  // $('#collapseTwo').on('shown.bs.collapse', function () {
-  //   initialize_map();
-  // })
+  return false;
+});
+
+
   //===========================================================
   // NAVIGATION
   //===========================================================
@@ -201,7 +204,7 @@ $(document).ready(function() {
       $( this ).find(".next").hide();
     }
 
-    $('.hero-slider').flexslider({
+    $( this ).flexslider({
       animation: "slide",
       directionNav: false,
       controlNav: false,
@@ -448,14 +451,6 @@ $(document).ready(function() {
 return false;
 });
 
-  //===========================================================
-  // EXPANDING LISTS
-  //===========================================================
-
-  $('.expanding-ul li').click(function() {
-    $('.expanding-ul li').removeClass('active');
-    $(this).addClass('active');
-  });
 
 });
 
@@ -475,59 +470,6 @@ $(window).load(function() {
     alignBottom();
   });
 
-  // Isotope Projects
-
-  //$('.projects-container').isotope({
-  //  itemSelector: '.project',
-  //  layoutMode: 'fitRows'
-  //});
-
-  $('.filters li').click(function() {
-    var current = $(this);
-
-    current.siblings('li').removeClass('active');
-    current.addClass('active');
-
-    var filterValue = current.attr('data-filter');
-    var container = current.closest('.projects-wrapper').find('.projects-container');
-    container.isotope({
-      filter: filterValue
-    });
-  });
-
-  // Isotope contained feature boxes
-
-  //$('.contained-features-wrapper').isotope({
-   // itemSelector: '.no-pad',
-   // layoutMode: 'masonry',
-   // masonry: {
-   //   gutter: 0
-   // }
-  //});
-
-  // Instagram Feed
-
-  // if ($('.instafeed').length) {
-  //   jQuery.fn.spectragram.accessData = {
-  //     accessToken: '1406933036.fedaafa.feec3d50f5194ce5b705a1f11a107e0b',
-  //     clientID: 'fedaafacf224447e8aef74872d3820a1'
-  //   };
-
-  //   $('.instafeed').each(function() {
-  //     $(this).children('ul').spectragram('getUserFeed', {
-  //       query: $(this).attr('data-user-name')
-  //     });
-
-  //   });
-
-  // }
-
-  // if ($('#tweets').length) {
-  //   $('#tweets').flexslider({
-  //     directionNav: false,
-  //     controlNav: false
-  //   });
-  // }
 
   // Remove Loader
 
@@ -575,39 +517,8 @@ $(window).load(function() {
     return false;
   });
 
-  // Blog Masonry
-
-  $('.blog-masonry-container').isotope({
-    itemSelector: '.blog-masonry-item',
-    layoutMode: 'masonry'
-  });
-
-  $('.blog-filters li').click(function() {
-    var current = $(this);
-
-    current.siblings('li').removeClass('active');
-    current.addClass('active');
-
-    var filterValue = current.attr('data-filter');
-    var container = current.closest('.blog-masonry').find('.blog-masonry-container');
-    container.isotope({
-      filter: filterValue
-    });
-  });
 });
 
-function handleTweets(tweets) {
-  var x = tweets.length;
-  var n = 0;
-  var element = document.getElementById('tweets');
-  var html = '<ul class="slides">';
-  while (n < x) {
-    html += '<li>' + tweets[n] + '</li>';
-    n++;
-  }
-  html += '</ul>';
-  element.innerHTML = html;
-}
 
 function alignVertical() {
 
