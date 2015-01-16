@@ -23,7 +23,7 @@ end
       <li class="overlayx">
         <% if image = feature.thumbnail(site.preferred_features_image_size) %>
         <div class="background-image-holder parallax-background ">
-          <%= image_tag(image.url, :class => "background-image") %>
+          <%= image_fu(image, "1400x762#", :class => "background-image") %>
         </div>
         <% end %>
         <% if feature.title.present? || feature.body.present? %>
