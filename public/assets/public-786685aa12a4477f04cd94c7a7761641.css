@@ -7192,6 +7192,47 @@ button.close {
     display: none !important;
   }
 }
+/* line 2, ../../app/assets/stylesheets/theme/_form.scss */
+span.error, span.valid {
+  position: absolute;
+  top: 0;
+  right: 1em;
+}
+
+/* line 7, ../../app/assets/stylesheets/theme/_form.scss */
+span.error, span.valid {
+  width: 44px;
+  height: 44px;
+  background-position: center center;
+  background-size: 22px;
+  background-repeat: no-repeat;
+}
+
+/* line 14, ../../app/assets/stylesheets/theme/_form.scss */
+span.error {
+  background-image: url(/assets/error-88e43bcfdc33fe50158367284b679bf3.svg);
+}
+
+/* line 17, ../../app/assets/stylesheets/theme/_form.scss */
+span.valid {
+  background-image: url(/assets/valid-4fdfad64de9041bea8a402634753109c.svg);
+}
+
+/* line 21, ../../app/assets/stylesheets/theme/_form.scss */
+.alert {
+  display: none;
+  border: 0;
+  border-radius: 0;
+  background-color: #ff3333;
+  color: #fff;
+}
+
+/* line 28, ../../app/assets/stylesheets/theme/_form.scss */
+.alert-success {
+  background-color: #22b573;
+  color: #fff;
+}
+
 /* line 1, ../../app/assets/stylesheets/theme/_navs.scss */
 .nav-tabs > li, .nav-pills > li {
   float: none;
