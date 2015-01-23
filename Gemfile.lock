@@ -242,7 +242,7 @@ GEM
     simple_form (2.1.2)
       actionpack (~> 3.0)
       activemodel (~> 3.0)
-    spreadsheet (1.0.0)
+    spreadsheet (1.0.1)
       ruby-ole (>= 1.0)
     sprockets (2.2.3)
       hike (~> 1.2)

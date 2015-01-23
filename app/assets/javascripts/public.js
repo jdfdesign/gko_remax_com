@@ -1,3 +1,4 @@
+//= require jquery_ujs
 //= require themes/lightbox
 //= require themes/flexslider
 //= require themes/smoothScroll
@@ -5,7 +6,6 @@
 //= require themes/scrollReveal
 //= require themes/plugin
 //= require themes/countdown
-//= require themes/jquery.validate
 
 $(document).ready(function() {
 
@@ -16,14 +16,145 @@ $(document).ready(function() {
     document.location.href = result;
   });
 
-$('.simple_form').submit(function(e) {
-  var name = $("#rental_property_inquiry_name").val(),
-      email = $("#rental_property_inquiry_email").val(),
-      message = $("#rental_property_inquiry_message").val(),
-      error = 0;
+  $('.rental_property_inquiry')
+    .on("ajax:beforeSend", function(evt, xhr, settings) {
+    jQuery('span.error').fadeOut('slow');
+    jQuery('span.valid').fadeOut('slow');
+    jQuery('#thanks').hide();
+    jQuery('#error').hide();
+    jQuery('#timedout').hide();
+    jQuery('#state').hide();
 
-  return false;
-});
+    var error = false;
+
+    var name = jQuery('#rental_property_inquiry_name').val();
+    if (name == "" || name == " ") {
+      jQuery('#rental_property_inquiry_name').parent().addClass('has-error');
+      error = true;
+    }
+
+    var checkEmail = /^([\w-\.]+@([\w-]+\.)+[\w-]{2,4})?$/;
+    var email = jQuery('#rental_property_inquiry_email').val();
+    if (email == "" || email == " ") {
+      jQuery('#rental_property_inquiry_email').parent().addClass('has-error');
+      error = true;
+    } else if (!checkEmail.test(email)) {
+      jQuery('#rental_property_inquiry_email').parent().addClass('has-error');
+      error = true;
+    }
+
+    var message = jQuery('#rental_property_inquiry_message').val();
+    if (message == "" || message == " ") {
+      jQuery('#rental_property_inquiry_message').parent().addClass('has-error');
+      error = true;
+    }
+
+    if (error == true) {
+      jQuery('#error').fadeIn('slow');
+      setTimeout(function() {
+        jQuery('#error').fadeOut('slow');
+      }, 3000);
+      return false;
+    }
+    else {
+      jQuery('#rental_property_inquiry_name').parent().removeClass('has-error');
+      jQuery('#rental_property_inquiry_email').parent().removeClass('has-error');
+      jQuery('#rental_property_inquiry_message').parent().removeClass('has-error');
+    }
+  })
+.on("ajax:error", function(evt, xhr, status, error) {
+  if (error == "timeout") {
+    jQuery('#timedout').fadeIn('slow');
+    setTimeout(function() {
+      jQuery('#timedout').fadeOut('slow');
+    }, 3000);
+  } else {
+    jQuery('#state').fadeIn('slow');
+    jQuery("#state").html('The following error occured: ' + error + '');
+    setTimeout(function() {
+      jQuery('#state').fadeOut('slow');
+    }, 3000);
+  }
+})
+.on("ajax:success", function(evt, data, status, xhr) {
+  console.log("success")
+  jQuery('#thanks').fadeIn('slow');
+  jQuery('input').val('');
+  jQuery('textarea').val('');
+  setTimeout(function() {
+    jQuery('#thanks').fadeOut('slow');
+  }, 4000);
+})
+
+  $('.sale_property_inquiry')
+    .on("ajax:beforeSend", function(evt, xhr, settings) {
+    jQuery('span.error').fadeOut('slow');
+    jQuery('span.valid').fadeOut('slow');
+    jQuery('#thanks').hide();
+    jQuery('#error').hide();
+    jQuery('#timedout').hide();
+    jQuery('#state').hide();
+
+    var error = false;
+
+    var name = jQuery('#sale_property_inquiry_name').val();
+    if (name == "" || name == " ") {
+      jQuery('#sale_property_inquiry_name').parent().addClass('has-error');
+      error = true;
+    }
+
+    var checkEmail = /^([\w-\.]+@([\w-]+\.)+[\w-]{2,4})?$/;
+    var email = jQuery('#sale_property_inquiry_email').val();
+    if (email == "" || email == " ") {
+      jQuery('#sale_property_inquiry_email').parent().addClass('has-error');
+      error = true;
+    } else if (!checkEmail.test(email)) {
+      jQuery('#sale_property_inquiry_email').parent().addClass('has-error');
+      error = true;
+    }
+
+    var message = jQuery('#sale_property_inquiry_message').val();
+    if (message == "" || message == " ") {
+      jQuery('#sale_property_inquiry_message').parent().addClass('has-error');
+      error = true;
+    }
+
+    if (error == true) {
+      jQuery('#error').fadeIn('slow');
+      setTimeout(function() {
+        jQuery('#error').fadeOut('slow');
+      }, 3000);
+      return false;
+    }
+    else {
+      jQuery('#sale_property_inquiry_name').parent().removeClass('has-error');
+      jQuery('#sale_property_inquiry_email').parent().removeClass('has-error');
+      jQuery('#sale_property_inquiry_message').parent().removeClass('has-error');
+    }
+  })
+.on("ajax:error", function(evt, xhr, status, error) {
+  if (error == "timeout") {
+    jQuery('#timedout').fadeIn('slow');
+    setTimeout(function() {
+      jQuery('#timedout').fadeOut('slow');
+    }, 3000);
+  } else {
+    jQuery('#state').fadeIn('slow');
+    jQuery("#state").html('The following error occured: ' + error + '');
+    setTimeout(function() {
+      jQuery('#state').fadeOut('slow');
+    }, 3000);
+  }
+})
+.on("ajax:success", function(evt, data, status, xhr) {
+  console.log("success")
+  jQuery('#thanks').fadeIn('slow');
+  jQuery('input').val('');
+  jQuery('textarea').val('');
+  setTimeout(function() {
+    jQuery('#thanks').fadeOut('slow');
+  }, 4000);
+})
 
 
   //===========================================================
@@ -330,7 +461,7 @@ $('.simple_form').submit(function(e) {
     //     $(this).find('.layer-2').css('transform', 'translate(' + -event.pageX / 5 + 'px,' + -event.pageY / 10 + 'px)');
     //   });
     //});
-  }
+}
 
   //===========================================================
   // MAPS
@@ -379,77 +510,6 @@ $('.simple_form').submit(function(e) {
   //   twitterFetcher.fetch($('#tweets').attr('data-widget-id'), '', 5, true, true, true, '', false, handleTweets);
   // }
 
-
-  //===========================================================
-  // CONTACT FORM
-  //===========================================================
-
-  $('form.email-form').submit(function(e) {
-    // return false so form submits through jQuery rather than reloading page.
-    if (e.preventDefault) e.preventDefault();
-    else e.returnValue = false;
-
-    console.log('We have a submission...');
-    var thisForm = $(this).closest('.email-form'),
-    error = 0,
-    originalError = thisForm.attr('original-error');
-
-    if (typeof originalError !== typeof undefined && originalError !== false) {
-      thisForm.find('.form-error').text(originalError);
-    }
-
-
-    $(thisForm).find('.validate-required').each(function() {
-      if ($(this).val() === '') {
-        $(this).addClass('field-error');
-        error = 1;
-      } else {
-        $(this).removeClass('field-error');
-      }
-    });
-
-    $(thisForm).find('.validate-email').each(function() {
-      if (!(/(.+)@(.+){2,}\.(.+){2,}/.test($(this).val()))) {
-        $(this).addClass('field-error');
-        error = 1;
-      } else {
-        $(this).removeClass('field-error');
-      }
-    });
-
-
-    if (error === 1) {
-      $(this).closest('.email-form').find('.form-error').fadeIn(200);
-    } else {
-      jQuery.ajax({
-        type: "POST",
-        url: "mail/mail.php",
-        data: thisForm.serialize(),
-        success: function(response) {
-          // Swiftmailer always sends back a number representing numner of emails sent.
-          // If this is numeric (not Swift Mailer error text) AND greater than 0 then show success message.
-          if ($.isNumeric(response)) {
-            if (parseInt(response) > 0) {
-              thisForm.find('.form-success').fadeIn(1000);
-              thisForm.find('.form-error').fadeOut(1000);
-              setTimeout(function() {
-                thisForm.find('.form-success').fadeOut(500);
-              }, 5000);
-            }
-          }
-          // If error text was returned, put the text in the .form-error div and show it.
-          else {
-            // Keep the current error text in a data attribute on the form
-            thisForm.find('.form-error').attr('original-error', thisForm.find('.form-error').text());
-            // Show the error with the returned error text.
-            thisForm.find('.form-error').text(response).fadeIn(1000);
-            thisForm.find('.form-success').fadeOut(1000);
-          }
-        }
-      });
-}
-return false;
-});
 
 
 });
