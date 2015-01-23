@@ -267,6 +267,9 @@ input, select, textarea {
 
 .image-slider .slides li {
   overflow: hidden;
+  > div {
+    padding-bottom: 24px;
+  }
 }
 .hero-slider .slides li {
   height: 650px;
