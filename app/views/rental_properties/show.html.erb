@@ -19,10 +19,7 @@ end
   tags << "<strong>#{o.option_type.presentation}: </strong>#{o.option_value.presentation}"
 end
 %>
-<%# end %>
 
-
-<%# resource_cache(resource) do %>
 <%= render "search" %>
 <article class="property">
 
@@ -144,7 +141,7 @@ end
 </div>
 </div>
 <% end %>
-<div class="panel panel-default">
+<div class="panel panel-default hidden-print">
   <div class="panel-heading" role="tab" id="headingThree">
     <div class="container">
       <h4 class="panel-title">

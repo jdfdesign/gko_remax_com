@@ -7159,7 +7159,7 @@ button.close {
 }
 @media print {
   /* line 153, ../../app/assets/stylesheets/bootstrap/_responsive-utilities.scss */
-  .visible-print-block {
+  .visible-print-block, img {
     display: block !important;
   }
 }
@@ -8335,11 +8335,11 @@ footer .nav > li > a:hover, footer .nav > li > a:focus {
 
 /* FIX FOR GMAP BUG
 -------------------------------------------------- */
-/* line 25, ../../app/assets/stylesheets/public.css.scss */
+/* line 24, ../../app/assets/stylesheets/public.css.scss */
 #map-canvas {
   height: 400px;
 }
-/* line 27, ../../app/assets/stylesheets/public.css.scss */
+/* line 26, ../../app/assets/stylesheets/public.css.scss */
 #map-canvas img {
   max-width: none;
   vertical-align: middle;
@@ -8347,12 +8347,12 @@ footer .nav > li > a:hover, footer .nav > li > a:focus {
   -ms-interpolation-mode: bicubic;
 }
 
-/* line 35, ../../app/assets/stylesheets/public.css.scss */
+/* line 34, ../../app/assets/stylesheets/public.css.scss */
 article.post-item {
   padding-bottom: 24px;
 }
 
-/* line 38, ../../app/assets/stylesheets/public.css.scss */
+/* line 37, ../../app/assets/stylesheets/public.css.scss */
 .thumbnail-property {
   position: relative;
   padding: 0;
@@ -8361,7 +8361,7 @@ article.post-item {
   overflow: visible;
   margin-bottom: 50px;
 }
-/* line 47, ../../app/assets/stylesheets/public.css.scss */
+/* line 46, ../../app/assets/stylesheets/public.css.scss */
 .thumbnail-property .price {
   position: absolute;
   top: -33px;
@@ -8371,7 +8371,7 @@ article.post-item {
   padding: 8px;
   color: #fff;
 }
-/* line 56, ../../app/assets/stylesheets/public.css.scss */
+/* line 55, ../../app/assets/stylesheets/public.css.scss */
 .thumbnail-property .caption {
   position: absolute;
   bottom: -50px;
@@ -8383,7 +8383,7 @@ article.post-item {
   -o-transition: all 0.5s ease;
   transition: all 0.5s ease;
 }
-/* line 65, ../../app/assets/stylesheets/public.css.scss */
+/* line 64, ../../app/assets/stylesheets/public.css.scss */
 .thumbnail-property .caption h3 {
   margin-top: 0;
   margin-bottom: 8px;
@@ -8392,18 +8392,18 @@ article.post-item {
   line-height: 20px;
   font-weight: 700;
 }
-/* line 72, ../../app/assets/stylesheets/public.css.scss */
+/* line 71, ../../app/assets/stylesheets/public.css.scss */
 .thumbnail-property .caption h3 a {
   font-style: normal;
   color: #333333;
   font-family: "Merriweather", Georgia, "Times New Roman", Times, serif;
 }
-/* line 76, ../../app/assets/stylesheets/public.css.scss */
+/* line 75, ../../app/assets/stylesheets/public.css.scss */
 .thumbnail-property .caption h3 a:hover {
   text-decoration: none;
   color: #333333;
 }
-/* line 82, ../../app/assets/stylesheets/public.css.scss */
+/* line 81, ../../app/assets/stylesheets/public.css.scss */
 .thumbnail-property .caption p {
   text-transform: uppercase;
   font-family: "Roboto Condensed", "Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -8411,22 +8411,22 @@ article.post-item {
   letter-spacing: 1px;
   margin-bottom: 0;
 }
-/* line 89, ../../app/assets/stylesheets/public.css.scss */
+/* line 88, ../../app/assets/stylesheets/public.css.scss */
 .thumbnail-property .caption p.body {
   display: none;
   margin-top: 8px;
 }
-/* line 97, ../../app/assets/stylesheets/public.css.scss */
+/* line 96, ../../app/assets/stylesheets/public.css.scss */
 .thumbnail-property:hover .caption p.body {
   display: block;
 }
 
-/* line 106, ../../app/assets/stylesheets/public.css.scss */
+/* line 105, ../../app/assets/stylesheets/public.css.scss */
 section:nth-of-type(even) .thumbnail .caption {
   background-color: #ebeae6;
 }
 
-/* line 113, ../../app/assets/stylesheets/public.css.scss */
+/* line 112, ../../app/assets/stylesheets/public.css.scss */
 .thumbnail-info,
 .thumbnail-badge {
   position: absolute;
@@ -8443,12 +8443,12 @@ section:nth-of-type(even) .thumbnail .caption {
   background-color: #03A9F4;
 }
 
-/* line 127, ../../app/assets/stylesheets/public.css.scss */
+/* line 126, ../../app/assets/stylesheets/public.css.scss */
 .thumbnail-badge {
   background-color: #FF5252 !important;
 }
 
-/* line 130, ../../app/assets/stylesheets/public.css.scss */
+/* line 129, ../../app/assets/stylesheets/public.css.scss */
 .heart {
   color: #fff;
   background-color: #F44336;
@@ -8463,29 +8463,29 @@ section:nth-of-type(even) .thumbnail .caption {
   background-color: #E91E63;
 }
 
-/* line 145, ../../app/assets/stylesheets/public.css.scss */
+/* line 144, ../../app/assets/stylesheets/public.css.scss */
 .col-sm-12.last {
   margin-top: 16px;
 }
 
 /* MEMBERS
 -------------------------------------------------- */
-/* line 151, ../../app/assets/stylesheets/public.css.scss */
+/* line 150, ../../app/assets/stylesheets/public.css.scss */
 #member-slider {
   padding: 24px 0;
 }
 
-/* line 154, ../../app/assets/stylesheets/public.css.scss */
+/* line 153, ../../app/assets/stylesheets/public.css.scss */
 .team-member {
   text-align: center;
 }
-/* line 156, ../../app/assets/stylesheets/public.css.scss */
+/* line 155, ../../app/assets/stylesheets/public.css.scss */
 .team-member h2 {
   font-size: 12px;
   margin-top: 16px;
   margin-bottom: 8px;
 }
-/* line 162, ../../app/assets/stylesheets/public.css.scss */
+/* line 161, ../../app/assets/stylesheets/public.css.scss */
 .team-member h5 {
   font-family: "Merriweather", Georgia, "Times New Roman", Times, serif;
   font-size: 12px;
@@ -8495,23 +8495,23 @@ section:nth-of-type(even) .thumbnail .caption {
 
 /* FORM
 -------------------------------------------------- */
-/* line 172, ../../app/assets/stylesheets/public.css.scss */
+/* line 171, ../../app/assets/stylesheets/public.css.scss */
 .form-control {
   font-family: "Merriweather", Georgia, "Times New Roman", Times, serif;
   font-size: 12px;
 }
 
-/* line 180, ../../app/assets/stylesheets/public.css.scss */
+/* line 179, ../../app/assets/stylesheets/public.css.scss */
 .form-search {
   padding: 22px 0;
   background-color: #e0ded8;
   border-bottom: 1px solid #d4d2ca;
 }
-/* line 184, ../../app/assets/stylesheets/public.css.scss */
+/* line 183, ../../app/assets/stylesheets/public.css.scss */
 .form-search input, .form-search select, .form-search textarea {
   width: 100%;
 }
-/* line 187, ../../app/assets/stylesheets/public.css.scss */
+/* line 186, ../../app/assets/stylesheets/public.css.scss */
 .form-search .btn-link {
   border: none;
   border-radius: 0;
@@ -8522,7 +8522,7 @@ section:nth-of-type(even) .thumbnail .caption {
   font-size: 11px;
   letter-spacing: 1px;
 }
-/* line 196, ../../app/assets/stylesheets/public.css.scss */
+/* line 195, ../../app/assets/stylesheets/public.css.scss */
 .form-search .btn-link:hover {
   text-decoration: none;
   border-bottom-color: #000;
@@ -8530,7 +8530,7 @@ section:nth-of-type(even) .thumbnail .caption {
   color: #000;
 }
 
-/* line 206, ../../app/assets/stylesheets/public.css.scss */
+/* line 205, ../../app/assets/stylesheets/public.css.scss */
 .background-image-holder,
 .foreground-image-holder {
   position: absolute;
@@ -8543,13 +8543,13 @@ section:nth-of-type(even) .thumbnail .caption {
   background-position: 50% 50% !important;
 }
 
-/* line 216, ../../app/assets/stylesheets/public.css.scss */
+/* line 215, ../../app/assets/stylesheets/public.css.scss */
 .background-image-holder.parallax-background {
   height: 120%;
   top: -10%;
 }
 
-/* line 221, ../../app/assets/stylesheets/public.css.scss */
+/* line 220, ../../app/assets/stylesheets/public.css.scss */
 .hover-background .background-image-holder,
 .hover-background .foreground-image-holder {
   -webkit-transition: all 0.3s ease-out;
@@ -8557,20 +8557,20 @@ section:nth-of-type(even) .thumbnail .caption {
   transition: all 0.3s ease-out;
 }
 
-/* line 224, ../../app/assets/stylesheets/public.css.scss */
+/* line 223, ../../app/assets/stylesheets/public.css.scss */
 .hover-background .background-image-holder {
   height: 110%;
   width: 110%;
 }
 
-/* line 229, ../../app/assets/stylesheets/public.css.scss */
+/* line 228, ../../app/assets/stylesheets/public.css.scss */
 .image-slider,
 .hero-slider {
   padding: 0px;
   position: relative;
 }
 
-/* line 233, ../../app/assets/stylesheets/public.css.scss */
+/* line 232, ../../app/assets/stylesheets/public.css.scss */
 .nav-slide {
   font-size: 12px;
   letter-spacing: 2px;
@@ -8588,41 +8588,41 @@ section:nth-of-type(even) .thumbnail .caption {
   background-color: rgba(0, 0, 0, 0.4);
   text-align: center;
 }
-/* line 249, ../../app/assets/stylesheets/public.css.scss */
+/* line 248, ../../app/assets/stylesheets/public.css.scss */
 .nav-slide:hover {
   color: #fff;
   text-decoration: none;
 }
-/* line 253, ../../app/assets/stylesheets/public.css.scss */
+/* line 252, ../../app/assets/stylesheets/public.css.scss */
 .nav-slide.prev {
   min-width: 60px;
   border-radius: 0 30px 30px 0;
   left: -2px;
   right: auto;
 }
-/* line 260, ../../app/assets/stylesheets/public.css.scss */
+/* line 259, ../../app/assets/stylesheets/public.css.scss */
 .nav-slide.next {
   min-width: 60px;
   right: -2px;
   left: auto;
 }
 
-/* line 268, ../../app/assets/stylesheets/public.css.scss */
+/* line 267, ../../app/assets/stylesheets/public.css.scss */
 .image-slider .slides li {
   overflow: hidden;
 }
-/* line 270, ../../app/assets/stylesheets/public.css.scss */
+/* line 269, ../../app/assets/stylesheets/public.css.scss */
 .image-slider .slides li > div {
   padding-bottom: 24px;
 }
 
-/* line 274, ../../app/assets/stylesheets/public.css.scss */
+/* line 273, ../../app/assets/stylesheets/public.css.scss */
 .hero-slider .slides li {
   height: 650px;
   overflow: hidden;
   position: relative;
 }
-/* line 278, ../../app/assets/stylesheets/public.css.scss */
+/* line 277, ../../app/assets/stylesheets/public.css.scss */
 .hero-slider .slides li h1 {
   font-family: "Merriweather", Georgia, "Times New Roman", Times, serif;
   font-style: italic;
@@ -8633,41 +8633,41 @@ section:nth-of-type(even) .thumbnail .caption {
   font-weight: 700;
   color: #fff;
 }
-/* line 288, ../../app/assets/stylesheets/public.css.scss */
+/* line 287, ../../app/assets/stylesheets/public.css.scss */
 .hero-slider .slides li p {
   color: #fff;
   text-align: center;
   margin-bottom: 24px;
 }
-/* line 293, ../../app/assets/stylesheets/public.css.scss */
+/* line 292, ../../app/assets/stylesheets/public.css.scss */
 .hero-slider .slides li .btn {
   margin-right: 16px;
 }
 
-/* line 298, ../../app/assets/stylesheets/public.css.scss */
+/* line 297, ../../app/assets/stylesheets/public.css.scss */
 .hero-slider .flex-direction-nav a {
   color: rgba(0, 0, 0, 0);
 }
 
-/* line 301, ../../app/assets/stylesheets/public.css.scss */
+/* line 300, ../../app/assets/stylesheets/public.css.scss */
 .flex-direction-nav a:before {
   top: 17px;
   font-size: 36px;
   left: 10px;
 }
 
-/* line 306, ../../app/assets/stylesheets/public.css.scss */
+/* line 305, ../../app/assets/stylesheets/public.css.scss */
 .flex-direction-nav a.flex-next:before {
   left: -10px;
 }
 
 @media all and (max-width: 1350px) {
-  /* line 310, ../../app/assets/stylesheets/public.css.scss */
+  /* line 309, ../../app/assets/stylesheets/public.css.scss */
   .flex-direction-nav {
     display: none !important;
   }
 }
-/* line 314, ../../app/assets/stylesheets/public.css.scss */
+/* line 313, ../../app/assets/stylesheets/public.css.scss */
 .hero-slider .slides li.overlay:before {
   position: absolute;
   width: 100%;
@@ -8680,7 +8680,7 @@ section:nth-of-type(even) .thumbnail .caption {
 }
 
 @media only screen and (min-width: 320px) and (max-width: 767px) {
-  /* line 327, ../../app/assets/stylesheets/public.css.scss */
+  /* line 326, ../../app/assets/stylesheets/public.css.scss */
   .hero-slider .slides li h1 {
     font-size: 32px;
     line-height: 40px;

@@ -19,7 +19,6 @@ $logo-height-sm-min: 135px;
 @import "theme/property";
 
 
-
 /* FIX FOR GMAP BUG
 -------------------------------------------------- */
 #map-canvas {
@@ -327,5 +326,12 @@ input, select, textarea {
   .hero-slider .slides li h1 {
     font-size: 32px;
     line-height: 40px;
+  }
+}
+
+
+@media print {
+  img {
+    @extend .visible-print-block;
   }
 }

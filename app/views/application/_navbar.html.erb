@@ -4,7 +4,7 @@
 @rental_properties = @rent_section.rental_properties.published.in_city(site.cities.first).with_translations(I18n.locale).order('content_translations.title ASC')
 %>
 <!-- Begin Header -->
-<div class="navbar navbar-default" role="navigation">
+<div class="navbar navbar-default hidden-print" role="navigation">
   <div class="container-fluid">
     <div class="navbar-header">
       <%= link_to(image_tag("logo-horizontal.png", :alt => site.title, :class => "img-responsive", :nopin => "nopin"), root_url, :class => "navbar-brand") %>

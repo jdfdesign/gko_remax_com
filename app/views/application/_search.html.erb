@@ -12,7 +12,7 @@ price_options.compact.join("\n").html_safe
 
 @sale_section ||= site.sale_property_lists.live.first
 %>
-<div role="tabpanel">
+<div class="hidden-print" role="tabpanel">
   <!-- Nav tabs -->
   <ul class="nav nav-tabs" role="tablist">
     <li role="presentation" class="<%= 'active' if active == 'rental' %>"><a href="#rent" aria-controls="rent" role="tab" data-toggle="tab">Properties for rent</a></li>
