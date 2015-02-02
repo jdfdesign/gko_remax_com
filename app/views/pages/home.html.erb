@@ -12,6 +12,15 @@ end
 @lifestyle_categories ||= site.categories.named("lifestyles").children
 
 @features ||= site.features.live
+
+geom = case request.env['mobvious.device_type']
+  when :mobile
+    "480x300#"
+  when :tablet
+    "1024x560#"
+  else
+    "1400x762#"
+  end
 %>
 
 <!-- Hero
@@ -20,14 +29,12 @@ end
     <ul class="slides">
       <% @features.each do |feature| %>
       <li class="overlayx">
-        <% if image = feature.thumbnail(image_geometry) %>
+        <% if image = feature.thumbnail(geom) %>
         <div class="background-image-holder parallax-background ">
           <%= image_tag(image.url, :class => "background-image img-responsive") %>
-
         </div>
         <% end %>
         <% if feature.title.present? || feature.body.present? %>
-
         <div class="container align-vertical">
           <div class="row">
             <div class="col-md-6 col-sm-9 col-md-offset-3">
