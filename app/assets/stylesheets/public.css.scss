@@ -6,6 +6,9 @@ $logo-height-sm-min: 135px;
 -------------------------------------------------- */
 @import "theme/variables";
 @import "bootstrap/bootstrap";
+@import "theme/owl.carousel";
+@import "theme/owl.theme";
+@import "theme/owl.theme";
 @import "theme/form";
 @import "theme/navs";
 @import "theme/navbar";
@@ -17,7 +20,7 @@ $logo-height-sm-min: 135px;
 @import "theme/footer";
 @import "theme/home";
 @import "theme/property";
-
+@import "theme/property";
 
 /* FIX FOR GMAP BUG
 -------------------------------------------------- */
@@ -264,6 +267,7 @@ input, select, textarea {
   }
 }
 
+
 .image-slider .slides li {
   overflow: hidden;
   > div {
@@ -271,7 +275,7 @@ input, select, textarea {
   }
 }
 .hero-slider .slides li {
-  height: 650px;
+  min-height: 600px;
   overflow: hidden;
   position: relative;
   h1 {
@@ -323,6 +327,9 @@ input, select, textarea {
 
 
 @media only screen and (min-width: 320px) and (max-width: 767px) {
+  .hero-slider .slides li {
+    min-height: 320px;
+  }
   .hero-slider .slides li h1 {
     font-size: 32px;
     line-height: 40px;

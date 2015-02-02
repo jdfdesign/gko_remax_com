@@ -1,5 +1,4 @@
 <%
-
 if @rent_section ||= site.rental_property_lists.live.first
   @promotions = @rent_section.rental_properties.live.with_promo.limit(6).order("RAND()")
   @infos = @rent_section.rental_properties.live.with_info.limit(8).order("RAND()")
@@ -21,9 +20,10 @@ end
     <ul class="slides">
       <% @features.each do |feature| %>
       <li class="overlayx">
-        <% if image = feature.thumbnail(site.preferred_features_image_size) %>
+        <% if image = feature.thumbnail(image_geometry) %>
         <div class="background-image-holder parallax-background ">
-          <%= image_tag(image.url, :class => "background-image") %>
+          <%= image_tag(image.url, :class => "background-image img-responsive") %>
+
         </div>
         <% end %>
         <% if feature.title.present? || feature.body.present? %>
@@ -32,6 +32,7 @@ end
           <div class="row">
             <div class="col-md-6 col-sm-9 col-md-offset-3">
               <%= content_tag(:h1, feature.title, :class => "text-white") if feature.title.present? %>
+
               <%= feature.body.html_safe if feature.body.present? %>
               <% if feature.owner and url = feature.owner.public_url %>
               <p><%= link_to(t("features.view_more"), url, :class => 'btn btn-primary btn-inverse') %></p>
@@ -58,6 +59,7 @@ end
     <div class="row">
      <div class="col-md-8 col-md-offset-2 text-center">
       <h2>A villa to fit your Vacation Style</h2>
+     
       <hr>
       <h3>Choose your next villa rental according to your vacation style</h3>
     </div>

@@ -18,9 +18,12 @@ rails s
 cd ~/Github/gko_remax_com
 bundle exec rake assets:precompile 
 
+rvm use 1.8.7 --default
 cd ~/Github/gko_remax_com
 bundle exec rake railties:install:migrations
 bundle exec rake db:migrate
+
+
 bundle exec rake db:bootstrap
 
 bundle exec rake db:admin:create

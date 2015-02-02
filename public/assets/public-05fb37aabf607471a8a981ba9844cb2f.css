@@ -7192,6 +7192,277 @@ button.close {
     display: none !important;
   }
 }
+/* 
+ * 	Core Owl Carousel CSS File
+ *	v1.3.3
+ */
+/* clearfix */
+/* line 7, ../../app/assets/stylesheets/theme/_owl.carousel.scss */
+.owl-carousel .owl-wrapper:after {
+  content: ".";
+  display: block;
+  clear: both;
+  visibility: hidden;
+  line-height: 0;
+  height: 0;
+}
+
+/* display none until init */
+/* line 16, ../../app/assets/stylesheets/theme/_owl.carousel.scss */
+.owl-carousel {
+  display: none;
+  position: relative;
+  width: 100%;
+  -ms-touch-action: pan-y;
+}
+
+/* line 24, ../../app/assets/stylesheets/theme/_owl.carousel.scss */
+.owl-carousel .owl-wr
+apper {
+  display: none;
+  position: relative;
+  -webkit-transform: translate3d(0px, 0px, 0px);
+}
+
+/* line 29, ../../app/assets/stylesheets/theme/_owl.carousel.scss */
+.owl-carousel .owl-wrapper-outer {
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+}
+
+/* line 34, ../../app/assets/stylesheets/theme/_owl.carousel.scss */
+.owl-carousel .owl-wrapper-outer.autoHeight {
+  -webkit-transition: height 500ms ease-in-out;
+  -moz-transition: height 500ms ease-in-out;
+  -ms-transition: height 500ms ease-in-out;
+  -o-transition: height 500ms ease-in-out;
+  transition: height 500ms ease-in-out;
+}
+
+/* line 42, ../../app/assets/stylesheets/theme/_owl.carousel.scss */
+.owl-carousel .owl-item {
+  float: left;
+}
+
+/* line 46, ../../app/assets/stylesheets/theme/_owl.carousel.scss */
+.owl-controls .owl-page,
+.owl-controls .owl-buttons div {
+  cursor: pointer;
+}
+
+/* line 49, ../../app/assets/stylesheets/theme/_owl.carousel.scss */
+.owl-controls {
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+/* mouse grab icon */
+/* line 59, ../../app/assets/stylesheets/theme/_owl.carousel.scss */
+.grabbing {
+  cursor: url(grabbing.png) 8 8, move;
+}
+
+/* fix */
+/* line 65, ../../app/assets/stylesheets/theme/_owl.carousel.scss */
+.owl-carousel .owl-wrapper,
+.owl-carousel .owl-item {
+  -webkit-backface-visibility: hidden;
+  -moz-backface-visibility: hidden;
+  -ms-backface-visibility: hidden;
+  -webkit-transform: translate3d(0, 0, 0);
+  -moz-transform: translate3d(0, 0, 0);
+  -ms-transform: translate3d(0, 0, 0);
+}
+
+/*
+* 	Owl Carousel Owl Demo Theme 
+*	v1.3.3
+*/
+/* line 6, ../../app/assets/stylesheets/theme/_owl.theme.scss */
+.owl-theme .owl-controls {
+  margin-top: 10px;
+  text-align: center;
+}
+
+/* Styling Next and Prev buttons */
+/* line 13, ../../app/assets/stylesheets/theme/_owl.theme.scss */
+.owl-theme .owl-controls .owl-buttons div {
+  color: #FFF;
+  display: inline-block;
+  zoom: 1;
+  *display: inline;
+  /*IE7 life-saver */
+  margin: 5px;
+  padding: 3px 10px;
+  font-size: 12px;
+  -webkit-border-radius: 30px;
+  -moz-border-radius: 30px;
+  border-radius: 30px;
+  background: #869791;
+  filter: Alpha(Opacity=50);
+  /*IE7 fix*/
+  opacity: 0.5;
+}
+
+/* Clickable class fix problem with hover on touch devices */
+/* Use it for non-touch hover action */
+/* line 30, ../../app/assets/stylesheets/theme/_owl.theme.scss */
+.owl-theme .owl-controls.clickable .owl-buttons div:hover {
+  filter: Alpha(Opacity=100);
+  /*IE7 fix*/
+  opacity: 1;
+  text-decoration: none;
+}
+
+/* Styling Pagination*/
+/* line 38, ../../app/assets/stylesheets/theme/_owl.theme.scss */
+.owl-theme .owl-controls .owl-page {
+  display: inline-block;
+  zoom: 1;
+  *display: inline;
+  /*IE7 life-saver */
+}
+
+/* line 43, ../../app/assets/stylesheets/theme/_owl.theme.scss */
+.owl-theme .owl-controls .owl-page span {
+  display: block;
+  width: 12px;
+  height: 12px;
+  margin: 5px 7px;
+  filter: Alpha(Opacity=50);
+  /*IE7 fix*/
+  opacity: 0.5;
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  border-radius: 20px;
+  background: #869791;
+}
+
+/* line 57, ../../app/assets/stylesheets/theme/_owl.theme.scss */
+.owl-theme .owl-controls .owl-page.active span,
+.owl-theme .owl-controls.clickable .owl-page:hover span {
+  filter: Alpha(Opacity=100);
+  /*IE7 fix*/
+  opacity: 1;
+}
+
+/* If PaginationNumbers is true */
+/* line 64, ../../app/assets/stylesheets/theme/_owl.theme.scss */
+.owl-theme .owl-controls .owl-page span.owl-numbers {
+  height: auto;
+  width: auto;
+  color: #FFF;
+  padding: 2px 10px;
+  font-size: 12px;
+  -webkit-border-radius: 30px;
+  -moz-border-radius: 30px;
+  border-radius: 30px;
+}
+
+/* preloading images */
+/* line 76, ../../app/assets/stylesheets/theme/_owl.theme.scss */
+.owl-item.loading {
+  min-height: 150px;
+  background: url(AjaxLoader.gif) no-repeat center center;
+}
+
+/*
+* 	Owl Carousel Owl Demo Theme 
+*	v1.3.3
+*/
+/* line 6, ../../app/assets/stylesheets/theme/_owl.theme.scss */
+.owl-theme .owl-controls {
+  margin-top: 10px;
+  text-align: center;
+}
+
+/* Styling Next and Prev buttons */
+/* line 13, ../../app/assets/stylesheets/theme/_owl.theme.scss */
+.owl-theme .owl-controls .owl-buttons div {
+  color: #FFF;
+  display: inline-block;
+  zoom: 1;
+  *display: inline;
+  /*IE7 life-saver */
+  margin: 5px;
+  padding: 3px 10px;
+  font-size: 12px;
+  -webkit-border-radius: 30px;
+  -moz-border-radius: 30px;
+  border-radius: 30px;
+  background: #869791;
+  filter: Alpha(Opacity=50);
+  /*IE7 fix*/
+  opacity: 0.5;
+}
+
+/* Clickable class fix problem with hover on touch devices */
+/* Use it for non-touch hover action */
+/* line 30, ../../app/assets/stylesheets/theme/_owl.theme.scss */
+.owl-theme .owl-controls.clickable .owl-buttons div:hover {
+  filter: Alpha(Opacity=100);
+  /*IE7 fix*/
+  opacity: 1;
+  text-decoration: none;
+}
+
+/* Styling Pagination*/
+/* line 38, ../../app/assets/stylesheets/theme/_owl.theme.scss */
+.owl-theme .owl-controls .owl-page {
+  display: inline-block;
+  zoom: 1;
+  *display: inline;
+  /*IE7 life-saver */
+}
+
+/* line 43, ../../app/assets/stylesheets/theme/_owl.theme.scss */
+.owl-theme .owl-controls .owl-page span {
+  display: block;
+  width: 12px;
+  height: 12px;
+  margin: 5px 7px;
+  filter: Alpha(Opacity=50);
+  /*IE7 fix*/
+  opacity: 0.5;
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  border-radius: 20px;
+  background: #869791;
+}
+
+/* line 57, ../../app/assets/stylesheets/theme/_owl.theme.scss */
+.owl-theme .owl-controls .owl-page.active span,
+.owl-theme .owl-controls.clickable .owl-page:hover span {
+  filter: Alpha(Opacity=100);
+  /*IE7 fix*/
+  opacity: 1;
+}
+
+/* If PaginationNumbers is true */
+/* line 64, ../../app/assets/stylesheets/theme/_owl.theme.scss */
+.owl-theme .owl-controls .owl-page span.owl-numbers {
+  height: auto;
+  width: auto;
+  color: #FFF;
+  padding: 2px 10px;
+  font-size: 12px;
+  -webkit-border-radius: 30px;
+  -moz-border-radius: 30px;
+  border-radius: 30px;
+}
+
+/* preloading images */
+/* line 76, ../../app/assets/stylesheets/theme/_owl.theme.scss */
+.owl-item.loading {
+  min-height: 150px;
+  background: url(AjaxLoader.gif) no-repeat center center;
+}
+
 /* line 2, ../../app/assets/stylesheets/theme/_form.scss */
 span.error, span.valid {
   position: absolute;
@@ -8333,13 +8604,163 @@ footer .nav > li > a:hover, footer .nav > li > a:focus {
   color: #333333;
 }
 
+/* HEADER
+-------------------------------------------------- */
+/* line 5, ../../app/assets/stylesheets/theme/_property.scss */
+.property-header h1 {
+  font-family: "Merriweather", Georgia, "Times New Roman", Times, serif;
+  font-size: 50px;
+  font-style: italic;
+  font-weight: 700;
+  margin-bottom: 16px;
+  margin-top: 0;
+}
+/* line 13, ../../app/assets/stylesheets/theme/_property.scss */
+.property-header hr {
+  margin-left: 0;
+}
+
+/* line 18, ../../app/assets/stylesheets/theme/_property.scss */
+.copy-text {
+  font-family: "Merriweather", Georgia, "Times New Roman", Times, serif;
+  font-size: 16px;
+  font-style: italic;
+  line-height: 24px;
+  color: #777777;
+  margin-top: 16px;
+}
+/* line 25, ../../app/assets/stylesheets/theme/_property.scss */
+.copy-text h1, .copy-text h2, .copy-text h3, .copy-text h4, .copy-text h5, .copy-text h6 {
+  font-style: normal;
+  font-family: 'Roboto';
+  font-size: 16px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-weight: 700;
+  color: #333333;
+}
+/* line 35, ../../app/assets/stylesheets/theme/_property.scss */
+.copy-text p:last-child {
+  margin-bottom: 0;
+}
+
+/* line 40, ../../app/assets/stylesheets/theme/_property.scss */
+.property-info,
+.property-promo-text {
+  background-color: #03A9F4;
+  color: #fff;
+  border-radius: 0;
+}
+/* line 44, ../../app/assets/stylesheets/theme/_property.scss */
+.property-info h4,
+.property-promo-text h4 {
+  color: #fff;
+  margin-top: 0;
+}
+
+/* line 50, ../../app/assets/stylesheets/theme/_property.scss */
+.property-promo-text {
+  background-color: #FF5252 !important;
+}
+
+/* line 53, ../../app/assets/stylesheets/theme/_property.scss */
+.nav-stickers > li {
+  float: left;
+}
+
+/* line 56, ../../app/assets/stylesheets/theme/_property.scss */
+.nav-stickers > li > a {
+  text-transform: uppercase;
+  font-family: "Roboto Condensed", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 12px;
+  letter-spacing: 1px;
+  padding: 0;
+  color: #777777;
+  -webkit-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+/* line 64, ../../app/assets/stylesheets/theme/_property.scss */
+.nav-stickers > li > a:hover, .nav-stickers > li > a:focus {
+  background-color: transparent;
+  color: #999;
+  text-decoration: none;
+}
+
+/* line 71, ../../app/assets/stylesheets/theme/_property.scss */
+.widget-details {
+  font-family: "Roboto Condensed", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 16px;
+  letter-spacing: 0;
+  line-height: 24px;
+}
+/* line 76, ../../app/assets/stylesheets/theme/_property.scss */
+.widget-details strong {
+  color: #000;
+}
+/* line 79, ../../app/assets/stylesheets/theme/_property.scss */
+.widget-details hr {
+  margin: 22px 0;
+}
+/* line 82, ../../app/assets/stylesheets/theme/_property.scss */
+.widget-details a {
+  color: #777777;
+}
+/* line 85, ../../app/assets/stylesheets/theme/_property.scss */
+.widget-details a:focus, .widget-details a:hover {
+  color: #333333;
+  text-decoration: none;
+}
+
+/* RATES
+-------------------------------------------------- */
+/* line 96, ../../app/assets/stylesheets/theme/_property.scss */
+.realty-seasons {
+  list-style-type: none;
+  padding-left: 0;
+}
+/* line 99, ../../app/assets/stylesheets/theme/_property.scss */
+.realty-seasons ul {
+  list-style-type: none;
+  font-family: "Merriweather", Georgia, "Times New Roman", Times, serif;
+  font-size: 16px;
+  font-style: italic;
+  line-height: 24px;
+  color: #777777;
+}
+
+/* line 108, ../../app/assets/stylesheets/theme/_property.scss */
+.realty-season-title {
+  font-style: normal;
+  font-family: 'Roboto';
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: 700;
+  color: #333333;
+  margin-top: 22px;
+  margin-bottom: 12px;
+}
+/* line 118, ../../app/assets/stylesheets/theme/_property.scss */
+.realty-season-title span {
+  font-weight: 300;
+  color: #777777;
+}
+
+/* line 123, ../../app/assets/stylesheets/theme/_property.scss */
+.price_notes_extra {
+  font-size: 16px;
+  line-height: 24px;
+  color: #333333;
+}
+
 /* FIX FOR GMAP BUG
 -------------------------------------------------- */
-/* line 24, ../../app/assets/stylesheets/public.css.scss */
+/* line 27, ../../app/assets/stylesheets/public.css.scss */
 #map-canvas {
   height: 400px;
 }
-/* line 26, ../../app/assets/stylesheets/public.css.scss */
+/* line 29, ../../app/assets/stylesheets/public.css.scss */
 #map-canvas img {
   max-width: none;
   vertical-align: middle;
@@ -8347,12 +8768,12 @@ footer .nav > li > a:hover, footer .nav > li > a:focus {
   -ms-interpolation-mode: bicubic;
 }
 
-/* line 34, ../../app/assets/stylesheets/public.css.scss */
+/* line 37, ../../app/assets/stylesheets/public.css.scss */
 article.post-item {
   padding-bottom: 24px;
 }
 
-/* line 37, ../../app/assets/stylesheets/public.css.scss */
+/* line 40, ../../app/assets/stylesheets/public.css.scss */
 .thumbnail-property {
   position: relative;
   padding: 0;
@@ -8361,7 +8782,7 @@ article.post-item {
   overflow: visible;
   margin-bottom: 50px;
 }
-/* line 46, ../../app/assets/stylesheets/public.css.scss */
+/* line 49, ../../app/assets/stylesheets/public.css.scss */
 .thumbnail-property .price {
   position: absolute;
   top: -33px;
@@ -8371,7 +8792,7 @@ article.post-item {
   padding: 8px;
   color: #fff;
 }
-/* line 55, ../../app/assets/stylesheets/public.css.scss */
+/* line 58, ../../app/assets/stylesheets/public.css.scss */
 .thumbnail-property .caption {
   position: absolute;
   bottom: -50px;
@@ -8383,7 +8804,7 @@ article.post-item {
   -o-transition: all 0.5s ease;
   transition: all 0.5s ease;
 }
-/* line 64, ../../app/assets/stylesheets/public.css.scss */
+/* line 67, ../../app/assets/stylesheets/public.css.scss */
 .thumbnail-property .caption h3 {
   margin-top: 0;
   margin-bottom: 8px;
@@ -8392,18 +8813,18 @@ article.post-item {
   line-height: 20px;
   font-weight: 700;
 }
-/* line 71, ../../app/assets/stylesheets/public.css.scss */
+/* line 74, ../../app/assets/stylesheets/public.css.scss */
 .thumbnail-property .caption h3 a {
   font-style: normal;
   color: #333333;
   font-family: "Merriweather", Georgia, "Times New Roman", Times, serif;
 }
-/* line 75, ../../app/assets/stylesheets/public.css.scss */
+/* line 78, ../../app/assets/stylesheets/public.css.scss */
 .thumbnail-property .caption h3 a:hover {
   text-decoration: none;
   color: #333333;
 }
-/* line 81, ../../app/assets/stylesheets/public.css.scss */
+/* line 84, ../../app/assets/stylesheets/public.css.scss */
 .thumbnail-property .caption p {
   text-transform: uppercase;
   font-family: "Roboto Condensed", "Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -8411,22 +8832,22 @@ article.post-item {
   letter-spacing: 1px;
   margin-bottom: 0;
 }
-/* line 88, ../../app/assets/stylesheets/public.css.scss */
+/* line 91, ../../app/assets/stylesheets/public.css.scss */
 .thumbnail-property .caption p.body {
   display: none;
   margin-top: 8px;
 }
-/* line 96, ../../app/assets/stylesheets/public.css.scss */
+/* line 99, ../../app/assets/stylesheets/public.css.scss */
 .thumbnail-property:hover .caption p.body {
   display: block;
 }
 
-/* line 105, ../../app/assets/stylesheets/public.css.scss */
+/* line 108, ../../app/assets/stylesheets/public.css.scss */
 section:nth-of-type(even) .thumbnail .caption {
   background-color: #ebeae6;
 }
 
-/* line 112, ../../app/assets/stylesheets/public.css.scss */
+/* line 115, ../../app/assets/stylesheets/public.css.scss */
 .thumbnail-info,
 .thumbnail-badge {
   position: absolute;
@@ -8443,12 +8864,12 @@ section:nth-of-type(even) .thumbnail .caption {
   background-color: #03A9F4;
 }
 
-/* line 126, ../../app/assets/stylesheets/public.css.scss */
+/* line 129, ../../app/assets/stylesheets/public.css.scss */
 .thumbnail-badge {
   background-color: #FF5252 !important;
 }
 
-/* line 129, ../../app/assets/stylesheets/public.css.scss */
+/* line 132, ../../app/assets/stylesheets/public.css.scss */
 .heart {
   color: #fff;
   background-color: #F44336;
@@ -8463,29 +8884,29 @@ section:nth-of-type(even) .thumbnail .caption {
   background-color: #E91E63;
 }
 
-/* line 144, ../../app/assets/stylesheets/public.css.scss */
+/* line 147, ../../app/assets/stylesheets/public.css.scss */
 .col-sm-12.last {
   margin-top: 16px;
 }
 
 /* MEMBERS
 -------------------------------------------------- */
-/* line 150, ../../app/assets/stylesheets/public.css.scss */
+/* line 153, ../../app/assets/stylesheets/public.css.scss */
 #member-slider {
   padding: 24px 0;
 }
 
-/* line 153, ../../app/assets/stylesheets/public.css.scss */
+/* line 156, ../../app/assets/stylesheets/public.css.scss */
 .team-member {
   text-align: center;
 }
-/* line 155, ../../app/assets/stylesheets/public.css.scss */
+/* line 158, ../../app/assets/stylesheets/public.css.scss */
 .team-member h2 {
   font-size: 12px;
   margin-top: 16px;
   margin-bottom: 8px;
 }
-/* line 161, ../../app/assets/stylesheets/public.css.scss */
+/* line 164, ../../app/assets/stylesheets/public.css.scss */
 .team-member h5 {
   font-family: "Merriweather", Georgia, "Times New Roman", Times, serif;
   font-size: 12px;
@@ -8495,23 +8916,23 @@ section:nth-of-type(even) .thumbnail .caption {
 
 /* FORM
 -------------------------------------------------- */
-/* line 171, ../../app/assets/stylesheets/public.css.scss */
+/* line 174, ../../app/assets/stylesheets/public.css.scss */
 .form-control {
   font-family: "Merriweather", Georgia, "Times New Roman", Times, serif;
   font-size: 12px;
 }
 
-/* line 179, ../../app/assets/stylesheets/public.css.scss */
+/* line 182, ../../app/assets/stylesheets/public.css.scss */
 .form-search {
   padding: 22px 0;
   background-color: #e0ded8;
   border-bottom: 1px solid #d4d2ca;
 }
-/* line 183, ../../app/assets/stylesheets/public.css.scss */
+/* line 186, ../../app/assets/stylesheets/public.css.scss */
 .form-search input, .form-search select, .form-search textarea {
   width: 100%;
 }
-/* line 186, ../../app/assets/stylesheets/public.css.scss */
+/* line 189, ../../app/assets/stylesheets/public.css.scss */
 .form-search .btn-link {
   border: none;
   border-radius: 0;
@@ -8522,7 +8943,7 @@ section:nth-of-type(even) .thumbnail .caption {
   font-size: 11px;
   letter-spacing: 1px;
 }
-/* line 195, ../../app/assets/stylesheets/public.css.scss */
+/* line 198, ../../app/assets/stylesheets/public.css.scss */
 .form-search .btn-link:hover {
   text-decoration: none;
   border-bottom-color: #000;
@@ -8530,7 +8951,7 @@ section:nth-of-type(even) .thumbnail .caption {
   color: #000;
 }
 
-/* line 205, ../../app/assets/stylesheets/public.css.scss */
+/* line 208, ../../app/assets/stylesheets/public.css.scss */
 .background-image-holder,
 .foreground-image-holder {
   position: absolute;
@@ -8543,13 +8964,13 @@ section:nth-of-type(even) .thumbnail .caption {
   background-position: 50% 50% !important;
 }
 
-/* line 215, ../../app/assets/stylesheets/public.css.scss */
+/* line 218, ../../app/assets/stylesheets/public.css.scss */
 .background-image-holder.parallax-background {
   height: 120%;
   top: -10%;
 }
 
-/* line 220, ../../app/assets/stylesheets/public.css.scss */
+/* line 223, ../../app/assets/stylesheets/public.css.scss */
 .hover-background .background-image-holder,
 .hover-background .foreground-image-holder {
   -webkit-transition: all 0.3s ease-out;
@@ -8557,20 +8978,20 @@ section:nth-of-type(even) .thumbnail .caption {
   transition: all 0.3s ease-out;
 }
 
-/* line 223, ../../app/assets/stylesheets/public.css.scss */
+/* line 226, ../../app/assets/stylesheets/public.css.scss */
 .hover-background .background-image-holder {
   height: 110%;
   width: 110%;
 }
 
-/* line 228, ../../app/assets/stylesheets/public.css.scss */
+/* line 231, ../../app/assets/stylesheets/public.css.scss */
 .image-slider,
 .hero-slider {
   padding: 0px;
   position: relative;
 }
 
-/* line 232, ../../app/assets/stylesheets/public.css.scss */
+/* line 235, ../../app/assets/stylesheets/public.css.scss */
 .nav-slide {
   font-size: 12px;
   letter-spacing: 2px;
@@ -8588,41 +9009,41 @@ section:nth-of-type(even) .thumbnail .caption {
   background-color: rgba(0, 0, 0, 0.4);
   text-align: center;
 }
-/* line 248, ../../app/assets/stylesheets/public.css.scss */
+/* line 251, ../../app/assets/stylesheets/public.css.scss */
 .nav-slide:hover {
   color: #fff;
   text-decoration: none;
 }
-/* line 252, ../../app/assets/stylesheets/public.css.scss */
+/* line 255, ../../app/assets/stylesheets/public.css.scss */
 .nav-slide.prev {
   min-width: 60px;
   border-radius: 0 30px 30px 0;
   left: -2px;
   right: auto;
 }
-/* line 259, ../../app/assets/stylesheets/public.css.scss */
+/* line 262, ../../app/assets/stylesheets/public.css.scss */
 .nav-slide.next {
   min-width: 60px;
   right: -2px;
   left: auto;
 }
 
-/* line 267, ../../app/assets/stylesheets/public.css.scss */
+/* line 271, ../../app/assets/stylesheets/public.css.scss */
 .image-slider .slides li {
   overflow: hidden;
 }
-/* line 269, ../../app/assets/stylesheets/public.css.scss */
+/* line 273, ../../app/assets/stylesheets/public.css.scss */
 .image-slider .slides li > div {
   padding-bottom: 24px;
 }
 
-/* line 273, ../../app/assets/stylesheets/public.css.scss */
+/* line 277, ../../app/assets/stylesheets/public.css.scss */
 .hero-slider .slides li {
-  height: 650px;
+  min-height: 600px;
   overflow: hidden;
   position: relative;
 }
-/* line 277, ../../app/assets/stylesheets/public.css.scss */
+/* line 281, ../../app/assets/stylesheets/public.css.scss */
 .hero-slider .slides li h1 {
   font-family: "Merriweather", Georgia, "Times New Roman", Times, serif;
   font-style: italic;
@@ -8633,41 +9054,41 @@ section:nth-of-type(even) .thumbnail .caption {
   font-weight: 700;
   color: #fff;
 }
-/* line 287, ../../app/assets/stylesheets/public.css.scss */
+/* line 291, ../../app/assets/stylesheets/public.css.scss */
 .hero-slider .slides li p {
   color: #fff;
   text-align: center;
   margin-bottom: 24px;
 }
-/* line 292, ../../app/assets/stylesheets/public.css.scss */
+/* line 296, ../../app/assets/stylesheets/public.css.scss */
 .hero-slider .slides li .btn {
   margin-right: 16px;
 }
 
-/* line 297, ../../app/assets/stylesheets/public.css.scss */
+/* line 301, ../../app/assets/stylesheets/public.css.scss */
 .hero-slider .flex-direction-nav a {
   color: rgba(0, 0, 0, 0);
 }
 
-/* line 300, ../../app/assets/stylesheets/public.css.scss */
+/* line 304, ../../app/assets/stylesheets/public.css.scss */
 .flex-direction-nav a:before {
   top: 17px;
   font-size: 36px;
   left: 10px;
 }
 
-/* line 305, ../../app/assets/stylesheets/public.css.scss */
+/* line 309, ../../app/assets/stylesheets/public.css.scss */
 .flex-direction-nav a.flex-next:before {
   left: -10px;
 }
 
 @media all and (max-width: 1350px) {
-  /* line 309, ../../app/assets/stylesheets/public.css.scss */
+  /* line 313, ../../app/assets/stylesheets/public.css.scss */
   .flex-direction-nav {
     display: none !important;
   }
 }
-/* line 313, ../../app/assets/stylesheets/public.css.scss */
+/* line 317, ../../app/assets/stylesheets/public.css.scss */
 .hero-slider .slides li.overlay:before {
   position: absolute;
   width: 100%;
@@ -8680,7 +9101,12 @@ section:nth-of-type(even) .thumbnail .caption {
 }
 
 @media only screen and (min-width: 320px) and (max-width: 767px) {
-  /* line 326, ../../app/assets/stylesheets/public.css.scss */
+  /* line 330, ../../app/assets/stylesheets/public.css.scss */
+  .hero-slider .slides li {
+    min-height: 320px;
+  }
+
+  /* line 333, ../../app/assets/stylesheets/public.css.scss */
   .hero-slider .slides li h1 {
     font-size: 32px;
     line-height: 40px;

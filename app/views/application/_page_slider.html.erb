@@ -2,7 +2,7 @@
 <section class="hero-slider" id="<%= rand_id %>">
   <ul class="slides">
     <% images.each do |img| %>
-    <li><div class="background-image-holder parallax-background "><%= image_fu(img, "1550x700#") %></div></li>
+    <li><div class="background-image-holder parallax-background "><%= image_fu(img, "1550x700#", :class => "img-responsive") %></div></li>
     <% end %>
   </ul>
   <a href="prev" class="nav-slide prev" data-target="#<%= rand_id %>"><span class="fa fa-angle-left fa-3x"></span></a>

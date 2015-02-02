@@ -86,6 +86,7 @@ $(document).ready(function() {
   }, 4000);
 })
 
+
   $('.sale_property_inquiry')
     .on("ajax:beforeSend", function(evt, xhr, settings) {
     jQuery('span.error').fadeOut('slow');
@@ -340,7 +341,7 @@ $(document).ready(function() {
       directionNav: false,
       controlNav: false,
       touch: false,
-      slideshow: true,
+      slideshow: true, // add flex-viewport wrapper dom element
       slideshowSpeed: 4000
     });
   });
@@ -352,11 +353,12 @@ $(document).ready(function() {
     }
 
     $('.image-slider').flexslider({
-      animation: "fade",
+      animation: "slide",
       directionNav: false,
       controlNav: false,
       touch: false,
-      slideshow: false
+      slideshow: true, // add flex-viewport wrapper dom element
+      slideshowSpeed: 4000
     });
   });
 

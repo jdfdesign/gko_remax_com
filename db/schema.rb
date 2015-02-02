@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20150109144252) do
+ActiveRecord::Schema.define(:version => 20150129162951) do
 
   create_table "annual_rental_options", :force => true do |t|
     t.text     "notes"
@@ -544,6 +544,7 @@ ActiveRecord::Schema.define(:version => 20150109144252) do
     t.integer  "city_id"
     t.string   "info_title"
     t.text     "info_body"
+    t.string   "video_url"
   end
 
   add_index "rental_property_options", ["area_id"], :name => "index_rental_property_options_on_area_id"
@@ -642,6 +643,7 @@ ActiveRecord::Schema.define(:version => 20150109144252) do
     t.string   "badge"
     t.integer  "exchange_price"
     t.integer  "city_id"
+    t.string   "video_url"
   end
 
   add_index "sale_property_options", ["area_id"], :name => "index_sale_property_options_on_area_id"
