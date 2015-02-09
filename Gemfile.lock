@@ -289,7 +289,7 @@ DEPENDENCIES
   gko_realty (= 0.2.3)!
   gko_stickers!
   money (= 5.0.0)
-  nokogiri (= 1.5.0)
+  nokogiri (~> 1.5.0)
   sass (= 3.2.14)
   sass-rails (~> 3.2.6)
   uglifier (~> 2.4.0)
