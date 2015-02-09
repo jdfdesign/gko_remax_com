@@ -122,7 +122,7 @@ GEM
     coffee-script (2.3.0)
       coffee-script-source
       execjs
-    coffee-script-source (1.8.0)
+    coffee-script-source (1.9.0)
     country_select (1.2.0)
     cucumber (1.1.9)
       builder (>= 2.1.2)
@@ -197,7 +197,7 @@ GEM
     net-ssh (2.9.2)
     net-ssh-gateway (1.2.0)
       net-ssh (>= 2.6.5)
-    nokogiri (1.5.11)
+    nokogiri (1.5.0)
     orm_adapter (0.5.0)
     polyglot (0.3.5)
     rack (1.4.5)
@@ -289,7 +289,7 @@ DEPENDENCIES
   gko_realty (= 0.2.3)!
   gko_stickers!
   money (= 5.0.0)
-  nokogiri (~> 1.5.0)
+  nokogiri (= 1.5.0)
   sass (= 3.2.14)
   sass-rails (~> 3.2.6)
   uglifier (~> 2.4.0)

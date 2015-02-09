@@ -34,4 +34,4 @@ end
 gem "money", "= 5.0.0"
 gem "eu_central_bank", "~> 0.3.2"
 gem "whenever", "~> 0.7.3"
-gem "nokogiri", "~> 1.5.0"
+gem "nokogiri", "= 1.5.0"
