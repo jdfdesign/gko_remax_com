@@ -21,6 +21,8 @@ geom = case request.env['mobvious.device_type']
   else
     "1400x762#"
   end
+  
+if @rent_section && @sale_section
 %>
 
 <!-- Hero
@@ -302,6 +304,7 @@ geom = case request.env['mobvious.device_type']
 <!-- Team
   ================================================== -->
 <%= render "team" %>
+<% end %>
 
 
 

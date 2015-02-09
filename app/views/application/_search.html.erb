@@ -11,6 +11,8 @@ price_options.compact.join("\n").html_safe
 @rental_properties ||= @rent_section.rental_properties.published.in_city(site.cities.first).with_translations(I18n.locale).order('content_translations.title ASC')
 
 @sale_section ||= site.sale_property_lists.live.first
+
+if @rent_section && @sale_section
 %>
 <div class="hidden-print" role="tabpanel">
   <!-- Nav tabs -->
@@ -110,3 +112,4 @@ price_options.compact.join("\n").html_safe
   </div>
 
 </div>
+<% end %>

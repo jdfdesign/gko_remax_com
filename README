@@ -45,3 +45,33 @@ bundle exec rake rates:update
 
 whenever --update-crontab --set environment=development
 bundle exec rake gko:db:backup --trace
+
+
+* déplacer le site sur le cloud
+comme on a eu un pbde blacklist…; ça peut pas faire de mal
+il faudrait leur attribuer une adresse IP spécifique également
+à voir si on le fait au moement de la création du compte ou s’il faut le demander après
+
+
+* listing news : doublons
+
+* impression page villa : ok pour la version CSS
+- pour la vente
+enlever la date si possible
+enlever les tags
+enlever le formulaire
+mais laisser les coordonnées de contact
+
+- pour la location
+réduire la photo si possible (caler sur une longueur d’image dans la largeur de page)
+ajouter les coordonnées de contact
+
+* listing selection : ordonner les villas manuellement
+le n° de posiiton en back ne correspond pas
+<Capture d’écran 2015-02-04 à 12.36.15.png>
+
+A DEVISER
+
+* panier-wishlist avec gestion par users en front
+* une version simplifiée permettant d’avoir un acces restreint sur les pages de listing géré depuisle back
+et avec des biens privés que l’on peut ajouter aux listing de selection mais qui ne sont pas publiques (en front « normal »)

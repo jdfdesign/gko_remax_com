@@ -28,6 +28,9 @@
     <div class="container">
       <div class='row'>
         <div class='col-sm-12'>
+          <% if @sale_property.meta and @sale_property.meta.video_url.present? %>
+            <%= link_to "Watch video", "http://vimeo.com/#{@sale_property.meta.video_url}", :class => "btn btn-primary btn-video hidden-print", :target => "blank" %>
+          <% end %>
           <%= render "slider", :images => resource.images %>
         </div>
       </div>
@@ -44,8 +47,14 @@
           <h1><%= resource.title %></h1>
           <hr>
           <%= render_copy_text(resource.body) %>
+          <% if @sale_property.meta and @sale_property.meta.video_url.present? %>
+          <br>
+          <div class="embed-responsive embed-responsive-16by9 hidden-print">
+            <iframe src="//player.vimeo.com/video/<%= @sale_property.meta.video_url %>"></iframe>
+          </div>
+          <% end %>
         </div>
-        <div class="col-sm-4">
+        <div class="col-sm-4 hidden-print">
           <div class='widget-details'>
             <%= tags.compact.join("<br/>").html_safe %>
             <hr>
@@ -84,7 +93,7 @@
           <p><small><%= site.inquiry_recipients.html_safe %></small></p>
           <% end %> 
         </div>
-        <div class='col-sm-8'>
+        <div class='col-sm-8 hidden-print'>
           <%= render :partial => 'sale_property_inquiries/form' %>
         </div>
       </div>

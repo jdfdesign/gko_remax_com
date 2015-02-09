@@ -1,4 +1,3 @@
-@import "twitter.bootstrap.2.2.1/bootstrap/bootstrap";
 @import 'gko/public/mixin';
 @import "gko/public/grid";
 
@@ -8,6 +7,11 @@ body {
 	line-height: 15px;
 }
 
+.img {
+  width: 100%;
+  height: auto;
+  max-width: 600px;
+}
 .hide-on-print {
   display: none;
 }
@@ -15,7 +19,6 @@ body {
 .show-on-print {
   display: block;
 }
-
 
 #wrapper-wide-body {
   width: auto;

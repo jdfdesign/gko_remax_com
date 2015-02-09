@@ -1,4 +1,4 @@
-<%# resource_cache(resource) do %>
+<% resource_cache(resource) do %>
 <% 
 options = @rental_property.content_options
 has_options = options.try(:any?)
@@ -29,6 +29,9 @@ end
     <div class="container">
       <div class='row'>
         <div class='col-sm-12'>
+          <% if @rental_property.meta and @rental_property.meta.video_url.present? %>
+            <%= link_to "Watch video", "http://vimeo.com/#{@rental_property.meta.video_url}", :class => "btn btn-primary btn-video hidden-print", :target => "blank" %>
+          <% end %>
           <%= render "slider", :images => resource.images %>
         </div>
       </div>
@@ -44,6 +47,12 @@ end
           <h1><%= @rental_property.title %></h1>
           <hr>
           <%= render_copy_text(@rental_property.body) %>
+          <% if @rental_property.meta and @rental_property.meta.video_url.present? %>
+            <br>
+            <div class="embed-responsive embed-responsive-16by9 hidden-print">
+              <iframe src="//player.vimeo.com/video/<%= @rental_property.meta.video_url %>"></iframe>
+            </div>
+          <% end %>
         </div>
         <div class="col-sm-4">
           <% if @rental_property.info_body.present? %>
@@ -174,4 +183,4 @@ end
 </div>
 
 </article>
-<%# end %> 
+<% end %> 
