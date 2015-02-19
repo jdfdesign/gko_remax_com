@@ -20,8 +20,8 @@ namespace :rates do
             end
             #puts "#{currency} -- eur_price #{rate.eur_price} - usd_price #{rate.usd_price}"
             rate.save!
-            rate.season.property.update_max_min_rates
           end
+          property.update_max_min_rates
         end
       rescue Exception => e
         ActiveRecord::Rollback
