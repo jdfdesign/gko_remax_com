@@ -8475,9 +8475,10 @@ footer .nav > li > a:hover, footer .nav > li > a:focus {
   position: absolute;
   right: 15px;
   top: -4px;
+  z-index: 200;
 }
 
-/* line 23, ../../app/assets/stylesheets/theme/_property.scss */
+/* line 24, ../../app/assets/stylesheets/theme/_property.scss */
 .copy-text {
   font-family: "Merriweather", Georgia, "Times New Roman", Times, serif;
   font-size: 16px;
@@ -8486,7 +8487,7 @@ footer .nav > li > a:hover, footer .nav > li > a:focus {
   color: #777777;
   margin-top: 16px;
 }
-/* line 30, ../../app/assets/stylesheets/theme/_property.scss */
+/* line 31, ../../app/assets/stylesheets/theme/_property.scss */
 .copy-text h1, .copy-text h2, .copy-text h3, .copy-text h4, .copy-text h5, .copy-text h6 {
   font-style: normal;
   font-family: 'Roboto';
@@ -8496,36 +8497,36 @@ footer .nav > li > a:hover, footer .nav > li > a:focus {
   font-weight: 700;
   color: #333333;
 }
-/* line 40, ../../app/assets/stylesheets/theme/_property.scss */
+/* line 41, ../../app/assets/stylesheets/theme/_property.scss */
 .copy-text p:last-child {
   margin-bottom: 0;
 }
 
-/* line 45, ../../app/assets/stylesheets/theme/_property.scss */
+/* line 46, ../../app/assets/stylesheets/theme/_property.scss */
 .property-info,
 .property-promo-text {
   background-color: #03A9F4;
   color: #fff;
   border-radius: 0;
 }
-/* line 49, ../../app/assets/stylesheets/theme/_property.scss */
+/* line 50, ../../app/assets/stylesheets/theme/_property.scss */
 .property-info h4,
 .property-promo-text h4 {
   color: #fff;
   margin-top: 0;
 }
 
-/* line 55, ../../app/assets/stylesheets/theme/_property.scss */
+/* line 56, ../../app/assets/stylesheets/theme/_property.scss */
 .property-promo-text {
   background-color: #FF5252 !important;
 }
 
-/* line 58, ../../app/assets/stylesheets/theme/_property.scss */
+/* line 59, ../../app/assets/stylesheets/theme/_property.scss */
 .nav-stickers > li {
   float: left;
 }
 
-/* line 61, ../../app/assets/stylesheets/theme/_property.scss */
+/* line 62, ../../app/assets/stylesheets/theme/_property.scss */
 .nav-stickers > li > a {
   text-transform: uppercase;
   font-family: "Roboto Condensed", "Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -8537,33 +8538,33 @@ footer .nav > li > a:hover, footer .nav > li > a:focus {
   -o-transition: all 0.3s ease;
   transition: all 0.3s ease;
 }
-/* line 69, ../../app/assets/stylesheets/theme/_property.scss */
+/* line 70, ../../app/assets/stylesheets/theme/_property.scss */
 .nav-stickers > li > a:hover, .nav-stickers > li > a:focus {
   background-color: transparent;
   color: #999;
   text-decoration: none;
 }
 
-/* line 76, ../../app/assets/stylesheets/theme/_property.scss */
+/* line 77, ../../app/assets/stylesheets/theme/_property.scss */
 .widget-details {
   font-family: "Roboto Condensed", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 16px;
   letter-spacing: 0;
   line-height: 24px;
 }
-/* line 81, ../../app/assets/stylesheets/theme/_property.scss */
+/* line 82, ../../app/assets/stylesheets/theme/_property.scss */
 .widget-details strong {
   color: #000;
 }
-/* line 84, ../../app/assets/stylesheets/theme/_property.scss */
+/* line 85, ../../app/assets/stylesheets/theme/_property.scss */
 .widget-details hr {
   margin: 22px 0;
 }
-/* line 87, ../../app/assets/stylesheets/theme/_property.scss */
+/* line 88, ../../app/assets/stylesheets/theme/_property.scss */
 .widget-details a {
   color: #777777;
 }
-/* line 90, ../../app/assets/stylesheets/theme/_property.scss */
+/* line 91, ../../app/assets/stylesheets/theme/_property.scss */
 .widget-details a:focus, .widget-details a:hover {
   color: #333333;
   text-decoration: none;
@@ -8571,12 +8572,12 @@ footer .nav > li > a:hover, footer .nav > li > a:focus {
 
 /* RATES
 -------------------------------------------------- */
-/* line 101, ../../app/assets/stylesheets/theme/_property.scss */
+/* line 102, ../../app/assets/stylesheets/theme/_property.scss */
 .realty-seasons {
   list-style-type: none;
   padding-left: 0;
 }
-/* line 104, ../../app/assets/stylesheets/theme/_property.scss */
+/* line 105, ../../app/assets/stylesheets/theme/_property.scss */
 .realty-seasons ul {
   list-style-type: none;
   font-family: "Merriweather", Georgia, "Times New Roman", Times, serif;
@@ -8586,7 +8587,7 @@ footer .nav > li > a:hover, footer .nav > li > a:focus {
   color: #777777;
 }
 
-/* line 113, ../../app/assets/stylesheets/theme/_property.scss */
+/* line 114, ../../app/assets/stylesheets/theme/_property.scss */
 .realty-season-title {
   font-style: normal;
   font-family: 'Roboto';
@@ -8598,13 +8599,13 @@ footer .nav > li > a:hover, footer .nav > li > a:focus {
   margin-top: 22px;
   margin-bottom: 12px;
 }
-/* line 123, ../../app/assets/stylesheets/theme/_property.scss */
+/* line 124, ../../app/assets/stylesheets/theme/_property.scss */
 .realty-season-title span {
   font-weight: 300;
   color: #777777;
 }
 
-/* line 128, ../../app/assets/stylesheets/theme/_property.scss */
+/* line 129, ../../app/assets/stylesheets/theme/_property.scss */
 .price_notes_extra {
   font-size: 16px;
   line-height: 24px;
@@ -8632,9 +8633,10 @@ footer .nav > li > a:hover, footer .nav > li > a:focus {
   position: absolute;
   right: 15px;
   top: -4px;
+  z-index: 200;
 }
 
-/* line 23, ../../app/assets/stylesheets/theme/_property.scss */
+/* line 24, ../../app/assets/stylesheets/theme/_property.scss */
 .copy-text {
   font-family: "Merriweather", Georgia, "Times New Roman", Times, serif;
   font-size: 16px;
@@ -8643,7 +8645,7 @@ footer .nav > li > a:hover, footer .nav > li > a:focus {
   color: #777777;
   margin-top: 16px;
 }
-/* line 30, ../../app/assets/stylesheets/theme/_property.scss */
+/* line 31, ../../app/assets/stylesheets/theme/_property.scss */
 .copy-text h1, .copy-text h2, .copy-text h3, .copy-text h4, .copy-text h5, .copy-text h6 {
   font-style: normal;
   font-family: 'Roboto';
@@ -8653,36 +8655,36 @@ footer .nav > li > a:hover, footer .nav > li > a:focus {
   font-weight: 700;
   color: #333333;
 }
-/* line 40, ../../app/assets/stylesheets/theme/_property.scss */
+/* line 41, ../../app/assets/stylesheets/theme/_property.scss */
 .copy-text p:last-child {
   margin-bottom: 0;
 }
 
-/* line 45, ../../app/assets/stylesheets/theme/_property.scss */
+/* line 46, ../../app/assets/stylesheets/theme/_property.scss */
 .property-info,
 .property-promo-text {
   background-color: #03A9F4;
   color: #fff;
   border-radius: 0;
 }
-/* line 49, ../../app/assets/stylesheets/theme/_property.scss */
+/* line 50, ../../app/assets/stylesheets/theme/_property.scss */
 .property-info h4,
 .property-promo-text h4 {
   color: #fff;
   margin-top: 0;
 }
 
-/* line 55, ../../app/assets/stylesheets/theme/_property.scss */
+/* line 56, ../../app/assets/stylesheets/theme/_property.scss */
 .property-promo-text {
   background-color: #FF5252 !important;
 }
 
-/* line 58, ../../app/assets/stylesheets/theme/_property.scss */
+/* line 59, ../../app/assets/stylesheets/theme/_property.scss */
 .nav-stickers > li {
   float: left;
 }
 
-/* line 61, ../../app/assets/stylesheets/theme/_property.scss */
+/* line 62, ../../app/assets/stylesheets/theme/_property.scss */
 .nav-stickers > li > a {
   text-transform: uppercase;
   font-family: "Roboto Condensed", "Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -8694,33 +8696,33 @@ footer .nav > li > a:hover, footer .nav > li > a:focus {
   -o-transition: all 0.3s ease;
   transition: all 0.3s ease;
 }
-/* line 69, ../../app/assets/stylesheets/theme/_property.scss */
+/* line 70, ../../app/assets/stylesheets/theme/_property.scss */
 .nav-stickers > li > a:hover, .nav-stickers > li > a:focus {
   background-color: transparent;
   color: #999;
   text-decoration: none;
 }
 
-/* line 76, ../../app/assets/stylesheets/theme/_property.scss */
+/* line 77, ../../app/assets/stylesheets/theme/_property.scss */
 .widget-details {
   font-family: "Roboto Condensed", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 16px;
   letter-spacing: 0;
   line-height: 24px;
 }
-/* line 81, ../../app/assets/stylesheets/theme/_property.scss */
+/* line 82, ../../app/assets/stylesheets/theme/_property.scss */
 .widget-details strong {
   color: #000;
 }
-/* line 84, ../../app/assets/stylesheets/theme/_property.scss */
+/* line 85, ../../app/assets/stylesheets/theme/_property.scss */
 .widget-details hr {
   margin: 22px 0;
 }
-/* line 87, ../../app/assets/stylesheets/theme/_property.scss */
+/* line 88, ../../app/assets/stylesheets/theme/_property.scss */
 .widget-details a {
   color: #777777;
 }
-/* line 90, ../../app/assets/stylesheets/theme/_property.scss */
+/* line 91, ../../app/assets/stylesheets/theme/_property.scss */
 .widget-details a:focus, .widget-details a:hover {
   color: #333333;
   text-decoration: none;
@@ -8728,12 +8730,12 @@ footer .nav > li > a:hover, footer .nav > li > a:focus {
 
 /* RATES
 -------------------------------------------------- */
-/* line 101, ../../app/assets/stylesheets/theme/_property.scss */
+/* line 102, ../../app/assets/stylesheets/theme/_property.scss */
 .realty-seasons {
   list-style-type: none;
   padding-left: 0;
 }
-/* line 104, ../../app/assets/stylesheets/theme/_property.scss */
+/* line 105, ../../app/assets/stylesheets/theme/_property.scss */
 .realty-seasons ul {
   list-style-type: none;
   font-family: "Merriweather", Georgia, "Times New Roman", Times, serif;
@@ -8743,7 +8745,7 @@ footer .nav > li > a:hover, footer .nav > li > a:focus {
   color: #777777;
 }
 
-/* line 113, ../../app/assets/stylesheets/theme/_property.scss */
+/* line 114, ../../app/assets/stylesheets/theme/_property.scss */
 .realty-season-title {
   font-style: normal;
   font-family: 'Roboto';
@@ -8755,13 +8757,13 @@ footer .nav > li > a:hover, footer .nav > li > a:focus {
   margin-top: 22px;
   margin-bottom: 12px;
 }
-/* line 123, ../../app/assets/stylesheets/theme/_property.scss */
+/* line 124, ../../app/assets/stylesheets/theme/_property.scss */
 .realty-season-title span {
   font-weight: 300;
   color: #777777;
 }
 
-/* line 128, ../../app/assets/stylesheets/theme/_property.scss */
+/* line 129, ../../app/assets/stylesheets/theme/_property.scss */
 .price_notes_extra {
   font-size: 16px;
   line-height: 24px;

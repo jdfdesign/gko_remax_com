@@ -19,6 +19,7 @@
   position: absolute;
   right: 15px;
   top: -4px;
+  z-index: 200;//arbitrary
 }
 .copy-text {
     font-family: $font-family-serif;
