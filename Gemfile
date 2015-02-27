@@ -9,15 +9,15 @@ end
 
 group :production do
 git "git@github.com:jdfdesign/gko_cms3.git", :tag => "v0.8.14.4" do
- gem 'gko_core'
+   gem 'gko_core'
    gem 'gko_auth'
- gem 'gko_documents'
+   gem 'gko_documents'
    gem 'gko_inquiries'
    gem 'gko_features'
    gem 'gko_categories'
  gem 'gko_stickers'
 end
-gem 'gko_realty', '= 0.2.4', :git => 'git@github.com:jdfdesign/gko-realty.git'
+gem 'gko_realty', '= 0.2.5', :git => 'git@github.com:jdfdesign/gko-realty.git'
 end
 
 #group :development do
