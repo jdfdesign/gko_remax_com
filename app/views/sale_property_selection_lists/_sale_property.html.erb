@@ -1,0 +1,23 @@
+<%
+  metas = ""
+  metas += "bedrooms #{record.meta.bedroom_count}" if record.meta.bedroom_count
+  metas += " - #{record.meta.area.name}" if record.meta.area
+  geom = local_assigns.has_key?(:geometry) ? geometry : '720x440#'
+%>
+<article class="col-sm-6 col-md-4 post-item"> 
+<%= link_to(record.public_url, :class => "thumbnail thumbnail-property") do %>
+  <%= image_fu(record.thumbnail, geom, :class => "img-responsive") %>
+  <div class="caption">
+   <h3><%= record.title %></h3>
+   <p class="tags-list">
+    <%= metas %>
+  </p>
+  <%= content_tag(:p, :class => "body") do %>
+    <%= truncate_html(strip_tags(record.body), :length => 120, :omission => "...") %>
+  <% end if record.body.present? %>
+</div>
+<% if record.badge.present? %>
+<div class="thumbnail-badge"><%= record.badge %></div>
+<% end %>
+<% end %>
+</article> 

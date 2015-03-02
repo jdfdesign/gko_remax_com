@@ -8,25 +8,25 @@ group :assets do
 end
 
 group :production do
-git "git@github.com:jdfdesign/gko_cms3.git", :tag => "v0.8.14.4" do
-   gem 'gko_core'
-   gem 'gko_auth'
-   gem 'gko_documents'
-   gem 'gko_inquiries'
-   gem 'gko_features'
-   gem 'gko_categories'
- gem 'gko_stickers'
-end
-gem 'gko_realty', '= 0.2.5', :git => 'git@github.com:jdfdesign/gko-realty.git'
+  git "git@github.com:jdfdesign/gko_cms3.git", :tag => "v0.8.14.4" do
+     gem 'gko_core'
+     gem 'gko_auth'
+     gem 'gko_documents'
+     gem 'gko_inquiries'
+     gem 'gko_features'
+     gem 'gko_categories'
+    gem 'gko_stickers'
+  end
+  gem 'gko_realty', '= 0.2.5', :git => 'git@github.com:jdfdesign/gko-realty.git'
 end
 
 #group :development do
 #  gem "gko_core", :path => '~/Github/gko_cms3/gko_core'
-# gem "gko_auth", :path => '~/Github/gko_cms3/gko_auth'
-# gem "gko_documents", :path => '~/Github/gko_cms3/gko_documents'
-# gem "gko_inquiries", :path => '~/Github/gko_cms3/gko_inquiries'
+#  gem "gko_auth", :path => '~/Github/gko_cms3/gko_auth'
+#  gem "gko_documents", :path => '~/Github/gko_cms3/gko_documents'
+#  gem "gko_inquiries", :path => '~/Github/gko_cms3/gko_inquiries'
 #  gem "gko_features", :path => '~/Github/gko_cms3/gko_features'
-# gem "gko_categories", :path => '~/Github/gko_cms3/gko_categories'
+#  gem "gko_categories", :path => '~/Github/gko_cms3/gko_categories'
 #  gem "gko_stickers", :path => '~/Github/gko_cms3/gko_stickers'
 #  gem "gko_realty", :path => '~/Github/gko/gko_realty' 
 #end

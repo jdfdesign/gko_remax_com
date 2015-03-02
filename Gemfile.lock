@@ -114,7 +114,7 @@ GEM
       activesupport (>= 3.2.0)
       json (>= 1.7)
     chronic (0.6.7)
-    codemirror-rails (4.8)
+    codemirror-rails (5.0)
       railties (>= 3.0, < 5)
     coffee-rails (3.2.2)
       coffee-script (>= 2.2.0)
