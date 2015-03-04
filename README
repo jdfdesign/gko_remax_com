@@ -8,7 +8,7 @@ tail -f log/production.log
 
 
 rvm use ruby-2.2.0  --default
-rvm use ruby-1.8.7-p374
+rvm use ruby-1.8.7-p374 --default
 cd ~/Github/gko_remax_com
 bundle install
 rails s

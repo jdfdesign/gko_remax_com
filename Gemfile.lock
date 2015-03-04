@@ -124,7 +124,7 @@ GEM
     coffee-script (2.3.0)
       coffee-script-source
       execjs
-    coffee-script-source (1.9.0)
+    coffee-script-source (1.9.1)
     country_select (1.2.0)
     cucumber (1.1.9)
       builder (>= 2.1.2)
@@ -187,7 +187,7 @@ GEM
     money (5.0.0)
       i18n (~> 0.4)
       json
-    multi_json (1.10.1)
+    multi_json (1.11.0)
     mysql2 (0.3.18)
     nested_set (1.7.1)
       activerecord (>= 3.0.0)
