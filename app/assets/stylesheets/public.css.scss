@@ -6,6 +6,7 @@ $logo-height-sm-min: 135px;
 -------------------------------------------------- */
 @import "theme/variables";
 @import "bootstrap/bootstrap";
+@import "bootstrap-datepicker3";
 @import "theme/owl.carousel";
 @import "theme/owl.theme";
 @import "theme/owl.theme";
@@ -270,8 +271,8 @@ input, select, textarea {
 
 .image-slider .slides li {
   overflow: hidden;
-  > div {
-    padding-bottom: 24px;
+  img {
+    width: auto; display: block; margin-left: auto; margin-right: auto;
   }
 }
 .hero-slider .slides li {

@@ -6,6 +6,7 @@
 //= require themes/scrollReveal
 //= require themes/plugin
 //= require themes/countdown
+//= require bootstrap-datepicker
 
 $(document).ready(function() {
 
@@ -15,6 +16,8 @@ $(document).ready(function() {
     var result = $(this).val()
     document.location.href = result;
   });
+
+ $('.datepicker').datepicker();
 
   $('.rental_property_inquiry')
     .on("ajax:beforeSend", function(evt, xhr, settings) {
@@ -79,7 +82,7 @@ $(document).ready(function() {
 .on("ajax:success", function(evt, data, status, xhr) {
   console.log("success")
   jQuery('#thanks').fadeIn('slow');
-  jQuery('input').val('');
+  jQuery('input').not(".submit").val('');
   jQuery('textarea').val('');
   setTimeout(function() {
     jQuery('#thanks').fadeOut('slow');

@@ -1,22 +1,23 @@
 <% 
     rand_id = "slider_#{rand(10000)}" 
-    geom = case request.env['mobvious.device_type']
-    when :mobile
-      "480x320#"
-    when :tablet
-      "1024x768#"
-    else
-      "1140x734#"
-    end
-
 %>
 <div class="image-slider" id="<%= rand_id %>">  
   <ul class="slides">
     <% images.each do |img| %>
+    <% 
+        geom = case request.env['mobvious.device_type']
+        when :mobile
+          img.portrait? ? "x320" : "480x320#"
+        when :tablet
+          img.portrait? ? "x768" : "1024x768#"
+        else
+          img.portrait? ? "x768" : "1140x768#"
+        end
+    %>
     <li>
-        <a href="//fr.pinterest.com/pin/create/button/?media=<%= img.thumbnail(geom).url() %>&description=remax-stbarths" data-pin-do="buttonPin" data-pin-config="none" data-pin-color="red" data-pin-height="28" class="hidden-print">
+        <span><a href="//fr.pinterest.com/pin/create/button/?media=<%= img.thumbnail(geom).url() %>&description=remax-stbarths" data-pin-do="buttonPin" data-pin-config="none" data-pin-color="red" data-pin-height="28" class="hidden-print">
             <img src="//assets.pinterest.com/images/pidgets/pinit_fg_en_rect_red_28.png" class="hidden-print"/>
-        </a>
+        </a></span>
         <%= image_fu(img, geom, :class => "img-responsive") %></li>
     <% end %>
   </ul>
