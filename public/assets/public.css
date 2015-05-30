@@ -9777,16 +9777,21 @@ section:nth-of-type(even) .thumbnail .caption {
   background-color: #ebeae6;
 }
 
-/* line 116, ../../app/assets/stylesheets/public.css.scss */
-.thumbnail-info,
-.thumbnail-badge {
+/* line 115, ../../app/assets/stylesheets/public.css.scss */
+.badges {
   position: absolute;
   top: 0;
+  left: 7%;
+  width: 86%;
+}
+
+/* line 122, ../../app/assets/stylesheets/public.css.scss */
+.thumbnail-info,
+.thumbnail-badge {
   margin: 0;
   padding: 8px;
   color: #fff;
-  left: 7%;
-  width: 86%;
+  width: 100%;
   text-transform: uppercase;
   font-family: "Roboto Condensed", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 12px;
@@ -9794,12 +9799,12 @@ section:nth-of-type(even) .thumbnail .caption {
   background-color: #03A9F4;
 }
 
-/* line 130, ../../app/assets/stylesheets/public.css.scss */
+/* line 133, ../../app/assets/stylesheets/public.css.scss */
 .thumbnail-badge {
   background-color: #FF5252 !important;
 }
 
-/* line 133, ../../app/assets/stylesheets/public.css.scss */
+/* line 136, ../../app/assets/stylesheets/public.css.scss */
 .heart {
   color: #fff;
   background-color: #F44336;
@@ -9814,29 +9819,29 @@ section:nth-of-type(even) .thumbnail .caption {
   background-color: #E91E63;
 }
 
-/* line 148, ../../app/assets/stylesheets/public.css.scss */
+/* line 151, ../../app/assets/stylesheets/public.css.scss */
 .col-sm-12.last {
   margin-top: 16px;
 }
 
 /* MEMBERS
 -------------------------------------------------- */
-/* line 154, ../../app/assets/stylesheets/public.css.scss */
+/* line 157, ../../app/assets/stylesheets/public.css.scss */
 #member-slider {
   padding: 24px 0;
 }
 
-/* line 157, ../../app/assets/stylesheets/public.css.scss */
+/* line 160, ../../app/assets/stylesheets/public.css.scss */
 .team-member {
   text-align: center;
 }
-/* line 159, ../../app/assets/stylesheets/public.css.scss */
+/* line 162, ../../app/assets/stylesheets/public.css.scss */
 .team-member h2 {
   font-size: 12px;
   margin-top: 16px;
   margin-bottom: 8px;
 }
-/* line 165, ../../app/assets/stylesheets/public.css.scss */
+/* line 168, ../../app/assets/stylesheets/public.css.scss */
 .team-member h5 {
   font-family: "Merriweather", Georgia, "Times New Roman", Times, serif;
   font-size: 12px;
@@ -9846,23 +9851,23 @@ section:nth-of-type(even) .thumbnail .caption {
 
 /* FORM
 -------------------------------------------------- */
-/* line 175, ../../app/assets/stylesheets/public.css.scss */
+/* line 178, ../../app/assets/stylesheets/public.css.scss */
 .form-control {
   font-family: "Merriweather", Georgia, "Times New Roman", Times, serif;
   font-size: 12px;
 }
 
-/* line 183, ../../app/assets/stylesheets/public.css.scss */
+/* line 186, ../../app/assets/stylesheets/public.css.scss */
 .form-search {
   padding: 22px 0;
   background-color: #e0ded8;
   border-bottom: 1px solid #d4d2ca;
 }
-/* line 187, ../../app/assets/stylesheets/public.css.scss */
+/* line 190, ../../app/assets/stylesheets/public.css.scss */
 .form-search input, .form-search select, .form-search textarea {
   width: 100%;
 }
-/* line 190, ../../app/assets/stylesheets/public.css.scss */
+/* line 193, ../../app/assets/stylesheets/public.css.scss */
 .form-search .btn-link {
   border: none;
   border-radius: 0;
@@ -9873,7 +9878,7 @@ section:nth-of-type(even) .thumbnail .caption {
   font-size: 11px;
   letter-spacing: 1px;
 }
-/* line 199, ../../app/assets/stylesheets/public.css.scss */
+/* line 202, ../../app/assets/stylesheets/public.css.scss */
 .form-search .btn-link:hover {
   text-decoration: none;
   border-bottom-color: #000;
@@ -9881,7 +9886,7 @@ section:nth-of-type(even) .thumbnail .caption {
   color: #000;
 }
 
-/* line 209, ../../app/assets/stylesheets/public.css.scss */
+/* line 212, ../../app/assets/stylesheets/public.css.scss */
 .background-image-holder,
 .foreground-image-holder {
   position: absolute;
@@ -9894,13 +9899,13 @@ section:nth-of-type(even) .thumbnail .caption {
   background-position: 50% 50% !important;
 }
 
-/* line 219, ../../app/assets/stylesheets/public.css.scss */
+/* line 222, ../../app/assets/stylesheets/public.css.scss */
 .background-image-holder.parallax-background {
   height: 120%;
   top: -10%;
 }
 
-/* line 224, ../../app/assets/stylesheets/public.css.scss */
+/* line 227, ../../app/assets/stylesheets/public.css.scss */
 .hover-background .background-image-holder,
 .hover-background .foreground-image-holder {
   -webkit-transition: all 0.3s ease-out;
@@ -9908,20 +9913,20 @@ section:nth-of-type(even) .thumbnail .caption {
   transition: all 0.3s ease-out;
 }
 
-/* line 227, ../../app/assets/stylesheets/public.css.scss */
+/* line 230, ../../app/assets/stylesheets/public.css.scss */
 .hover-background .background-image-holder {
   height: 110%;
   width: 110%;
 }
 
-/* line 232, ../../app/assets/stylesheets/public.css.scss */
+/* line 235, ../../app/assets/stylesheets/public.css.scss */
 .image-slider,
 .hero-slider {
   padding: 0px;
   position: relative;
 }
 
-/* line 236, ../../app/assets/stylesheets/public.css.scss */
+/* line 239, ../../app/assets/stylesheets/public.css.scss */
 .nav-slide {
   font-size: 12px;
   letter-spacing: 2px;
@@ -9939,30 +9944,30 @@ section:nth-of-type(even) .thumbnail .caption {
   background-color: rgba(0, 0, 0, 0.4);
   text-align: center;
 }
-/* line 252, ../../app/assets/stylesheets/public.css.scss */
+/* line 255, ../../app/assets/stylesheets/public.css.scss */
 .nav-slide:hover {
   color: #fff;
   text-decoration: none;
 }
-/* line 256, ../../app/assets/stylesheets/public.css.scss */
+/* line 259, ../../app/assets/stylesheets/public.css.scss */
 .nav-slide.prev {
   min-width: 60px;
   border-radius: 0 30px 30px 0;
   left: -2px;
   right: auto;
 }
-/* line 263, ../../app/assets/stylesheets/public.css.scss */
+/* line 266, ../../app/assets/stylesheets/public.css.scss */
 .nav-slide.next {
   min-width: 60px;
   right: -2px;
   left: auto;
 }
 
-/* line 272, ../../app/assets/stylesheets/public.css.scss */
+/* line 275, ../../app/assets/stylesheets/public.css.scss */
 .image-slider .slides li {
   overflow: hidden;
 }
-/* line 274, ../../app/assets/stylesheets/public.css.scss */
+/* line 277, ../../app/assets/stylesheets/public.css.scss */
 .image-slider .slides li img {
   width: auto;
   display: block;
@@ -9970,13 +9975,13 @@ section:nth-of-type(even) .thumbnail .caption {
   margin-right: auto;
 }
 
-/* line 278, ../../app/assets/stylesheets/public.css.scss */
+/* line 281, ../../app/assets/stylesheets/public.css.scss */
 .hero-slider .slides li {
   min-height: 600px;
   overflow: hidden;
   position: relative;
 }
-/* line 282, ../../app/assets/stylesheets/public.css.scss */
+/* line 285, ../../app/assets/stylesheets/public.css.scss */
 .hero-slider .slides li h1 {
   font-family: "Merriweather", Georgia, "Times New Roman", Times, serif;
   font-style: italic;
@@ -9987,41 +9992,41 @@ section:nth-of-type(even) .thumbnail .caption {
   font-weight: 700;
   color: #fff;
 }
-/* line 292, ../../app/assets/stylesheets/public.css.scss */
+/* line 295, ../../app/assets/stylesheets/public.css.scss */
 .hero-slider .slides li p {
   color: #fff;
   text-align: center;
   margin-bottom: 24px;
 }
-/* line 297, ../../app/assets/stylesheets/public.css.scss */
+/* line 300, ../../app/assets/stylesheets/public.css.scss */
 .hero-slider .slides li .btn {
   margin-right: 16px;
 }
 
-/* line 302, ../../app/assets/stylesheets/public.css.scss */
+/* line 305, ../../app/assets/stylesheets/public.css.scss */
 .hero-slider .flex-direction-nav a {
   color: rgba(0, 0, 0, 0);
 }
 
-/* line 305, ../../app/assets/stylesheets/public.css.scss */
+/* line 308, ../../app/assets/stylesheets/public.css.scss */
 .flex-direction-nav a:before {
   top: 17px;
   font-size: 36px;
   left: 10px;
 }
 
-/* line 310, ../../app/assets/stylesheets/public.css.scss */
+/* line 313, ../../app/assets/stylesheets/public.css.scss */
 .flex-direction-nav a.flex-next:before {
   left: -10px;
 }
 
 @media all and (max-width: 1350px) {
-  /* line 314, ../../app/assets/stylesheets/public.css.scss */
+  /* line 317, ../../app/assets/stylesheets/public.css.scss */
   .flex-direction-nav {
     display: none !important;
   }
 }
-/* line 318, ../../app/assets/stylesheets/public.css.scss */
+/* line 321, ../../app/assets/stylesheets/public.css.scss */
 .hero-slider .slides li.overlay:before {
   position: absolute;
   width: 100%;
@@ -10034,12 +10039,12 @@ section:nth-of-type(even) .thumbnail .caption {
 }
 
 @media only screen and (min-width: 320px) and (max-width: 767px) {
-  /* line 331, ../../app/assets/stylesheets/public.css.scss */
+  /* line 334, ../../app/assets/stylesheets/public.css.scss */
   .hero-slider .slides li {
     min-height: 320px;
   }
 
-  /* line 334, ../../app/assets/stylesheets/public.css.scss */
+  /* line 337, ../../app/assets/stylesheets/public.css.scss */
   .hero-slider .slides li h1 {
     font-size: 32px;
     line-height: 40px;

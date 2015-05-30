@@ -112,15 +112,18 @@ article.post-item {
     }
   }
 
-  .thumbnail-info,
-  .thumbnail-badge {
+  .badges {
     position: absolute;
     top: 0;
+    left: 7%;
+    width: 86%;
+  }
+  .thumbnail-info,
+  .thumbnail-badge {
     margin: 0;
     padding: 8px;
     color: #fff;
-    left: 7%;
-    width: 86%;
+    width: 100%;
     text-transform: uppercase;
     font-family: $font-family-sans-serif;
     font-size: 12px;

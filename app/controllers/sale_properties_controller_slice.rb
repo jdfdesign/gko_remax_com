@@ -7,7 +7,7 @@ SalePropertiesController.class_eval do
    def load_resources
 	 params[:page] = (params[:search][:page] || 1) if searching?
      load_city
-     end_of_association_chain.includes(:images, :meta).published.in_city(@city.id).with_translations(I18n.locale)
+     end_of_association_chain.includes(:images, :meta).published.in_city(@city.id).with_translations(I18n.locale).order('sale_property_options.price ASC')
    end
    
    def load_city
