@@ -7,14 +7,14 @@ GIT
 
 GIT
   remote: git@github.com:jdfdesign/gko_cms3.git
-  revision: fb3098d14c0db53b3aec99a598dc7c9dd5fd7cbe
-  tag: v0.8.21
+  revision: f33aae508fbdcb5eae4dcef923d8e227aa6e859c
+  tag: v0.8.22
   specs:
-    gko_auth (0.8.21)
+    gko_auth (0.8.22)
       cancan (~> 1.6.10)
       devise (~> 2.2.3)
-    gko_categories (0.8.21)
-    gko_core (0.8.21)
+    gko_categories (0.8.22)
+    gko_core (0.8.22)
       activesupport-slices (= 0.0.2)
       acts_as_indexed (~> 0.7.7)
       babosa (~> 0.3.8)
@@ -41,7 +41,7 @@ GIT
       mobvious (~> 0.3.2)
       mysql2 (~> 0.3.14)
       nested_set (~> 1.7.1)
-      net-ssh (= 2.5.1)
+      net-ssh (= 2.0.14)
       rack-cache (~> 1.2)
       rack-mount (~> 0.8.3)
       rails (~> 3.2.22)
@@ -56,13 +56,13 @@ GIT
       uglifier (~> 2.4.0)
       uuid (~> 2.3.7)
       will_paginate (~> 3.0.2)
-    gko_documents (0.8.21)
+    gko_documents (0.8.22)
       dragonfly (~> 0.9.8)
       rack-cache (>= 0.5.3)
-    gko_features (0.8.21)
-    gko_inquiries (0.8.21)
+    gko_features (0.8.22)
+    gko_inquiries (0.8.22)
       filters_spam (~> 0.2)
-    gko_stickers (0.8.21)
+    gko_stickers (0.8.22)
 
 GEM
   remote: https://rubygems.org/
@@ -169,7 +169,6 @@ GEM
     jquery-rails (2.0.3)
       railties (>= 3.1.0, < 5.0)
       thor (~> 0.14)
-    jruby-pageant (1.1.1)
     json (1.8.3)
     launchy (2.4.3)
       addressable (~> 2.3)
@@ -198,8 +197,7 @@ GEM
       net-ssh (>= 1.99.1)
     net-sftp (2.0.5)
       net-ssh (>= 2.0.9)
-    net-ssh (2.5.1)
-      jruby-pageant (>= 1.0.2)
+    net-ssh (2.0.14)
     net-ssh-gateway (1.1.0)
       net-ssh (>= 1.99.1)
     nokogiri (1.5.11)
