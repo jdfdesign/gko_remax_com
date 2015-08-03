@@ -1,20 +1,20 @@
 GIT
   remote: git@github.com:jdfdesign/gko-realty.git
-  revision: 99ecacb52971cd16f2971b59823dc6d75d8910df
+  revision: 995e35d543459de812508b52529f7c61778d5cb1
   specs:
-    gko_realty (0.2.7)
+    gko_realty (0.3.1)
       gko_core
 
 GIT
   remote: git@github.com:jdfdesign/gko_cms3.git
-  revision: 5e183932b5a6f404b671153f93c73d4b5f01b1c6
-  tag: v0.8.16
+  revision: 5fdad8e5f6eae2a7715d49f1dcd4dedac23be3a7
+  tag: v0.8.19
   specs:
-    gko_auth (0.8.16)
+    gko_auth (0.8.19)
       cancan (~> 1.6.10)
       devise (~> 2.2.3)
-    gko_categories (0.8.16)
-    gko_core (0.8.16)
+    gko_categories (0.8.19)
+    gko_core (0.8.19)
       activesupport-slices (= 0.0.2)
       acts_as_indexed (~> 0.7.7)
       babosa (~> 0.3.8)
@@ -55,13 +55,13 @@ GIT
       uglifier (~> 2.4.0)
       uuid (~> 2.3.7)
       will_paginate (~> 3.0.2)
-    gko_documents (0.8.16)
+    gko_documents (0.8.19)
       dragonfly (~> 0.9.8)
       rack-cache (>= 0.5.3)
-    gko_features (0.8.16)
-    gko_inquiries (0.8.16)
+    gko_features (0.8.19)
+    gko_inquiries (0.8.19)
       filters_spam (~> 0.2)
-    gko_stickers (0.8.16)
+    gko_stickers (0.8.19)
 
 GEM
   remote: https://rubygems.org/
@@ -105,7 +105,7 @@ GEM
       railties (>= 3.0)
     builder (3.0.4)
     cancan (1.6.10)
-    capistrano (2.15.5)
+    capistrano (2.15.6)
       highline
       net-scp (>= 1.0.0)
       net-sftp (>= 2.0.0)
@@ -116,7 +116,7 @@ GEM
       activesupport (>= 3.2.0)
       json (>= 1.7)
     chronic (0.6.7)
-    codemirror-rails (5.3)
+    codemirror-rails (5.5)
       railties (>= 3.0, < 5)
     coffee-rails (3.2.2)
       coffee-script (>= 2.2.0)
@@ -188,7 +188,7 @@ GEM
       i18n (~> 0.4)
       json
     multi_json (1.11.0)
-    mysql2 (0.3.18)
+    mysql2 (0.3.19)
     nested_set (1.7.1)
       activerecord (>= 3.0.0)
       railties (>= 3.0.0)
@@ -196,7 +196,7 @@ GEM
       net-ssh (>= 2.6.5)
     net-sftp (2.1.2)
       net-ssh (>= 2.6.5)
-    net-ssh (2.9.2)
+    net-ssh (2.10.0)
     net-ssh-gateway (1.2.0)
       net-ssh (>= 2.6.5)
     nokogiri (1.5.11)
@@ -241,10 +241,10 @@ GEM
       railties (~> 3.2.0)
       sass (>= 3.1.10)
       tilt (~> 1.3)
-    simple_form (2.1.2)
+    simple_form (2.1.3)
       actionpack (~> 3.0)
       activemodel (~> 3.0)
-    spreadsheet (1.0.3)
+    spreadsheet (1.0.4)
       ruby-ole (>= 1.0)
     sprockets (2.2.3)
       hike (~> 1.2)
@@ -252,11 +252,11 @@ GEM
       rack (~> 1.0)
       tilt (~> 1.1, != 1.3.0)
     systemu (2.6.5)
-    term-ansicolor (1.3.0)
+    term-ansicolor (1.3.2)
       tins (~> 1.0)
     thor (0.19.1)
     tilt (1.4.1)
-    tins (1.5.2)
+    tins (1.5.4)
     to_xls (1.5.3)
       spreadsheet
     treetop (1.4.15)
@@ -267,7 +267,7 @@ GEM
     uglifier (2.4.0)
       execjs (>= 0.3.0)
       json (>= 1.8.0)
-    uuid (2.3.7)
+    uuid (2.3.8)
       macaddr (~> 1.0)
     warden (1.2.3)
       rack (>= 1.0)
@@ -289,7 +289,7 @@ DEPENDENCIES
   gko_documents!
   gko_features!
   gko_inquiries!
-  gko_realty (= 0.2.7)!
+  gko_realty (= 0.3.1)!
   gko_stickers!
   money (= 5.0.0)
   nokogiri (~> 1.5.1)

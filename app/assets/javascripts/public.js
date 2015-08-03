@@ -355,14 +355,28 @@ $(document).ready(function() {
       $( this ).find(".next").hide();
     }
 
-    $('.image-slider').flexslider({
-      animation: "slide",
-      directionNav: false,
-      controlNav: false,
-      touch: false,
-      slideshow: true, // add flex-viewport wrapper dom element
-      slideshowSpeed: 4000
-    });
+  
+    $('#carousel').flexslider({
+        animation: "slide",
+        controlNav: false,
+        directionNav: false,
+        animationLoop: false,
+        slideshow: false,
+        itemWidth: 210,
+        itemMargin: 5,
+        asNavFor: '#slider'
+      });
+    
+      $('#slider').flexslider({
+          animation: "slide",
+          directionNav: false,
+          controlNav: false,
+          animationLoop: false,
+          slideshow: true,
+          slideshowSpeed: 4000,
+          sync: "#carousel"
+        });
+
   });
 
 
