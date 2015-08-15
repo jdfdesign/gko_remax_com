@@ -257,7 +257,7 @@ GEM
       tins (~> 1.0)
     thor (0.19.1)
     tilt (1.4.1)
-    tins (1.5.4)
+    tins (1.6.0)
     to_xls (1.5.3)
       spreadsheet
     treetop (1.4.15)

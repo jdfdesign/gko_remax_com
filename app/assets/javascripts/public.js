@@ -349,12 +349,18 @@ $(document).ready(function() {
     });
   });
 
-  $( ".image-slider" ).each(function( index ) {
+  $(".image-slider").each(function( index ) {
     if ($( this ).find('li').length < 2) {
       $( this ).find(".prev").hide();
       $( this ).find(".next").hide();
     }
-
+  $(".image-slider").flexslider({
+        animation: "slide",
+        controlNav: false,
+        directionNav: false,
+        animationLoop: false,
+        slideshow: false
+      });
   
     $('#carousel').flexslider({
         animation: "slide",
