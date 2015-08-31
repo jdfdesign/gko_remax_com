@@ -18,13 +18,14 @@
     <i class="fa fa-heart heart"></i>
   <% end %>
   </div>
-  
+  <div class="badges">
   <% unless record.badge.blank? %>
     <div class="thumbnail-badge"><%= record.badge %></div>
   <% end %>
   <% unless record.info_title.blank? %>
     <div class="thumbnail-info"><%= record.info_title %></div>
   <% end %>
+  </div>
 <% end %>
 </article>
 <% if record_counter % 3 == 2 %> 
