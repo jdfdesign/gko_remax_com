@@ -1,6 +1,7 @@
 GIT
   remote: git@github.com:jdfdesign/gko-realty.git
-  revision: 995e35d543459de812508b52529f7c61778d5cb1
+  revision: 7e0ae8c1cc2a86b5bd01d61c5f144a8564e9881c
+  tag: v0.3.1
   specs:
     gko_realty (0.3.1)
       gko_core
@@ -117,7 +118,7 @@ GEM
       activesupport (>= 3.2.0)
       json (>= 1.7)
     chronic (0.6.7)
-    codemirror-rails (5.5)
+    codemirror-rails (5.6)
       railties (>= 3.0, < 5)
     coffee-rails (3.2.2)
       coffee-script (>= 2.2.0)
@@ -189,7 +190,7 @@ GEM
       i18n (~> 0.4)
       json
     multi_json (1.11.2)
-    mysql2 (0.3.19)
+    mysql2 (0.3.20)
     nested_set (1.7.1)
       activerecord (>= 3.0.0)
       railties (>= 3.0.0)
@@ -290,7 +291,7 @@ DEPENDENCIES
   gko_documents!
   gko_features!
   gko_inquiries!
-  gko_realty (= 0.3.1)!
+  gko_realty!
   gko_stickers!
   money (= 5.0.0)
   nokogiri (~> 1.5.1)

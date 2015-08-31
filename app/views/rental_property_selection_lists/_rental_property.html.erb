@@ -26,4 +26,10 @@
     <div class="thumbnail-info"><%= record.info_title %></div>
   <% end %>
 <% end %>
-</article> 
+</article>
+<% if record_counter % 3 == 2 %> 
+  <div class="clearfix visible-md-block visible-lg-block"></div> 
+<% end %>
+<% if record_counter % 2 == 1 %>
+  <div class="clearfix visible-sm-block"></div> 
+<% end %>

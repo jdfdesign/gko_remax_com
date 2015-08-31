@@ -17,7 +17,7 @@ group :production do
      gem 'gko_categories'
     gem 'gko_stickers'
   end
-  gem 'gko_realty', '= 0.3.1', :git => 'git@github.com:jdfdesign/gko-realty.git'
+  gem 'gko_realty', :git => 'git@github.com:jdfdesign/gko-realty.git', :tag => "v0.3.1"
 end
 
 #group :development do
