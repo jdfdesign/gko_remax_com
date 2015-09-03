@@ -17,154 +17,152 @@ $(document).ready(function() {
     document.location.href = result;
   });
 
- $('.datepicker').datepicker();
+  $('.datepicker').datepicker();
 
   $('.rental_property_inquiry')
     .on("ajax:beforeSend", function(evt, xhr, settings) {
-    jQuery('span.error').fadeOut('slow');
-    jQuery('span.valid').fadeOut('slow');
-    jQuery('#thanks').hide();
-    jQuery('#error').hide();
-    jQuery('#timedout').hide();
-    jQuery('#state').hide();
+      jQuery('span.error').fadeOut('slow');
+      jQuery('span.valid').fadeOut('slow');
+      jQuery('#thanks').hide();
+      jQuery('#error').hide();
+      jQuery('#timedout').hide();
+      jQuery('#state').hide();
 
-    var error = false;
+      var error = false;
 
-    var name = jQuery('#rental_property_inquiry_name').val();
-    if (name == "" || name == " ") {
-      jQuery('#rental_property_inquiry_name').parent().addClass('has-error');
-      error = true;
-    }
+      var name = jQuery('#rental_property_inquiry_name').val();
+      if (name == "" || name == " ") {
+        jQuery('#rental_property_inquiry_name').parent().addClass('has-error');
+        error = true;
+      }
 
-    var checkEmail = /^([\w-\.]+@([\w-]+\.)+[\w-]{2,4})?$/;
-    var email = jQuery('#rental_property_inquiry_email').val();
-    if (email == "" || email == " ") {
-      jQuery('#rental_property_inquiry_email').parent().addClass('has-error');
-      error = true;
-    } else if (!checkEmail.test(email)) {
-      jQuery('#rental_property_inquiry_email').parent().addClass('has-error');
-      error = true;
-    }
+      var checkEmail = /^([\w-\.]+@([\w-]+\.)+[\w-]{2,4})?$/;
+      var email = jQuery('#rental_property_inquiry_email').val();
+      if (email == "" || email == " ") {
+        jQuery('#rental_property_inquiry_email').parent().addClass('has-error');
+        error = true;
+      } else if (!checkEmail.test(email)) {
+        jQuery('#rental_property_inquiry_email').parent().addClass('has-error');
+        error = true;
+      }
 
-    var message = jQuery('#rental_property_inquiry_message').val();
-    if (message == "" || message == " ") {
-      jQuery('#rental_property_inquiry_message').parent().addClass('has-error');
-      error = true;
-    }
+      var message = jQuery('#rental_property_inquiry_message').val();
+      if (message == "" || message == " ") {
+        jQuery('#rental_property_inquiry_message').parent().addClass('has-error');
+        error = true;
+      }
 
-    if (error == true) {
-      jQuery('#error').fadeIn('slow');
+      if (error == true) {
+        jQuery('#error').fadeIn('slow');
+        setTimeout(function() {
+          jQuery('#error').fadeOut('slow');
+        }, 3000);
+        return false;
+      } else {
+        jQuery('#rental_property_inquiry_name').parent().removeClass('has-error');
+        jQuery('#rental_property_inquiry_email').parent().removeClass('has-error');
+        jQuery('#rental_property_inquiry_message').parent().removeClass('has-error');
+      }
+    })
+    .on("ajax:error", function(evt, xhr, status, error) {
+      if (error == "timeout") {
+        jQuery('#timedout').fadeIn('slow');
+        setTimeout(function() {
+          jQuery('#timedout').fadeOut('slow');
+        }, 3000);
+      } else {
+        jQuery('#state').fadeIn('slow');
+        jQuery("#state").html('The following error occured: ' + error + '');
+        setTimeout(function() {
+          jQuery('#state').fadeOut('slow');
+        }, 3000);
+      }
+    })
+    .on("ajax:success", function(evt, data, status, xhr) {
+      console.log("success")
+      jQuery('#thanks').fadeIn('slow');
+      jQuery('input').not(".submit").val('');
+      jQuery('textarea').val('');
       setTimeout(function() {
-        jQuery('#error').fadeOut('slow');
-      }, 3000);
-      return false;
-    }
-    else {
-      jQuery('#rental_property_inquiry_name').parent().removeClass('has-error');
-      jQuery('#rental_property_inquiry_email').parent().removeClass('has-error');
-      jQuery('#rental_property_inquiry_message').parent().removeClass('has-error');
-    }
-  })
-.on("ajax:error", function(evt, xhr, status, error) {
-  if (error == "timeout") {
-    jQuery('#timedout').fadeIn('slow');
-    setTimeout(function() {
-      jQuery('#timedout').fadeOut('slow');
-    }, 3000);
-  } else {
-    jQuery('#state').fadeIn('slow');
-    jQuery("#state").html('The following error occured: ' + error + '');
-    setTimeout(function() {
-      jQuery('#state').fadeOut('slow');
-    }, 3000);
-  }
-})
-.on("ajax:success", function(evt, data, status, xhr) {
-  console.log("success")
-  jQuery('#thanks').fadeIn('slow');
-  jQuery('input').not(".submit").val('');
-  jQuery('textarea').val('');
-  setTimeout(function() {
-    jQuery('#thanks').fadeOut('slow');
-  }, 4000);
-})
+        jQuery('#thanks').fadeOut('slow');
+      }, 4000);
+    })
 
 
   $('.sale_property_inquiry')
     .on("ajax:beforeSend", function(evt, xhr, settings) {
-    jQuery('span.error').fadeOut('slow');
-    jQuery('span.valid').fadeOut('slow');
-    jQuery('#thanks').hide();
-    jQuery('#error').hide();
-    jQuery('#timedout').hide();
-    jQuery('#state').hide();
+      jQuery('span.error').fadeOut('slow');
+      jQuery('span.valid').fadeOut('slow');
+      jQuery('#thanks').hide();
+      jQuery('#error').hide();
+      jQuery('#timedout').hide();
+      jQuery('#state').hide();
 
-    var error = false;
+      var error = false;
 
-    var name = jQuery('#sale_property_inquiry_name').val();
-    if (name == "" || name == " ") {
-      jQuery('#sale_property_inquiry_name').parent().addClass('has-error');
-      error = true;
-    }
+      var name = jQuery('#sale_property_inquiry_name').val();
+      if (name == "" || name == " ") {
+        jQuery('#sale_property_inquiry_name').parent().addClass('has-error');
+        error = true;
+      }
 
-    var checkEmail = /^([\w-\.]+@([\w-]+\.)+[\w-]{2,4})?$/;
-    var email = jQuery('#sale_property_inquiry_email').val();
-    if (email == "" || email == " ") {
-      jQuery('#sale_property_inquiry_email').parent().addClass('has-error');
-      error = true;
-    } else if (!checkEmail.test(email)) {
-      jQuery('#sale_property_inquiry_email').parent().addClass('has-error');
-      error = true;
-    }
+      var checkEmail = /^([\w-\.]+@([\w-]+\.)+[\w-]{2,4})?$/;
+      var email = jQuery('#sale_property_inquiry_email').val();
+      if (email == "" || email == " ") {
+        jQuery('#sale_property_inquiry_email').parent().addClass('has-error');
+        error = true;
+      } else if (!checkEmail.test(email)) {
+        jQuery('#sale_property_inquiry_email').parent().addClass('has-error');
+        error = true;
+      }
 
-    var message = jQuery('#sale_property_inquiry_message').val();
-    if (message == "" || message == " ") {
-      jQuery('#sale_property_inquiry_message').parent().addClass('has-error');
-      error = true;
-    }
+      var message = jQuery('#sale_property_inquiry_message').val();
+      if (message == "" || message == " ") {
+        jQuery('#sale_property_inquiry_message').parent().addClass('has-error');
+        error = true;
+      }
 
-    if (error == true) {
-      jQuery('#error').fadeIn('slow');
+      if (error == true) {
+        jQuery('#error').fadeIn('slow');
+        setTimeout(function() {
+          jQuery('#error').fadeOut('slow');
+        }, 3000);
+        return false;
+      } else {
+        jQuery('#sale_property_inquiry_name').parent().removeClass('has-error');
+        jQuery('#sale_property_inquiry_email').parent().removeClass('has-error');
+        jQuery('#sale_property_inquiry_message').parent().removeClass('has-error');
+      }
+    })
+    .on("ajax:error", function(evt, xhr, status, error) {
+      if (error == "timeout") {
+        jQuery('#timedout').fadeIn('slow');
+        setTimeout(function() {
+          jQuery('#timedout').fadeOut('slow');
+        }, 3000);
+      } else {
+        jQuery('#state').fadeIn('slow');
+        jQuery("#state").html('The following error occured: ' + error + '');
+        setTimeout(function() {
+          jQuery('#state').fadeOut('slow');
+        }, 3000);
+      }
+    })
+    .on("ajax:success", function(evt, data, status, xhr) {
+      console.log("success")
+      jQuery('#thanks').fadeIn('slow');
+      jQuery('input').val('');
+      jQuery('textarea').val('');
       setTimeout(function() {
-        jQuery('#error').fadeOut('slow');
-      }, 3000);
-      return false;
-    }
-    else {
-      jQuery('#sale_property_inquiry_name').parent().removeClass('has-error');
-      jQuery('#sale_property_inquiry_email').parent().removeClass('has-error');
-      jQuery('#sale_property_inquiry_message').parent().removeClass('has-error');
-    }
-  })
-.on("ajax:error", function(evt, xhr, status, error) {
-  if (error == "timeout") {
-    jQuery('#timedout').fadeIn('slow');
-    setTimeout(function() {
-      jQuery('#timedout').fadeOut('slow');
-    }, 3000);
-  } else {
-    jQuery('#state').fadeIn('slow');
-    jQuery("#state").html('The following error occured: ' + error + '');
-    setTimeout(function() {
-      jQuery('#state').fadeOut('slow');
-    }, 3000);
-  }
-})
-.on("ajax:success", function(evt, data, status, xhr) {
-  console.log("success")
-  jQuery('#thanks').fadeIn('slow');
-  jQuery('input').val('');
-  jQuery('textarea').val('');
-  setTimeout(function() {
-    jQuery('#thanks').fadeOut('slow');
-  }, 4000);
-})
+        jQuery('#thanks').fadeOut('slow');
+      }, 4000);
+    })
 
 
   //===========================================================
   // NAVIGATION
   //===========================================================
-  
+
   // Nav Sticky
 
   $(window).scroll(function() {
@@ -207,7 +205,7 @@ $(document).ready(function() {
   //===========================================================
   // LOGO SIZE
   //===========================================================
-  
+
   // Detect logo dimensions and add correct class
 
   // var logoImage = $('.top-bar .logo:first-of-type');
@@ -322,24 +320,22 @@ $(document).ready(function() {
   } else {
     $('body').addClass('pointer');
   }
-  
+
   //===========================================================
   // SLIDERS
   //===========================================================
-  
-  // Slider Initializations
 
   $('.testimonials-slider').flexslider({
     directionNav: false
   });
 
-  $( ".hero-slider" ).each(function( index ) {
-    if ($( this ).find('li').length < 2) {
-      $( this ).find(".prev").hide();
-      $( this ).find(".next").hide();
+  $(".hero-slider").each(function(index) {
+    if ($(this).find('li').length < 2) {
+      $(this).find(".prev").hide();
+      $(this).find(".next").hide();
     }
 
-    $( this ).flexslider({
+    $(this).flexslider({
       animation: "slide",
       directionNav: false,
       controlNav: false,
@@ -349,47 +345,44 @@ $(document).ready(function() {
     });
   });
 
-  $(".image-slider").each(function( index ) {
-    if ($( this ).find('li').length < 2) {
-      $( this ).find(".prev").hide();
-      $( this ).find(".next").hide();
+  $(".image-slider").each(function(index) {
+    if ($(this).find('li').length < 2) {
+      $(this).find(".prev").hide();
+      $(this).find(".next").hide();
     }
-  $(".image-slider").flexslider({
-        animation: "slide",
-        controlNav: false,
-        directionNav: false,
-        animationLoop: false,
-        slideshow: false
-      });
+  }).flexslider({
+    animation: "slide",
+    controlNav: false,
+    directionNav: false,
+    animationLoop: false,
+    slideshow: false
+  });
   
-    $('#carousel').flexslider({
-        animation: "slide",
-        controlNav: false,
-        directionNav: false,
-        animationLoop: false,
-        slideshow: false,
-        itemWidth: 210,
-        itemMargin: 5,
-        asNavFor: '#slider'
-      });
-    
-      $('#slider').flexslider({
-          animation: "slide",
-          directionNav: false,
-          controlNav: false,
-          animationLoop: false,
-          slideshow: true,
-          slideshowSpeed: 4000,
-          sync: "#carousel"
-        });
-
+  // The carousel being synced must be initialized first
+  $('#carousel').flexslider({
+    animation: "slide",
+    controlNav: false,
+    directionNav: false,
+    animationLoop: false,
+    slideshow: false,
+    itemWidth: 210,
+    itemMargin: 5,
+    asNavFor: '#slider'
   });
 
+  $('#slider').flexslider({
+    animation: "slide",
+    controlNav: false,
+    directionNav: false,
+    animationLoop: false,
+    slideshow: false,
+    sync: "#carousel"
+  });
 
   $('.prev, .next').on('click', function() {
     var href = $(this).attr('href');
     var target = $(this).data("target");
-    $(target).flexslider(href)
+    $(target).flexslider(href);
     return false;
   })
 
@@ -406,7 +399,7 @@ $(document).ready(function() {
   //===========================================================
   // TABS
   //===========================================================
-  
+
   // Feature Selector
 
   $('.selector-tabs li').click(function() {
@@ -418,11 +411,11 @@ $(document).ready(function() {
     $(this).closest('.feature-selector').find('.selector-content').children('li').removeClass('active');
     $(this).closest('.feature-selector').find('.selector-content').children('li:nth-child(' + activeTab + ')').addClass('active');
   });
-  
+
   //===========================================================
   // BACKGROUND IMAGE
   //===========================================================
-  
+
   // Append .background-image-holder <img>'s as CSS backgrounds
 
   $('.background-image-holder').each(function() {
@@ -431,7 +424,7 @@ $(document).ready(function() {
     $(this).children('img').hide();
     $(this).css('background-position', '50% 0%');
   });
-  
+
   //===========================================================
   // ACCORDION
   //===========================================================
@@ -476,66 +469,7 @@ $(document).ready(function() {
     skrollr.init({
       forceHeight: false
     });
-
-    // Multi Layer Parallax
-
-    //$('.hover-background').each(function() {
-    //   $(this).mousemove(function(event) {
-     //    $(this).find('.background-image-holder').css('transform', 'translate(' + -event.pageX / 18 + 'px,' + -event.pageY / 18 + 'px)');
-    //     $(this).find('.layer-1').css('transform', 'translate(' + -event.pageX / 9 + 'px,' + -event.pageY / 10 + 'px)');
-    //     $(this).find('.layer-2').css('transform', 'translate(' + -event.pageX / 5 + 'px,' + -event.pageY / 10 + 'px)');
-    //   });
-    //});
-}
-
-  //===========================================================
-  // MAPS
-  //===========================================================
-  
-  // Map Holder Overlay
-
-  // $('.map-holder').click(function() {
-  //   $(this).addClass('on');
-  // });
-
-  // $(window).scroll(function() {
-  //   if ($('.map-holder').hasClass('on')) {
-  //     $('.map-holder').removeClass('on');
-  //   }
-  // });
-
-  // Map Details Holder
-
-  // $('.details-holder').each(function() {
-  //   $(this).css('height', $(this).width());
-  // });
-
-  // $('.details-holder').mouseenter(function() {
-  //   $(this).closest('.map-overlay').addClass('fade-overlay');
-  // }).mouseleave(function() {
-  //   $(this).closest('.map-overlay').removeClass('fade-overlay');
-  // });
-
-
-  //===========================================================
-  // COUNTDOWN
-  //===========================================================
-
-  // $('.countdown').each(function() {
-  //   $(this).countdown({
-  //     until: new Date($(this).attr('data-date'))
-  //   });
-  // });
-
-  //===========================================================
-  // TWITTER FEED
-  //===========================================================
-
-  // if ($('#tweets').length) {
-  //   twitterFetcher.fetch($('#tweets').attr('data-widget-id'), '', 5, true, true, true, '', false, handleTweets);
-  // }
-
-
+  }
 
 });
 
@@ -567,12 +501,12 @@ $(window).load(function() {
   $('form.mail-list-signup').on('submit', function() {
 
     var iFrame = $(this).closest('section, header').find('iframe.mail-list-form'),
-    thisForm = $(this).closest('.mail-list-signup'),
-    userEmail = $(this).find('.signup-email-field').val(),
-    userFullName = $(this).find('.signup-name-field').val(),
-    userFirstName = $(this).find('.signup-first-name-field').val(),
-    userLastName = $(this).find('.signup-last-name-field').val(),
-    error = 0;
+      thisForm = $(this).closest('.mail-list-signup'),
+      userEmail = $(this).find('.signup-email-field').val(),
+      userFullName = $(this).find('.signup-name-field').val(),
+      userFirstName = $(this).find('.signup-first-name-field').val(),
+      userLastName = $(this).find('.signup-last-name-field').val(),
+      error = 0;
 
     $(thisForm).find('.validate-required').each(function() {
       if ($(this).val() === '') {
@@ -650,10 +584,10 @@ function onYouTubeIframeAPIReady() {
 }
 
 function initialize_map() {
-  if(typeof google != 'undefined') {
+  if (typeof google != 'undefined') {
     var $map = $(document.getElementById('map-canvas'));
     var point = $map.data("point").split(",");
-    var latlng = new google.maps.LatLng(point[0],point[1]);
+    var latlng = new google.maps.LatLng(point[0], point[1]);
     var map_options = {
       zoom: 15,
       center: latlng,
@@ -661,6 +595,9 @@ function initialize_map() {
       mapTypeId: google.maps.MapTypeId.ROADMAP
     };
     var map = new google.maps.Map(document.getElementById('map-canvas'), map_options);
-    var marker = new google.maps.Marker({position: latlng,map: map});
+    var marker = new google.maps.Marker({
+      position: latlng,
+      map: map
+    });
   }
 }

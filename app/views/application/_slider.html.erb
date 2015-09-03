@@ -1,10 +1,7 @@
-<% 
-    rand_id = "slider_#{rand(10000)}" 
-%>
-<div class="image-slider" id="slider">  
+<div id="slider" class="flexslider">  
   <ul class="slides">
     <% images.each do |img| %>
-    <% 
+    <%  
         geom = case request.env['mobvious.device_type']
         when :mobile
           img.portrait? ? "x320" : "480x320#"
@@ -31,4 +28,6 @@
       <li><%= image_fu(img, "480x320#", :class => "img-responsive") %></li>
     <% end %>
   </ul>
+  <a href="prev" class="nav-slide prev hidden-print" data-target="#carousel"><span class="fa fa-angle-left fa-3x"></span></a>
+  <a href="next" class="nav-slide next hidden-print" data-target="#carousel"><span class="fa fa-angle-right fa-3x"></span></a>
 </div>

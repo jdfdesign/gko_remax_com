@@ -7,16 +7,12 @@ $logo-height-sm-min: 135px;
 @import "theme/variables";
 @import "bootstrap/bootstrap";
 @import "bootstrap-datepicker3";
-@import "theme/owl.carousel";
-@import "theme/owl.theme";
-@import "theme/owl.theme";
 @import "theme/form";
 @import "theme/navs";
 @import "theme/navbar";
 @import "theme/panels";
 @import "theme/buttons";
 @import "theme/flexslider";
-
 @import "theme/sections";
 @import "theme/footer";
 @import "theme/home";
@@ -178,11 +174,8 @@ article.post-item {
 .form-control {
   font-family: $font-family-serif;
   font-size: 12px;
-  //border-radius: 18px !important;
 }
-input, select, textarea {
-//border-radius: 18px;
-}
+
 .form-search {
   padding: $line-height-computed 0;
   background-color: darken(#ebeae6, 5%);
@@ -252,6 +245,7 @@ input, select, textarea {
   padding: 8px 0;
   background-color: rgba(0, 0, 0, .4);
   text-align: center;
+  margin-top: -30px;
   &:hover {
     color: #fff;
     text-decoration: none;
@@ -275,7 +269,10 @@ input, select, textarea {
 .image-slider .slides li {
   overflow: hidden;
   img {
-    width: auto; display: block; margin-left: auto; margin-right: auto;
+    width: auto; 
+    display: block; 
+    margin-left: auto; 
+    margin-right: auto;
   }
 }
 .hero-slider .slides li {
@@ -315,7 +312,7 @@ input, select, textarea {
 }
 @media all and (max-width: 1350px) {
   .flex-direction-nav {
-    display: none !important;
+    //display: none !important;
   }
 }
 .hero-slider .slides li.overlay:before {
@@ -339,7 +336,18 @@ input, select, textarea {
     line-height: 40px;
   }
 }
-
+#slider {
+  margin-bottom: 0 !important;
+  border: none !important;
+  background-color: transparent !important;
+  box-shadow: none !important;
+}
+#carousel {
+  margin: 0 !important;
+}
+#carousel li {
+  margin-right: 5px;
+}
 
 @media print {
   img {
