@@ -4,11 +4,11 @@
     <%  
         geom = case request.env['mobvious.device_type']
         when :mobile
-          img.portrait? ? "x320" : "480x320#"
+          img.portrait? ? "480x320#" : "480x320#"
         when :tablet
-          img.portrait? ? "x768" : "1024x768#"
+          img.portrait? ? "1140x768#" : "1024x768#"
         else
-          img.portrait? ? "x768" : "1140x768#"
+          img.portrait? ? "1140x768#" : "1140x768#"
         end
     %>
     <li>
