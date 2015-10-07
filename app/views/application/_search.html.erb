@@ -17,8 +17,12 @@ if @rent_section && @sale_section
 <div class="hidden-print" role="tabpanel">
   <!-- Nav tabs -->
   <ul class="nav nav-tabs" role="tablist">
-    <li role="presentation" class="<%= 'active' if active == 'rental' %>"><a href="#rent" aria-controls="rent" role="tab" data-toggle="tab">Properties for rent</a></li>
-    <li role="presentation" class="<%= 'active' if active == 'sale' %>"><a href="#sale" aria-controls="sale" role="tab" data-toggle="tab">Properties for sale</a></li>
+    <li role="presentation" class="<%= 'active' if active == 'rental' %>">
+      <a href="#rent" aria-controls="rent" role="tab" data-toggle="tab"><%= t("realty.properties_for_rent") %></a>
+    </li>
+    <li role="presentation" class="<%= 'active' if active == 'sale' %>">
+      <a href="#sale" aria-controls="sale" role="tab" data-toggle="tab"><%= t("realty.properties_for_sale") %></a>
+    </li>
   </ul>
 
   <!-- Tab panes -->
@@ -69,7 +73,7 @@ if @rent_section && @sale_section
          </div>
          <div class="col-md-2">
           <%= link_to(@rent_section.public_url, :class => "btn btn-link") do %>
-          <i class='fa fa-long-arrow-right'></i> <%= "View all listing" %>
+          <i class='fa fa-long-arrow-right'></i> <%= t("realty.view_all_listing") %>
           <% end %>
         </div>
       </div>

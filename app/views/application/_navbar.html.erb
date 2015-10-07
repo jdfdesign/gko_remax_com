@@ -25,7 +25,7 @@
          
     <form class="navbar-form hidden-xs" role="search">
         <div class="form-group">
-          <%= collection_select("rental_property", "id", @rental_properties, :public_url, :title, :prompt => "Select a rental property") %>
+          <%= collection_select("rental_property", "id", @rental_properties, :public_url, :title, :prompt => "#{t("realty.select_rental_property")}") %>
         </div>
       </form>
   </div>

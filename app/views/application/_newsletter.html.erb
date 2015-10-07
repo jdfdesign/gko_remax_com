@@ -11,28 +11,28 @@
       <form class="form-newsletter" role="form" action="http://account.stbarth-emailing.com/t/j/s/ntyilt/" method="post">
         <div class="col-md-3">
           <div class="form-group">
-            <label class="sr-only" for="fieldName">Name</label>
-            <input type="text" class="form-control" name="cm-name" id="fieldName" placeholder="Name" required>
+            <label class="sr-only" for="fieldName"><%= t("realty.newsletter.name") %></label>
+            <input type="text" class="form-control" name="cm-name" id="fieldName" placeholder="<%= t("realty.newsletter.name") %>" required>
           </div>
         </div>
         <div class="col-md-3">
           <div class="form-group">
-            <label class="sr-only" for="fieldEmail">Email</label>
-            <input class="form-control" id="fieldEmail" name="cm-ntyilt-ntyilt" placeholder="Enter email" type="email" required >
+            <label class="sr-only" for="fieldEmail"><%= t("realty.newsletter.email") %></label>
+            <input class="form-control" id="fieldEmail" name="cm-ntyilt-ntyilt" placeholder="<%= t("realty.newsletter.email") %>" type="email" required >
           </div>
         </div>
         <div class="col-md-3">
           <div class="form-group">
-            <label class="sr-only" for="fieldkutkdt">Language</label>
+            <label class="sr-only" for="fieldkutkdt"><%= t("realty.newsletter.language") %></label>
             <select class="form-control" name="cm-fo-kutkdt" id="fieldkutkdt" required>
-             <option value="">Language</option>
+             <option value=""><%= t("realty.newsletter.language") %></option>
              <option value="1068172">English</option>
              <option value="1068173">Français</option>
             </select>
           </div>
         </div>
         <div class="col-md-3">
-          <button type="submit" class="btn btn-inverse"><i class="fa fa-paper-plane"></i> Subscribe</button>
+          <button type="submit" class="btn btn-inverse"><i class="fa fa-paper-plane"></i> <%= t("realty.newsletter.subscribe") %></button>
         </div>
       </form>
     </div><!--end of row-->

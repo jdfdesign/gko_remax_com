@@ -67,10 +67,10 @@ if @rent_section && @sale_section
    <div class="container">
     <div class="row">
      <div class="col-md-8 col-md-offset-2 text-center">
-      <h2>A villa to fit your Vacation Style</h2>
+      <h2><%= t("home.style_title").html_safe %></h2>
      
       <hr>
-      <h3>Choose your next villa rental according to your vacation style</h3>
+      <h3><%= t("home.style_body").html_safe %></h3>
     </div>
   </div><!--end of row-->
 
@@ -102,9 +102,9 @@ if @rent_section && @sale_section
 
     <div class="row">
      <div class="col-md-8 col-md-offset-2 text-center">
-      <h2>Special offers</h2>
+      <h2><%= t("home.offers_title").html_safe %></h2>
       <hr>
-      <h3>Benefit of good deals, special prices, discounts or extra services offered</h3>
+      <h3><%= t("home.offers_body").html_safe %></h3>
     </div>
   </div><!--end of row-->
 
@@ -130,7 +130,7 @@ if @rent_section && @sale_section
     <div class="col-md-12 text-center">
       <div class="btn-group controls">
         <a href="prev" class="btn btn-primary prev" data-target="#promo-slider"><span class="fa fa-angle-left"></span></a>
-        <%= link_to("View all", add_url_param(:with_promo,'true', @rent_section.public_url), :class => "btn btn-primary ") %>
+        <%= link_to(t("realty.view_all"), add_url_param(:with_promo,'true', @rent_section.public_url), :class => "btn btn-primary ") %>
         <a href="next" class="btn btn-primary next" data-target="#promo-slider"><span class="fa fa-angle-right"></span></a>
       </div>
     </div>
@@ -148,9 +148,9 @@ if @rent_section && @sale_section
      <div class="col-md-6">
       <div class="row">
         <div class="col-md-12 text-center">
-          <h2>Coups de coeur</h2>
+          <h2><%= t("home.badges_title").html_safe %></h2>
           <hr>
-          <h3>A selection of villas you have to see, hidden gems, <br>villas you could fall in love with.</h3>
+          <h3><%= t("home.badges_body").html_safe %></h3>
         </div>
       </div>
 
@@ -172,7 +172,7 @@ if @rent_section && @sale_section
         <div class="col-md-12 text-center">
           <div class="btn-group controls">
             <a href="prev" class="btn btn-primary prev" data-target="#heart-slider"><span class="fa fa-angle-left"></span></a>
-            <%= link_to("View all", add_url_param(:with_end_displays,'true', @rent_section.public_url), :class => "btn btn-primary ") %>
+            <%= link_to(t("realty.view_all"), add_url_param(:with_end_displays,'true', @rent_section.public_url), :class => "btn btn-primary ") %>
             <a href="next" class="btn btn-primary next" data-target="#heart-slider"><span class="fa fa-angle-right"></span></a>
           </div>
 
@@ -184,10 +184,9 @@ if @rent_section && @sale_section
     <div class="col-md-6">
       <div class="row">
         <div class="col-md-12 text-center">
-          <h2>SOMETHING IS NEW</h2>
+          <h2><%= t("home.news_title").html_safe %></h2>
           <hr>
-          <h3>New listing, new deco or new prices… <br>
-            Something is new in these villas</h3>
+          <h3><%= t("home.news_body").html_safe %></h3>
           </div>
         </div>
         <div class="row content">
@@ -207,7 +206,7 @@ if @rent_section && @sale_section
           <div class="col-md-12 text-center">
             <div class="btn-group controls">
               <a href="prev" class="btn btn-primary prev" data-target="#new-slider"><span class="fa fa-angle-left"></span></a>
-              <%= link_to("View all", add_url_param(:with_infos,'true', @rent_section.public_url), :class => "btn btn-primary ") %>
+              <%= link_to(t("realty.view_all"), add_url_param(:with_infos,'true', @rent_section.public_url), :class => "btn btn-primary ") %>
               <a href="next" class="btn btn-primary next" data-target="#new-slider"><span class="fa fa-angle-right"></span></a>
             </div>
 
@@ -225,7 +224,7 @@ if @rent_section && @sale_section
    <div class="container">
     <div class="row">
      <div class="col-md-8 col-md-offset-2 text-center">
-      <h2>A selection of properties for sale</h2>
+      <h2><%= t("home.sale_properties_title") %></h2>
     </div>
     <div class="row content">
       <div class="col-md-12">
@@ -263,7 +262,7 @@ if @rent_section && @sale_section
       <div class="col-md-12 text-center">
         <div class="btn-group controls">
           <a href="prev" class="btn btn-inverse prev" data-target="#sale-slider"><span class="fa fa-angle-left"></span></a>
-          <%= link_to("View all", @sale_section.public_url, :class => "btn btn-inverse ") %>
+          <%= link_to(t("realty.view_all"), @sale_section.public_url, :class => "btn btn-inverse ") %>
           <a href="next" class="btn btn-inverse next" data-target="#sale-slider"><span class="fa fa-angle-right"></span></a>
         </div>
       </div>
@@ -279,22 +278,16 @@ if @rent_section && @sale_section
   <section class="services">
    <div class="container">
     <div class="row">
-      <div class="col-md-4">
+      <div class="col-md-6">
         <h2><%= t("home.vacation_rentals.title") %></h2>
         <hr>
         <%= t("home.vacation_rentals.body").html_safe %>
         <%#= link_to("More", "#", :class => "btn btn-primary") %>
       </div>
-      <div class="col-md-4">
+      <div class="col-md-6">
         <h2><%= t("home.concierge_services.title") %></h2>
         <hr>
         <%= t("home.concierge_services.body").html_safe %>
-        <%#= link_to("More", "#", :class => "btn btn-primary") %>
-      </div>
-      <div class="col-md-4">
-        <h2><%= t("home.sin_marteen.title") %></h2>
-        <hr>
-        <%= t("home.sin_marteen.body").html_safe %>
         <%#= link_to("More", "#", :class => "btn btn-primary") %>
       </div>
     </div><!--end of row-->

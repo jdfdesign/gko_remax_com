@@ -6,13 +6,37 @@ en:
   informations: Informations
   footer_remaxislandproperties: "<a href='http://www.remaxislandproperties.com' target='_blank'>Looking for properties in St Martin/St Maarten ?</a><br/><a href='http://www.remaxislandproperties.com' target='_blank'>Visit Remax Island Properties in St Martin/St Maarten.</a><br/>©Remax Island Properties St Barths."
   realty:
+    select_rental_property: Select a rental property
+    team_title: Team
+    properties_for_rent: Properties for rent
+    properties_for_sale: Properties for sale
+    view_all_listing: View all listing
+    bedrooms: Bedrooms
+    follow_us: Follow us
+    contact: Contact
+    navigation: Navigation
+    partners: Partners
+    view_all: View all
     view_all_promotions: View all promotions
     price_notes: "A 10% service charge will be added to all rates. All villa prices are subject to an additional 5% Accommodation Tax. Rates are based on 2 guests per bedroom. Above rates are subject to change without any prior notice.<br/>Currency conversion provided for information only and subject to confirmation through our agents."
+    newsletter:
+      name: Name
+      email: Email
+      language: Language
+      subscribe: Subscribe
   sale_properties:
     collection:
       empty: "Please contact us for our selection of properties for sale."
-
   home:
+    style_title: A villa to fit your vacation style
+    style_body: Choose your next villa rental according to your vacation style
+    offers_title: Special offers
+    offers_body: "Benefit of good deals, special prices, discounts or extra services offered"
+    badges_title: Coups de coeur
+    badges_body: "A selection of villas you have to see, hidden gems, <br>villas you could fall in love with."
+    news_title: SOMETHING IS NEW
+    news_body: "New listing, new deco or new prices… <br>Something is new in these villas"
+    sale_properties_title: A selection of properties for sale
     vacation_rentals:
       title: "SAINT-BARTH REAL ESTATE & VACATION RENTALS"
       body: "<p>The leading real-estate company in the world is RE/MAX®, whose global advice and expertise help investors make the right decisions and accommodate their requirements of property ownership.<br>RE/MAX Island Properties – St. Barths is the commercial name for the Saint Barths RE/MAX franchise, owned and operated by the registered French real estate company Gecko Caraibes SARL licensed by the French department of Guadeloupe (License #: 06 037) and in partnership with the S.O.C.A.F. financial guarantee group.<br>We are offering the high end marketing concept, THE RE/MAX COLLECTION, introduced by RE/MAX International. We serve the specialized needs and interests of affluent buyers and sellers by providing exceptional service to discriminating clients for exclusive properties.<br>The agency opened its doors in August 2006 and is now playing a leading role on the Saint Barths real-estate market.<br>No other company provides such a wide range of services, including residential & commercial sales, luxury vacation rentals, long term rentals and property management.<br>Our agents can help you with buying or selling a home at any of the +8000 RE/MAX® offices located in 85 countries around the world. </p><p><small><strong>PLEASE NOTE:</strong> Not all our listings are on line so please do not hesitate to contact us for more confidential Hotel or commercial listings.</small></p>"

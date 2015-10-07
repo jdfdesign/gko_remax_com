@@ -1,6 +1,6 @@
 <%
   metas = ""
-  metas += "bedrooms #{record.meta.bedroom_count}" if record.meta.bedroom_count
+  metas += "#{t("realty.bedrooms")} #{record.meta.bedroom_count}" if record.meta.bedroom_count
   metas += " - #{record.meta.area.name}" if record.meta.area
   geom = local_assigns.has_key?(:geometry) ? geometry : '720x440#'
 %>
