@@ -4,18 +4,18 @@
     <%  
         geom = case request.env['mobvious.device_type']
         when :mobile
-          img.portrait? ? "480x320#" : "480x320#"
+          img.portrait? ? "x320" : "480x320#"
         when :tablet
-          img.portrait? ? "1140x768#" : "1024x768#"
+          img.portrait? ? "x768" : "1024x768#"
         else
-          img.portrait? ? "1140x768#" : "1140x768#"
+          img.portrait? ? "x768" : "1140x768#"
         end
     %>
     <li>
         <span><a href="//fr.pinterest.com/pin/create/button/?media=<%= img.thumbnail(geom).url() %>&description=remax-stbarths" data-pin-do="buttonPin" data-pin-config="none" data-pin-color="red" data-pin-height="28" class="hidden-print">
             <img src="//assets.pinterest.com/images/pidgets/pinit_fg_en_rect_red_28.png" class="hidden-print"/>
         </a></span>
-        <%= image_fu(img, geom, :class => "img-responsive") %></li>
+        <%= image_fu(img, geom) %></li>
     <% end %>
   </ul>
   <a href="prev" class="nav-slide prev hidden-print" data-target="#slider"><span class="fa fa-angle-left fa-3x"></span></a>
