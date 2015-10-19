@@ -6,6 +6,7 @@ fr:
   informations: Informations
   footer_remaxislandproperties: "<a href='http://www.remaxislandproperties.com' target='_blank'>Looking for properties in St Martin/St Maarten? Visit Remax Island Properties in St Martin/St Maarten.</a><br/>©Remax Island Properties St Barths."
   realty:
+    watch_video: Voir la vidéo
     select_rental_property: Selectionnez une villa en location
     team_title: Notre équipe
     properties_for_rent: Location
@@ -18,7 +19,7 @@ fr:
     partners: Partenaires
     view_all: Tout voir
     view_all_promotions: Voir toutes les promotions
-    price_notes: "Tous les tarifs sont basés sur 7 nuits et comprennent l'accompagnement à votre villa dès votre arrivée, cadeau de bienvenue et service de ménage quotidien (sauf le dimanche et jours fériés). <br/>Conversion des devises fourni à titre d'information seulement et sous réserve de confirmation par nos agents."
+    price_notes: "Veuillez noter que 10% de service et 5% de taxe de séjour sont à ajouter aux tarifs indiqués ci-dessus. Les tarifs sont basés sur 2 personnes maximum par chambre et sont susceptibles d’être modifiés sans préavis. Le taux de change indiqué est uniquement à titre indicatif et doit être confirmé par nos agents au moment de la réservation."
     newsletter:
       name: Nom
       email: Email
@@ -28,8 +29,8 @@ fr:
     collection:
       empty: "Nous avons de nombreux biens à vous proposer, n'hésitez pas à nous contacter."
   home: 
-    style_title: Une villa qui correspond à votre style de vacances
-    style_body: Choisissez votre prochaine villa adaptée à votre style de vacances
+    style_title: A chacun son style
+    style_body: Choisissez la villa de vos prochaines vacances selon vos préférences
     offers_title: Offres spéciales
     offers_body: "Bénéficiez des bonnes affaires, des prix spéciaux, des remises ou des services supplémentaires offerts."
     badges_title: Coups de coeur
@@ -39,7 +40,7 @@ fr:
     sale_properties_title: Une sélection de propriétés à vendre
     vacation_rentals:
       title: "VENTE IMMOBILIERE & LOCATION DE VACANCES A ST BARTH"
-      body: "<p>RE/MAX® est le plus grand réseau d’agence immobilière au monde. Fort de notre expérience et de notre expertise, nous travaillons avec les investisseurs du monde entier et nous efforçons de trouver les propriétés qui correspondent à leurs attentes.</p><p>RE/MAX Island Properties – St. Barths est le nom commercial de notre franchise à Saint Barthélemy, détenu et gérée par la société immobilière Gecko Caraïbes SARL immatriculée en Guadeloupe (License# : 06 037) et affilié à la S.O.C.A.F (garanties financières).</p><p>Nous sommes fier de proposé la mise en avant de nos biens hauts de gammes avec la branche « THE RE/MAX COLLECTION », introduite par RE/MAX International.</p><p>Nous répondons aux besoins précis et aux intérêts des acheteurs et des vendeurs affluents en fournissant un service exceptionnel pour des propriétés exclusives.</p><p>L’agence à ouvert ses portes en aout 2006 et joue désormais un rôle essentiel dans le marché de l’immobilier à Saint Barthélemy.</p><p>Nous sommes une des seules agences qui offrent une telle gamme de services aussi variés tels que la vente de biens résidentiels, commerciaux, location de vacances de luxe et location à l’année ainsi que le management de propriétés.</p><p>Nos agents vous aident à vendre ou à acheter dans n’importe qu’elle des plus de 8000 agences RE/MAX situées dans plus de 85 pays dans le monde.</p><p><strong>A SAVOIR :</strong> Tout notre listing n’est pas listé sur notre site web, n’hésitez pas à nous contactez pour connaitre nos ventes confidentielles tels que des hôtels ou des commerces.</p>"
+      body: "<p>RE/MAX® est le plus grand réseau d’agences immobilières au monde. Forts de notre expérience et de notre expertise, nous travaillons avec des investisseurs du monde entier et nous nous efforçons de trouver les propriétés qui correspondent à leurs attentes.</p><p>Nous sommes fiers de proposer la mise en avant de nos biens haut-de-gamme avec la branche « THE RE/MAX COLLECTION », introduite par RE/MAX International.</p><p>Nous répondons aux besoins précis et aux intérêts des acheteurs et des vendeurs en fournissant un service exceptionnel pour des propriétés exclusives.</p><p>Notre agence offre une gamme de services complets tels que la vente de biens résidentiels ou commerciaux, locations de vacances de luxe ainsi que le management de propriétés.</p><p><small><strong>A SAVOIR:</strong> Tout notre portefeuille n’est pas en ligne sur notre site internet. N’hésitez pas à nous contacter pour connaître nos biens confidentiels à la vente tels que les hôtels ou commerces.</small></p>"
     concierge_services: 
       title: "Durant votre séjour - Service conciergerie"
       body: "<p>Remax Island Properties - St Barths fait en sorte que votre séjour soit organiser avant votre arrivée.</p><p>Divers services peuvent être proposés lors de la réservation de votre villa. Si vous avez besoin d’aide, n’hésitez pas à nous contacter pour organiser par exemple votre location de voiture, lit bébé, baby-sitting, massage à la Villa, traiteurs, restaurants, activités nautiques, vol privé...</p><p>Nous sommes ici pour vous aider à rendre votre séjour le plus agréable possible afin que vous repartiez avec des souvenirs merveilleux qui dureront toute une vie ...</p>"
