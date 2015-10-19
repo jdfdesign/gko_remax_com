@@ -62,7 +62,7 @@ if @rent_section && @sale_section
               :selected => params[:search].present? ? params[:search][:with_category] : nil,
               :label_method => :title,
               :value_method => :id,
-              :prompt => @vacation_style_cat.title,
+              :prompt => t(:'helpers.select.lifestyle.prompt').html_safe,
               :label => false,
               :as => :select,
               :input_html => { :class => "form-control" } %>

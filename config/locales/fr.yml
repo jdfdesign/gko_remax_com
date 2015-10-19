@@ -9,9 +9,9 @@ fr:
     watch_video: Voir la vidéo
     select_rental_property: Selectionnez une villa en location
     team_title: Notre équipe
-    properties_for_rent: Location
-    properties_for_sale: Vente
-    view_all_listing: Tout voir
+    properties_for_rent: Biens à la location
+    properties_for_sale: Biens à la vente
+    view_all_listing: Voir tous les biens
     bedrooms: Chambres
     follow_us: Nous suivre
     contact: Contact
@@ -32,12 +32,13 @@ fr:
     style_title: A chacun son style
     style_body: Choisissez la villa de vos prochaines vacances selon vos préférences
     offers_title: Offres spéciales
-    offers_body: "Bénéficiez des bonnes affaires, des prix spéciaux, des remises ou des services supplémentaires offerts."
+    offers_body: "Profitez de nos promotions et offres spéciales"
+    offers_view_all: Voir toutes les offres
     badges_title: Coups de coeur
-    badges_body: "Une sélection de villas que vous devez voir, trésors cachés, <br>des villas dont vous pourriez tomber amoureux"
-    news_title: Quelquechose de nouveau
-    news_body: "Nouvelles villas, nouvelles décos ou nouveaux tarifs… <br>Quelquechose a changé dans ces villas"
-    sale_properties_title: Une sélection de propriétés à vendre
+    badges_body: "Notre sélection de coup de cœur qui pourrait vous séduire, trésors à découvrir absolument."
+    news_title: Nouveautés
+    news_body: "Nouveaux biens, nouveaux prix, nouvelles décorations,… Découvrez les nouveautés de ces biens."
+    sale_properties_title: Sélection de biens à la vente
     vacation_rentals:
       title: "VENTE IMMOBILIERE & LOCATION DE VACANCES A ST BARTH"
       body: "<p>RE/MAX® est le plus grand réseau d’agences immobilières au monde. Forts de notre expérience et de notre expertise, nous travaillons avec des investisseurs du monde entier et nous nous efforçons de trouver les propriétés qui correspondent à leurs attentes.</p><p>Nous sommes fiers de proposer la mise en avant de nos biens haut-de-gamme avec la branche « THE RE/MAX COLLECTION », introduite par RE/MAX International.</p><p>Nous répondons aux besoins précis et aux intérêts des acheteurs et des vendeurs en fournissant un service exceptionnel pour des propriétés exclusives.</p><p>Notre agence offre une gamme de services complets tels que la vente de biens résidentiels ou commerciaux, locations de vacances de luxe ainsi que le management de propriétés.</p><p><small><strong>A SAVOIR:</strong> Tout notre portefeuille n’est pas en ligne sur notre site internet. N’hésitez pas à nous contacter pour connaître nos biens confidentiels à la vente tels que les hôtels ou commerces.</small></p>"
@@ -50,4 +51,6 @@ fr:
   helpers:
     select:
       lifestyle:
-        prompt: "lifestyles"
+        prompt: "Styles"
+      price:
+        prompt: Prix hebdomadaires

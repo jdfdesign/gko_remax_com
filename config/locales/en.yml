@@ -33,6 +33,7 @@ en:
     style_body: Choose your next villa rental according to your vacation style
     offers_title: Special offers
     offers_body: "Benefit of good deals, special prices, discounts or extra services offered"
+    offers_view_all: View all
     badges_title: Coups de coeur
     badges_body: "A selection of villas you have to see, hidden gems, <br>villas you could fall in love with."
     news_title: SOMETHING IS NEW
@@ -50,7 +51,7 @@ en:
   helpers:
     select:
       lifestyle:
-        prompt: "lifestyles"
+        prompt: "Vacation Styles"
       
       
       

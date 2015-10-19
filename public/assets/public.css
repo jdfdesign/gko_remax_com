@@ -8192,17 +8192,19 @@ span.valid {
   border: none;
 }
 /* line 8, ../../app/assets/stylesheets/theme/_navbar.scss */
-.navbar .dropdown-menu {
-  font-size: 13px;
-}
-/* line 11, ../../app/assets/stylesheets/theme/_navbar.scss */
 .navbar .dropdown-menu > li > a {
   color: #777777;
 }
-/* line 14, ../../app/assets/stylesheets/theme/_navbar.scss */
+/* line 11, ../../app/assets/stylesheets/theme/_navbar.scss */
 .navbar .dropdown-menu > li > a:hover, .navbar .dropdown-menu > li > a:focus {
   color: black;
   background-color: transparent;
+}
+
+/* line 17, ../../app/assets/stylesheets/theme/_navbar.scss */
+.navbar-nav > li > .dropdown-menu {
+  margin-top: -40px;
+  font-size: 13px;
 }
 
 /* line 23, ../../app/assets/stylesheets/theme/_navbar.scss */
@@ -8264,26 +8266,41 @@ span.valid {
     margin-left: -15px;
   }
 }
-/* line 73, ../../app/assets/stylesheets/theme/_navbar.scss */
+/* line 72, ../../app/assets/stylesheets/theme/_navbar.scss */
 #locales > li {
   padding: 56.5px 10px;
 }
-/* line 77, ../../app/assets/stylesheets/theme/_navbar.scss */
+/* line 76, ../../app/assets/stylesheets/theme/_navbar.scss */
 #locales > li > a {
-  padding: 0;
+  padding: 0 0 0 26px;
   border-bottom: 3px solid #ebeae6;
   font-size: 13px;
   -webkit-transition: all 0.3s ease;
   -o-transition: all 0.3s ease;
   transition: all 0.3s ease;
+  background-size: contain;
+  background-position: 0 50%;
+  background-repeat: no-repeat;
 }
-/* line 83, ../../app/assets/stylesheets/theme/_navbar.scss */
+/* line 85, ../../app/assets/stylesheets/theme/_navbar.scss */
+#locales > li > a:before {
+  content: '\00a0';
+}
+/* line 88, ../../app/assets/stylesheets/theme/_navbar.scss */
+#locales > li > a.en {
+  background-image: url(/assets/flags/4x3/gb.svg);
+}
+/* line 91, ../../app/assets/stylesheets/theme/_navbar.scss */
+#locales > li > a.fr {
+  background-image: url(/assets/flags/4x3/fr.svg);
+}
+/* line 95, ../../app/assets/stylesheets/theme/_navbar.scss */
 #locales > li > a:hover, #locales > li > a:focus {
   border-bottom-color: black;
   background-color: transparent;
 }
 
-/* line 89, ../../app/assets/stylesheets/theme/_navbar.scss */
+/* line 101, ../../app/assets/stylesheets/theme/_navbar.scss */
 .navbar-form {
   position: absolute;
   right: 0px;
@@ -9096,164 +9113,6 @@ footer .nav > li > a:hover, footer .nav > li > a:focus {
   /* Opera 11.10+ */
   background: linear-gradient(90deg, #dd5e89 10%, #f7bb97 90%);
   /* W3C */
-}
-
-/* HEADER
--------------------------------------------------- */
-/* line 5, ../../app/assets/stylesheets/theme/_property.scss */
-.property-header h1 {
-  font-family: "Merriweather", Georgia, "Times New Roman", Times, serif;
-  font-size: 50px;
-  font-style: italic;
-  font-weight: 700;
-  margin-bottom: 16px;
-  margin-top: 0;
-}
-/* line 13, ../../app/assets/stylesheets/theme/_property.scss */
-.property-header hr {
-  margin-left: 0;
-}
-
-/* line 18, ../../app/assets/stylesheets/theme/_property.scss */
-.btn-video {
-  position: absolute;
-  right: 15px;
-  top: -4px;
-  z-index: 200;
-}
-
-/* line 24, ../../app/assets/stylesheets/theme/_property.scss */
-.copy-text {
-  font-family: "Merriweather", Georgia, "Times New Roman", Times, serif;
-  font-size: 16px;
-  font-style: italic;
-  line-height: 24px;
-  color: #777777;
-  margin-top: 16px;
-}
-/* line 31, ../../app/assets/stylesheets/theme/_property.scss */
-.copy-text h1, .copy-text h2, .copy-text h3, .copy-text h4, .copy-text h5, .copy-text h6 {
-  font-style: normal;
-  font-family: 'Roboto';
-  font-size: 16px;
-  text-transform: uppercase;
-  letter-spacing: 2px;
-  font-weight: 700;
-  color: #333333;
-}
-/* line 41, ../../app/assets/stylesheets/theme/_property.scss */
-.copy-text p:last-child {
-  margin-bottom: 0;
-}
-
-/* line 46, ../../app/assets/stylesheets/theme/_property.scss */
-.property-info,
-.property-promo-text {
-  background-color: #03A9F4;
-  color: #fff;
-  border-radius: 0;
-}
-/* line 50, ../../app/assets/stylesheets/theme/_property.scss */
-.property-info h4,
-.property-promo-text h4 {
-  color: #fff;
-  margin-top: 0;
-}
-
-/* line 56, ../../app/assets/stylesheets/theme/_property.scss */
-.property-promo-text {
-  background-color: #FF5252 !important;
-}
-
-/* line 59, ../../app/assets/stylesheets/theme/_property.scss */
-.nav-stickers > li {
-  float: left;
-}
-
-/* line 62, ../../app/assets/stylesheets/theme/_property.scss */
-.nav-stickers > li > a {
-  text-transform: uppercase;
-  font-family: "Roboto Condensed", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-size: 12px;
-  letter-spacing: 1px;
-  padding: 0;
-  color: #777777;
-  -webkit-transition: all 0.3s ease;
-  -o-transition: all 0.3s ease;
-  transition: all 0.3s ease;
-}
-/* line 70, ../../app/assets/stylesheets/theme/_property.scss */
-.nav-stickers > li > a:hover, .nav-stickers > li > a:focus {
-  background-color: transparent;
-  color: #999;
-  text-decoration: none;
-}
-
-/* line 77, ../../app/assets/stylesheets/theme/_property.scss */
-.widget-details {
-  font-family: "Roboto Condensed", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-size: 16px;
-  letter-spacing: 0;
-  line-height: 24px;
-}
-/* line 82, ../../app/assets/stylesheets/theme/_property.scss */
-.widget-details strong {
-  color: #000;
-}
-/* line 85, ../../app/assets/stylesheets/theme/_property.scss */
-.widget-details hr {
-  margin: 22px 0;
-}
-/* line 88, ../../app/assets/stylesheets/theme/_property.scss */
-.widget-details a {
-  color: #777777;
-}
-/* line 91, ../../app/assets/stylesheets/theme/_property.scss */
-.widget-details a:focus, .widget-details a:hover {
-  color: #333333;
-  text-decoration: none;
-}
-
-/* RATES
--------------------------------------------------- */
-/* line 102, ../../app/assets/stylesheets/theme/_property.scss */
-.realty-seasons {
-  list-style-type: none;
-  padding-left: 0;
-}
-/* line 105, ../../app/assets/stylesheets/theme/_property.scss */
-.realty-seasons ul {
-  list-style-type: none;
-  font-family: "Merriweather", Georgia, "Times New Roman", Times, serif;
-  font-size: 16px;
-  font-style: italic;
-  line-height: 24px;
-  color: #777777;
-}
-
-/* line 114, ../../app/assets/stylesheets/theme/_property.scss */
-.realty-season-title {
-  font-style: normal;
-  font-family: 'Roboto';
-  font-size: 14px;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  font-weight: 700;
-  color: #333333;
-  margin-top: 22px;
-  margin-bottom: 12px;
-}
-/* line 124, ../../app/assets/stylesheets/theme/_property.scss */
-.realty-season-title span {
-  font-weight: 300;
-  color: #777777;
-}
-
-/* line 129, ../../app/assets/stylesheets/theme/_property.scss */
-.price_notes_extra {
-  font-size: 16px;
-  line-height: 24px;
-  color: #333333;
 }
 
 /* HEADER

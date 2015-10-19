@@ -5,9 +5,6 @@
     border: none;
     //border-bottom: 1px solid $navbar-default-bg:;
     //background-color: #e0ded8;
-    .dropdown-menu {
-        font-size: 13px;
-    }
     .dropdown-menu > li > a {
         color: $navbar-default-link-color;
         &:hover,
@@ -17,7 +14,10 @@
         }
     }
 }
-
+.navbar-nav > li > .dropdown-menu {
+  margin-top: -40px;
+  font-size: 13px;
+}
 
 //364 × 187
 .navbar-brand {
@@ -69,20 +69,32 @@
     }
 }
 #locales {
-
-    > li {
-        padding: (($logo-height-sm-min - $line-height-computed) / 2) 10px;
-    }
+  > li {
+    padding: (($logo-height-sm-min - $line-height-computed) / 2) 10px;
+  }
 
     > li > a {
-        padding: 0;
-        border-bottom: 3px solid $navbar-default-bg;
-        font-size: 13px;
-        @include transition(all 0.3s ease);
-        &:hover,
-        &:focus {
-            border-bottom-color: $navbar-default-link-hover-color;
-            background-color: transparent;
+      padding: 0 0 0 26px;
+      border-bottom: 3px solid $navbar-default-bg;
+      font-size: 13px;
+      @include transition(all 0.3s ease);
+      background-size: contain;
+      background-position: 0 50%;
+      background-repeat: no-repeat;
+      
+      &:before {
+        content: '\00a0';
+      }
+      &.en {
+        background-image: image-url('flags/4x3/gb.svg');
+      }
+      &.fr {
+        background-image: image-url('flags/4x3/fr.svg');
+      }
+      &:hover,
+      &:focus {
+        border-bottom-color: $navbar-default-link-hover-color;
+        background-color: transparent;
         }
     }
 }
