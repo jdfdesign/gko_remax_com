@@ -1,20 +1,20 @@
 GIT
   remote: git@github.com:jdfdesign/gko-realty.git
-  revision: d34db11a1fec071aa680f7871893f46cc9dd791a
-  tag: v0.4.5
+  revision: e31c7bad672f219ecc64cc2540a9f977a83ced4e
+  tag: v0.4.6
   specs:
-    gko_realty (0.4.5)
+    gko_realty (0.4.6)
 
 GIT
   remote: git@github.com:jdfdesign/gko_cms3.git
-  revision: 5c42440124ce2d00c7e41b575da6d8c696799a45
-  tag: v0.8.24
+  revision: 4175de02d98ae9f16dad4a92da699648e30e05ca
+  tag: v0.8.28
   specs:
-    gko_auth (0.8.24)
+    gko_auth (0.8.28)
       cancan (~> 1.6.10)
       devise (~> 2.2.3)
-    gko_categories (0.8.24)
-    gko_core (0.8.24)
+    gko_categories (0.8.28)
+    gko_core (0.8.28)
       activesupport-slices (= 0.0.2)
       acts_as_indexed (~> 0.7.7)
       babosa (~> 0.3.8)
@@ -43,11 +43,11 @@ GIT
       mysql2 (~> 0.3.14)
       nested_set (~> 1.7.1)
       net-ssh (= 2.0.14)
-      rack-cache (~> 1.2)
+      rack-cache (= 1.2)
       rack-mount (~> 0.8.3)
-      rails (~> 3.2.22)
+      rails (= 3.2.22)
       rake (~> 10.1.1)
-      rmagick (= 2.13.2)
+      rmagick
       routing-filter (= 0.3.1)
       rubyzip (= 0.9.6.1)
       sass-rails (~> 3.2.6)
@@ -57,13 +57,13 @@ GIT
       uglifier (~> 2.4.0)
       uuid (~> 2.3.7)
       will_paginate (~> 3.0.2)
-    gko_documents (0.8.24)
+    gko_documents (0.8.28)
       dragonfly (~> 0.9.8)
       rack-cache (>= 0.5.3)
-    gko_features (0.8.24)
-    gko_inquiries (0.8.24)
+    gko_features (0.8.28)
+    gko_inquiries (0.8.28)
       filters_spam (~> 0.2)
-    gko_stickers (0.8.24)
+    gko_stickers (0.8.28)
 
 GEM
   remote: https://rubygems.org/
@@ -233,7 +233,7 @@ GEM
       json (~> 1.4)
     responders (0.9.3)
       railties (~> 3.1)
-    rmagick (2.13.2)
+    rmagick (2.15.4)
     routing-filter (0.3.1)
       actionpack
     ruby-ole (1.2.11.8)
@@ -246,7 +246,7 @@ GEM
     simple_form (2.1.3)
       actionpack (~> 3.0)
       activemodel (~> 3.0)
-    spreadsheet (1.0.7)
+    spreadsheet (1.0.8)
       ruby-ole (>= 1.0)
     sprockets (2.2.3)
       hike (~> 1.2)
@@ -276,7 +276,10 @@ GEM
     whenever (0.7.3)
       activesupport (>= 2.3.4)
       chronic (~> 0.6.3)
+    wicked_pdf (0.9.10)
+      rails
     will_paginate (3.0.7)
+    wkhtmltopdf-binary (0.9.9.3)
 
 PLATFORMS
   ruby
@@ -299,3 +302,5 @@ DEPENDENCIES
   sass-rails (~> 3.2.6)
   uglifier (~> 2.4.0)
   whenever (~> 0.7.3)
+  wicked_pdf (~> 0.9.10)
+  wkhtmltopdf-binary (~> 0.9.9.3)

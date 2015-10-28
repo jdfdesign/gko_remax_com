@@ -9131,7 +9131,7 @@ footer .nav > li > a:hover, footer .nav > li > a:focus {
   margin-left: 0;
 }
 
-/* line 18, ../../app/assets/stylesheets/theme/_property.scss */
+/* line 17, ../../app/assets/stylesheets/theme/_property.scss */
 .btn-video {
   position: absolute;
   right: 15px;
@@ -9139,7 +9139,7 @@ footer .nav > li > a:hover, footer .nav > li > a:focus {
   z-index: 200;
 }
 
-/* line 24, ../../app/assets/stylesheets/theme/_property.scss */
+/* line 23, ../../app/assets/stylesheets/theme/_property.scss */
 .copy-text {
   font-family: "Merriweather", Georgia, "Times New Roman", Times, serif;
   font-size: 16px;
@@ -9148,7 +9148,7 @@ footer .nav > li > a:hover, footer .nav > li > a:focus {
   color: #777777;
   margin-top: 16px;
 }
-/* line 31, ../../app/assets/stylesheets/theme/_property.scss */
+/* line 30, ../../app/assets/stylesheets/theme/_property.scss */
 .copy-text h1, .copy-text h2, .copy-text h3, .copy-text h4, .copy-text h5, .copy-text h6 {
   font-style: normal;
   font-family: 'Roboto';
@@ -9158,36 +9158,36 @@ footer .nav > li > a:hover, footer .nav > li > a:focus {
   font-weight: 700;
   color: #333333;
 }
-/* line 41, ../../app/assets/stylesheets/theme/_property.scss */
+/* line 39, ../../app/assets/stylesheets/theme/_property.scss */
 .copy-text p:last-child {
   margin-bottom: 0;
 }
 
-/* line 46, ../../app/assets/stylesheets/theme/_property.scss */
+/* line 44, ../../app/assets/stylesheets/theme/_property.scss */
 .property-info,
 .property-promo-text {
   background-color: #03A9F4;
   color: #fff;
   border-radius: 0;
 }
-/* line 50, ../../app/assets/stylesheets/theme/_property.scss */
+/* line 48, ../../app/assets/stylesheets/theme/_property.scss */
 .property-info h4,
 .property-promo-text h4 {
   color: #fff;
   margin-top: 0;
 }
 
-/* line 56, ../../app/assets/stylesheets/theme/_property.scss */
+/* line 54, ../../app/assets/stylesheets/theme/_property.scss */
 .property-promo-text {
   background-color: #FF5252 !important;
 }
 
-/* line 59, ../../app/assets/stylesheets/theme/_property.scss */
+/* line 57, ../../app/assets/stylesheets/theme/_property.scss */
 .nav-stickers > li {
   float: left;
 }
 
-/* line 62, ../../app/assets/stylesheets/theme/_property.scss */
+/* line 60, ../../app/assets/stylesheets/theme/_property.scss */
 .nav-stickers > li > a {
   text-transform: uppercase;
   font-family: "Roboto Condensed", "Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -9199,33 +9199,33 @@ footer .nav > li > a:hover, footer .nav > li > a:focus {
   -o-transition: all 0.3s ease;
   transition: all 0.3s ease;
 }
-/* line 70, ../../app/assets/stylesheets/theme/_property.scss */
+/* line 68, ../../app/assets/stylesheets/theme/_property.scss */
 .nav-stickers > li > a:hover, .nav-stickers > li > a:focus {
   background-color: transparent;
   color: #999;
   text-decoration: none;
 }
 
-/* line 77, ../../app/assets/stylesheets/theme/_property.scss */
+/* line 75, ../../app/assets/stylesheets/theme/_property.scss */
 .widget-details {
   font-family: "Roboto Condensed", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 16px;
   letter-spacing: 0;
   line-height: 24px;
 }
-/* line 82, ../../app/assets/stylesheets/theme/_property.scss */
+/* line 80, ../../app/assets/stylesheets/theme/_property.scss */
 .widget-details strong {
   color: #000;
 }
-/* line 85, ../../app/assets/stylesheets/theme/_property.scss */
+/* line 83, ../../app/assets/stylesheets/theme/_property.scss */
 .widget-details hr {
   margin: 22px 0;
 }
-/* line 88, ../../app/assets/stylesheets/theme/_property.scss */
+/* line 86, ../../app/assets/stylesheets/theme/_property.scss */
 .widget-details a {
   color: #777777;
 }
-/* line 91, ../../app/assets/stylesheets/theme/_property.scss */
+/* line 89, ../../app/assets/stylesheets/theme/_property.scss */
 .widget-details a:focus, .widget-details a:hover {
   color: #333333;
   text-decoration: none;
@@ -9233,12 +9233,12 @@ footer .nav > li > a:hover, footer .nav > li > a:focus {
 
 /* RATES
 -------------------------------------------------- */
-/* line 102, ../../app/assets/stylesheets/theme/_property.scss */
+/* line 100, ../../app/assets/stylesheets/theme/_property.scss */
 .realty-seasons {
   list-style-type: none;
   padding-left: 0;
 }
-/* line 105, ../../app/assets/stylesheets/theme/_property.scss */
+/* line 103, ../../app/assets/stylesheets/theme/_property.scss */
 .realty-seasons ul {
   list-style-type: none;
   font-family: "Merriweather", Georgia, "Times New Roman", Times, serif;
@@ -9248,7 +9248,7 @@ footer .nav > li > a:hover, footer .nav > li > a:focus {
   color: #777777;
 }
 
-/* line 114, ../../app/assets/stylesheets/theme/_property.scss */
+/* line 112, ../../app/assets/stylesheets/theme/_property.scss */
 .realty-season-title {
   font-style: normal;
   font-family: 'Roboto';
@@ -9260,17 +9260,73 @@ footer .nav > li > a:hover, footer .nav > li > a:focus {
   margin-top: 22px;
   margin-bottom: 12px;
 }
-/* line 124, ../../app/assets/stylesheets/theme/_property.scss */
+/* line 122, ../../app/assets/stylesheets/theme/_property.scss */
 .realty-season-title span {
   font-weight: 300;
   color: #777777;
 }
 
-/* line 129, ../../app/assets/stylesheets/theme/_property.scss */
+/* line 127, ../../app/assets/stylesheets/theme/_property.scss */
 .price_notes_extra {
   font-size: 16px;
   line-height: 24px;
   color: #333333;
+}
+
+/* line 3, ../../app/assets/stylesheets/theme/_pdf.scss */
+.pdf hr {
+  border-color: #777777;
+}
+/* line 7, ../../app/assets/stylesheets/theme/_pdf.scss */
+.pdf * {
+  letter-spacing: 0 !important;
+}
+/* line 11, ../../app/assets/stylesheets/theme/_pdf.scss */
+.pdf .panel-title {
+  padding: 0;
+  color: #000;
+  text-transform: uppercase;
+}
+/* line 17, ../../app/assets/stylesheets/theme/_pdf.scss */
+.pdf .panel-body {
+  width: 100%;
+  padding: 0;
+}
+/* line 20, ../../app/assets/stylesheets/theme/_pdf.scss */
+.pdf .panel-body h1, .pdf .panel-body h2, .pdf .panel-body h3, .pdf .panel-body h4, .pdf .panel-body h5, .pdf .panel-body h6, .pdf .panel-body p {
+  font-size: 12px;
+  line-height: 16px;
+}
+/* line 26, ../../app/assets/stylesheets/theme/_pdf.scss */
+.pdf .realty-seasons {
+  list-style-type: none;
+  padding-left: 0;
+}
+/* line 29, ../../app/assets/stylesheets/theme/_pdf.scss */
+.pdf .realty-seasons ul {
+  font-size: 12px;
+  line-height: 16px;
+}
+/* line 35, ../../app/assets/stylesheets/theme/_pdf.scss */
+.pdf .realty-season-title {
+  font-size: 12px !important;
+  margin-top: 0 !important;
+}
+/* line 40, ../../app/assets/stylesheets/theme/_pdf.scss */
+.pdf .price_notes_extra {
+  font-size: 10px;
+  line-height: 16px;
+}
+/* line 45, ../../app/assets/stylesheets/theme/_pdf.scss */
+.pdf #footer {
+  background-color: transparent;
+  padding: 22px 0;
+  color: #777777;
+}
+/* line 51, ../../app/assets/stylesheets/theme/_pdf.scss */
+.pdf a {
+  color: #000;
+  text-decoration: underline;
 }
 
 /* FIX FOR GMAP BUG

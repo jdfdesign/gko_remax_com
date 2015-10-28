@@ -1,0 +1,55 @@
+.pdf {
+
+  hr {
+    border-color: $text-color;
+  }
+  
+  * {
+    letter-spacing: 0 !important;
+  }
+  
+  .panel-title {
+    padding: 0;
+    color: #000;
+    text-transform: uppercase;
+  }
+  
+  .panel-body {
+    width: 100%;
+    padding: 0;
+    h1, h2, h3, h4, h5, h6, p {
+      font-size: 12px;
+      line-height: 16px;
+    }
+  }
+  
+  .realty-seasons {
+    list-style-type: none;
+    padding-left: 0;
+    ul {
+      font-size: 12px;
+      line-height: 16px;
+    }
+  }
+  
+  .realty-season-title {
+    font-size: 12px !important;
+    margin-top: 0 !important;
+  }
+  
+  .price_notes_extra {
+    font-size: 10px;
+    line-height: 16px;
+  }
+  
+  #footer {
+    background-color: transparent;
+    padding: ($line-height-computed) 0;
+    color: $text-color;
+  }
+  
+  a {
+    color: #000;
+    text-decoration: underline;
+  }
+}

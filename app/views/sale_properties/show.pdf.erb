@@ -1,0 +1,38 @@
+<%# resource_cache(resource) do %>
+
+    <%
+    options = @sale_property.content_options
+    has_options = options.try(:any?)
+    tags = []
+    tags << realty_meta_tag("price", sale_price_value(@sale_property, true))
+    tags << realty_meta_tag("bedroom_count", @sale_property.bedroom_count)
+    tags << realty_meta_tag("bathroom_count", @sale_property.bathroom_count)
+    tags << realty_meta_tag("year_built", @sale_property.year_built)
+    if @sale_property.acreage.present?
+      tags << realty_meta_tag("acreage", "#{@sale_property.acreage} m2")
+    end
+    if @sale_property.building_size.present? 
+      tags << realty_meta_tag("building_size", "#{@sale_property.building_size} m2")
+    end
+    if @sale_property.area.present? 
+      tags << realty_meta_tag("area", @sale_property.area.name)
+    end
+    %>
+  <%# end %>  
+
+<article class="property">
+  <%= image_tag "file://#{resource.images.first.image.path}", :class => "img-responsive" %>
+  <br/>
+  <!-- Header
+  ================================================== -->
+  <div class="property-header">
+    <h1><%= resource.title %></h1>
+    <hr>
+    <%= render_copy_text(resource.body) %>
+  </div>
+  <hr>
+  <div class='widget-details'>
+    <%= tags.compact.join("<br/>").html_safe %>
+  </div>
+</article>
+<%# end %>

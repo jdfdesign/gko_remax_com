@@ -8,7 +8,7 @@ group :assets do
 end
 
 group :production do
-  git "git@github.com:jdfdesign/gko_cms3.git", :tag => "v0.8.24" do
+  git "git@github.com:jdfdesign/gko_cms3.git", :tag => "v0.8.28" do
     gem 'gko_core'
     gem 'gko_auth'
     gem 'gko_documents'
@@ -17,7 +17,7 @@ group :production do
     gem 'gko_categories'
     gem 'gko_stickers'
   end
-  gem 'gko_realty', :git => 'git@github.com:jdfdesign/gko-realty.git', :tag => "v0.4.5"
+  gem 'gko_realty', :git => 'git@github.com:jdfdesign/gko-realty.git', :tag => "v0.4.6"
 end
 
 #group :development do
@@ -36,3 +36,5 @@ gem "eu_central_bank", "~> 0.3.2"
 gem "whenever", "~> 0.7.3"
 gem "nokogiri", "~> 1.5.1"
 gem 'bootstrap-datepicker-rails', '1.3.1.1'
+gem 'wicked_pdf', '~> 0.9.10'
+gem 'wkhtmltopdf-binary', '~> 0.9.9.3'

@@ -2,18 +2,17 @@
 /* HEADER
 -------------------------------------------------- */
 .property-header {
-    h1 {
-        font-family: $font-family-serif;
-        font-size: 50px;
-        font-style: italic;
-        font-weight: 700;
-        margin-bottom: 16px;
-        margin-top: 0;
-    }
-    hr {
-        margin-left: 0;
-    }
-
+  h1 {
+    font-family: $font-family-serif;
+    font-size: 50px;
+    font-style: italic;
+    font-weight: 700;
+    margin-bottom: 16px;
+    margin-top: 0;
+  }
+  hr {
+    margin-left: 0;
+  }
 }
 .btn-video {
   position: absolute;
@@ -22,56 +21,55 @@
   z-index: 200;//arbitrary
 }
 .copy-text {
-    font-family: $font-family-serif;
-    font-size: 16px;
-    font-style: italic;
-    line-height: 24px;
-    color: $text-color;
-    margin-top: 16px;
-        h1, h2, h3, h4, h5, h6 {
-        font-style: normal;
-        font-family: 'Roboto';
-        font-size: 16px;
-        text-transform: uppercase;
-        letter-spacing: 2px;
-        font-weight: 700;
-        color: $headings-color;
-
-    }
-    p:last-child {
-        margin-bottom: 0;
-    }
+  font-family: $font-family-serif;
+  font-size: 16px;
+  font-style: italic;
+  line-height: 24px;
+  color: $text-color;
+  margin-top: 16px;
+  h1, h2, h3, h4, h5, h6 {
+  font-style: normal;
+  font-family: 'Roboto';
+  font-size: 16px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-weight: 700;
+  color: $headings-color;
+  }
+  p:last-child {
+      margin-bottom: 0;
+  }
 }
 .property-info,
 .property-promo-text {
-    background-color: #03A9F4;
+  background-color: #03A9F4;
+  color: #fff;
+  border-radius: 0;
+  h4 {
     color: #fff;
-    border-radius: 0;
-    h4 {
-        color: #fff;
-        margin-top: 0;
-    }
+    margin-top: 0;
+  }
 }
 
 .property-promo-text {
   background-color: #FF5252 !important;
 }
 .nav-stickers > li {
-    float: left;
+  float: left;
 }
 .nav-stickers > li > a {
-    text-transform: uppercase;
-    font-family: $font-family-sans-serif;
-    font-size: 12px;
-    letter-spacing: 1px;
-    padding: 0;
-    color: $text-color;
-    @include transition(all 0.3s ease);
-    &:hover, &:focus {
-        background-color: transparent;
-        color: #999;
-        text-decoration: none;
-    }
+  text-transform: uppercase;
+  font-family: $font-family-sans-serif;
+  font-size: 12px;
+  letter-spacing: 1px;
+  padding: 0;
+  color: $text-color;
+  @include transition(all 0.3s ease);
+  &:hover, &:focus {
+    background-color: transparent;
+    color: #999;
+    text-decoration: none;
+  }
 }
 
 .widget-details {
@@ -85,13 +83,13 @@
     hr {
         margin: $line-height-computed 0;
     }
-    a {
-        color: $text-color;
-        &:focus,
-        &:hover {
-         color: $headings-color;
-         text-decoration: none; 
-     } 
+  a {
+      color: $text-color;
+      &:focus,
+      &:hover {
+       color: $headings-color;
+       text-decoration: none; 
+  } 
  }
 }
 
@@ -103,28 +101,28 @@
     list-style-type: none;
     padding-left: 0;
     ul {
-        list-style-type: none;
-            font-family: $font-family-serif;
-    font-size: 16px;
-    font-style: italic;
-    line-height: 24px;
-    color: $text-color;
+      list-style-type: none;
+      font-family: $font-family-serif;
+      font-size: 16px;
+      font-style: italic;
+      line-height: 24px;
+      color: $text-color;
     }
 }
 .realty-season-title {
-            font-style: normal;
-        font-family: 'Roboto';
-        font-size: 14px;
-        text-transform: uppercase;
-        letter-spacing: 1px;
-        font-weight: 700;
-        color: $headings-color;
-        margin-top: $line-height-computed;
-        margin-bottom: 12px; 
-        span {
-             font-weight: 300;
-             color: $text-color;
-        }
+  font-style: normal;
+  font-family: 'Roboto';
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: 700;
+  color: $headings-color;
+  margin-top: $line-height-computed;
+  margin-bottom: 12px; 
+  span {
+       font-weight: 300;
+       color: $text-color;
+  }
 }
 .price_notes_extra {
     font-size: 16px;

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html class="no-js">
+  <head>
+  	<meta charset='utf8'>
+    <meta name='pdfkit-footer_html' content="application/footer.pdf.erb" />
+    <link href='http://fonts.googleapis.com/css?family=Roboto+Condensed:400,700|Merriweather:400,400italic,700,700italic|Roboto:900,400' rel='stylesheet' type='text/css'>	
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+    <%= wicked_pdf_stylesheet_link_tag "public" -%>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="https://netdna.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+    <%= wicked_pdf_javascript_include_tag "public" -%>
+  </head>
+
+  <body class="pdf">
+    <div class="container">
+      <%= yield %>
+    </div>
+    <hr>
+    <%= render 'footer' %>
+</body>
+</html>
+
