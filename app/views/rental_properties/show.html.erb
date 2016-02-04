@@ -1,18 +1,18 @@
 <%# resource_cache(resource) do %>
-<% 
+<%
 options = @rental_property.content_options
 has_options = options.try(:any?)
 tags = []
 tags << realty_meta_tag("bedroom_count", @rental_property.bedroom_count)
 tags << realty_meta_tag("bathroom_count", @rental_property.bathroom_count)
 tags << realty_meta_tag("min_price", rental_min_price_value(@rental_property))
-if @rental_property.area.present? 
+if @rental_property.area.present?
   tags << realty_meta_tag("area", @rental_property.area.name)
 end
-if @rental_property.children_policy.present? 
+if @rental_property.children_policy.present?
   tags << realty_meta_tag("children_policy", @rental_property.children_policy)
 end
-if @rental_property.pets_policy.present? 
+if @rental_property.pets_policy.present?
   tags << realty_meta_tag("pets_policy", @rental_property.pets_policy)
 end
 @rental_property.content_options.each do |o|
@@ -99,7 +99,7 @@ end
             <div class="container">
               <div class='row'>
                <div class='col-sm-11 col-sm-offset-1'>
-                <% if @rental_property.promo_text.present? %>
+                <% if @rental_property.promo? %>
                   <div class="well property-promo-text">
                     <%= @rental_property.promo_text.html_safe %>
                   </div>
@@ -138,7 +138,7 @@ end
           ================================================== -->
           <div class='row'>
             <div class='col-sm-12'>
-              <%= render('gmap', :point => @rental_property.lat_long) %> 
+              <%= render('gmap', :point => @rental_property.lat_long) %>
             </div>
           </div>
           <% end %>
@@ -170,7 +170,7 @@ end
             <%= render 'shared/realty_agent', :realty_agent => @rental_property.meta.realty_agent %>
             <% elsif site.inquiry_recipients.present? %>
             <p><small><%= site.inquiry_recipients.html_safe %></small></p>
-            <% end %> 
+            <% end %>
           </div>
           <div class='col-sm-8'>
             <%= render :partial => 'rental_property_inquiries/form' %>
@@ -183,4 +183,4 @@ end
 </div>
 
 </article>
-<%# end %> 
+<%# end %>
