@@ -9,37 +9,16 @@
   </div><!--end of row-->
 
   <div class="row content">
-    <div class="col-md-12">
-      <div class="image-slider" id="member-slider">
-        <ul class="slides">
-          <% site.realty_agents.in_groups_of(3) do |group| %>
-          <li>
-            <% group.each do |c| %>
-            <% if c %>
-            <div class="col-md-4">
-              <div class="team-member">
-                <i class="fa fa-user fa-4x"></i>
-               <h2><%= c.name %></h2>
-               <h5><%= c.grade %></h5>
-             </div><!--end of team member-->
-           </div>
-           <% end %>
-           <% end %>
-         </li>
-         <% end %>
-       </ul>
-     </div><!--end of image slider-->
-   </div>
- </div>
-
- <div class="row space-bottom-large">
-  <div class="col-md-12 text-center">
-    <div class="btn-group controls">
-      <a href="prev" class="btn btn-primary prev" data-target="#member-slider"><span class="fa fa-angle-left"></span></a>
-      <a href="next" class="btn btn-primary next" data-target="#member-slider"><span class="fa fa-angle-right"></span></a>
-    </div>
+    <% site.realty_agents.each do |realty_agent| %>
+      <div class="col-xs-6 col-md-3">
+        <div class="team-member">
+          <%= image_tag(realty_agent.thumbnail("80x100#").url) %>
+          <h2><%= realty_agent.name %></h2>
+          <h5><%= realty_agent.grade %></h5>
+        </div><!--end of team member-->
+      </div>
+    <% end %>
   </div>
-
 </div><!--end of row-->
 </div><!--end of container-->
 </section>
